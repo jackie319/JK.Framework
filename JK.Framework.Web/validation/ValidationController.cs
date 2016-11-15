@@ -7,6 +7,9 @@ using System.Web.Mvc;
 
 namespace JK.Framework.Web.validation
 {
+    /// <summary>
+    ///已废弃
+    /// </summary>
     public class ValidationController:Controller
     {
         private bool isValid;

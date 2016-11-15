@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.Framework.Web", "JK.Fram
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.Framework.Extensions", "JK.Framework.Extensions\JK.Framework.Extensions.csproj", "{FFCDE5F0-5423-4723-A5C9-894CB359FD55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.Framework.Core", "JK.Framework.Core\JK.Framework.Core.csproj", "{1D16371D-484B-4EA0-8324-E39DC1BB251E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.Framework.API", "JK.Framework.API\JK.Framework.API.csproj", "{5D62A6D4-9579-45C9-AD39-592776FBB6C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{FFCDE5F0-5423-4723-A5C9-894CB359FD55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFCDE5F0-5423-4723-A5C9-894CB359FD55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFCDE5F0-5423-4723-A5C9-894CB359FD55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D16371D-484B-4EA0-8324-E39DC1BB251E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D16371D-484B-4EA0-8324-E39DC1BB251E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D16371D-484B-4EA0-8324-E39DC1BB251E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D16371D-484B-4EA0-8324-E39DC1BB251E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D62A6D4-9579-45C9-AD39-592776FBB6C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D62A6D4-9579-45C9-AD39-592776FBB6C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D62A6D4-9579-45C9-AD39-592776FBB6C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D62A6D4-9579-45C9-AD39-592776FBB6C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

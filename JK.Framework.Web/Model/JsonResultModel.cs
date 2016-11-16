@@ -16,7 +16,7 @@ namespace JK.Framework.Web.Model
             ErrorMsg = erroMsg;
             Data = data;
         }
-       // public Encoding ContentEncoding { get; set; }其余父类JsonResult的属性
+        //其余父类JsonResult的属性（Encoding ContentEncoding等）待扩展 
         public bool Success { set; get; }
         public string ErrorMsg { set; get; }
        

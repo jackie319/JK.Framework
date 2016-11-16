@@ -9,24 +9,24 @@ namespace JK.Framework.Web.Model
 {
    public static class JsonResultHelper
     {
-       public static JsonResult JsonOk(this Controller left,bool success=true,string errorMsg="",object returnData=null)
+       public static JsonResult JsonOk(this Controller left,bool success=true,string errorMsg="",string url="",object returnData=null)
        {
-           return new JsonResultModel(success,errorMsg,returnData);
+           return new JsonResultModel(success,errorMsg,url,returnData);
        }
 
         public static JsonResult JsonOk(this Controller left,object returnData)
         {
-            return new JsonResultModel(true, "", returnData);
+            return new JsonResultModel(true, "", "",returnData);
         }
 
-        public static JsonResult JsonOk(bool success = true, string errorMsg = "", object returnData = null)
+        public static JsonResult JsonOk(bool success = true, string errorMsg = "",string url="", object returnData = null)
         {
-            return new JsonResultModel(success, errorMsg, returnData);
+            return new JsonResultModel(success, errorMsg, url,returnData);
         }
 
         public static JsonResult JsonOk(object returnData)
         {
-            return new JsonResultModel(true,"", returnData);
+            return new JsonResultModel(true,"", "",returnData);
         }
     }
 }

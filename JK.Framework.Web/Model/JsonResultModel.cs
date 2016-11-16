@@ -7,18 +7,21 @@ using System.Web.Mvc;
 
 namespace JK.Framework.Web.Model
 {
-    internal class JsonResultModel:JsonResult
+    public class JsonResultModel:JsonResult
     {
 
-        internal JsonResultModel(bool success,string erroMsg,Object data=null)
+        public JsonResultModel(bool success,string erroMsg,string errorUrl="",Object data=null)
         {
             Success = success;
             ErrorMsg = erroMsg;
+            ErrorUrl = erroMsg;
             Data = data;
         }
         //其余父类JsonResult的属性（Encoding ContentEncoding等）待扩展 
-        public bool Success { set; get; }
-        public string ErrorMsg { set; get; }
+        public virtual bool Success { set; get; }
+
+        public virtual string ErrorUrl { get; set; }
+        public virtual string ErrorMsg { set; get; }
        
     }
 

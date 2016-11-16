@@ -22,11 +22,7 @@ namespace JK.Framework.Web.Filter
                         foreach (var error in item.Errors)
                         {
                             var errorMsg = error.ErrorMessage;
-                            ResultModel model = new ResultModel();
-                            model.Success = false;
-                            model.ErrorMsg = errorMsg;
-                            filterContext.Result = new JsonResult() { Data = model };
-
+                            filterContext.Result = JsonResultHelper.JsonOk(false,errorMsg);
                         }
                     }
                 }

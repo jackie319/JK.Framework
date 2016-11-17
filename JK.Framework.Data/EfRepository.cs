@@ -92,4 +92,23 @@ namespace JK.Framework.Data
             }
         }
     }
+
+
+
+
+    //public partial class UserAccount : EfRepository<UserAccount>
+    //{
+    //    public UserAccount(DbContext dbContext) : base(dbContext)
+    //    {
+    //    }
+    //}
+
+    //public class Test
+    //{
+    //    public UserAccount CreatedUserAccountTwo()
+    //    {
+    //        UserAccount account = new UserAccount(new AccountEntities());
+    //        return account.Add(account);
+    //    }
+    //}
 }

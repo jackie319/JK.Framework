@@ -3,3 +3,8 @@ D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framewo
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.csprojResolveAssemblyReference.cache
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.dll
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.pdb
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framework.Data.dll.config
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Data\bin\Debug\EntityFramework.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Data\bin\Debug\EntityFramework.xml
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Data\bin\Debug\EntityFramework.SqlServer.xml

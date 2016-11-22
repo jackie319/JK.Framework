@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommonException.cs" />
     <Compile Include="ExportCsvManager.cs" />
     <Compile Include="ImportCsvManager.cs" />
     <Compile Include="JsonStorage.cs" />
@@ -60,6 +59,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JK.Framework.Core\JK.Framework.Core.csproj">
+      <Project>{1D16371D-484B-4EA0-8324-E39DC1BB251E}</Project>
+      <Name>JK.Framework.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

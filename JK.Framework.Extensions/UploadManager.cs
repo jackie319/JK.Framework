@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using JK.Framework.Core;
 
 namespace JK.Framework.Extensions
 {
@@ -490,7 +491,7 @@ namespace JK.Framework.Extensions
                         return fe.ToString().ToLower();
 
                 }
-                throw new CommonException(ExcetptionType.ValidationExcption, "图片格式不符合要求格式（jpg,png,bmp,gif）！");
+                throw new CommonException("图片格式不符合要求格式（jpg,png,bmp,gif）！");
             }
         }
 

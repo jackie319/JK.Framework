@@ -5,68 +5,40 @@ using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using JK.Framework.Core;
+using JK.Framework.Core.Data;
 
 namespace JK.Framework.Data
 {
-    public class EfRepository<T> where T : class
+    public class EfRepository<T> : IRepository<T> where T : BaseEntity
     {
-        DbContext _dbContext;
+        #region Fields
 
-        public EfRepository(DbContext dbContext)
+        private readonly IDbContext _context;
+        private IDbSet<T> _entities;
+
+        #endregion
+
+        #region Ctor
+
+        /// <summary>
+        /// Ctor
+        /// </summary>
+        /// <param name="context">Object context</param>
+        public EfRepository(IDbContext context)
         {
-            _dbContext = dbContext;
+            this._context = context;
         }
 
-        public T Add(T entity)
-        {
-            try
-            {
-                _dbContext.Set<T>().Add(entity);
-                _dbContext.SaveChanges();
-                return entity;
-            }
-            catch (DbEntityValidationException dbEx)
-            {
-                throw new Exception(GetFullErrorText(dbEx), dbEx);
-            }
+        #endregion
 
-        }
+        #region Utilities
 
-        public T Update(T entity)
-        {
-            try
-            {
-                if (_dbContext.Entry<T>(entity).State == EntityState.Modified)
-                {
-                    _dbContext.SaveChanges();
-                }
-                else if (_dbContext.Entry<T>(entity).State == EntityState.Detached)
-                {
-                    _dbContext.Set<T>().Attach(entity);
-                    _dbContext.Entry<T>(entity).State = EntityState.Modified;
-                    _dbContext.SaveChanges();
-                }
-                return entity;
-            }
-            catch (DbEntityValidationException dbEx)
-            {
-                throw new Exception(GetFullErrorText(dbEx), dbEx);
-            }
-
-        }
-
-
-        public T Find(params object[] keyValues)
-        {
-            return _dbContext.Set<T>().Find(keyValues);
-        }
-
-        public List<T> FindAll()
-        {
-            return _dbContext.Set<T>().ToList();
-        }
-
-
+        /// <summary>
+        /// Get full error
+        /// </summary>
+        /// <param name="exc">Exception</param>
+        /// <returns>Error</returns>
         protected string GetFullErrorText(DbEntityValidationException exc)
         {
             var msg = string.Empty;
@@ -76,39 +48,185 @@ namespace JK.Framework.Data
             return msg;
         }
 
-        public void Delete(T model)
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// Get entity by identifier
+        /// </summary>
+        /// <param name="id">Identifier</param>
+        /// <returns>Entity</returns>
+        public virtual T GetById(object id)
         {
-            _dbContext.Set<T>().Remove(model);
-            _dbContext.SaveChanges();
+            //see some suggested performance optimization (not tested)
+            //http://stackoverflow.com/questions/11686225/dbset-find-method-ridiculously-slow-compared-to-singleordefault-on-id/11688189#comment34876113_11688189
+            return this.Entities.Find(id);
         }
 
-        public void Delete(params object[] keyValues)
+        /// <summary>
+        /// Insert entity
+        /// </summary>
+        /// <param name="entity">Entity</param>
+        public virtual void Insert(T entity)
         {
-            T model = Find(keyValues);
-            if (model != null)
+            try
             {
-                _dbContext.Set<T>().Remove(model);
-                _dbContext.SaveChanges();
+                if (entity == null)
+                    throw new ArgumentNullException("entity");
+
+                this.Entities.Add(entity);
+
+                this._context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                throw new Exception(GetFullErrorText(dbEx), dbEx);
             }
         }
+
+        /// <summary>
+        /// Insert entities
+        /// </summary>
+        /// <param name="entities">Entities</param>
+        public virtual void Insert(IEnumerable<T> entities)
+        {
+            try
+            {
+                if (entities == null)
+                    throw new ArgumentNullException("entities");
+
+                foreach (var entity in entities)
+                    this.Entities.Add(entity);
+
+                this._context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                throw new Exception(GetFullErrorText(dbEx), dbEx);
+            }
+        }
+
+        /// <summary>
+        /// Update entity
+        /// </summary>
+        /// <param name="entity">Entity</param>
+        public virtual void Update(T entity)
+        {
+            try
+            {
+                if (entity == null)
+                    throw new ArgumentNullException("entity");
+
+                this._context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                throw new Exception(GetFullErrorText(dbEx), dbEx);
+            }
+        }
+
+        /// <summary>
+        /// Update entities
+        /// </summary>
+        /// <param name="entities">Entities</param>
+        public virtual void Update(IEnumerable<T> entities)
+        {
+            try
+            {
+                if (entities == null)
+                    throw new ArgumentNullException("entities");
+
+                this._context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                throw new Exception(GetFullErrorText(dbEx), dbEx);
+            }
+        }
+
+        /// <summary>
+        /// Delete entity
+        /// </summary>
+        /// <param name="entity">Entity</param>
+        public virtual void Delete(T entity)
+        {
+            try
+            {
+                if (entity == null)
+                    throw new ArgumentNullException("entity");
+
+                this.Entities.Remove(entity);
+
+                this._context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                throw new Exception(GetFullErrorText(dbEx), dbEx);
+            }
+        }
+
+        /// <summary>
+        /// Delete entities
+        /// </summary>
+        /// <param name="entities">Entities</param>
+        public virtual void Delete(IEnumerable<T> entities)
+        {
+            try
+            {
+                if (entities == null)
+                    throw new ArgumentNullException("entities");
+
+                foreach (var entity in entities)
+                    this.Entities.Remove(entity);
+
+                this._context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                throw new Exception(GetFullErrorText(dbEx), dbEx);
+            }
+        }
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Gets a table
+        /// </summary>
+        public virtual IQueryable<T> Table
+        {
+            get
+            {
+                return this.Entities;
+            }
+        }
+
+        /// <summary>
+        /// Gets a table with "no tracking" enabled (EF feature) Use it only when you load record(s) only for read-only operations
+        /// </summary>
+        public virtual IQueryable<T> TableNoTracking
+        {
+            get
+            {
+                return this.Entities.AsNoTracking();
+            }
+        }
+
+        /// <summary>
+        /// Entities
+        /// </summary>
+        protected virtual IDbSet<T> Entities
+        {
+            get
+            {
+                if (_entities == null)
+                    _entities = _context.Set<T>();
+                return _entities;
+            }
+        }
+
+        #endregion
     }
-
-
-
-
-    //public partial class UserAccount : EfRepository<UserAccount>
-    //{
-    //    public UserAccount(DbContext dbContext) : base(dbContext)
-    //    {
-    //    }
-    //}
-
-    //public class Test
-    //{
-    //    public UserAccount CreatedUserAccountTwo()
-    //    {
-    //        UserAccount account = new UserAccount(new AccountEntities());
-    //        return account.Add(account);
-    //    }
-    //}
 }

@@ -49,16 +49,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EfRepositoryTest.cs" />
     <Compile Include="EfRepository.cs" />
-    <Compile Include="Nop\BaseEntity.cs" />
-    <Compile Include="Nop\EfRepositoryNop.cs" />
-    <Compile Include="Nop\IDbContext.cs" />
-    <Compile Include="Nop\IRepository.cs" />
+    <Compile Include="IDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JK.Framework.Core\JK.Framework.Core.csproj">
+      <Project>{1D16371D-484B-4EA0-8324-E39DC1BB251E}</Project>
+      <Name>JK.Framework.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

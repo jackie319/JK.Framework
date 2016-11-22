@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JK.Framework.Data
+namespace JK.Framework.Core.Data
 {
+    /// <summary>
+    /// Repository
+    /// </summary>
     public partial interface IRepository<T> where T : BaseEntity
     {
         /// <summary>

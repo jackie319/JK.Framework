@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JK.Framework.Data
+namespace JK.Framework.Core
 {
-    public abstract partial class BaseEntity
+   public abstract  partial class BaseEntity
     {
         /// <summary>
         /// Gets or sets the entity identifier
@@ -67,3 +67,4 @@ namespace JK.Framework.Data
         }
     }
 }
+

@@ -52,6 +52,8 @@
     <Compile Include="EfRepositoryTest.cs" />
     <Compile Include="EfRepository.cs" />
     <Compile Include="IDbContext.cs" />
+    <Compile Include="NopEntityTypeConfiguration.cs" />
+    <Compile Include="ObjectContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

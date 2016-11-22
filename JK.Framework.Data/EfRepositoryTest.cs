@@ -94,7 +94,8 @@ namespace JK.Framework.Data
     }
 
 
-
+ 
+   
 
     //public partial class UserAccount : EfRepositoryTest<UserAccount>
     //{

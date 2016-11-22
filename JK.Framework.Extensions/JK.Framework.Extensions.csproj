@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerLoginResults.cs" />
     <Compile Include="ExportCsvManager.cs" />
     <Compile Include="ImportCsvManager.cs" />
     <Compile Include="JsonStorage.cs" />

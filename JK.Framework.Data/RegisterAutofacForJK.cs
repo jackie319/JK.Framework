@@ -19,4 +19,44 @@ namespace JK.Framework.Data
             builder.RegisterGeneric(typeof(EfRepository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();
         }
     }
+
+
+    //mvc web项目中配置autofac
+    //public class MvcApplication : System.Web.HttpApplication
+    //{
+    //    protected void Application_Start()
+    //    {
+
+    //        RegisterAutofac();
+    //    }
+
+    //    public static void RegisterAutofac()
+    //    {
+    //        string connectionStr = System.Web.Configuration.WebConfigurationManager.
+    //            ConnectionStrings["AccountEntities"].ConnectionString; ;
+
+    //        ContainerBuilder builder = new ContainerBuilder();
+    //        builder.RegisterControllers(Assembly.GetExecutingAssembly());
+
+    //        #region IOC注册区域
+    //        //倘若需要默认注册所有的，请这样写（主要参数需要修改）
+    //        //builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+    //        //   .AsImplementedInterfaces();
+
+    //        //JKFramework
+    //        RegisterAutofacForJK.RegisterAutofacForJKFramework(builder, connectionStr);
+    //        builder.RegisterType<AccountServiceImpl>().As<IAccountService>().InstancePerHttpRequest(); //mvc
+
+
+    //        #endregion
+    //        // then
+    //        var container = builder.Build();
+    //        DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
+    //    }
+
+
+    //}
+
+
 }

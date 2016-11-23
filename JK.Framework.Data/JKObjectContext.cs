@@ -12,11 +12,11 @@ using JK.Framework.Core;
 
 namespace JK.Framework.Data
 {
-    public class EfObjectContext:DbContext,IDbContext
+    public class JKObjectContext:DbContext,IDbContext
     {
         #region Ctor
 
-        public EfObjectContext(string nameOrConnectionString)
+        public JKObjectContext(string nameOrConnectionString)
             : base(nameOrConnectionString)
         {
             //((IObjectContextAdapter) this).ObjectContext.ContextOptions.LazyLoadingEnabled = true;

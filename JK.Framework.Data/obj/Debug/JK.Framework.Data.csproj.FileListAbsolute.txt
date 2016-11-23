@@ -10,3 +10,5 @@ D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Data\bin\Debug\EntityFram
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Data\bin\Debug\EntityFramework.SqlServer.xml
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framework.Core.dll
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framework.Core.pdb
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Data\bin\Debug\Autofac.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Data\bin\Debug\Autofac.xml

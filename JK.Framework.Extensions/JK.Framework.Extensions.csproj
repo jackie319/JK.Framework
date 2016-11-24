@@ -53,6 +53,7 @@
     <Compile Include="JsonStorage.cs" />
     <Compile Include="JsonTool.cs" />
     <Compile Include="LinqTool.cs" />
+    <Compile Include="Log4net.cs" />
     <Compile Include="LogTool.cs" />
     <Compile Include="MD5.cs" />
     <Compile Include="OperatorLog.cs" />

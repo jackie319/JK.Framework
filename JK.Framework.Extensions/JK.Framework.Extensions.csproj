@@ -55,6 +55,7 @@
     <Compile Include="LinqTool.cs" />
     <Compile Include="LogTool.cs" />
     <Compile Include="MD5.cs" />
+    <Compile Include="OperatorLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UploadManager.cs" />
   </ItemGroup>

@@ -1,0 +1,9 @@
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\bin\Debug\JK.Framework.Extensions.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\bin\Debug\JK.Framework.Extensions.pdb
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\bin\Debug\JK.Framework.Core.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\bin\Debug\Newtonsoft.Json.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\bin\Debug\JK.Framework.Core.pdb
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\bin\Debug\Newtonsoft.Json.xml
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\obj\Debug\JK.Framework.Extensions.csprojResolveAssemblyReference.cache
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\obj\Debug\JK.Framework.Extensions.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\obj\Debug\JK.Framework.Extensions.pdb

@@ -1,0 +1,4 @@
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\bin\Debug\JK.Framework.Core.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\bin\Debug\JK.Framework.Core.pdb
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.pdb

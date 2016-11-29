@@ -18,13 +18,22 @@ namespace JK.Framework.Core.Config
             {
                 foreach (XmlNode node in section.ChildNodes)
                 {
-                    foreach (XmlNode childNode in node)
+                    if (node.Name.Equals("conStr"))
                     {
-                        var name = childNode.Attributes["name"].InnerText;
-                        var value = childNode.Attributes["value"].InnerText;
-                        var text = childNode.Attributes["text"].InnerText;
-                        myDictionary.Add(name, value);
+                        foreach (XmlNode childNode in node)
+                        {
+                            var name = childNode.Attributes["name"].InnerText;
+                            var value = childNode.Attributes["value"].InnerText;
+                            var text = childNode.Attributes["text"].InnerText;
+                            myDictionary.Add(name, value);
+                        }
                     }
+
+                    if (node.Name.Equals("keyValue"))
+                    {
+
+                    }
+
                 }
             }
             _dictionary = myDictionary;

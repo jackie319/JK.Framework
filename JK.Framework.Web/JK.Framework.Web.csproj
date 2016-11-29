@@ -48,7 +48,6 @@
     <Compile Include="Model\JsonResultModel.cs" />
     <Compile Include="Model\ResultModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="validation\ValidationController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JK.Framework.Extensions\JK.Framework.Extensions.csproj">

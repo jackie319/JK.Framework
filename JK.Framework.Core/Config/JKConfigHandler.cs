@@ -22,10 +22,19 @@ namespace JK.Framework.Core.Config
                     {
                         foreach (XmlNode childNode in node)
                         {
-                            var name = childNode.Attributes["name"].InnerText;
-                            var value = childNode.Attributes["value"].InnerText;
-                            var text = childNode.Attributes["text"].InnerText;
-                            myDictionary.Add(name, value);
+                            try
+                            {
+                                var name = childNode.Attributes["name"].InnerText;
+                                var value = childNode.Attributes["value"].InnerText;
+                                var text = childNode.Attributes["text"].InnerText;
+                                myDictionary.Add(name, value);
+                            }
+                            catch (NullReferenceException)
+                            {
+                                throw  new CommonException("config文件配置错误，找不到节点");
+                            }
+                         
+                           
                         }
                     }
 

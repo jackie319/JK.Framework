@@ -49,6 +49,7 @@
     <Compile Include="Caching\MemoryCacheManager.cs" />
     <Compile Include="Caching\PerRequestCacheManager.cs" />
     <Compile Include="Caching\RedisCacheManager.cs" />
+    <Compile Include="Config\JKConfigHandler.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="CommonException.cs" />
     <Compile Include="IPagedList.cs" />

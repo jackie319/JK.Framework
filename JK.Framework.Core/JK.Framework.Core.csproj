@@ -54,6 +54,9 @@
     <Compile Include="CommonException.cs" />
     <Compile Include="IPagedList.cs" />
     <Compile Include="PagedList.cs" />
+    <Compile Include="Plugins\IPlugin.cs" />
+    <Compile Include="Plugins\PluginDescriptor.cs" />
+    <Compile Include="Plugins\PluginManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

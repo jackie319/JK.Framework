@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Filter\AuthorityWebFilter.cs" />
     <Compile Include="Filter\GlobalExceptionFilter.cs" />
     <Compile Include="Filter\ValidationFilter.cs" />
     <Compile Include="Model\JsonResultHelper.cs" />

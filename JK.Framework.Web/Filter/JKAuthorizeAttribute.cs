@@ -13,6 +13,16 @@ namespace JK.Framework.Web.Filter
     public class JKAuthorizeAttribute : AuthorizeAttribute
     {
         #region 判断 IIdentity.IsAuthenticated 是否通过
+
+        public override void OnAuthorization(AuthorizationContext filterContext)
+        {
+            if (!filterContext.HttpContext.User.Identity.IsAuthenticated)
+            {
+                //do some sthing
+            }
+            base.OnAuthorization(filterContext);
+        }
+
         #endregion
     }
 

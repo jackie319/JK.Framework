@@ -8,6 +8,9 @@ using JK.Framework.Web.Model;
 
 namespace JK.Framework.Web.Filter
 {
+    /// <summary>
+    /// mvc模型验证filter
+    /// </summary>
    public class ValidationFilter: ActionFilterAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)

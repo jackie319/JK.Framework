@@ -10,6 +10,9 @@ using JK.Framework.Web.Model;
 
 namespace JK.Framework.Web.Filter
 {
+    /// <summary>
+    /// 全局异常处理filter
+    /// </summary>
     public class GlobalExceptionFilter : FilterAttribute, IExceptionFilter
     {
         public string ErrorHandlerController { get; }

@@ -85,6 +85,7 @@ namespace JK.Framework.Data
 
     //    builder.Register<IDbContext>(c => new JKObjectContext(authorityStr))
     //           .Named<IDbContext>("authorityEntity").InstancePerLifetimeScope();
+    //   //不用实现新的IDbContext实例AuthorityContext
     // // builder.Register<IDbContext>(c => new AuthorityContext(authorityStr))
     ////       .Named<IDbContext>("authorityEntity").InstancePerLifetimeScope();
 

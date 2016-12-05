@@ -83,8 +83,10 @@ namespace JK.Framework.Data
     //    builder.Register<IDbContext>(c => new JKObjectContext(connectionStr))
     //          .Named<IDbContext>("accountEntity").InstancePerLifetimeScope();
 
-    //    builder.Register<IDbContext>(c => new AuthorityContext(authorityStr))
-    //       .Named<IDbContext>("authorityEntity").InstancePerLifetimeScope();
+    //    builder.Register<IDbContext>(c => new JKObjectContext(authorityStr))
+    //           .Named<IDbContext>("authorityEntity").InstancePerLifetimeScope();
+    // // builder.Register<IDbContext>(c => new AuthorityContext(authorityStr))
+    ////       .Named<IDbContext>("authorityEntity").InstancePerLifetimeScope();
 
 
     //    builder.RegisterType<EfRepository<UserAccount>>()

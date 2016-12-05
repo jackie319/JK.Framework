@@ -23,7 +23,7 @@ namespace JK.Framework.Data
     }
 
 
-    //mvc web项目中配置autofac
+    //mvc web项目中配置autofac(单数据库)
     //public class MvcApplication : System.Web.HttpApplication
     //{
     //    protected void Application_Start()
@@ -60,5 +60,52 @@ namespace JK.Framework.Data
 
     //}
 
+
+    //mvc web项目中配置autofac(多数据库)
+    //public static void RegisterAutofac()
+    //{
+    //    string connectionStr = System.Web.Configuration.WebConfigurationManager.
+    //        ConnectionStrings["AccountEntities"].ConnectionString;
+    //    string authorityStr = System.Web.Configuration.WebConfigurationManager.
+    //        ConnectionStrings["AuthorityEntities"].ConnectionString;
+
+    //    ContainerBuilder builder = new ContainerBuilder();
+    //    builder.RegisterControllers(Assembly.GetExecutingAssembly());
+
+    //    #region IOC注册区域
+    //    //倘若需要默认注册所有的，请这样写（主要参数需要修改）
+    //    //builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+    //    //   .AsImplementedInterfaces();
+
+    //    //JKFramework
+    //    // RegisterAutofacForJK.RegisterAutofacForJKFramework(builder,connectionStr);
+
+    //    builder.Register<IDbContext>(c => new JKObjectContext(connectionStr))
+    //          .Named<IDbContext>("accountEntity").InstancePerLifetimeScope();
+
+    //    builder.Register<IDbContext>(c => new AuthorityContext(authorityStr))
+    //       .Named<IDbContext>("authorityEntity").InstancePerLifetimeScope();
+
+
+    //    builder.RegisterType<EfRepository<UserAccount>>()
+    //        .As<IRepository<UserAccount>>()
+    //        .WithParameter(ResolvedParameter.ForNamed<IDbContext>("accountEntity"))
+    //        .InstancePerLifetimeScope();
+
+    //    builder.RegisterType<EfRepository<Function>>()
+    //       .As<IRepository<Function>>()
+    //       .WithParameter(ResolvedParameter.ForNamed<IDbContext>("authorityEntity"))
+    //       .InstancePerLifetimeScope();
+    //    builder.RegisterType<MemoryCacheManager>().As<ICacheManager>().SingleInstance();
+    //    builder.RegisterType<DbContextGetter>().As<IDbContextGetter>().SingleInstance();
+    //    builder.RegisterType<AccountServiceImpl>().As<IAccountService>().InstancePerHttpRequest(); //mvc
+    //    builder.RegisterType<FunctionImpl>().As<IFunction>().InstancePerHttpRequest();
+
+    //    #endregion
+    //    // then
+    //    var container = builder.Build();
+    //    DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
+    //}
 
 }

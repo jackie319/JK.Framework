@@ -45,6 +45,7 @@
     <Compile Include="Filter\AuthorityWebFilter.cs" />
     <Compile Include="Filter\GlobalExceptionFilter.cs" />
     <Compile Include="Filter\JKAuthorizeAttribute.cs" />
+    <Compile Include="Filter\RepeatSubmitFilter.cs" />
     <Compile Include="Filter\ValidationFilter.cs" />
     <Compile Include="Model\JsonResultHelper.cs" />
     <Compile Include="Model\JsonResultModel.cs" />

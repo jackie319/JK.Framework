@@ -9,9 +9,13 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Compilation;
 using System.Web.Hosting;
+using JK.Framework.Core.Plugins;
+
+[assembly: PreApplicationStartMethod(typeof(PluginManager), "Initialize")]
 
 namespace JK.Framework.Core.Plugins
 {
+
     public class PluginManager
     {
         //约定：插件目录

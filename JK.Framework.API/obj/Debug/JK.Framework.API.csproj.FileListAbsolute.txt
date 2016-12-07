@@ -2,3 +2,4 @@ D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.API\bin\Debug\JK.Framewor
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.API\bin\Debug\JK.Framework.API.pdb
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.API\obj\Debug\JK.Framework.API.dll
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.API\obj\Debug\JK.Framework.API.pdb
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.API\obj\Debug\JK.Framework.API.csprojResolveAssemblyReference.cache

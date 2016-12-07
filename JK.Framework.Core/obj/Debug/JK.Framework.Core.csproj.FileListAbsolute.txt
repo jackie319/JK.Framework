@@ -2,3 +2,10 @@ D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\bin\Debug\JK.Framewo
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\bin\Debug\JK.Framework.Core.pdb
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.dll
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.pdb
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.Integration.Mvc.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.xml
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.Integration.Mvc.xml
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\bin\Debug\Microsoft.Web.Infrastructure.xml
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.csprojResolveAssemblyReference.cache

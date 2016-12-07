@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.4.2.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.0\lib\net451\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Caching" />
@@ -52,8 +58,10 @@
     <Compile Include="Config\JKConfigHandler.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="CommonException.cs" />
+    <Compile Include="Infrastructure\DependencyManagement\ContainerManager.cs" />
     <Compile Include="IPagedList.cs" />
     <Compile Include="PagedList.cs" />
+    <Compile Include="Plugins\BasePlugin.cs" />
     <Compile Include="Plugins\IPlugin.cs" />
     <Compile Include="Plugins\PluginDescriptor.cs" />
     <Compile Include="Plugins\PluginManager.cs" />

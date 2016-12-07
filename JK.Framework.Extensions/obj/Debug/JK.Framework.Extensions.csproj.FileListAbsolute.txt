@@ -7,3 +7,9 @@ D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\bin\Debug\Newt
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\obj\Debug\JK.Framework.Extensions.csprojResolveAssemblyReference.cache
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\obj\Debug\JK.Framework.Extensions.dll
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\obj\Debug\JK.Framework.Extensions.pdb
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\bin\Debug\Autofac.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\bin\Debug\Autofac.Integration.Mvc.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\bin\Debug\Autofac.xml
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\bin\Debug\Autofac.Integration.Mvc.xml
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\bin\Debug\Microsoft.Web.Infrastructure.xml

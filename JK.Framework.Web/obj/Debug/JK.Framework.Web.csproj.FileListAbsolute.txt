@@ -26,3 +26,7 @@ D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Web\bin\Debug\zh-Hans\Sys
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Web\obj\Debug\JK.Framework.Web.csprojResolveAssemblyReference.cache
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Web\obj\Debug\JK.Framework.Web.dll
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Web\obj\Debug\JK.Framework.Web.pdb
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Web\bin\Debug\Autofac.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Web\bin\Debug\Autofac.Integration.Mvc.dll
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Web\bin\Debug\Autofac.xml
+D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Web\bin\Debug\Autofac.Integration.Mvc.xml

@@ -18,14 +18,13 @@ namespace JK.Framework.Web.Filter
             string controllerName = string.Empty;
             try
             {
-                controllerName = filterContext.RouteData.Values["Controller"].ToString();
+                controllerName = filterContext.RouteData.Values["Controller"].ToString().ToLower();
             }
             catch (Exception e)
             {
             }
-            string notFilterController = "Account|Error|Home|WebClientConfig|";
+            string notFilterController = "Account|Error|Home|WebClientConfig|Picture|ImageBrowser|WechatMessage|WechatWelcome|VoteChannel|VoteSubject|KendoImageBrowserTKWExtension".ToLower();
 
-            //配合权限模块
             //if (!controllerName.IsNullOrWhiteSpace() && !notFilterController.Contains(controllerName))
             //{
             //    bool flag = false;
@@ -33,7 +32,7 @@ namespace JK.Framework.Web.Filter
             //    var currentUse = UserHelper.GetCurrentUser<WebUser>();
             //    foreach (var item in currentUse.ActionUrl)
             //    {
-            //        if (item.Contains(controllerName))
+            //        if (item.ToLower().Contains(controllerName))
             //        {
             //            flag = true;
             //        }

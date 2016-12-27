@@ -61,4 +61,8 @@ namespace JK.Framework.Web.Filter
     //    }
     //}
     #endregion
+
+    #region
+    //结合session
+#endregion
 }

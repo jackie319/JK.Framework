@@ -15,6 +15,5 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\bin\Debug\A
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.Integration.Mvc.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.xml
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.Integration.Mvc.xml
-E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.csprojResolveAssemblyReference.cache
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.pdb

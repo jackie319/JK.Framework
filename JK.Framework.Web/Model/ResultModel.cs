@@ -25,7 +25,7 @@ namespace JK.Framework.Web.Model
         }
         internal JsonResultModel ToJsonResultModel()
         {
-            return new JsonResultModel(Success,ErrorMsg,ErrorUrl,Data);
+            return new JsonResultModel(Success,ErrorMsg,Total,ErrorUrl,Data);
         }
     }
 }

@@ -10,11 +10,12 @@ namespace JK.Framework.Web.Model
     public class JsonResultModel:JsonResult
     {
 
-        public JsonResultModel(bool success,string erroMsg,string errorUrl="",Object data=null)
+        public JsonResultModel(bool success,string erroMsg,int total,string errorUrl="",Object data=null)
         {
             Success = success;
             ErrorMsg = erroMsg;
             ErrorUrl = erroMsg;
+            Total = total;
             Data = data;
         }
         //其余父类JsonResult的属性（Encoding ContentEncoding等）待扩展 
@@ -22,7 +23,9 @@ namespace JK.Framework.Web.Model
 
         public virtual string ErrorUrl { get; set; }
         public virtual string ErrorMsg { set; get; }
-       
+
+        public virtual int Total { set; get; }
+
     }
 
 

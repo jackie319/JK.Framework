@@ -9,3 +9,12 @@ D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.xm
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.Integration.Mvc.xml
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\bin\Debug\Microsoft.Web.Infrastructure.xml
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.csprojResolveAssemblyReference.cache
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\bin\Debug\JK.Framework.Core.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\bin\Debug\JK.Framework.Core.pdb
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.Integration.Mvc.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.xml
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.Integration.Mvc.xml
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.csprojResolveAssemblyReference.cache
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.pdb

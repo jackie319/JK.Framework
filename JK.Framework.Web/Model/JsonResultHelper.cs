@@ -14,14 +14,14 @@ namespace JK.Framework.Web.Model
            return new ResultModel(success,errorMsg,total,url,returnData).ToJsonResultModel();
        }
 
-        public static JsonResult ResultListModel(this Controller left, int total, object returnData)
+        public static JsonResult ResultListModel(this Controller left, int total, object returnData, JsonRequestBehavior jsonRequestBehavior=JsonRequestBehavior.AllowGet)
         {
-            return new ResultModel(true, "",total, "",returnData).ToJsonResultModel();
+            return new ResultModel(true, "",total, "",returnData).ToJsonResultModel(jsonRequestBehavior);
         }
 
-        public static JsonResult ResultModel(this Controller left,  object returnData)
+        public static JsonResult ResultModel(this Controller left,  object returnData, JsonRequestBehavior jsonRequestBehavior = JsonRequestBehavior.AllowGet)
         {
-            return new ResultModel(true, "", 1, "", returnData).ToJsonResultModel();
+            return new ResultModel(true, "", 1, "", returnData).ToJsonResultModel(jsonRequestBehavior);
         }
 
         public static JsonResult ResultSuccess(this Controller left)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace JK.Framework.Web.Model
 {
@@ -23,9 +24,9 @@ namespace JK.Framework.Web.Model
             Total = total;
             Data = data;
         }
-        internal JsonResultModel ToJsonResultModel()
+        internal JsonResultModel ToJsonResultModel(JsonRequestBehavior jsonRequestBehavior= JsonRequestBehavior.DenyGet)
         {
-            return new JsonResultModel(Success,ErrorMsg,Total,ErrorUrl,Data);
+            return new JsonResultModel(Success,ErrorMsg,Total, jsonRequestBehavior, ErrorUrl,Data);
         }
     }
 }

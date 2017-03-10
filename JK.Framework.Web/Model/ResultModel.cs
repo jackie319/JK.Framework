@@ -26,7 +26,9 @@ namespace JK.Framework.Web.Model
         }
         internal JsonResultModel ToJsonResultModel(JsonRequestBehavior jsonRequestBehavior= JsonRequestBehavior.DenyGet)
         {
-            return new JsonResultModel(Success,ErrorMsg,Total, jsonRequestBehavior, ErrorUrl,Data);
+           return new JsonResultModel(jsonRequestBehavior,this);
         }
+
+
     }
 }

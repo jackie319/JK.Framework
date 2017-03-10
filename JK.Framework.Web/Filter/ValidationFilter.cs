@@ -25,7 +25,7 @@ namespace JK.Framework.Web.Filter
                         foreach (var error in item.Errors)
                         {
                             var errorMsg = error.ErrorMessage;
-                            filterContext.Result = JsonResultHelper.JsonOk(false,errorMsg);
+                            filterContext.Result = JsonResultHelper.Result(false,errorMsg);
                         }
                     }
                 }

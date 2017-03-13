@@ -9,9 +9,9 @@ namespace JK.Framework.Web.Model
 {
    public static class JsonResultHelper
     {
-       public static JsonResult Result(this Controller left, bool success=true,string errorMsg="",int total=0,string url="",object returnData=null)
+       public static JsonResult Result(this Controller left, bool success=true,string errorMsg="",int total=0,string url="",object returnData=null, JsonRequestBehavior jsonRequestBehavior = JsonRequestBehavior.DenyGet)
        {
-           return new ResultModel(success,errorMsg,total,url,returnData).ToJsonResultModel();
+           return new ResultModel(success,errorMsg,total,url,returnData).ToJsonResultModel(jsonRequestBehavior);
        }
 
         public static JsonResult ResultListModel(this Controller left, int total, object returnData, JsonRequestBehavior jsonRequestBehavior=JsonRequestBehavior.AllowGet)
@@ -24,13 +24,13 @@ namespace JK.Framework.Web.Model
             return new ResultModel(true, "", 1, "", returnData).ToJsonResultModel(jsonRequestBehavior);
         }
 
-        public static JsonResult ResultSuccess(this Controller left)
+        public static JsonResult ResultSuccess(this Controller left, JsonRequestBehavior jsonRequestBehavior = JsonRequestBehavior.DenyGet)
         {
-            return new ResultModel(true, "", 0, "",null).ToJsonResultModel();
+            return new ResultModel(true, "", 0, "",null).ToJsonResultModel(jsonRequestBehavior);
         }
-        public static JsonResult ResultError(this Controller left,string errorMsg,string errorUrl="")
+        public static JsonResult ResultError(this Controller left,string errorMsg,string errorUrl="", JsonRequestBehavior jsonRequestBehavior = JsonRequestBehavior.DenyGet)
         {
-            return new ResultModel(false, errorMsg, 0, errorUrl, null).ToJsonResultModel();
+            return new ResultModel(false, errorMsg, 0, errorUrl, null).ToJsonResultModel(jsonRequestBehavior);
         }
 
         public static JsonResult Result( bool success = true, string errorMsg = "",string url="",int total=0, object returnData = null)

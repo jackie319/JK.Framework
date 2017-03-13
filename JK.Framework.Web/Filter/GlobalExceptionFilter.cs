@@ -19,7 +19,7 @@ namespace JK.Framework.Web.Filter
 
         public string ErrorHandlerAction { get; }
 
-        public delegate JsonResultModel ExceptionHandlerDelegate(ExceptionContext exceptionFilterContext);
+        public delegate ResultModel ExceptionHandlerDelegate(ExceptionContext exceptionFilterContext);
         public ExceptionHandlerDelegate ExceptionHandler { get; }
 
         public GlobalExceptionFilter(ExceptionHandlerDelegate exceptionHandler,string errorHandlerController="Error", string errorHandlerAction="Index")
@@ -39,7 +39,7 @@ namespace JK.Framework.Web.Filter
             var accepts = filterContext.RequestContext.HttpContext.Request.AcceptTypes;
             if (accepts != null && accepts.Any(a => a.Equals("application/json", StringComparison.OrdinalIgnoreCase)))
             {
-                filterContext.Result = errorHandledResult;
+                filterContext.Result = errorHandledResult.ToJsonResultModel();
             }
             else
             {
@@ -70,7 +70,8 @@ namespace JK.Framework.Web.Filter
         }
 
         //项目自处理异常委托
-        //private static JsonResultModel GlobalExceptionHandler(ExceptionContext exceptionfiltercontext)
+        //FilterConfig partial 类中
+        //private static ResultModel GlobalExceptionHandler(ExceptionContext exceptionfiltercontext)
         //{
         //    var url = exceptionfiltercontext.RequestContext.HttpContext.Request.RawUrl;
         //    var exception = exceptionfiltercontext.Exception;
@@ -79,9 +80,12 @@ namespace JK.Framework.Web.Filter
         //        exception = exception.InnerException;
         //    }
 
-        //    
-        //    var result = new JsonResultModel(false, exception.Message, url) { };
+        //    var logger = LogManager.GetLogger(typeof(FilterConfig));
+        //    logger.Error("出错了！错误信息：" + exception.Message + "访问路径：" + url + "堆栈：" + exception.StackTrace);
+        //    var result = new ResultModel(false, exception.Message, 0, url, null) { };
         //    return result;
         //}
+         //以及
+        //filters.Add(new GlobalExceptionFilter(GlobalExceptionHandler, "Error", "Index"));
     }
 }

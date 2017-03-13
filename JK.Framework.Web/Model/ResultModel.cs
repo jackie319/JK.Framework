@@ -20,7 +20,7 @@ namespace JK.Framework.Web.Model
         {
             Success = success;
             ErrorMsg = erroMsg;
-            ErrorUrl = erroMsg;
+            ErrorUrl = errorUrl;
             Total = total;
             Data = data;
         }

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Filter\UserBase.cs" />
     <Compile Include="Model\QueryBase.cs" />
     <Compile Include="Private\404NotFound.cs" />
     <Compile Include="Filter\AuthorityWebFilter.cs" />
@@ -55,6 +56,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\JK.Framework.Core\JK.Framework.Core.csproj">
+      <Project>{1D16371D-484B-4EA0-8324-E39DC1BB251E}</Project>
+      <Name>JK.Framework.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JK.Framework.Extensions\JK.Framework.Extensions.csproj">
       <Project>{FFCDE5F0-5423-4723-A5C9-894CB359FD55}</Project>
       <Name>JK.Framework.Extensions</Name>

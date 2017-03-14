@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using JK.Framework.Core;
 
 namespace JK.Framework.Web.Filter
 {
@@ -18,7 +19,7 @@ namespace JK.Framework.Web.Filter
         {
             if (!filterContext.HttpContext.User.Identity.IsAuthenticated)
             {
-                //do some sthing
+                throw new AuthorizeException("用户未通过认证");
             }
             base.OnAuthorization(filterContext);
         }
@@ -27,42 +28,37 @@ namespace JK.Framework.Web.Filter
     }
 
 
-    #region 自定义User实现IPrincipal
-    //public class WebUser : WebUserBase
+    #region 自定义User实现UserBase（实现了IPrincipal）
+    //public class UserModel : UserBase
     //{
-    //}
+    //    public Guid UserGuid { set; get; }
+    //    public string UserName { set; get; }
+    //    public string NickName { set; get; }
 
-    //public abstract class WebUserBase : UserBase, IWebUser { }
+    //    public IList<UserMenuModel> UserMenuModels { set; get; }
 
-    //public abstract class UserBase : IPrincipal, IUser { }
-    #endregion
-
-    #region 登录成功后将自定义User 赋给 HttpContext.User（IPrincipal）,并设置IIdentity.IsAuthenticated 设置为true（认证通过）
-    //public ActionResult SubmitLogin()
-    //{
-
-    //    HttpContext.User = webUser;
-
-    //    return Json(new { success = true });
-    //}
-
-    #endregion
-
-
-    #region 获取自定义User
-    //public class UserHelper
-    //{
-    //    public static T GetCurrentUser<T>() where T : WebUser
+    //    public UserModel(Guid userGuid, string userName, string nickName, IList<UserMenuModel> menus, Boolean isAuthenticated) : base(userName, "MMY", isAuthenticated)
     //    {
-    //        if (HttpContext.Current.User != null && HttpContext.Current.User is WebUser)
-    //            return (T)HttpContext.Current.User;
-
-    //        throw new InvalidOperationException();
+    //        UserGuid = userGuid;
+    //        UserName = userName;
+    //        NickName = nickName;
+    //        UserMenuModels = menus;
     //    }
     //}
     #endregion
 
+    #region 登录成功后将自定义User 赋给 HttpContext.User（IPrincipal）,并设置IIdentity.IsAuthenticated 设置为true（认证通过）
+    //public ActionResult Login()
+    //{
+    //    UserModel userModel = new UserModel(account.Guid, account.UserName, account.NickName, menu, true) { };
+    //    HttpContext.User = UserModel;
+
+    //    return this.ResultSuccess();
+    //}
+
+    #endregion
+
     #region
     //结合session
-#endregion
+    #endregion
 }

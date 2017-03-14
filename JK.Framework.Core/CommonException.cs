@@ -60,4 +60,15 @@ namespace JK.Framework.Core
         {
         }
     }
+
+    /// <summary>
+    /// 只用于用户认证不通过
+    /// </summary>
+    public class AuthorizeException:Exception
+    {
+        public AuthorizeException(string message)
+            : base(message)
+        {
+        }
+    }
 }

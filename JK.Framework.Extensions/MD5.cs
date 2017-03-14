@@ -39,5 +39,11 @@ namespace JK.Framework.Extensions
         {
            return  ToMd5(value + "Jackie["+salt+"}");
         }
+
+        public static string RandomSalt()
+        {
+            //TODO:生成随机盐
+            return "";
+        }
     }
 }

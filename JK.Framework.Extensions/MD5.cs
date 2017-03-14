@@ -34,5 +34,10 @@ namespace JK.Framework.Extensions
             }
             return value;
         }
+
+        public static string ToMd5WithSalt(this string value, string salt)
+        {
+           return  ToMd5(value + "Jackie["+salt+"}");
+        }
     }
 }

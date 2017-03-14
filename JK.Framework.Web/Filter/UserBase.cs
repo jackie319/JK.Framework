@@ -10,7 +10,7 @@ namespace JK.Framework.Web.Filter
     public class UserBase :IPrincipal{
         public bool IsInRole(string role)
         {
-            return false;
+            return true;
         }
 
         public UserBase(string name, string authenticationType, bool isAuthenticated)

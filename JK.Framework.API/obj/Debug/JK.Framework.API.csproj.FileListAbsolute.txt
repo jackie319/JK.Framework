@@ -7,4 +7,3 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.API\bin\Debug\JK
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.API\bin\Debug\JK.Framework.API.pdb
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.API\obj\Debug\JK.Framework.API.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.API\obj\Debug\JK.Framework.API.pdb
-E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.API\obj\Debug\JK.Framework.API.csprojResolveAssemblyReference.cache

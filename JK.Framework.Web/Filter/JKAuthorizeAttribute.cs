@@ -48,11 +48,22 @@ namespace JK.Framework.Web.Filter
     #endregion
 
     #region 登录成功后将自定义User 赋给 HttpContext.User（IPrincipal）,并设置IIdentity.IsAuthenticated 设置为true（认证通过）
-    //public ActionResult Login()
+    //[AllowAnonymous]
+    //public ActionResult SubmitLogin(string userName, string nickName)
     //{
-    //    UserModel userModel = new UserModel(account.Guid, account.UserName, account.NickName, menu, true) { };
-    //    HttpContext.User = UserModel;
+    //    string md5 = nickName.ToMd5();
+    //    try
+    //    {
+    //        var account = _userAccount.Login(userName, md5);
+    //        var menu = _authority.GetUserMenu(new Guid(), Guid.Empty);
+    //        UserModel userModel = new UserModel(account.Guid, account.UserName, account.NickName, menu, true) { };
 
+    //        Session["UserInfoModel"] = userModel;
+    //    }
+    //    catch (CommonException)
+    //    {
+    //        return this.ResultError("用户名或密码错误");
+    //    }
     //    return this.ResultSuccess();
     //}
 

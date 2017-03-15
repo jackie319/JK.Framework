@@ -17,6 +17,11 @@ namespace JK.Framework.Web.Filter
 
         public override void OnAuthorization(AuthorizationContext filterContext)
         {
+            bool flag = filterContext.ActionDescriptor.IsDefined(typeof(AllowAnonymousAttribute), true) || filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(typeof(AllowAnonymousAttribute), true);
+            if (flag)
+            {
+                return;
+            }
             if (!filterContext.HttpContext.User.Identity.IsAuthenticated)
             {
                 throw new AuthorizeException("用户未通过认证");

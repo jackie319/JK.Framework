@@ -80,6 +80,7 @@ namespace JK.Framework.Web.Filter
     //}
     //protected void MvcApplicationPostAcquireRequestState(object sender, EventArgs e)
     //{
+    // if (HttpContext.Current.Session == null) return;
     //    var user = Session["UserInfoModel"];
     //    if (user is UserModel)
     //    {
@@ -87,5 +88,5 @@ namespace JK.Framework.Web.Filter
     //    }
     //}
     #endregion
- 
+
 }

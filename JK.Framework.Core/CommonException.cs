@@ -61,6 +61,18 @@ namespace JK.Framework.Core
         }
     }
 
+    public enum JKExceptionType
+    {
+        /// <summary>
+        /// 通用异常
+        /// </summary>
+        Common,
+        /// <summary>
+        /// 未认证
+        /// </summary>
+        NoAuthorized
+    }
+
     /// <summary>
     /// 只用于用户认证不通过
     /// </summary>

@@ -28,7 +28,7 @@ namespace JK.Framework.Web.Filter
     }
 
 
-    #region 自定义User实现UserBase（实现了IPrincipal）
+    #region 自定义User(UserModel)实现UserBase（实现了IPrincipal）
     //public class UserModel : UserBase
     //{
     //    public Guid UserGuid { set; get; }
@@ -57,7 +57,7 @@ namespace JK.Framework.Web.Filter
     //        var account = _userAccount.Login(userName, md5);
     //        var menu = _authority.GetUserMenu(new Guid(), Guid.Empty);
     //        UserModel userModel = new UserModel(account.Guid, account.UserName, account.NickName, menu, true) { };
-
+    //        HttpContext.User = userModel;
     //        Session["UserInfoModel"] = userModel;
     //    }
     //    catch (CommonException)
@@ -68,8 +68,19 @@ namespace JK.Framework.Web.Filter
     //}
 
     #endregion
-
-    #region
-    //结合session
+    #region Global中每次请求时把UserModel 赋值给 HttpContext.User 
+    //public MvcApplication()
+    //{
+    //    PostAcquireRequestState += MvcApplicationPostAcquireRequestState;
+    //}
+    //protected void MvcApplicationPostAcquireRequestState(object sender, EventArgs e)
+    //{
+    //    var user = Session["UserInfoModel"];
+    //    if (user is UserModel)
+    //    {
+    //        HttpContext.Current.User = user as UserModel;
+    //    }
+    //}
     #endregion
+ 
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Routing;
+using JK.Framework.Core;
 using JK.Framework.Extensions;
 using JK.Framework.Web.Model;
 
@@ -44,7 +45,15 @@ namespace JK.Framework.Web.Filter
             else
             {
                 filterContext.Controller.ViewData.Model = errorHandledResult;
-                filterContext.Result = new RedirectToRouteResult(GetRouteValueDictionary());
+                if (errorHandledResult.ExceptionType == JKExceptionType.NoAuthorized)
+                {
+                    filterContext.Result = new RedirectResult("/");
+                }
+                else
+                {
+                    filterContext.Result = new RedirectToRouteResult(GetRouteValueDictionary());
+                }
+             
             }
             filterContext.ExceptionHandled = true;
         }

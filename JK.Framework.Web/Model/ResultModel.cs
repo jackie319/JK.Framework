@@ -16,15 +16,17 @@ namespace JK.Framework.Web.Model
         public virtual string ErrorMsg { set; get; }
 
         public virtual JKExceptionType ExceptionType { set; get; }
+        public string RedirectUrl { set; get; }
         public virtual int Total { set; get; }
         public virtual Object Data { set; get; }
-        public ResultModel(bool success, string erroMsg, int total, string errorUrl = "", JKExceptionType exceptionType=JKExceptionType.Common,Object data = null)
+        public ResultModel(bool success, string erroMsg, int total, string errorUrl = "", JKExceptionType exceptionType=JKExceptionType.Common,string redirectUrl="",Object data = null)
         {
             Success = success;
             ErrorMsg = erroMsg;
             ErrorUrl = errorUrl;
             Total = total;
             ExceptionType = exceptionType;
+            RedirectUrl = redirectUrl;
             Data = data;
         }
         internal JsonResultModel ToJsonResultModel(JsonRequestBehavior jsonRequestBehavior= JsonRequestBehavior.DenyGet)

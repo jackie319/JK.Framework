@@ -47,7 +47,7 @@ namespace JK.Framework.Web.Filter
                 filterContext.Controller.ViewData.Model = errorHandledResult;
                 if (errorHandledResult.ExceptionType == JKExceptionType.NoAuthorized)
                 {
-                    filterContext.Result = new RedirectResult("/");
+                    filterContext.Result = new RedirectResult(errorHandledResult.RedirectUrl);
                 }
                 else
                 {

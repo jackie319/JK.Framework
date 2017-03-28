@@ -59,6 +59,7 @@
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="CommonException.cs" />
     <Compile Include="Infrastructure\DependencyManagement\ContainerManager.cs" />
+    <Compile Include="Infrastructure\DependencyManagement\IDependencyRegistrar.cs" />
     <Compile Include="IPagedList.cs" />
     <Compile Include="PagedList.cs" />
     <Compile Include="Plugins\BasePlugin.cs" />

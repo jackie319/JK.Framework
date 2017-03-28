@@ -36,7 +36,7 @@ namespace JK.Framework.Data
             builder.RegisterGeneric(typeof(EfRepository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();
             builder.RegisterType<MemoryCacheManager>().As<ICacheManager>().SingleInstance();
             registerAutofacDelegate(builder);
-            //TODO:通过反射找到IDependencyRegistrar的实现类并调用方法
+            //TODO:也可通过反射找到IDependencyRegistrar的实现类并调用方法
 
             // then
             _container = builder.Build();

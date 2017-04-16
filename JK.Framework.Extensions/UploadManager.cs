@@ -63,6 +63,7 @@ namespace JK.Framework.Extensions
             public static string SavePicture(HttpPostedFileBase img, string uploadPath)
             {
                 string path = "";
+                string picName = string.Empty;
                 if (string.IsNullOrEmpty(img.FileName))
                     throw new CommonException("图片为空！");
                 if (string.IsNullOrEmpty(uploadPath))
@@ -74,7 +75,8 @@ namespace JK.Framework.Extensions
 
                     string basePath = uploadUrl;
                     string typeName = DefuaultExtensionName;
-                    path = uploadPath + "/" + Guid.NewGuid() + "." + typeName;
+                    picName = Guid.NewGuid() + "." + typeName;
+                    path = uploadPath + "/" + picName;
                     if (!Directory.Exists(basePath + uploadPath))
                     {
                         Directory.CreateDirectory(basePath + uploadPath);
@@ -86,7 +88,8 @@ namespace JK.Framework.Extensions
                 {
                     throw new CommonException(e.Message);
                 }
-                return uploadVirtualName + path;
+               // return uploadVirtualName + path;
+                return picName;
             }
 
             /// <summary>

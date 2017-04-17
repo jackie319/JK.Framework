@@ -15,7 +15,7 @@ namespace JK.Framework.Extensions
         /// </summary>
         /// <param name="Source_String">需要加密的字符串</param>
         /// <returns>密文</returns>
-        public static string SHA1_Encrypt(string Source_String)
+        public static string SHA1_Encrypt(this string Source_String)
         {
             byte[] StrRes = Encoding.Default.GetBytes(Source_String);
             HashAlgorithm iSHA = new SHA1CryptoServiceProvider();

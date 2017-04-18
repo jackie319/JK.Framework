@@ -16,7 +16,7 @@ namespace JK.Framework.Extensions
         /// Author:杨建宝(jackie)
         /// </summary>
         /// <remarks>
-        /// 简单日记记录(请使用log4net)
+        /// 简单日记记录(已废弃，请使用log4net)
         /// </remarks>
         public static class LogTool
         {

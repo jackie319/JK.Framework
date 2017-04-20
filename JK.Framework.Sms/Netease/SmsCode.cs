@@ -23,7 +23,11 @@ namespace JK.Framework.Sms.Netease
             RegisteCodeTemplateid = registeCodeTemplateid;
             RegisteUrl = registeUrl;
         }
-
+        /// <summary>
+        /// 发送验证码
+        /// </summary>
+        /// <param name="phone"></param>
+        /// <returns></returns>
         public SendRegisteCodeResult SendRegisteCode(string phone)
         {
             using (var webClient = new WebClient { Encoding = Encoding.UTF8 })

@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReadMe", "ReadMe", "{4A6617
 		ReadMe.txt = ReadMe.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.Framework.Test", "JK.Framework.Test\JK.Framework.Test.csproj", "{56C31614-2356-468D-B175-C83DB8EDE843}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{A400624B-ADFE-47E0-8B21-C71F2C612537}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A400624B-ADFE-47E0-8B21-C71F2C612537}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A400624B-ADFE-47E0-8B21-C71F2C612537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56C31614-2356-468D-B175-C83DB8EDE843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56C31614-2356-468D-B175-C83DB8EDE843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56C31614-2356-468D-B175-C83DB8EDE843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56C31614-2356-468D-B175-C83DB8EDE843}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

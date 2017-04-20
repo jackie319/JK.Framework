@@ -1,0 +1,5 @@
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\bin\Debug\JK.Framework.Pay.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\bin\Debug\JK.Framework.Pay.pdb
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\obj\Debug\JK.Framework.Pay.csprojResolveAssemblyReference.cache
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\obj\Debug\JK.Framework.Pay.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\obj\Debug\JK.Framework.Pay.pdb

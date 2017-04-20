@@ -15,14 +15,14 @@ D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\bin\Debug\Auto
 D:\Jackie\tools\JK.Framework\JK.Framework\JK.Framework.Extensions\bin\Debug\Microsoft.Web.Infrastructure.xml
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\JK.Framework.Extensions.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\JK.Framework.Extensions.pdb
-E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\JK.Framework.Core.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\Newtonsoft.Json.dll
-E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\Autofac.dll
-E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\Autofac.Integration.Mvc.dll
-E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\JK.Framework.Core.pdb
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\Newtonsoft.Json.xml
-E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\Autofac.xml
-E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\Autofac.Integration.Mvc.xml
-E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\obj\Debug\JK.Framework.Extensions.csprojResolveAssemblyReference.cache
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\obj\Debug\JK.Framework.Extensions.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\obj\Debug\JK.Framework.Extensions.pdb
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\JK.Framework.Extensions.dll.config
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\NPOI.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\NPOI.OOXML.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\NPOI.OpenXml4Net.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\NPOI.OpenXmlFormats.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\NPOI.xml

@@ -45,3 +45,10 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Debug\Ne
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\obj\Debug\JK.Framework.Web.csprojResolveAssemblyReference.cache
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\obj\Debug\JK.Framework.Web.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\obj\Debug\JK.Framework.Web.pdb
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Debug\JK.Framework.Web.dll.config
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Debug\NPOI.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Debug\NPOI.OOXML.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Debug\NPOI.OpenXmlFormats.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Debug\NPOI.OpenXml4Net.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Debug\NPOI.xml

@@ -87,12 +87,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\JK.Framework.Core\JK.Framework.Core.csproj">
-      <Project>{1D16371D-484B-4EA0-8324-E39DC1BB251E}</Project>
-      <Name>JK.Framework.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

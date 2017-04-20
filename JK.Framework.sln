@@ -17,6 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.Framework.Pay", "JK.Fram
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.Framework.Sms", "JK.Framework.Sms\JK.Framework.Sms.csproj", "{A400624B-ADFE-47E0-8B21-C71F2C612537}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReadMe", "ReadMe", "{4A66177F-E981-4E20-B65E-77D0CFC3D926}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

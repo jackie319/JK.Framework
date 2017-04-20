@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.Framework.Data", "JK.Framework.Data\JK.Framework.Data.csproj", "{837B0507-D077-489C-B117-B14D8596E547}"
 EndProject
@@ -12,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.Framework.Core", "JK.Framework.Core\JK.Framework.Core.csproj", "{1D16371D-484B-4EA0-8324-E39DC1BB251E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.Framework.API", "JK.Framework.API\JK.Framework.API.csproj", "{5D62A6D4-9579-45C9-AD39-592776FBB6C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.Framework.Pay", "JK.Framework.Pay\JK.Framework.Pay.csproj", "{D8F93D0A-620F-4BB7-A0B2-E799CEF75B8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.Framework.Sms", "JK.Framework.Sms\JK.Framework.Sms.csproj", "{A400624B-ADFE-47E0-8B21-C71F2C612537}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{5D62A6D4-9579-45C9-AD39-592776FBB6C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D62A6D4-9579-45C9-AD39-592776FBB6C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D62A6D4-9579-45C9-AD39-592776FBB6C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F93D0A-620F-4BB7-A0B2-E799CEF75B8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F93D0A-620F-4BB7-A0B2-E799CEF75B8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F93D0A-620F-4BB7-A0B2-E799CEF75B8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F93D0A-620F-4BB7-A0B2-E799CEF75B8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A400624B-ADFE-47E0-8B21-C71F2C612537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A400624B-ADFE-47E0-8B21-C71F2C612537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A400624B-ADFE-47E0-8B21-C71F2C612537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A400624B-ADFE-47E0-8B21-C71F2C612537}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

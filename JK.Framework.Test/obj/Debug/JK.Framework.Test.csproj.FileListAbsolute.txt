@@ -4,3 +4,4 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\bin\Debug\M
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\bin\Debug\zh-Hans\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.pdb
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.csprojResolveAssemblyReference.cache

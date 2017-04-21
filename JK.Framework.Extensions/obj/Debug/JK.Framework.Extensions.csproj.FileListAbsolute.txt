@@ -26,3 +26,4 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\D
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\NPOI.OpenXml4Net.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\NPOI.OpenXmlFormats.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\NPOI.xml
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\obj\Debug\JK.Framework.Extensions.csprojResolveAssemblyReference.cache

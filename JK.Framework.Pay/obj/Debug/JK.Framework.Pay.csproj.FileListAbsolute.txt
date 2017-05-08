@@ -6,3 +6,6 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\obj\Debug\JK
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.pdb
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.xml
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.MP.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.MP.pdb
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.MP.xml

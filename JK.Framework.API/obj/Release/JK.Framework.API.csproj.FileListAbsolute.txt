@@ -1,0 +1,5 @@
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.API\bin\Release\JK.Framework.API.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.API\bin\Release\JK.Framework.API.pdb
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.API\obj\Release\JK.Framework.API.csprojResolveAssemblyReference.cache
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.API\obj\Release\JK.Framework.API.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.API\obj\Release\JK.Framework.API.pdb

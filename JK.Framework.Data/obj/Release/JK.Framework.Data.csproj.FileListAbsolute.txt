@@ -27,3 +27,13 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Release
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\obj\Release\JK.Framework.Data.csprojResolveAssemblyReference.cache
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\obj\Release\JK.Framework.Data.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\obj\Release\JK.Framework.Data.pdb
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Release\Autofac.Integration.WebApi.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Release\Newtonsoft.Json.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Release\System.Net.Http.Formatting.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Release\System.Web.Http.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Release\System.Web.Http.WebHost.dll
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Release\Autofac.Integration.WebApi.xml
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Release\Newtonsoft.Json.xml
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Release\System.Net.Http.Formatting.xml
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Release\System.Web.Http.xml
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Release\System.Web.Http.WebHost.xml

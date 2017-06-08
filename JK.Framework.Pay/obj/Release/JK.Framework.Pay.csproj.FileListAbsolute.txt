@@ -6,6 +6,5 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\bin\Release\
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\bin\Release\Senparc.Weixin.xml
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\bin\Release\Senparc.Weixin.MP.pdb
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\bin\Release\Senparc.Weixin.MP.xml
-E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\obj\Release\JK.Framework.Pay.csprojResolveAssemblyReference.cache
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\obj\Release\JK.Framework.Pay.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\obj\Release\JK.Framework.Pay.pdb

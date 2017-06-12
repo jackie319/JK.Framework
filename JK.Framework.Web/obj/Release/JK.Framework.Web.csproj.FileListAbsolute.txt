@@ -15,7 +15,6 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Release\
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Release\NPOI.OpenXml4Net.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Release\JK.Framework.Core.pdb
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Release\JK.Framework.Extensions.pdb
-E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Release\JK.Framework.Extensions.dll.config
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Release\System.Web.Mvc.xml
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Release\Autofac.xml
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Release\Autofac.Integration.Mvc.xml

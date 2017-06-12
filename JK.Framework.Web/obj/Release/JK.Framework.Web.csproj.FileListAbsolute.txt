@@ -23,3 +23,4 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Release\
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Release\zh-Hans\System.Web.Mvc.resources.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\obj\Release\JK.Framework.Web.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\obj\Release\JK.Framework.Web.pdb
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Release\JK.Framework.Extensions.dll.config

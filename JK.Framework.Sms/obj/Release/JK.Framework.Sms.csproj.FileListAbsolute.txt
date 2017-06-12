@@ -14,3 +14,4 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Sms\bin\Release\
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Sms\obj\Release\JK.Framework.Sms.csprojResolveAssemblyReference.cache
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Sms\obj\Release\JK.Framework.Sms.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Sms\obj\Release\JK.Framework.Sms.pdb
+E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Sms\bin\Release\JK.Framework.Extensions.dll.config

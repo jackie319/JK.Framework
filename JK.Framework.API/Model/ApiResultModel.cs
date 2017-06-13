@@ -34,24 +34,16 @@ namespace JK.Framework.API.Model
         /// 跳转地址
         /// </summary>
         public string RedirectUrl { set; get; }
-        /// <summary>
-        /// 条目总数
-        /// </summary>
-        public virtual int Total { set; get; }
-        /// <summary>
-        /// 返回的数据
-        /// </summary>
-        public virtual Object Data { set; get; }
+  
+     
 
-        public ApiResultModel(bool success, string erroMsg, int total, string errorUrl = "", JKExceptionType exceptionType = JKExceptionType.Common, string redirectUrl = "", Object data = null)
+        public ApiResultModel(bool success, string erroMsg,  string errorUrl = "", JKExceptionType exceptionType = JKExceptionType.Common, string redirectUrl = "")
         {
             Success = success;
             ErrorMsg = erroMsg;
             ErrorUrl = errorUrl;
-            Total = total;
             ExceptionType = exceptionType;
             RedirectUrl = redirectUrl;
-            Data = data;
         }
     }
 }

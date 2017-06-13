@@ -1,5 +1,6 @@
 ﻿using JK.Framework.API.Model;
 using JK.Framework.Extensions;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,8 @@ namespace JK.Framework.API.Filter
 
             var errorHandledResult = ExceptionHandler(actionExecutedContext);
             var response = new HttpResponseMessage(HttpStatusCode.InternalServerError);
-            response.Content = new StringContent(errorHandledResult.ErrorMsg);
+            var errorJson = JsonConvert.SerializeObject(errorHandledResult);
+            response.Content = new StringContent(errorJson);
             actionExecutedContext.Response = response;
             base.OnException(actionExecutedContext);
         }

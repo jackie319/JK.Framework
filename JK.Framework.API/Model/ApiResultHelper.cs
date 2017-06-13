@@ -15,23 +15,15 @@ namespace JK.Framework.API.Model
         //    return new ApiResultModel(success, errorMsg, total, url, exceptionType, redirectUrl, returnData);
         //}
 
-        public static ApiResultModel ResultApiListModel(this ApiController left, int total, object returnData, JKExceptionType exceptionType = JKExceptionType.Common, string redirectUrl = "")
-        {
-            return new ApiResultModel(true, "", total, "", exceptionType, redirectUrl, returnData);
-        }
-        public static ApiResultModel ResultApiModel(this ApiController left, object returnData, JKExceptionType exceptionType = JKExceptionType.Common, string redirectUrl = "")
-        {
-            return new ApiResultModel(true, "", 1, "", exceptionType, redirectUrl, returnData);
-        }
 
         public static ApiResultModel ResultApiSuccess(this ApiController left, JKExceptionType exceptionType = JKExceptionType.Common, string redirectUrl = "")
         { 
-            return new ApiResultModel(true, "", 0, "", exceptionType, redirectUrl, null);
+            return new ApiResultModel(true, "",  "", exceptionType, redirectUrl);
         }
 
         public static ApiResultModel ResultApiError(this ApiController left, string errorMsg, string errorUrl = "", JKExceptionType exceptionType = JKExceptionType.Common, string redirectUrl = "")
         {
-            return new ApiResultModel(false, errorMsg, 0, errorUrl, exceptionType, redirectUrl, null);
+            return new ApiResultModel(false, errorMsg,  errorUrl, exceptionType, redirectUrl);
         }
     }
 }

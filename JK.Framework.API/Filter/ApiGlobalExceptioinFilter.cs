@@ -35,7 +35,7 @@ namespace JK.Framework.API.Filter
             var errorHandledResult = ExceptionHandler(actionExecutedContext);
             var response = new HttpResponseMessage(HttpStatusCode.InternalServerError);
             var errorJson = JsonConvert.SerializeObject(errorHandledResult);
-            response.Content = new StringContent(errorJson);
+            response.Content = new StringContent(errorJson,Encoding.UTF8, "application/json");
             actionExecutedContext.Response = response;
             base.OnException(actionExecutedContext);
         }

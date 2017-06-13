@@ -5,7 +5,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JK.Framework.Web.Filter
+namespace JK.Framework.Core
 {
     public class UserBase :IPrincipal{
         public bool IsInRole(string role)

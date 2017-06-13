@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Filter\UserBase.cs" />
     <Compile Include="Private\404NotFound.cs" />
     <Compile Include="Filter\AuthorityWebFilter.cs" />
     <Compile Include="Filter\GlobalExceptionFilter.cs" />

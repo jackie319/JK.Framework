@@ -12,6 +12,9 @@ using System.Threading.Tasks;
         private int skip;
         private int take = 20;
 
+        /// <summary>
+        /// 指定跳过条目数
+        /// </summary>
         public int Skip
         {
             get {
@@ -27,6 +30,9 @@ using System.Threading.Tasks;
             set { skip = value; }
         }
 
+        /// <summary>
+        /// 指定返回记录的数量
+        /// </summary>
         public int Take
         {
             get

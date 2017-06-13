@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\ApiQueryModel.cs" />
     <Compile Include="Model\ApiResultHelper.cs" />
     <Compile Include="Model\ApiResultModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -92,7 +92,7 @@ namespace JK.Framework.Extensions
                 sw.Dispose();
             }
             /// <summary>
-            /// 简单记录错误日志
+            /// 简单记录错误日志(webconfig不用配置)
             /// </summary>
             /// <param name="type"></param>
             /// <param name="content"></param>

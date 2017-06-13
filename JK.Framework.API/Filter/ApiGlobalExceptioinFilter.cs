@@ -20,8 +20,6 @@ namespace JK.Framework.API.Filter
         public delegate ApiResultModel ExceptionHandlerDelegate(HttpActionExecutedContext actionExecutedContext);
         public ExceptionHandlerDelegate ExceptionHandler { get; }
 
-        public bool AllowMultiple => throw new NotImplementedException();
-
         public ApiGlobalExceptioinFilter(ExceptionHandlerDelegate exceptionHandler)
         {
             ExceptionHandler = exceptionHandler;

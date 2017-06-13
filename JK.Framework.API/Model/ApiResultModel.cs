@@ -7,9 +7,6 @@ using System.Threading.Tasks;
 
 namespace JK.Framework.API.Model
 {
-    /// <summary>
-    /// 此类同JK.Framework.Web.Model 类似，应该再降一级
-    /// </summary>
     public class ApiResultModel
     {
         /// <summary>

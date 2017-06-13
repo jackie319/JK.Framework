@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Filter\ApiGlobalExceptioinFilter.cs" />
     <Compile Include="Model\ApiQueryModel.cs" />
     <Compile Include="Model\ApiResultHelper.cs" />
     <Compile Include="Model\ApiResultModel.cs" />
@@ -52,6 +53,10 @@
     <ProjectReference Include="..\JK.Framework.Core\JK.Framework.Core.csproj">
       <Project>{1D16371D-484B-4EA0-8324-E39DC1BB251E}</Project>
       <Name>JK.Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JK.Framework.Extensions\JK.Framework.Extensions.csproj">
+      <Project>{FFCDE5F0-5423-4723-A5C9-894CB359FD55}</Project>
+      <Name>JK.Framework.Extensions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

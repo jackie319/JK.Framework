@@ -415,5 +415,65 @@ namespace JK.Framework.Extensions
             }
         }
 
+
+#region 导入示例
+        //public class ImportPrincipalModel
+        //{
+        //    public HttpPostedFileBase Excel { get; set; }
+        //    public Guid MerchantUid { get; set; }
+        //}
+
+        ///// <summary>
+        ///// 导入商户负责人
+        ///// </summary>
+        ///// <param name="model"></param>
+        ///// <returns></returns>
+        //[HttpPost]
+        //public ActionResult ImportPrincipal(ImportPrincipalModel model)
+        //{
+        //    var user = UserHelper.GetCurrentUser<WebUser>().EmallMerchantDoamin;
+        //    var file = model.Excel;
+        //    if (file != null)
+        //    {
+        //        var path = SaveFile(file);
+
+        //        user.ImportMerchantStaff(model.MerchantUid, path);
+
+        //        return Json(new { Error = "" });
+
+        //    }
+        //    return Json(new { Error = "请上传Excel文件" });
+
+        //}
+
+        //[System.Web.Mvc.NonAction]
+        //private string SaveFile(HttpPostedFileBase httpPostedFileBase)
+        //{
+        //    var saveLocation = System.Configuration.ConfigurationManager.AppSettings["MerchantStaffExcel"];
+        //    var fullPath = Path.Combine(saveLocation, DateTime.Now.ToString("yyyyMMddhhmmsss") + Path.GetExtension(httpPostedFileBase.FileName));
+        //    if (!Directory.Exists(saveLocation))
+        //    {
+        //        Directory.CreateDirectory(saveLocation);
+        //    }
+        //    httpPostedFileBase.SaveAs(fullPath);
+        //    return fullPath;
+        //}
+
+
+        //public void ImportMerchantStaff(Guid merchantUid, string path)
+        //{
+        //    var dataTable = ExcelTool.ExcelToDataTable(path, true, 0);
+        //    foreach (DataRow row in dataTable.Rows)
+        //    {
+        //        MerchantStaff staff = new MerchantStaff();
+        //        staff.MerchantUid = merchantUid;
+        //        staff.StaffNo = row.ItemArray[0].ToString().Trim();
+        //        staff.FullName = row.ItemArray[1].ToString().Trim();
+        //        staff.Gender = row.ItemArray[2].ToString().Trim();
+        //        staff.Mobile = row.ItemArray[3].ToString().Trim();
+        //        EmallManager.CreateMerchantStaff(staff);
+        //    }
+        //}
+#endregion
     }
 }

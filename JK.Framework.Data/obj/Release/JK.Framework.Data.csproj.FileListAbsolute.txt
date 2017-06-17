@@ -37,3 +37,42 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Release
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Release\System.Net.Http.Formatting.xml
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Release\System.Web.Http.xml
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Release\System.Web.Http.WebHost.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\JK.Framework.Data.dll.config
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\JK.Framework.Data.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\JK.Framework.Data.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\Autofac.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\Autofac.Integration.Mvc.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\Autofac.Integration.WebApi.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\EntityFramework.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\EntityFramework.SqlServer.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\JK.Framework.Core.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\Microsoft.Web.Infrastructure.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\Newtonsoft.Json.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Net.Http.Formatting.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.Helpers.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.Http.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.Http.WebHost.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.Mvc.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.Razor.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.WebPages.Deployment.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.WebPages.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.WebPages.Razor.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\JK.Framework.Core.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\Autofac.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\Autofac.Integration.Mvc.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\Autofac.Integration.WebApi.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\EntityFramework.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\EntityFramework.SqlServer.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\Newtonsoft.Json.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Net.Http.Formatting.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.Helpers.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.Http.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.Http.WebHost.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.Mvc.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.Razor.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.WebPages.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.WebPages.Deployment.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.WebPages.Razor.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Release\JK.Framework.Data.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Release\JK.Framework.Data.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Release\JK.Framework.Data.pdb

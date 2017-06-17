@@ -5,3 +5,9 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\bin\Debug\z
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.pdb
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\JK.Framework.Test.dll
+D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\JK.Framework.Test.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\zh-Hans\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.dll
+D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.pdb

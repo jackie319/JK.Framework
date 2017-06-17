@@ -14,3 +14,20 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Sms\bin\Debug\NP
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Sms\obj\Debug\JK.Framework.Sms.csprojResolveAssemblyReference.cache
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Sms\obj\Debug\JK.Framework.Sms.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Sms\obj\Debug\JK.Framework.Sms.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Debug\JK.Framework.Sms.dll.config
+D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Debug\JK.Framework.Sms.dll
+D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Debug\JK.Framework.Sms.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Debug\JK.Framework.Extensions.dll
+D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Debug\Newtonsoft.Json.dll
+D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Debug\NPOI.dll
+D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Debug\NPOI.OOXML.dll
+D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Debug\NPOI.OpenXml4Net.dll
+D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Debug\JK.Framework.Extensions.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Debug\JK.Framework.Extensions.dll.config
+D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Debug\Newtonsoft.Json.xml
+D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Debug\NPOI.xml
+D:\Code\Github\JK.Framework\JK.Framework.Sms\obj\Debug\JK.Framework.Sms.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Sms\obj\Debug\JK.Framework.Sms.dll
+D:\Code\Github\JK.Framework\JK.Framework.Sms\obj\Debug\JK.Framework.Sms.pdb

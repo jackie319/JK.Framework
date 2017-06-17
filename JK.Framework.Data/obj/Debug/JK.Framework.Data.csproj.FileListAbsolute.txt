@@ -56,3 +56,42 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Debug\S
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.csprojResolveAssemblyReference.cache
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framework.Data.dll.config
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framework.Data.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framework.Data.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\Autofac.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\Autofac.Integration.Mvc.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\Autofac.Integration.WebApi.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\EntityFramework.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framework.Core.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\Newtonsoft.Json.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Net.Http.Formatting.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.Helpers.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.Http.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.Http.WebHost.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.Mvc.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.Razor.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.WebPages.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framework.Core.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\Autofac.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\Autofac.Integration.Mvc.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\Autofac.Integration.WebApi.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\EntityFramework.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\Newtonsoft.Json.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Net.Http.Formatting.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.Helpers.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.Http.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.Http.WebHost.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.Mvc.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.Razor.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.WebPages.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.pdb

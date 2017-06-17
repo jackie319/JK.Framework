@@ -27,3 +27,16 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\D
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\NPOI.OpenXmlFormats.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\bin\Debug\NPOI.xml
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Extensions\obj\Debug\JK.Framework.Extensions.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Extensions\bin\Debug\JK.Framework.Extensions.dll.config
+D:\Code\Github\JK.Framework\JK.Framework.Extensions\bin\Debug\JK.Framework.Extensions.dll
+D:\Code\Github\JK.Framework\JK.Framework.Extensions\bin\Debug\JK.Framework.Extensions.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Extensions\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Code\Github\JK.Framework\JK.Framework.Extensions\bin\Debug\Newtonsoft.Json.dll
+D:\Code\Github\JK.Framework\JK.Framework.Extensions\bin\Debug\NPOI.dll
+D:\Code\Github\JK.Framework\JK.Framework.Extensions\bin\Debug\NPOI.OOXML.dll
+D:\Code\Github\JK.Framework\JK.Framework.Extensions\bin\Debug\NPOI.OpenXml4Net.dll
+D:\Code\Github\JK.Framework\JK.Framework.Extensions\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\Code\Github\JK.Framework\JK.Framework.Extensions\bin\Debug\Newtonsoft.Json.xml
+D:\Code\Github\JK.Framework\JK.Framework.Extensions\bin\Debug\NPOI.xml
+D:\Code\Github\JK.Framework\JK.Framework.Extensions\obj\Debug\JK.Framework.Extensions.dll
+D:\Code\Github\JK.Framework\JK.Framework.Extensions\obj\Debug\JK.Framework.Extensions.pdb

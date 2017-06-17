@@ -23,3 +23,28 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.API\bin\Release\
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.API\bin\Release\NPOI.xml
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.API\bin\Release\Newtonsoft.Json.xml
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.API\bin\Release\JK.Framework.API.dll.config
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\JK.Framework.API.dll.config
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\JK.Framework.API.dll
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\JK.Framework.API.pdb
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\JK.Framework.Core.dll
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\JK.Framework.Extensions.dll
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\Newtonsoft.Json.dll
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\System.Web.Http.dll
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\Autofac.dll
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\Autofac.Integration.Mvc.dll
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\NPOI.dll
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\NPOI.OOXML.dll
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\System.Net.Http.Formatting.dll
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\ICSharpCode.SharpZipLib.dll
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\NPOI.OpenXmlFormats.dll
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\NPOI.OpenXml4Net.dll
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\JK.Framework.Core.pdb
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\JK.Framework.Extensions.pdb
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\JK.Framework.Extensions.dll.config
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\Newtonsoft.Json.xml
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\Autofac.xml
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\Autofac.Integration.Mvc.xml
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Release\NPOI.xml
+D:\Code\Github\JK.Framework\JK.Framework.API\obj\Release\JK.Framework.API.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.API\obj\Release\JK.Framework.API.dll
+D:\Code\Github\JK.Framework\JK.Framework.API\obj\Release\JK.Framework.API.pdb

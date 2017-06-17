@@ -18,3 +18,11 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\bin\Debug\A
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.pdb
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Core\bin\Debug\JK.Framework.Core.dll
+D:\Code\Github\JK.Framework\JK.Framework.Core\bin\Debug\JK.Framework.Core.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.dll
+D:\Code\Github\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.Integration.Mvc.dll
+D:\Code\Github\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.xml
+D:\Code\Github\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.Integration.Mvc.xml
+D:\Code\Github\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.dll
+D:\Code\Github\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.pdb

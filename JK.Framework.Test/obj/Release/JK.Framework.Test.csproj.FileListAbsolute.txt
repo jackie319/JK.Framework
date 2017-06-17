@@ -5,3 +5,10 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\bin\Release
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\obj\Release\JK.Framework.Test.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\obj\Release\JK.Framework.Test.pdb
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\obj\Release\JK.Framework.Test.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\JK.Framework.Test.dll
+D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\JK.Framework.Test.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\zh-Hans\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Release\JK.Framework.Test.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Release\JK.Framework.Test.dll
+D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Release\JK.Framework.Test.pdb

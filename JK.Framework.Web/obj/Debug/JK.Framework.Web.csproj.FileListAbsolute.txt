@@ -52,3 +52,26 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Debug\IC
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Debug\NPOI.OpenXmlFormats.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Debug\NPOI.OpenXml4Net.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Web\bin\Debug\NPOI.xml
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\JK.Framework.Web.dll.config
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\JK.Framework.Web.dll
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\JK.Framework.Web.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\JK.Framework.Core.dll
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\JK.Framework.Extensions.dll
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\Autofac.dll
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\Autofac.Integration.Mvc.dll
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\NPOI.dll
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\NPOI.OOXML.dll
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\Newtonsoft.Json.dll
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\NPOI.OpenXml4Net.dll
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\JK.Framework.Core.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\JK.Framework.Extensions.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\JK.Framework.Extensions.dll.config
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\Autofac.xml
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\Autofac.Integration.Mvc.xml
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\NPOI.xml
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\Newtonsoft.Json.xml
+D:\Code\Github\JK.Framework\JK.Framework.Web\obj\Debug\JK.Framework.Web.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Web\obj\Debug\JK.Framework.Web.dll
+D:\Code\Github\JK.Framework\JK.Framework.Web\obj\Debug\JK.Framework.Web.pdb

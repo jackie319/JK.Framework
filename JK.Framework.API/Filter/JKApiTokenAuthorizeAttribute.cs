@@ -38,7 +38,6 @@ namespace JK.Framework.API.Filter
             base.OnAuthorization(filterContext);
         }
 
-#endregion
     }
 
 

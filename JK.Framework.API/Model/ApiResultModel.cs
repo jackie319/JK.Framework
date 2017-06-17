@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace JK.Framework.API.Model
 {
+    /// <summary>
+    /// 操作型方法和全局异常返回的模型
+    /// </summary>
     public class ApiResultModel
     {
         /// <summary>

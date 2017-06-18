@@ -23,17 +23,23 @@ namespace JK.Framework.API.Filter
         protected override void HandleUnauthorizedRequest(HttpActionContext filterContext)
         {
             string token = string.Empty;
+
             if (filterContext.Request.Headers.Contains("token"))
             {
-                token = HttpUtility.UrlDecode(filterContext.Request.Headers.GetValues("token").FirstOrDefault());
-                if (!token.Equals(_PrivateToken))
+                try {
+                    token = HttpUtility.UrlDecode(filterContext.Request.Headers.GetValues("token").FirstOrDefault());
+                } catch (ArgumentException)
+                {
+                }
+                
+                if (string.IsNullOrEmpty(token) || !token.Equals(_PrivateToken))
                 {
                     throw new CommonException("无效的token");
                 }
             }
             else
             {
-                throw new CommonException("无效的token");
+                throw new CommonException("缺少参数token");
             }
             base.OnAuthorization(filterContext);
         }

@@ -7,20 +7,21 @@ using JK.Framework.Core;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web;
+using System.Web.Http.Filters;
 
 namespace JK.Framework.API.Filter
 {
     /// <summary>
     /// 暂时简单处理Token授权,待改
     /// </summary>
-    public class JKApiTokenAuthorizeAttribute : AuthorizeAttribute
+    public class JKApiTokenAuthorizeAttribute : ActionFilterAttribute
     {
         private string _PrivateToken { get; }
         public JKApiTokenAuthorizeAttribute(string privateToken)
         {
             _PrivateToken = privateToken;
         }
-        protected override void HandleUnauthorizedRequest(HttpActionContext filterContext)
+        public override void OnActionExecuting(HttpActionContext filterContext)
         {
             string token = string.Empty;
 
@@ -41,7 +42,7 @@ namespace JK.Framework.API.Filter
             {
                 throw new CommonException("缺少参数token");
             }
-            base.OnAuthorization(filterContext);
+            base.OnActionExecuting(filterContext);
         }
 
     }

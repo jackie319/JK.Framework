@@ -71,5 +71,9 @@ namespace JK.Framework.Core.Caching
         public virtual void Dispose()
         {
         }
+
+        public void SetSliding(string key, object data, int cacheTime)
+        {
+        }
     }
 }

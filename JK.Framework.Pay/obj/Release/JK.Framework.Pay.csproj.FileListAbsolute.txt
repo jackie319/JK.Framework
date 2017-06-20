@@ -17,6 +17,5 @@ D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Release\Senparc.Weixin.pdb
 D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Release\Senparc.Weixin.xml
 D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Release\Senparc.Weixin.MP.pdb
 D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Release\Senparc.Weixin.MP.xml
-D:\Code\Github\JK.Framework\JK.Framework.Pay\obj\Release\JK.Framework.Pay.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.Framework.Pay\obj\Release\JK.Framework.Pay.dll
 D:\Code\Github\JK.Framework\JK.Framework.Pay\obj\Release\JK.Framework.Pay.pdb

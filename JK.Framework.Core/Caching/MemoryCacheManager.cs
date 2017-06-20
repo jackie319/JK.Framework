@@ -52,6 +52,22 @@ namespace JK.Framework.Core.Caching
         }
 
         /// <summary>
+        /// Adds the specified key and object to the cache.
+        /// </summary>
+        /// <param name="key">key</param>
+        /// <param name="data">Data</param>
+        /// <param name="cacheTime">Cache time</param>
+        public virtual void SetSliding(string key, object data, int cacheTime)
+        {
+            if (data == null)
+                return;
+
+            var policy = new CacheItemPolicy();
+            policy.SlidingExpiration = TimeSpan.FromMinutes(cacheTime);
+            Cache.Add(new CacheItem(key, data), policy);
+        }
+
+        /// <summary>
         /// Gets a value indicating whether the value associated with the specified key is cached
         /// </summary>
         /// <param name="key">key</param>
@@ -104,5 +120,7 @@ namespace JK.Framework.Core.Caching
         public virtual void Dispose()
         {
         }
+
+ 
     }
 }

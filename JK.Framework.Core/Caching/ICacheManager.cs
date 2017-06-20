@@ -28,6 +28,13 @@ namespace JK.Framework.Core.Caching
         void Set(string key, object data, int cacheTime);
 
         /// <summary>
+        /// for session cache by JK
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="data"></param>
+        /// <param name="cacheTime"></param>
+        void SetSliding(string key, object data, int cacheTime);
+        /// <summary>
         /// Gets a value indicating whether the value associated with the specified key is cached
         /// </summary>
         /// <param name="key">key</param>

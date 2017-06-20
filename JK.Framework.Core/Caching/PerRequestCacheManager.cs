@@ -71,6 +71,10 @@ namespace JK.Framework.Core.Caching
                     items.Add(key, data);
             }
         }
+        public void SetSliding(string key, object data, int cacheTime)
+        {
+        }
+
 
         /// <summary>
         /// Gets a value indicating whether the value associated with the specified key is cached
@@ -154,5 +158,7 @@ namespace JK.Framework.Core.Caching
         public virtual void Dispose()
         {
         }
+
+    
     }
 }

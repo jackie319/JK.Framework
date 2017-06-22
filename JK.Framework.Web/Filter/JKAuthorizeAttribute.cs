@@ -22,6 +22,7 @@ namespace JK.Framework.Web.Filter
             {
                 return;
             }
+            //在进入JKAuthorizeAttribute 之前HttpContext.User 已被赋值
             if (!filterContext.HttpContext.User.Identity.IsAuthenticated)
             {
                 throw new AuthorizeException("用户未通过认证");

@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Filter\ApiGlobalExceptioinFilter.cs" />
+    <Compile Include="Filter\ApiSessionAuthorizeAttribute.cs" />
     <Compile Include="Filter\ApiValidationFilter.cs" />
     <Compile Include="Filter\JKApiTokenAuthorizeAttribute.cs" />
     <Compile Include="Model\ApiQueryModel.cs" />

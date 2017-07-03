@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.Framework.Data", "JK.Framework.Data\JK.Framework.Data.csproj", "{837B0507-D077-489C-B117-B14D8596E547}"
 EndProject
@@ -23,6 +23,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReadMe", "ReadMe", "{4A6617
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.Framework.Test", "JK.Framework.Test\JK.Framework.Test.csproj", "{56C31614-2356-468D-B175-C83DB8EDE843}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other", "Other", "{FD36F2AB-0AD2-4CE0-A4C1-0F8623A049FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{103C971A-D80F-4876-80CC-587E83DB7D96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,5 +69,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D8F93D0A-620F-4BB7-A0B2-E799CEF75B8C} = {FD36F2AB-0AD2-4CE0-A4C1-0F8623A049FE}
+		{A400624B-ADFE-47E0-8B21-C71F2C612537} = {FD36F2AB-0AD2-4CE0-A4C1-0F8623A049FE}
+		{56C31614-2356-468D-B175-C83DB8EDE843} = {103C971A-D80F-4876-80CC-587E83DB7D96}
 	EndGlobalSection
 EndGlobal

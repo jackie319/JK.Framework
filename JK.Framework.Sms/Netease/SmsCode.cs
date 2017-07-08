@@ -14,14 +14,13 @@ namespace JK.Framework.Sms.Netease
         private string Appkey { set; get; }
         private string AppSecret { set; get; }
         private string RegisteCodeTemplateid { set; get; }
-        private string RegisteUrl { set; get; }
+        private readonly string RegisteUrl = "https://api.netease.im/sms/sendcode.action";
 
-        public SmsCode(string appkey,string appSecret,string registeCodeTemplateid,string registeUrl)
+        public SmsCode(string appkey,string appSecret,string registeCodeTemplateid)
         {
             Appkey = appkey;
             AppSecret = appSecret;
             RegisteCodeTemplateid = registeCodeTemplateid;
-            RegisteUrl = registeUrl;
         }
         /// <summary>
         /// 发送验证码

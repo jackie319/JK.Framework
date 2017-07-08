@@ -11,10 +11,10 @@ namespace JK.Framework.Sms.Netease
     /// </summary>
     public class SmsCode
     {
-        public string Appkey { set; get; }
-        public string AppSecret { set; get; }
-        public string RegisteCodeTemplateid { set; get; }
-        public string RegisteUrl { set; get; }
+        private string Appkey { set; get; }
+        private string AppSecret { set; get; }
+        private string RegisteCodeTemplateid { set; get; }
+        private string RegisteUrl { set; get; }
 
         public SmsCode(string appkey,string appSecret,string registeCodeTemplateid,string registeUrl)
         {

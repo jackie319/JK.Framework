@@ -27,12 +27,15 @@ namespace JK.Frameword.Oauth.Wechat
         /// <summary>
         /// 用户特权信息，json 数组，如微信沃卡用户为（chinaunicom）
         /// </summary>
-        public string privilege { get; set; }
+        public IList<Object> privilege { get; set; }
         /// <summary>
         /// 只有在用户将公众号绑定到微信开放平台帐号后，才会出现该字段
         /// </summary>
         public string unionid { get; set; }
       
+        /// <summary>
+        /// errcode 不为空则代表出错
+        /// </summary>
         public string errcode { get; set; }
 
         public string errmsg { get; set; }

@@ -18,6 +18,9 @@ namespace JK.Frameword.Oauth.Wechat
 
         public string scope { get; set; }
 
+        /// <summary>
+        /// errcode 不为空则代表出错
+        /// </summary>
         public string errcode { get; set; }
 
         public string errmsg { get; set; }

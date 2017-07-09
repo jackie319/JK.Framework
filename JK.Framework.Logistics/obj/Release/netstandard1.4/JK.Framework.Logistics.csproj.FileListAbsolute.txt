@@ -1,7 +1,0 @@
-D:\Code\Github\JK.Framework\JK.Framework.Logistics\bin\Release\netstandard1.4\JK.Framework.Logistics.deps.json
-D:\Code\Github\JK.Framework\JK.Framework.Logistics\bin\Release\netstandard1.4\JK.Framework.Logistics.dll
-D:\Code\Github\JK.Framework\JK.Framework.Logistics\bin\Release\netstandard1.4\JK.Framework.Logistics.pdb
-D:\Code\Github\JK.Framework\JK.Framework.Logistics\obj\Release\netstandard1.4\JK.Framework.Logistics.csprojResolveAssemblyReference.cache
-D:\Code\Github\JK.Framework\JK.Framework.Logistics\obj\Release\netstandard1.4\JK.Framework.Logistics.AssemblyInfo.cs
-D:\Code\Github\JK.Framework\JK.Framework.Logistics\obj\Release\netstandard1.4\JK.Framework.Logistics.dll
-D:\Code\Github\JK.Framework\JK.Framework.Logistics\obj\Release\netstandard1.4\JK.Framework.Logistics.pdb

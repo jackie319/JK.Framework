@@ -29,7 +29,7 @@ namespace JK.Framework.Logistics.kdniao
         /// <returns></returns>
         public SearchResult GetOrderTracesByJson(string orderCode, string shipperCode, string logisticCode)
         {
-            string requestData = "{'OrderCode':" + orderCode + ",'ShipperCode':" + shipperCode + ",'LogisticCode':" + logisticCode + "}";
+            string requestData = "{'OrderCode':'" + orderCode + "','ShipperCode':'" + shipperCode + "','LogisticCode':'" + logisticCode + "'}";
 
             Dictionary<string, string> param = new Dictionary<string, string>();
             param.Add("RequestData", HttpUtility.UrlEncode(requestData, Encoding.UTF8));

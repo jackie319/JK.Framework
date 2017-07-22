@@ -8,7 +8,7 @@ using Senparc.Weixin.MP.TenPayLibV3;
 
 namespace JK.Framework.Pay.Tencent
 {
-    public static class TenPay
+    public static class WechatPay
     {
         /// <summary>
         /// 统一下单

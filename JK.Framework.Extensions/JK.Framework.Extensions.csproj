@@ -79,6 +79,7 @@
     <Compile Include="LogTool.cs" />
     <Compile Include="Encryption\MD5.cs" />
     <Compile Include="OperatorLog.cs" />
+    <Compile Include="OrderNo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Encryption\SHA1.cs" />
     <Compile Include="UploadManager.cs" />

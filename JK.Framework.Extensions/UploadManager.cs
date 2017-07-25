@@ -118,10 +118,11 @@ namespace JK.Framework.Extensions
         /// <param name="img">img为base64编码的图片字符串</param>
         /// <param name="uploadPath"></param>
         /// <returns></returns>
-        public static string SavePicture(string img, string uploadPath)
+        public static string SavePictureBase64(string img, string uploadPath)
         {
             //TODO：图片校验
             string path = "";
+            string picName = string.Empty;
             if (string.IsNullOrEmpty(img))
                 throw new ArgumentException("图片为空！");
             if (string.IsNullOrEmpty(uploadPath))
@@ -130,14 +131,16 @@ namespace JK.Framework.Extensions
             MemoryStream ms = new MemoryStream(arr);
             Bitmap bmp = new Bitmap(ms);
             string basePath = uploadUrl;
-            path = uploadPath + "/" + Guid.NewGuid() + ".jpg";
+            picName =  Guid.NewGuid() + ".jpg";
+            path = uploadPath+"/" +picName;
             if (!Directory.Exists(basePath + uploadPath))
             {
                 Directory.CreateDirectory(basePath + uploadPath);
             }
+           if(bmp.Width>5000) throw new ArgumentException("图片太大！");
             bmp.Save(basePath + path);
             ms.Close();
-            return uploadVirtualName + path;
+            return picName;
         }
 
 

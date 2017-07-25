@@ -131,13 +131,13 @@ namespace JK.Framework.Extensions
             MemoryStream ms = new MemoryStream(arr);
             Bitmap bmp = new Bitmap(ms);
             string basePath = uploadUrl;
-            picName =  Guid.NewGuid() + ".jpg";
+            picName =  Guid.NewGuid() + ".jpg";//TODO:
             path = uploadPath+"/" +picName;
             if (!Directory.Exists(basePath + uploadPath))
             {
                 Directory.CreateDirectory(basePath + uploadPath);
             }
-           if(bmp.Width>5000) throw new ArgumentException("图片太大！");
+           if(bmp.Width>5000) throw new ArgumentException("图片太大！");//TODO:
             bmp.Save(basePath + path);
             ms.Close();
             return picName;

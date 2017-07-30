@@ -177,7 +177,7 @@ namespace JK.Framework.Pay.Tencent
         {
             RefundResultModel result = new RefundResultModel();
             string nonceStr = TenPayV3Util.GetNoncestr();
-            RequestHandler packageReqHandler = new RequestHandler(null);
+            RequestHandler packageReqHandler = new RequestHandler();
 
             //设置package订单参数
             packageReqHandler.SetParameter("appid", AppId);       //公众账号ID

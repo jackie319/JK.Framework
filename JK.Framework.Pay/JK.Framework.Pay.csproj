@@ -41,6 +41,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tencent\PayException.cs" />
+    <Compile Include="Tencent\PayNotifyResultModel.cs" />
+    <Compile Include="Tencent\RefundModel.cs" />
+    <Compile Include="Tencent\RefundNotifyModel.cs" />
+    <Compile Include="Tencent\RefundResultModel.cs" />
     <Compile Include="Tencent\WechatPay.cs" />
   </ItemGroup>
   <ItemGroup />

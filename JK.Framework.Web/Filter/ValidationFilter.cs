@@ -24,8 +24,20 @@ namespace JK.Framework.Web.Filter
                     {
                         foreach (var error in item.Errors)
                         {
-                            var errorMsg = error.ErrorMessage;
-                            filterContext.Result = JsonResultHelper.Result(false,errorMsg);
+                            var errorMsg = string.Empty;
+                            if (!string.IsNullOrEmpty(error.ErrorMessage))
+                            {
+                                errorMsg = error.ErrorMessage;
+                            }
+                            else
+                            {
+                                if (error.Exception != null)
+                                {
+                                    errorMsg = error.Exception.Message;
+                                }
+                            }
+                            var resultErrorMsg = $"模型验证错误：{errorMsg}";
+                            filterContext.Result = JsonResultHelper.Result(false, resultErrorMsg);
                         }
                     }
                 }

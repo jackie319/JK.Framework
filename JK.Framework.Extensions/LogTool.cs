@@ -48,7 +48,7 @@ namespace JK.Framework.Extensions
             /// <returns></returns>
             private static string GetFilePath(string file)
             {
-                string dtime = DateTime.Now.ToString("yyyyMMdd");
+                string dtime = DateTimeHelper.Now.ToString("yyyyMMdd");
                 string directory = AppDomain.CurrentDomain.BaseDirectory + "/Daily";
                 if (!Directory.Exists(directory))
                 {
@@ -70,7 +70,7 @@ namespace JK.Framework.Extensions
                 }
                 string path = GetFilePath("DailyRecord");
                 var sw = new StreamWriter(path, true);//新建或追加
-                sw.WriteLine("[{0} {1}]\r\n{2}\r\n", DateTime.Now.ToString("MM-dd HH:mm:ss"), type, content);
+                sw.WriteLine("[{0} {1}]\r\n{2}\r\n", DateTimeHelper.Now.ToString("MM-dd HH:mm:ss"), type, content);
                 sw.Close();
                 sw.Dispose();
             }
@@ -87,7 +87,7 @@ namespace JK.Framework.Extensions
                 }
                 string path = GetFilePath("DailyRecord");
                 var sw = new StreamWriter(path, true);//新建或追加
-                sw.WriteLine("[{0}]\r\n{1}\r\n", DateTime.Now.ToString("MM-dd HH:mm:ss"), message);
+                sw.WriteLine("[{0}]\r\n{1}\r\n", DateTimeHelper.Now.ToString("MM-dd HH:mm:ss"), message);
                 sw.Close();
                 sw.Dispose();
             }
@@ -103,7 +103,7 @@ namespace JK.Framework.Extensions
             {
                 var path = GetFilePath("ErrorRecord");
                 var sw = new StreamWriter(path, true);//新建或追加
-                sw.WriteLine("[{0} {1}]\r\n{2}\r\n", DateTime.Now.ToString("MM-dd HH:mm:ss"), type, content);
+                sw.WriteLine("[{0} {1}]\r\n{2}\r\n", DateTimeHelper.Now.ToString("MM-dd HH:mm:ss"), type, content);
                 sw.WriteLine("{0}\r\n{1}\r\n{2}\r\n", url, source, stackTrace);
                 sw.Close();
             }

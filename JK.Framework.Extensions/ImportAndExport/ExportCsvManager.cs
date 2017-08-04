@@ -92,7 +92,7 @@ namespace JK.Framework.Extensions
         public static void ExportToCsv(DataSet ds, string fileName)
         {
             if (string.IsNullOrEmpty(fileName))
-                fileName = DateTime.Now.ToString("yyMMddHHmmssiii");
+                fileName = DateTimeHelper.Now.ToString("yyMMddHHmmssiii");
             string data = GetCsvData(ds);
             HttpContext.Current.Response.ClearHeaders();
             HttpContext.Current.Response.Clear();

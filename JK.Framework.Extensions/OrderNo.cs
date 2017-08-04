@@ -14,7 +14,7 @@ namespace JK.Framework.Extensions
         /// <returns></returns>
         public string CreateOrderNo()
         {
-            string date = DateTime.Now.ToString("yyMMddHHmmss");
+            string date = DateTimeHelper.Now.ToString("yyMMddHHmmss");
             //种子精确到百纳秒级别
             int ram = new Random(BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0)).Next(100000, 999999);
             return string.Format(date + ram);

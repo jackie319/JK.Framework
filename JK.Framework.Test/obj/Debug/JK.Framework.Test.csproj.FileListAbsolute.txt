@@ -11,3 +11,4 @@ D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\Microsoft.VisualStudio.Q
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\zh-Hans\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
 D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.dll
 D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.csprojResolveAssemblyReference.cache

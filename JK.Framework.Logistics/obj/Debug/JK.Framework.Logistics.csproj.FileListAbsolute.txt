@@ -1,0 +1,7 @@
+D:\Code\Github\JK.Framework\JK.Framework.Logistics\bin\Debug\JK.Framework.Logistics.dll
+D:\Code\Github\JK.Framework\JK.Framework.Logistics\bin\Debug\JK.Framework.Logistics.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Logistics\bin\Debug\Newtonsoft.Json.dll
+D:\Code\Github\JK.Framework\JK.Framework.Logistics\bin\Debug\Newtonsoft.Json.xml
+D:\Code\Github\JK.Framework\JK.Framework.Logistics\obj\Debug\JK.Framework.Logistics.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Logistics\obj\Debug\JK.Framework.Logistics.dll
+D:\Code\Github\JK.Framework\JK.Framework.Logistics\obj\Debug\JK.Framework.Logistics.pdb

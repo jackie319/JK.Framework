@@ -19,3 +19,4 @@ D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.MP.pdb
 D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.MP.xml
 D:\Code\Github\JK.Framework\JK.Framework.Pay\obj\Debug\JK.Framework.Pay.dll
 D:\Code\Github\JK.Framework\JK.Framework.Pay\obj\Debug\JK.Framework.Pay.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Pay\obj\Debug\JK.Framework.Pay.csprojResolveAssemblyReference.cache

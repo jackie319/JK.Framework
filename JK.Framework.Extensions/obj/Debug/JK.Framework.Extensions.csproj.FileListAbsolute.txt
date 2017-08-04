@@ -40,3 +40,4 @@ D:\Code\Github\JK.Framework\JK.Framework.Extensions\bin\Debug\Newtonsoft.Json.xm
 D:\Code\Github\JK.Framework\JK.Framework.Extensions\bin\Debug\NPOI.xml
 D:\Code\Github\JK.Framework\JK.Framework.Extensions\obj\Debug\JK.Framework.Extensions.dll
 D:\Code\Github\JK.Framework\JK.Framework.Extensions\obj\Debug\JK.Framework.Extensions.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Extensions\obj\Debug\JK.Framework.Extensions.csprojResolveAssemblyReference.cache

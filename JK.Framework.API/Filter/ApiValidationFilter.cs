@@ -29,8 +29,20 @@ namespace JK.Framework.API.Filter
                     {
                         foreach (var error in item.Errors)
                         {
-                            var errorMsg = error.ErrorMessage;
-                            throw new CommonException(errorMsg);//交给全局异常
+                            var errorMsg = string.Empty;
+                            if (!string.IsNullOrEmpty(error.ErrorMessage))
+                            {
+                                 errorMsg = error.ErrorMessage;
+                            }
+                            else
+                            {
+                                if (error.Exception != null)
+                                {
+                                    errorMsg = error.Exception.Message;
+                                }
+                            }
+                            var resultErrorMsg = $"模型验证错误：{errorMsg}";
+                            throw new CommonException(resultErrorMsg);//交给全局异常
                         }
                     }
                 }

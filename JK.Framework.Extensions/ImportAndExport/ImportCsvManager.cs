@@ -43,7 +43,7 @@ namespace JK.Framework.Extensions
             if (httpPostedFileBase == null) throw new ImportCsvException(CsvExceptionType.FileNotFound);
             string extension = Path.GetExtension(httpPostedFileBase.FileName);
             if (extension == null || !extension.Equals(".csv")) throw new ImportCsvException(CsvExceptionType.ExtensionNotFormat);
-            string fullPath = saveServerLocation + "/" + DateTimeHelper.Now.ToString("yyyyMMddhhmmsss") +
+            string fullPath = saveServerLocation + "/" + DateTime.Now.ToString("yyyyMMddhhmmsss") +
                                Path.GetExtension(httpPostedFileBase.FileName);
             //文件夹不存在则创建
             if (!Directory.Exists(saveServerLocation))

@@ -75,5 +75,10 @@ namespace JK.Framework.Core.Caching
         public void SetSliding(string key, object data, int cacheTime)
         {
         }
+
+        public int Total()
+        {
+            return 0;
+        }
     }
 }

@@ -34,6 +34,12 @@ namespace JK.Framework.Core.Caching
         /// <param name="data"></param>
         /// <param name="cacheTime"></param>
         void SetSliding(string key, object data, int cacheTime);
+
+        /// <summary>
+        /// for session cache by JK
+        /// </summary>
+        /// <returns></returns>
+        int Total();
         /// <summary>
         /// Gets a value indicating whether the value associated with the specified key is cached
         /// </summary>

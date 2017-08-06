@@ -35,6 +35,11 @@ namespace JK.Framework.Core.Caching
             return (T)Cache[key];
         }
 
+       public  int Total()
+        {
+            return Cache.Count();
+        }
+
         /// <summary>
         /// Adds the specified key and object to the cache.
         /// </summary>

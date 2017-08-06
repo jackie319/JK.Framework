@@ -74,7 +74,10 @@ namespace JK.Framework.Core.Caching
         public void SetSliding(string key, object data, int cacheTime)
         {
         }
-
+        public int Total()
+        {
+            return 0;
+        }
 
         /// <summary>
         /// Gets a value indicating whether the value associated with the specified key is cached

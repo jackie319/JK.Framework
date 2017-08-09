@@ -137,7 +137,7 @@ namespace JK.Framework.Extensions
             {
                 Directory.CreateDirectory(basePath + uploadPath);
             }
-           if(bmp.Width>5000) throw new ArgumentException("图片太大！");//TODO:
+           if(bmp.Width>3000) throw new ArgumentException("图片太大！");//TODO:
             bmp.Save(basePath + path);
             ms.Close();
             return picName;

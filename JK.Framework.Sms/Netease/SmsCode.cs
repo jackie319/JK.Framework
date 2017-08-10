@@ -3,6 +3,7 @@ using System.Net;
 using System.Text;
 using JK.Framework.Extensions;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace JK.Framework.Sms.Netease
 {
@@ -53,8 +54,10 @@ namespace JK.Framework.Sms.Netease
         /// </summary>
         /// <param name="phone"></param>
         /// <returns></returns>
-        public SendRegisteCodeResult SendNotifyCode(string mobiles, int templateid,string param)
+        public SendRegisteCodeResult SendNotifyCode(IList<string> mobileList, int templateid, IList<string> paramList)
         {
+            string mobiles = CovertListToStr(mobileList);
+            string param = CovertListToStr(paramList);
             using (var webClient = new WebClient { Encoding = Encoding.UTF8 })
             {
                 string nonce = Guid.NewGuid().ToString("N");
@@ -74,6 +77,25 @@ namespace JK.Framework.Sms.Netease
                 SendRegisteCodeResult model = JsonConvert.DeserializeObject<SendRegisteCodeResult>(result);
                 return model;
             }
+        }
+
+        private string CovertListToStr(IList<string> strList)
+        {
+            StringBuilder mobiles = new StringBuilder("[");
+            int total = strList.Count;
+            for (int i = 0; i < total; i++)
+            {
+                mobiles.Append("\"");
+                mobiles.Append(strList[i]);
+                mobiles.Append("\"");
+                if (i != total - 1)
+                {
+                    mobiles.Append(",");
+                }
+
+            }
+            mobiles.Append("]");
+            return mobiles.ToString();
         }
     }
 }

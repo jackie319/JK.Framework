@@ -77,7 +77,7 @@ namespace JK.Framework.Pay.Tencent
             PayNotifyResultModel notify = new PayNotifyResultModel();
             ResponseHandler resHandler = new ResponseHandler(httpContext);
             resHandler.Init();
-            resHandler.SetKey(Key);//TODO:
+            resHandler.SetKey(Key);
 
             //判断签名
             if (!resHandler.IsTenpaySign()) { throw new PayException("签名错误"); }

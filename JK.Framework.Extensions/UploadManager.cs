@@ -143,7 +143,17 @@ namespace JK.Framework.Extensions
             return picName;
         }
 
-
+        //controller 调用
+        //public PictureViewModel UploadBase64()
+        //{
+        //    //获取base64编码的图片
+        //    HttpContextBase context = (HttpContextBase)Request.Properties["MS_HttpContext"];
+        //    string text = context.Request.Form["file"];
+        //    PictureViewModel model = new PictureViewModel();
+        //    var url = UploadManager.SavePictureBase64(text, "Member");
+        //    model.PicUrl = url;
+        //    return model;
+        //}
 
 
 

@@ -75,17 +75,13 @@ namespace JK.Framework.Pay.Tencent
         public PayNotifyResultModel PayNotify(HttpContext httpContext)
         {
             PayNotifyResultModel notify = new PayNotifyResultModel();
-            Senparc.Weixin.MP.TenPayLib.ResponseHandler resHandler = new Senparc.Weixin.MP.TenPayLib.ResponseHandler(httpContext);
+            ResponseHandler resHandler = new ResponseHandler(httpContext);
             resHandler.Init();
-            resHandler.SetKey(Key, AppKey);//TODO:
+            resHandler.SetKey(Key);//TODO:
 
             //判断签名
             if (!resHandler.IsTenpaySign()) { throw new PayException("签名错误"); }
 
-            if (!resHandler.IsWXsign())
-            {
-                throw new PayException("签名错误");
-            }
             //商户在收到后台通知后根据通知ID向财付通发起验证确认，采用后台系统调用交互模式
             // string notify_id = resHandler.GetParameter("notify_id");
             //取结果参数做业务处理
@@ -118,7 +114,6 @@ namespace JK.Framework.Pay.Tencent
             string settlement_total_fee = resHandler.GetParameter("settlement_total_fee");
             string attach = resHandler.GetParameter("attach");
             string time_end = resHandler.GetParameter("time_end");
-            string payMessage = null;
 
             notify.ResultCode = return_code;
             notify.ReturnMsg = return_msg ?? string.Empty;

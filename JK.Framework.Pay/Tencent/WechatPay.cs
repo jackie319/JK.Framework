@@ -115,7 +115,7 @@ namespace JK.Framework.Pay.Tencent
             string attach = resHandler.GetParameter("attach");
             string time_end = resHandler.GetParameter("time_end");
 
-            notify.ResultCode = return_code;
+            notify.ReturnCode = return_code;
             notify.ReturnMsg = return_msg ?? string.Empty;
             notify.AppId = appid ?? string.Empty;
             notify.MchId = mch_id ?? string.Empty;

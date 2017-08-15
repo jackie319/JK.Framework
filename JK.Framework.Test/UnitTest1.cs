@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Text;
+using JK.Framework.Extensions.QrCode;
 
 namespace JK.Framework.Test
 {
@@ -33,6 +34,14 @@ namespace JK.Framework.Test
             mobiles.Append("]");
             var str = mobiles.ToString();
             Assert.IsNull(mobiles);
+        }
+
+        [TestMethod]
+        public void TestQrCode()
+        {
+            TWQrCode code = new TWQrCode();
+            code.GeneralQrCode("http://m.maimaiyin.cn","D:\\erweima/","测试二维码22");
+            Assert.IsTrue(true);
         }
     }
 }

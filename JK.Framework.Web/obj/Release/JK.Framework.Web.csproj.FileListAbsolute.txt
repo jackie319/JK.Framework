@@ -47,3 +47,4 @@ D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Release\Newtonsoft.Json.xml
 D:\Code\Github\JK.Framework\JK.Framework.Web\obj\Release\JK.Framework.Web.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.Framework.Web\obj\Release\JK.Framework.Web.dll
 D:\Code\Github\JK.Framework\JK.Framework.Web\obj\Release\JK.Framework.Web.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Release\ThoughtWorks.QRCode.dll

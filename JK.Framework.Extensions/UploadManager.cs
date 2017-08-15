@@ -115,7 +115,9 @@ namespace JK.Framework.Extensions
         /// <summary>
         /// string img(base64)
         /// </summary>
-        /// <param name="img">img为base64编码的图片字符串</param>
+        /// <param name="img">img为base64编码的图片字符串
+        /// data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAAARCAMAAAArMfRlAAAABGdBTUEA
+        /// </param>
         /// <param name="uploadPath"></param>
         /// <returns></returns>
         public static string SavePictureBase64(string img, string uploadPath)
@@ -127,8 +129,10 @@ namespace JK.Framework.Extensions
                 throw new ArgumentException("图片为空！");
             if (string.IsNullOrEmpty(uploadPath))
                 throw new ArgumentException("图片路径不能为空！");
-            byte[] arr = Convert.FromBase64String(img);
-            MemoryStream ms = new MemoryStream(arr);
+            var tmpArr = img.Split(',');
+
+            byte[] bytes = Convert.FromBase64String(tmpArr[1]);
+            MemoryStream ms = new MemoryStream(bytes);
             Bitmap bmp = new Bitmap(ms);
             string basePath = uploadUrl;
             picName =  Guid.NewGuid() + ".jpg";//TODO:

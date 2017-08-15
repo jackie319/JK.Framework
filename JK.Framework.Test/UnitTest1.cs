@@ -39,8 +39,7 @@ namespace JK.Framework.Test
         [TestMethod]
         public void TestQrCode()
         {
-            TWQrCode code = new TWQrCode();
-            code.GeneralQrCode("http://m.maimaiyin.cn","D:\\erweima/","测试二维码22");
+            TWQrCode.GenerateQrCode("http://m.maimaiyin.cn","D:\\erweima/","测试二维码22");
             Assert.IsTrue(true);
         }
     }

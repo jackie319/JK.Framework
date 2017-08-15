@@ -116,7 +116,7 @@ namespace JK.Framework.Extensions
         /// string img(base64)
         /// </summary>
         /// <param name="img">img为base64编码的图片字符串
-        /// data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAAARCAMAAAArMfRlAAAABGdBTUEA
+        ///类似：“ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAAARCAMAAAArMfRlAAAABGdBTUEA”
         /// </param>
         /// <param name="uploadPath"></param>
         /// <returns></returns>
@@ -130,7 +130,6 @@ namespace JK.Framework.Extensions
             if (string.IsNullOrEmpty(uploadPath))
                 throw new ArgumentException("图片路径不能为空！");
             var tmpArr = img.Split(',');
-
             byte[] bytes = Convert.FromBase64String(tmpArr[1]);
             MemoryStream ms = new MemoryStream(bytes);
             Bitmap bmp = new Bitmap(ms);

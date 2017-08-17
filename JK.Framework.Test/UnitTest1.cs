@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Text;
 using JK.Framework.Extensions.QrCode;
+using JK.Framework.Extensions.Zip;
 
 namespace JK.Framework.Test
 {
@@ -40,6 +41,13 @@ namespace JK.Framework.Test
         public void TestQrCode()
         {
             TWQrCode.GenerateQrCode("http://m.maimaiyin.cn","D:\\erweima/","测试二维码22");
+            Assert.IsTrue(true);
+        }
+
+        [TestMethod]
+        public void TestZip()
+        {
+            ZipHelper.ZipFile("D:\\erweima/", "");
             Assert.IsTrue(true);
         }
     }

@@ -17,10 +17,10 @@ D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\NPOI.dll
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\NPOI.OOXML.dll
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\Newtonsoft.Json.dll
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\ThoughtWorks.QRCode.dll
-D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\ICSharpCode.SharpZipLib.dll
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\NPOI.OpenXmlFormats.dll
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\NPOI.OpenXml4Net.dll
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\JK.Framework.Extensions.pdb
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\JK.Framework.Extensions.dll.config
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\NPOI.xml
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\Newtonsoft.Json.xml
+D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\JK.Framework.Test.dll.config

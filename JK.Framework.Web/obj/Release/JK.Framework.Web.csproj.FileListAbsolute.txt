@@ -34,7 +34,6 @@ D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Release\Autofac.Integration.Mvc
 D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Release\NPOI.dll
 D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Release\NPOI.OOXML.dll
 D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Release\Newtonsoft.Json.dll
-D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Release\ICSharpCode.SharpZipLib.dll
 D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Release\NPOI.OpenXmlFormats.dll
 D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Release\NPOI.OpenXml4Net.dll
 D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Release\JK.Framework.Core.pdb

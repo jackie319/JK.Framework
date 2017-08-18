@@ -31,3 +31,4 @@ D:\Code\Github\JK.Framework\JK.Framework.Sms\obj\Debug\JK.Framework.Sms.csprojRe
 D:\Code\Github\JK.Framework\JK.Framework.Sms\obj\Debug\JK.Framework.Sms.dll
 D:\Code\Github\JK.Framework\JK.Framework.Sms\obj\Debug\JK.Framework.Sms.pdb
 D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Debug\ThoughtWorks.QRCode.dll
+D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Debug\System.Json.dll

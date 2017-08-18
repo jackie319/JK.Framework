@@ -38,6 +38,22 @@ namespace JK.Framework.Test
         }
 
         [TestMethod]
+        public void TestJsonArray()
+        {
+            IList<string> mobileList = new List<string>();
+            mobileList.Add("18288215197");
+            mobileList.Add("18288215197");
+            mobileList.Add("18288215197");
+            System.Json.JsonArray array = new System.Json.JsonArray();
+            foreach (var item in mobileList)
+            {
+                array.Add(item);
+            }
+            var str=array.ToString();
+            Assert.IsTrue(true);
+        }
+
+        [TestMethod]
         public void TestQrCode()
         {
             TWQrCode.GenerateQrCode("http://m.maimaiyin.cn","D:\\erweima/","测试二维码22");

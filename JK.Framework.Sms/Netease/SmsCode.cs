@@ -4,6 +4,7 @@ using System.Text;
 using JK.Framework.Extensions;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Json;
 
 namespace JK.Framework.Sms.Netease
 {
@@ -56,8 +57,8 @@ namespace JK.Framework.Sms.Netease
         /// <returns></returns>
         public SendRegisteCodeResult SendNotifyCode(IList<string> mobileList, int templateid, IList<string> paramList)
         {
-            string mobiles = CovertListToStr(mobileList);
-            string param = CovertListToStr(paramList);
+            var mobiles = CovertListToStr(mobileList);
+            var param = CovertListToStr(paramList);
             using (var webClient = new WebClient { Encoding = Encoding.UTF8 })
             {
                 string nonce = Guid.NewGuid().ToString("N");
@@ -79,23 +80,14 @@ namespace JK.Framework.Sms.Netease
             }
         }
 
-        private string CovertListToStr(IList<string> strList)
+        private JsonArray CovertListToStr(IList<string> strList)
         {
-            StringBuilder mobiles = new StringBuilder("[");
-            int total = strList.Count;
-            for (int i = 0; i < total; i++)
+            JsonArray array = new JsonArray();
+            foreach (var item in strList)
             {
-                mobiles.Append("\"");
-                mobiles.Append(strList[i]);
-                mobiles.Append("\"");
-                if (i != total - 1)
-                {
-                    mobiles.Append(",");
-                }
-
+                array.Add(item);
             }
-            mobiles.Append("]");
-            return mobiles.ToString();
+            return array;
         }
     }
 }

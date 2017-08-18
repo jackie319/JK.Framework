@@ -22,7 +22,6 @@ D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Release\JK.Framework.Extensions
 D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Release\Newtonsoft.Json.dll
 D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Release\NPOI.dll
 D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Release\NPOI.OOXML.dll
-D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Release\ICSharpCode.SharpZipLib.dll
 D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Release\NPOI.OpenXmlFormats.dll
 D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Release\NPOI.OpenXml4Net.dll
 D:\Code\Github\JK.Framework\JK.Framework.Sms\bin\Release\JK.Framework.Extensions.pdb

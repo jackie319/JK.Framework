@@ -5,6 +5,8 @@ using JK.Framework.Extensions;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Json;
+using System.Web;
+using System.IO;
 
 namespace JK.Framework.Sms.Netease
 {
@@ -43,7 +45,7 @@ namespace JK.Framework.Sms.Netease
                 webClient.Headers.Add("CurTime", curTime);
                 webClient.Headers.Add("CheckSum", sha1);
                 string url = RegisteUrl;
-                string data = "mobile=" + phone + "&templateid =" + templateid + "&codeLen=6";
+                string data = "mobile=" + phone + "&templateid=" + templateid + "&codeLen=6";
                 var result = webClient.UploadString(url, "POST", data);
                 SendRegisteCodeResult model = JsonConvert.DeserializeObject<SendRegisteCodeResult>(result);
                 return model;
@@ -73,21 +75,23 @@ namespace JK.Framework.Sms.Netease
                 webClient.Headers.Add("CurTime", curTime);
                 webClient.Headers.Add("CheckSum", sha1);
                 string url = NotifyUrl;
-                string data = "mobiles=" + mobiles + "&templateid =" + templateid + "&params="+param;
+                string data = "templateid=" + templateid + "&mobiles=" + mobiles + "&params=" +param;
                 var result = webClient.UploadString(url, "POST", data);
                 SendRegisteCodeResult model = JsonConvert.DeserializeObject<SendRegisteCodeResult>(result);
                 return model;
             }
         }
 
-        private JsonArray CovertListToStr(IList<string> strList)
+        private string CovertListToStr(IList<string> strList)
         {
             JsonArray array = new JsonArray();
             foreach (var item in strList)
             {
                 array.Add(item);
             }
-            return array;
+            return array.ToString();
         }
+
+
     }
 }

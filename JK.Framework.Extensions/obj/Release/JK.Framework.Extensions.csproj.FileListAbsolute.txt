@@ -25,4 +25,3 @@ D:\Code\Github\JK.Framework\JK.Framework.Extensions\bin\Release\NPOI.xml
 D:\Code\Github\JK.Framework\JK.Framework.Extensions\obj\Release\JK.Framework.Extensions.dll
 D:\Code\Github\JK.Framework\JK.Framework.Extensions\obj\Release\JK.Framework.Extensions.pdb
 D:\Code\Github\JK.Framework\JK.Framework.Extensions\bin\Release\ThoughtWorks.QRCode.dll
-D:\Code\Github\JK.Framework\JK.Framework.Extensions\obj\Release\JK.Framework.Extensions.csprojResolveAssemblyReference.cache

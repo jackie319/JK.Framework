@@ -35,15 +35,18 @@ namespace JK.Framework.Pay.Tencent
         /// </summary>
         private string Cert { get; set; }
 
-        private string AppKey { get; set; }
+        /// <summary>
+        /// 证书私钥
+        /// </summary>
+        private string Password { get; set; }
 
-        public WechatPay(string appId, string mchId, string key, string cert, string appkey)
+        public WechatPay(string appId, string mchId, string key, string cert, string password)
         {
             AppId = appId;
             MchId = mchId;
             Key = key;
             Cert = cert;
-            AppKey = appkey;
+            Password = password;
         }
         /// <summary>
         /// 统一下单
@@ -177,11 +180,11 @@ namespace JK.Framework.Pay.Tencent
             //设置package订单参数
             packageReqHandler.SetParameter("appid", AppId);       //公众账号ID
             packageReqHandler.SetParameter("mch_id", MchId);          //商户号
-            packageReqHandler.SetParameter("out_trade_no", "");                 //填入商家订单号
-            packageReqHandler.SetParameter("out_refund_no", "");                //填入退款订单号
-            packageReqHandler.SetParameter("total_fee", "");               //填入总金额
-            packageReqHandler.SetParameter("refund_fee", "");               //填入退款金额
-            packageReqHandler.SetParameter("op_user_id", MchId);   //操作员Id，默认就是商户号
+            packageReqHandler.SetParameter("out_trade_no", model.OutTradeNo);                 //填入商家订单号
+            packageReqHandler.SetParameter("out_refund_no", model.OutRefundNo);                //填入退款订单号
+            packageReqHandler.SetParameter("total_fee", model.totalFee.ToString());               //填入总金额
+            packageReqHandler.SetParameter("refund_fee", model.RefundFee.ToString());               //填入退款金额
+          //  packageReqHandler.SetParameter("op_user_id", MchId);   //操作员Id，默认就是商户号
             packageReqHandler.SetParameter("nonce_str", nonceStr);              //随机字符串
             string sign = packageReqHandler.CreateMd5Sign("key", Key);
             packageReqHandler.SetParameter("sign", sign);                       //签名
@@ -193,7 +196,7 @@ namespace JK.Framework.Pay.Tencent
             //本地或者服务器的证书位置（证书在微信支付申请成功发来的通知邮件中）
             string cert = Cert;// @"F:\apiclient_cert.p12";
                                //私钥（在安装证书时设置）
-            string password = "";
+            string password = Password;
             ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(CheckValidationResult);
             //调用证书
             X509Certificate2 cer = new X509Certificate2(cert, password, X509KeyStorageFlags.PersistKeySet | X509KeyStorageFlags.MachineKeySet);
@@ -216,7 +219,29 @@ namespace JK.Framework.Pay.Tencent
             #endregion
 
             var res = XDocument.Parse(responseContent);
-            string openid = res.Element("xml").Element("out_refund_no").Value;
+         
+            string return_code = res.Element("xml").Element("return_code").Value;
+            string return_msg= res.Element("xml").Element("return_msg").Value;
+            string result_code= res.Element("xml").Element("result_code").Value;
+            string err_code = res.Element("xml").Element("err_code").Value;
+            string err_code_des = res.Element("xml").Element("err_code_des").Value;
+            string appid = res.Element("xml").Element("appid").Value;
+            string mch_id = res.Element("xml").Element("mch_id").Value;
+            string nonce_str = res.Element("xml").Element("nonce_str").Value;
+            string ResultSign = res.Element("xml").Element("sign").Value;
+            string transaction_id = res.Element("xml").Element("transaction_id").Value;
+            string out_trade_no = res.Element("xml").Element("out_trade_no").Value;
+            string out_refund_no = res.Element("xml").Element("out_refund_no").Value;
+            string refund_id = res.Element("xml").Element("refund_id").Value;
+            string refund_fee = res.Element("xml").Element("refund_fee").Value;
+            string settlement_refund_fee = res.Element("xml").Element("settlement_refund_fee").Value;
+            string total_fee = res.Element("xml").Element("total_fee").Value;
+
+            result.ReturnCode = return_code ?? string.Empty;
+            result.ReturnMsg = return_msg ?? string.Empty;
+            result.ResultCode = result_code ?? string.Empty;
+            result.ErrCode = err_code ?? string.Empty;
+            result.ErrCodeDes = err_code_des ?? string.Empty;
             return result;
         }
 
@@ -236,28 +261,39 @@ namespace JK.Framework.Pay.Tencent
         public RefundNotifyModel RefundNotify(HttpContext httpContext)
         {
             RefundNotifyModel result = new RefundNotifyModel();
-
             ResponseHandler resHandler = new ResponseHandler(httpContext);
+            resHandler.Init();
+            resHandler.SetKey(Key);
+
+            //判断签名
+            if (!resHandler.IsTenpaySign()) { throw new PayException("签名错误"); }
 
             string return_code = resHandler.GetParameter("return_code");
             string return_msg = resHandler.GetParameter("return_msg");
 
-            string res = null;
+            string appid = resHandler.GetParameter("appid");
+            string mch_id = resHandler.GetParameter("mch_id");
+            string nonce_str = resHandler.GetParameter("nonce_str");
+            string req_info = resHandler.GetParameter("req_info");
 
-            resHandler.SetKey("");
-            //验证请求是否从微信发过来（安全）
-            if (resHandler.IsTenpaySign())
-            {
-                res = "success";
+            result.ReturnCode = return_code ?? string.Empty;
+            result.ReturnMsg = return_msg ?? string.Empty;
+            result.AppId = appid ?? string.Empty;
+            result.MchId = mch_id ?? string.Empty;
+            result.NonceStr = nonce_str ?? string.Empty;
+            result.ReqInfo = req_info ?? string.Empty;
 
-                //正确的订单处理
-            }
-            else
-            {
-                res = "wrong";
-
-                //错误的订单处理
-            }
+            result.TransactionId = string.Empty;
+            result.OutRefundNo = string.Empty;
+            result.RefundId = string.Empty;
+            result.OutTradeNo = string.Empty;
+            result.TotalFee = 0;
+            result.RefundFee = 0;
+            result.RefundStatus = string.Empty;
+            result.SuccessTime = string.Empty;
+            result.RefundRecvAccout = string.Empty;
+            result.RefundAccount = string.Empty;
+            result.RefundRequestSource = string.Empty;
 
             return result;
         }

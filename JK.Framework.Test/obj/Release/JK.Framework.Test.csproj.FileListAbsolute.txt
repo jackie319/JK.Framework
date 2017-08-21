@@ -24,3 +24,4 @@ D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\JK.Framework.Extension
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\NPOI.xml
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\Newtonsoft.Json.xml
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\JK.Framework.Test.dll.config
+D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Release\System.Json.dll

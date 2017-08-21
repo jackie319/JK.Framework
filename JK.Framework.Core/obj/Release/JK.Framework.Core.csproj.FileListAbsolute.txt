@@ -14,4 +14,3 @@ D:\Code\Github\JK.Framework\JK.Framework.Core\bin\Release\Autofac.xml
 D:\Code\Github\JK.Framework\JK.Framework.Core\bin\Release\Autofac.Integration.Mvc.xml
 D:\Code\Github\JK.Framework\JK.Framework.Core\obj\Release\JK.Framework.Core.dll
 D:\Code\Github\JK.Framework\JK.Framework.Core\obj\Release\JK.Framework.Core.pdb
-D:\Code\Github\JK.Framework\JK.Framework.Core\obj\Release\JK.Framework.Core.csprojResolveAssemblyReference.cache

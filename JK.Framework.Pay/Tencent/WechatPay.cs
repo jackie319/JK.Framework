@@ -11,6 +11,7 @@ using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.IO;
 using System.Xml.Linq;
+using JK.Framework.Extensions;
 
 namespace JK.Framework.Pay.Tencent
 {
@@ -200,7 +201,6 @@ namespace JK.Framework.Pay.Tencent
             ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(CheckValidationResult);
             //调用证书
             X509Certificate2 cer = new X509Certificate2(cert, password, X509KeyStorageFlags.PersistKeySet | X509KeyStorageFlags.MachineKeySet);
-
             #region 发起post请求
             HttpWebRequest webrequest = (HttpWebRequest)HttpWebRequest.Create(url);
             webrequest.ClientCertificates.Add(cer);
@@ -217,31 +217,33 @@ namespace JK.Framework.Pay.Tencent
             StreamReader streamReader = new StreamReader(httpWebResponse.GetResponseStream());
             string responseContent = streamReader.ReadToEnd();
             #endregion
-
             var res = XDocument.Parse(responseContent);
-         
-            string return_code = res.Element("xml").Element("return_code").Value;
-            string return_msg= res.Element("xml").Element("return_msg").Value;
-            string result_code= res.Element("xml").Element("result_code").Value;
-            string err_code = res.Element("xml").Element("err_code").Value;
-            string err_code_des = res.Element("xml").Element("err_code_des").Value;
-            string appid = res.Element("xml").Element("appid").Value;
-            string mch_id = res.Element("xml").Element("mch_id").Value;
-            string nonce_str = res.Element("xml").Element("nonce_str").Value;
-            string ResultSign = res.Element("xml").Element("sign").Value;
-            string transaction_id = res.Element("xml").Element("transaction_id").Value;
-            string out_trade_no = res.Element("xml").Element("out_trade_no").Value;
-            string out_refund_no = res.Element("xml").Element("out_refund_no").Value;
-            string refund_id = res.Element("xml").Element("refund_id").Value;
-            string refund_fee = res.Element("xml").Element("refund_fee").Value;
-            string settlement_refund_fee = res.Element("xml").Element("settlement_refund_fee").Value;
-            string total_fee = res.Element("xml").Element("total_fee").Value;
+            LogTool.ErrorRecord("error", "1", "url", "", "");
+            string return_code = GetXmlValue(res, "return_code"); 
+  
+            string return_msg= GetXmlValue(res, "return_msg");
+            string result_code= GetXmlValue(res, "result_code"); 
+            string err_code = GetXmlValue(res, "err_code");
+            string err_code_des = GetXmlValue(res, "err_code_des");
+            string appid = GetXmlValue(res, "appid");
+            string mch_id = GetXmlValue(res, "mch_id");
+            string nonce_str = GetXmlValue(res, "nonce_str");
+            string ResultSign = GetXmlValue(res, "ResultSign");
+            string transaction_id = GetXmlValue(res, "transaction_id");
+            string out_trade_no = GetXmlValue(res, "out_trade_no");
+            string out_refund_no = GetXmlValue(res, "out_refund_no");
+            string refund_id = GetXmlValue(res, "refund_id");
+            string refund_fee = GetXmlValue(res, "refund_fee");
+            string settlement_refund_fee = GetXmlValue(res, "settlement_refund_fee");
+            string total_fee = GetXmlValue(res, "total_fee");
 
+            LogTool.ErrorRecord("error", "2", "url", "", "");
             result.ReturnCode = return_code ?? string.Empty;
             result.ReturnMsg = return_msg ?? string.Empty;
             result.ResultCode = result_code ?? string.Empty;
             result.ErrCode = err_code ?? string.Empty;
             result.ErrCodeDes = err_code_des ?? string.Empty;
+          
             return result;
         }
 
@@ -250,6 +252,16 @@ namespace JK.Framework.Pay.Tencent
             if (errors == SslPolicyErrors.None)
                 return true;
             return false;
+        }
+
+        private  string GetXmlValue(XDocument res,string nodeName)
+        {
+            if (res == null || res.Element("xml") == null
+                || res.Element("xml").Element(nodeName) == null)
+            {
+                return null;
+            }
+            return res.Element("xml").Element(nodeName).Value;
         }
 
 

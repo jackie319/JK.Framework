@@ -58,7 +58,12 @@
     <Compile Include="Tencent\RefundResultModel.cs" />
     <Compile Include="Tencent\WechatPay.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\JK.Framework.Extensions\JK.Framework.Extensions.csproj">
+      <Project>{FFCDE5F0-5423-4723-A5C9-894CB359FD55}</Project>
+      <Name>JK.Framework.Extensions</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

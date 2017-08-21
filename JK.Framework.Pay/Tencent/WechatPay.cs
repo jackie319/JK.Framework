@@ -171,7 +171,7 @@ namespace JK.Framework.Pay.Tencent
         /// <summary>
         /// 发起退款
         /// </summary>
-        private RefundResultModel Refund(RefundModel model)
+        public RefundResultModel Refund(RefundModel model)
         {
             RefundResultModel result = new RefundResultModel();
             string nonceStr = TenPayV3Util.GetNoncestr();

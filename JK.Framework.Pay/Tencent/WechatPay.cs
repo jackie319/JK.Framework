@@ -84,7 +84,7 @@ namespace JK.Framework.Pay.Tencent
             resHandler.SetKey(Key);
 
             //判断签名
-            if (!resHandler.IsTenpaySign()) { throw new PayException("签名错误"); }
+            if (!resHandler.IsTenpaySign()) { throw new PayException("支付通知签名错误"); }
 
             //商户在收到后台通知后根据通知ID向财付通发起验证确认，采用后台系统调用交互模式
             // string notify_id = resHandler.GetParameter("notify_id");
@@ -218,7 +218,6 @@ namespace JK.Framework.Pay.Tencent
             string responseContent = streamReader.ReadToEnd();
             #endregion
             var res = XDocument.Parse(responseContent);
-            LogTool.ErrorRecord("error", "1", "url", "", "");
             string return_code = GetXmlValue(res, "return_code"); 
   
             string return_msg= GetXmlValue(res, "return_msg");
@@ -237,7 +236,6 @@ namespace JK.Framework.Pay.Tencent
             string settlement_refund_fee = GetXmlValue(res, "settlement_refund_fee");
             string total_fee = GetXmlValue(res, "total_fee");
 
-            LogTool.ErrorRecord("error", "2", "url", "", "");
             result.ReturnCode = return_code ?? string.Empty;
             result.ReturnMsg = return_msg ?? string.Empty;
             result.ResultCode = result_code ?? string.Empty;
@@ -266,7 +264,7 @@ namespace JK.Framework.Pay.Tencent
 
 
         /// <summary>
-        /// 退款通知
+        /// 退款通知（不需验证签名。需要解密）
         /// </summary>
         /// <param name="httpContext"></param>
         /// <returns></returns>
@@ -276,9 +274,6 @@ namespace JK.Framework.Pay.Tencent
             ResponseHandler resHandler = new ResponseHandler(httpContext);
             resHandler.Init();
             resHandler.SetKey(Key);
-
-            //判断签名
-            if (!resHandler.IsTenpaySign()) { throw new PayException("签名错误"); }
 
             string return_code = resHandler.GetParameter("return_code");
             string return_msg = resHandler.GetParameter("return_msg");

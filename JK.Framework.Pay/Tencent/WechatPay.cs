@@ -12,6 +12,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.IO;
 using System.Xml.Linq;
 using JK.Framework.Extensions;
+using JK.Framework.Extensions.Encryption;
 
 namespace JK.Framework.Pay.Tencent
 {
@@ -218,23 +219,23 @@ namespace JK.Framework.Pay.Tencent
             string responseContent = streamReader.ReadToEnd();
             #endregion
             var res = XDocument.Parse(responseContent);
-            string return_code = GetXmlValue(res, "return_code"); 
+            string return_code = GetXmlValue(res, "xml","return_code"); 
   
-            string return_msg= GetXmlValue(res, "return_msg");
-            string result_code= GetXmlValue(res, "result_code"); 
-            string err_code = GetXmlValue(res, "err_code");
-            string err_code_des = GetXmlValue(res, "err_code_des");
-            string appid = GetXmlValue(res, "appid");
-            string mch_id = GetXmlValue(res, "mch_id");
-            string nonce_str = GetXmlValue(res, "nonce_str");
-            string ResultSign = GetXmlValue(res, "ResultSign");
-            string transaction_id = GetXmlValue(res, "transaction_id");
-            string out_trade_no = GetXmlValue(res, "out_trade_no");
-            string out_refund_no = GetXmlValue(res, "out_refund_no");
-            string refund_id = GetXmlValue(res, "refund_id");
-            string refund_fee = GetXmlValue(res, "refund_fee");
-            string settlement_refund_fee = GetXmlValue(res, "settlement_refund_fee");
-            string total_fee = GetXmlValue(res, "total_fee");
+            string return_msg= GetXmlValue(res, "xml", "return_msg");
+            string result_code= GetXmlValue(res, "xml", "result_code"); 
+            string err_code = GetXmlValue(res, "xml", "err_code");
+            string err_code_des = GetXmlValue(res, "xml", "err_code_des");
+            string appid = GetXmlValue(res, "xml", "appid");
+            string mch_id = GetXmlValue(res, "xml", "mch_id");
+            string nonce_str = GetXmlValue(res, "xml", "nonce_str");
+            string ResultSign = GetXmlValue(res, "xml", "ResultSign");
+            string transaction_id = GetXmlValue(res, "xml", "transaction_id");
+            string out_trade_no = GetXmlValue(res, "xml", "out_trade_no");
+            string out_refund_no = GetXmlValue(res, "xml", "out_refund_no");
+            string refund_id = GetXmlValue(res, "xml", "refund_id");
+            string refund_fee = GetXmlValue(res, "xml", "refund_fee");
+            string settlement_refund_fee = GetXmlValue(res, "xml", "settlement_refund_fee");
+            string total_fee = GetXmlValue(res, "xml", "total_fee");
 
             result.ReturnCode = return_code ?? string.Empty;
             result.ReturnMsg = return_msg ?? string.Empty;
@@ -252,14 +253,14 @@ namespace JK.Framework.Pay.Tencent
             return false;
         }
 
-        private  string GetXmlValue(XDocument res,string nodeName)
+        private  string GetXmlValue(XDocument res,string rootName,string nodeName)
         {
-            if (res == null || res.Element("xml") == null
-                || res.Element("xml").Element(nodeName) == null)
+            if (res == null || res.Element(rootName) == null
+                || res.Element(rootName).Element(nodeName) == null)
             {
                 return null;
             }
-            return res.Element("xml").Element(nodeName).Value;
+            return res.Element(rootName).Element(nodeName).Value;
         }
 
 
@@ -290,17 +291,52 @@ namespace JK.Framework.Pay.Tencent
             result.NonceStr = nonce_str ?? string.Empty;
             result.ReqInfo = req_info ?? string.Empty;
 
-            result.TransactionId = string.Empty;
-            result.OutRefundNo = string.Empty;
-            result.RefundId = string.Empty;
-            result.OutTradeNo = string.Empty;
-            result.TotalFee = 0;
-            result.RefundFee = 0;
-            result.RefundStatus = string.Empty;
-            result.SuccessTime = string.Empty;
-            result.RefundRecvAccout = string.Empty;
-            result.RefundAccount = string.Empty;
-            result.RefundRequestSource = string.Empty;
+        
+            string key = Key.ToMd5();
+            string xmlResult = AES.AESDecrypt(req_info, key);
+            var res=XDocument.Parse(xmlResult);
+
+            string transaction_id = GetXmlValue(res,"root", "transaction_id");
+            string out_trade_no = GetXmlValue(res, "root", "out_trade_no");
+            string out_refund_no = GetXmlValue(res, "root", "out_refund_no");
+            string refund_id = GetXmlValue(res, "root", "refund_id");
+            string total_fee = GetXmlValue(res, "root", "total_fee");
+            string settlement_total_fee = GetXmlValue(res, "root", "settlement_total_fee");
+            string refund_fee = GetXmlValue(res, "root", "refund_fee");
+            string settlement_refund_fee = GetXmlValue(res, "root", "settlement_refund_fee");
+            string refund_status = GetXmlValue(res, "root", "refund_status");
+            string success_time = GetXmlValue(res, "root", "success_time");
+            string refund_recv_accout = GetXmlValue(res, "root", "refund_recv_accout");
+            string refund_account = GetXmlValue(res, "root", "refund_account");
+            string refund_request_source = GetXmlValue(res, "root", "refund_request_source");
+
+            result.TransactionId = transaction_id??string.Empty;
+            result.OutRefundNo = out_refund_no??string.Empty;
+            result.RefundId = refund_id??string.Empty;
+            result.OutTradeNo = out_trade_no??string.Empty;
+            if (string.IsNullOrEmpty(refund_fee))
+            {
+                result.RefundFee = 0;
+            }
+            else
+            {
+                result.RefundFee = Convert.ToInt32(refund_fee);
+            }
+
+            if (string.IsNullOrEmpty(total_fee))
+            {
+                result.TotalFee = 0;
+            }
+            else
+            {
+                result.TotalFee = Convert.ToInt32(total_fee);
+            }
+
+            result.RefundStatus = refund_status??string.Empty;
+            result.SuccessTime = success_time??string.Empty;
+            result.RefundRecvAccout = refund_recv_accout??string.Empty;
+            result.RefundAccount = refund_account??string.Empty;
+            result.RefundRequestSource = refund_request_source??string.Empty;
 
             return result;
         }

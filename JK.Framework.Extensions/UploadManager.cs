@@ -158,7 +158,16 @@ namespace JK.Framework.Extensions
         //    return model;
         //}
 
-
+        /// <summary>
+        /// 具体参见MMY PictureController （Member）
+        /// </summary>
+        /// <param name="img"></param>
+        /// <param name="uploadPath"></param>
+        /// <returns></returns>
+        public static string SavePictureForWebApi(string img, string uploadPath)
+        {
+            return "";
+        }
 
         /// <summary>
         /// jpeg图片压缩

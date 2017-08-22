@@ -72,6 +72,8 @@
   <ItemGroup>
     <Compile Include="CustomerLoginResults.cs" />
     <Compile Include="DateTimeHelper.cs" />
+    <Compile Include="Encryption\AES.cs" />
+    <Compile Include="Encryption\Base64.cs" />
     <Compile Include="ImportAndExport\Excel.cs" />
     <Compile Include="ImportAndExport\ExportCsvManager.cs" />
     <Compile Include="ImportAndExport\ImportCsvManager.cs" />

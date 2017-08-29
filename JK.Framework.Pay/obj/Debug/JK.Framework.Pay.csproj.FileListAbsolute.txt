@@ -9,24 +9,24 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\bin\Debug\Se
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.MP.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.MP.pdb
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.MP.xml
+D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\JK.Framework.Pay.dll.config
 D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\JK.Framework.Pay.dll
 D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\JK.Framework.Pay.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\JK.Framework.Extensions.dll
+D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\Newtonsoft.Json.dll
 D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.dll
 D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.MP.dll
-D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.xml
-D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.MP.xml
-D:\Code\Github\JK.Framework\JK.Framework.Pay\obj\Debug\JK.Framework.Pay.dll
-D:\Code\Github\JK.Framework\JK.Framework.Pay\obj\Debug\JK.Framework.Pay.pdb
-D:\Code\Github\JK.Framework\JK.Framework.Pay\obj\Debug\JK.Framework.Pay.csprojResolveAssemblyReference.cache
-D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\JK.Framework.Extensions.dll
 D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\NPOI.dll
 D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\ThoughtWorks.QRCode.dll
 D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\NPOI.OOXML.dll
-D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\Newtonsoft.Json.dll
 D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\NPOI.OpenXmlFormats.dll
 D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\NPOI.OpenXml4Net.dll
 D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\JK.Framework.Extensions.pdb
 D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\JK.Framework.Extensions.dll.config
-D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\NPOI.xml
 D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\Newtonsoft.Json.xml
-D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\JK.Framework.Pay.dll.config
+D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.xml
+D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\Senparc.Weixin.MP.xml
+D:\Code\Github\JK.Framework\JK.Framework.Pay\bin\Debug\NPOI.xml
+D:\Code\Github\JK.Framework\JK.Framework.Pay\obj\Debug\JK.Framework.Pay.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Pay\obj\Debug\JK.Framework.Pay.dll
+D:\Code\Github\JK.Framework\JK.Framework.Pay\obj\Debug\JK.Framework.Pay.pdb

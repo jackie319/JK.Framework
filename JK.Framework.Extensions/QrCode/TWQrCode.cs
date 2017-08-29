@@ -19,7 +19,7 @@ namespace JK.Framework.Extensions.QrCode
         /// 生成二维码
         /// </summary>
         /// <param name="content">内容</param>
-        /// <param name="path">保存路径</param>
+        /// <param name="path">保存路径，不带“/”</param>
         /// <param name="picName">二维码名称</param>
         public static void GenerateQrCode(string content,string path,string picName)
         {
@@ -34,7 +34,7 @@ namespace JK.Framework.Extensions.QrCode
             {
                 Directory.CreateDirectory(path);
             }
-            string filepath = path + filename;
+            string filepath = path +"/"+ filename;
             FileStream fs = new System.IO.FileStream(filepath, FileMode.OpenOrCreate, FileAccess.Write);
             image.Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg);
             fs.Close();

@@ -23,7 +23,7 @@ namespace JK.Framework.Extensions.QrCode
         /// <param name="path">保存路径，不带“/”</param>
         /// <param name="picName">二维码名称</param>
         /// <param name="logoPath">logo路径（本地绝对路径）</param>
-        public static void GenerateQrCode(string content,string path,string picName,string logoPath)
+        public static void GenerateQrCode(string content, string path, string picName, string logoPath)
         {
             QRCodeEncoder qrCodeEncoder = new QRCodeEncoder();
             qrCodeEncoder.QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE;
@@ -36,9 +36,9 @@ namespace JK.Framework.Extensions.QrCode
             {
                 Directory.CreateDirectory(path);
             }
-            string filepath = path +"/"+ filename;
+            string filepath = path + "/" + filename;
             FileStream fs = new System.IO.FileStream(filepath, FileMode.OpenOrCreate, FileAccess.Write);
-    
+
             //中间带logo
             if (!string.IsNullOrEmpty(logoPath))
             {
@@ -53,6 +53,7 @@ namespace JK.Framework.Extensions.QrCode
             image.Dispose();
         }
 
+
         /// <summary>
         /// 调用此函数后使此两种图片合并，类似相册，有个
         /// 背景图，中间贴自己的目标图片
@@ -64,7 +65,7 @@ namespace JK.Framework.Extensions.QrCode
             Image img = Image.FromFile(destImg);    //照片图片
             if (img.Height != 65 || img.Width != 65)
             {
-                img = KiResizeImage(img, 65, 65, 0);
+                img = KiResizeImageRadius(img, 65, 65, 0);
             }
             Graphics g = Graphics.FromImage(imgBack);
             g.DrawImage(imgBack, 0, 0, imgBack.Width, imgBack.Height);   //g.DrawImage(imgBack, 0, 0, 相框宽, 相框高);
@@ -116,11 +117,21 @@ namespace JK.Framework.Extensions.QrCode
                 //画头像
                 Bitmap img = new Bitmap(newW, newH);
                 Graphics g = Graphics.FromImage(img);
-                g.FillRectangle(Brushes.White, new Rectangle(0, 0, newW, newH));
-                FillRoundRectangle(g, Brushes.Plum, new Rectangle(0, 0, newW, newH), 10);
-                DrawRoundRectangle(g, Pens.Yellow, new Rectangle(0, 0, newW, newH), 10);
+                // g.FillRectangle(Brushes.White, new Rectangle(0, 0, newW, newH));
+                //DrawRoundRectangle(g, Pens.Yellow, new Rectangle(0, 0, newW, newH), 10);
+                //TextureBrush brush = new TextureBrush(bmp);
+                //FillRoundRectangle(g, brush, new Rectangle(0, 0, newW, newH), 10);
 
-                g.DrawImage(bmp, new Rectangle(0, 0, newW, newH), new Rectangle(0, 0, bmp.Width, bmp.Height), GraphicsUnit.Pixel);
+                //g.DrawImage(bmp, new Rectangle(0, 0, newW, newH), new Rectangle(0, 0, bmp.Width, bmp.Height), GraphicsUnit.Pixel);
+                Pen p1 = new Pen(new SolidBrush(Color.Gray));
+                using (GraphicsPath path1 = CreateRoundedRectanglePath(new Rectangle(0,0,newW,newH), 10))
+                {
+                    g.DrawPath(p1, path1);
+                    TextureBrush brush = new TextureBrush(bmp);
+                    g.FillPath(brush, path1);
+                }
+
+
                 g.Dispose();
 
                 return img;

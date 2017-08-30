@@ -7,6 +7,7 @@ using JK.Framework.Extensions.Zip;
 using JK.Framework.Extensions.Encryption;
 using JK.Framework.Extensions;
 using System.Xml.Linq;
+using System.IO;
 
 namespace JK.Framework.Test
 {
@@ -62,6 +63,21 @@ namespace JK.Framework.Test
             string logoPath = "D:\\jackie/maimaiyin/LOGO/公众号LOGO.jpg";
             string name = Guid.NewGuid().ToString();
             TWQrCode.GenerateQrCode("http://m.maimaiyin.cn","D:\\erweima/", name, logoPath);
+            Assert.IsTrue(true);
+        }
+
+
+        [TestMethod]
+        public void TestQrCodeTwo()
+        {
+            string logoPath = "D:\\jackie/maimaiyin/LOGO/公众号LOGO.jpg";
+            string name = Guid.NewGuid().ToString();
+            string filename = Guid.NewGuid().ToString()+".png";
+            string path = "D:\\erweima";
+            string filepath = path + "/" + filename;
+            FileStream fs = new System.IO.FileStream(filepath, FileMode.OpenOrCreate, FileAccess.Write);
+            var bitmap=QRCodeHelper.CreateQRCodeWithLogo("http://m.maimaiyin.cn",  logoPath);
+            bitmap.Save(fs, System.Drawing.Imaging.ImageFormat.Png);
             Assert.IsTrue(true);
         }
 

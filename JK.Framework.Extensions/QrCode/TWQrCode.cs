@@ -31,19 +31,22 @@ namespace JK.Framework.Extensions.QrCode
             qrCodeEncoder.QRCodeVersion = 8;//版本
             qrCodeEncoder.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.M;
             Image image = qrCodeEncoder.Encode(content);
-            string filename = picName + ".jpg";
+            string filename = picName + ".png";
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }
             string filepath = path +"/"+ filename;
             FileStream fs = new System.IO.FileStream(filepath, FileMode.OpenOrCreate, FileAccess.Write);
-            image.Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg);
+    
             //中间带logo
             if (!string.IsNullOrEmpty(logoPath))
             {
-                System.IO.MemoryStream MStream1 = new System.IO.MemoryStream();
-                CombinImage(image, logoPath).Save(MStream1, System.Drawing.Imaging.ImageFormat.Png);
+                CombinImage(image, logoPath).Save(fs, System.Drawing.Imaging.ImageFormat.Png);
+            }
+            else
+            {
+                image.Save(fs, System.Drawing.Imaging.ImageFormat.Png);
             }
 
             fs.Close();
@@ -56,7 +59,7 @@ namespace JK.Framework.Extensions.QrCode
         /// </summary>
         /// <param name="imgBack">粘贴的源图片</param>
         /// <param name="destImg">粘贴的目标图片</param>
-        public static Image CombinImage(Image imgBack, string destImg)
+        internal static Image CombinImage(Image imgBack, string destImg)
         {
             Image img = Image.FromFile(destImg);    //照片图片
             if (img.Height != 65 || img.Width != 65)
@@ -65,8 +68,8 @@ namespace JK.Framework.Extensions.QrCode
             }
             Graphics g = Graphics.FromImage(imgBack);
             g.DrawImage(imgBack, 0, 0, imgBack.Width, imgBack.Height);   //g.DrawImage(imgBack, 0, 0, 相框宽, 相框高);
-                                                                         //g.FillRectangle(System.Drawing.Brushes.White, imgBack.Width / 2 - img.Width / 2 - 1, imgBack.Width / 2 - img.Width / 2 - 1,1,1);//相片四周刷一层黑色边框
-                                                                         //g.DrawImage(img, 照片与相框的左边距, 照片与相框的上边距, 照片宽, 照片高);
+            //g.FillRectangle(System.Drawing.Brushes.White, imgBack.Width / 2 - img.Width / 2 - 1, imgBack.Width / 2 - img.Width / 2 - 1,1,1);//相片四周刷一层黑色边框
+            //g.DrawImage(img, 照片与相框的左边距, 照片与相框的上边距, 照片宽, 照片高);
             g.DrawImage(img, imgBack.Width / 2 - img.Width / 2, imgBack.Width / 2 - img.Width / 2, img.Width, img.Height);
             GC.Collect();
             return imgBack;
@@ -80,7 +83,7 @@ namespace JK.Framework.Extensions.QrCode
         /// <param name="newH">新的高度</param>
         /// <param name="Mode">保留着，暂时未用</param>
         /// <returns>处理以后的图片</returns>
-        public static Image KiResizeImage(Image bmp, int newW, int newH, int Mode)
+        internal static Image KiResizeImage(Image bmp, int newW, int newH, int Mode)
         {
             try
             {
@@ -97,7 +100,66 @@ namespace JK.Framework.Extensions.QrCode
                 return null;
             }
         }
- 
+
+        /// <summary>
+        /// 圆角
+        /// </summary>
+        /// <param name="bmp"></param>
+        /// <param name="newW"></param>
+        /// <param name="newH"></param>
+        /// <param name="Mode"></param>
+        /// <returns></returns>
+        internal static Image KiResizeImageRadius(Image bmp, int newW, int newH, int Mode)
+        {
+            try
+            {
+                //画头像
+                Bitmap img = new Bitmap(newW, newH);
+                Graphics g = Graphics.FromImage(img);
+                g.FillRectangle(Brushes.White, new Rectangle(0, 0, newW, newH));
+                FillRoundRectangle(g, Brushes.Plum, new Rectangle(0, 0, newW, newH), 10);
+                DrawRoundRectangle(g, Pens.Yellow, new Rectangle(0, 0, newW, newH), 10);
+
+                g.DrawImage(bmp, new Rectangle(0, 0, newW, newH), new Rectangle(0, 0, bmp.Width, bmp.Height), GraphicsUnit.Pixel);
+                g.Dispose();
+
+                return img;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+
+        internal static void DrawRoundRectangle(Graphics g, Pen pen, Rectangle rect, int cornerRadius)
+        {
+            using (GraphicsPath path = CreateRoundedRectanglePath(rect, cornerRadius))
+            {
+                g.DrawPath(pen, path);
+            }
+        }
+        internal static void FillRoundRectangle(Graphics g, Brush brush, Rectangle rect, int cornerRadius)
+        {
+            using (GraphicsPath path = CreateRoundedRectanglePath(rect, cornerRadius))
+            {
+                g.FillPath(brush, path);
+            }
+        }
+        internal static GraphicsPath CreateRoundedRectanglePath(Rectangle rect, int cornerRadius)
+        {
+            GraphicsPath roundedRect = new GraphicsPath();
+            roundedRect.AddArc(rect.X, rect.Y, cornerRadius * 2, cornerRadius * 2, 180, 90);
+            roundedRect.AddLine(rect.X + cornerRadius, rect.Y, rect.Right - cornerRadius * 2, rect.Y);
+            roundedRect.AddArc(rect.X + rect.Width - cornerRadius * 2, rect.Y, cornerRadius * 2, cornerRadius * 2, 270, 90);
+            roundedRect.AddLine(rect.Right, rect.Y + cornerRadius * 2, rect.Right, rect.Y + rect.Height - cornerRadius * 2);
+            roundedRect.AddArc(rect.X + rect.Width - cornerRadius * 2, rect.Y + rect.Height - cornerRadius * 2, cornerRadius * 2, cornerRadius * 2, 0, 90);
+            roundedRect.AddLine(rect.Right - cornerRadius * 2, rect.Bottom, rect.X + cornerRadius * 2, rect.Bottom);
+            roundedRect.AddArc(rect.X, rect.Bottom - cornerRadius * 2, cornerRadius * 2, cornerRadius * 2, 90, 90);
+            roundedRect.AddLine(rect.X, rect.Bottom - cornerRadius * 2, rect.X, rect.Y + cornerRadius * 2);
+            roundedRect.CloseFigure();
+            return roundedRect;
+        }
 
 
 

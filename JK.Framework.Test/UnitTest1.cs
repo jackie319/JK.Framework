@@ -59,7 +59,9 @@ namespace JK.Framework.Test
         [TestMethod]
         public void TestQrCode()
         {
-            TWQrCode.GenerateQrCode("http://m.maimaiyin.cn","D:\\erweima/","测试二维码22");
+            string logoPath = "D:\\jackie/maimaiyin/LOGO/公众号LOGO.jpg";
+            string name = Guid.NewGuid().ToString();
+            TWQrCode.GenerateQrCode("http://m.maimaiyin.cn","D:\\erweima/", name, logoPath);
             Assert.IsTrue(true);
         }
 

@@ -26,7 +26,7 @@ namespace JK.Framework.Extensions.QrCode
                 QRCodeEncoder qRCodeEncoder = new QRCodeEncoder();
                 qRCodeEncoder.QRCodeEncodeMode = QRCodeEncoder.ENCODE_MODE.BYTE;//设置二维码编码格式 
                 qRCodeEncoder.QRCodeScale = 4;//设置编码测量度             
-                qRCodeEncoder.QRCodeVersion = 7;//设置编码版本   
+                qRCodeEncoder.QRCodeVersion = 8;//设置编码版本(TODO：必须为8 否则某些地址不能正确生成二维码)   
                 qRCodeEncoder.QRCodeErrorCorrect = QRCodeEncoder.ERROR_CORRECTION.M;//设置错误校验 
 
                 Bitmap image = qRCodeEncoder.Encode(content);

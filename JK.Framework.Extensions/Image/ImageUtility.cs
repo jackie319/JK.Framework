@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JK.Framework.Extensions.QrCode
+namespace JK.Framework.Extensions
 {
     public static class ImageUtility
     {
@@ -20,9 +20,9 @@ namespace JK.Framework.Extensions.QrCode
         /// <param name="headerImg">用户头像</param>
         /// <param name="n"></param>
         /// <returns></returns>
-        public static Bitmap MergeQrImg(Bitmap qrImg, Bitmap headerImg, double n = 0.23)
+        public static Bitmap MergeQrImg(Bitmap qrImg, Bitmap headerImg, Boolean isNeedBorder = false, double n = 0.23)
         {
-            int margin = 10;
+            int margin = 5;
             float dpix = qrImg.HorizontalResolution;
             float dpiy = qrImg.VerticalResolution;
             var _newWidth = (10 * qrImg.Width - 36 * margin) * 1.0f / 36;
@@ -37,11 +37,12 @@ namespace JK.Framework.Extensions.QrCode
             g.Clear(Color.Transparent);
             Pen p = new Pen(new SolidBrush(Color.White));
             Rectangle rect = new Rectangle(0, 0, newImgWidth - 1, newImgWidth - 1);
-            using (GraphicsPath path = CreateRoundedRectanglePath(rect, 10))
+            using (GraphicsPath path = CreateRoundedRectanglePath(rect, 7))
             {
                 g.DrawPath(p, path);
                 g.FillPath(new SolidBrush(Color.White), path);
             }
+
             //画头像
             Bitmap img1 = new Bitmap(_headerImg.Width, _headerImg.Width);
             Graphics g1 = Graphics.FromImage(img1);
@@ -50,7 +51,7 @@ namespace JK.Framework.Extensions.QrCode
             g1.Clear(Color.Transparent);
             Pen p1 = new Pen(new SolidBrush(Color.Gray));
             Rectangle rect1 = new Rectangle(0, 0, _headerImg.Width - 1, _headerImg.Width - 1);
-            using (GraphicsPath path1 = CreateRoundedRectanglePath(rect1, 1))
+            using (GraphicsPath path1 = CreateRoundedRectanglePath(rect1, 7))
             {
                 g1.DrawPath(p1, path1);
                 TextureBrush brush = new TextureBrush(_headerImg);
@@ -70,6 +71,22 @@ namespace JK.Framework.Extensions.QrCode
             PointF center2 = new PointF((qrImg.Width - headerBgImg.Width) / 2, (qrImg.Height - headerBgImg.Height) / 2);
             g2.DrawImage(headerBgImg, center2);
             g2.Dispose();
+
+            if (isNeedBorder)
+            {
+                Bitmap borderImg = new Bitmap(backgroudImg.Width + 20, backgroudImg.Height + 20);
+
+                Graphics g3 = Graphics.FromImage(borderImg);
+                g3.Clear(Color.Transparent);
+                //g.DrawImage(imgBack, 0, 0, 相框宽, 相框高);
+                //g.FillRectangle(System.Drawing.Brushes.White, imgBack.Width / 2 - img.Width / 2 - 1, imgBack.Width / 2 - img.Width / 2 - 1,1,1);//相片四周刷一层黑色边框
+                //g.DrawImage(img, 照片与相框的左边距, 照片与相框的上边距, 照片宽, 照片高);
+                g3.FillRectangle(System.Drawing.Brushes.White, 0, 0, borderImg.Width, borderImg.Height);
+                g3.DrawImage(backgroudImg, (borderImg.Width-backgroudImg.Width)/2,(borderImg.Height-backgroudImg.Height)/2, backgroudImg.Width, backgroudImg.Height);
+                g3.Dispose();
+                return borderImg;
+            }
+
             return backgroudImg;
         }
         #endregion

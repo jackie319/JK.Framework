@@ -17,7 +17,7 @@ namespace JK.Framework.Extensions.QrCode
     public class TWQrCode
     {
         /// <summary>
-        /// 生成二维码
+        /// 生成二维码(已废弃，请使用QRCodeHelper.cn)
         /// </summary>
         /// <param name="content">内容</param>
         /// <param name="path">保存路径，不带“/”</param>
@@ -68,7 +68,8 @@ namespace JK.Framework.Extensions.QrCode
                 img = KiResizeImageRadius(img, 65, 65, 0);
             }
             Graphics g = Graphics.FromImage(imgBack);
-            g.DrawImage(imgBack, 0, 0, imgBack.Width, imgBack.Height);   //g.DrawImage(imgBack, 0, 0, 相框宽, 相框高);
+            g.DrawImage(imgBack, 0, 0, imgBack.Width, imgBack.Height);  
+            //g.DrawImage(imgBack, 0, 0, 相框宽, 相框高);
             //g.FillRectangle(System.Drawing.Brushes.White, imgBack.Width / 2 - img.Width / 2 - 1, imgBack.Width / 2 - img.Width / 2 - 1,1,1);//相片四周刷一层黑色边框
             //g.DrawImage(img, 照片与相框的左边距, 照片与相框的上边距, 照片宽, 照片高);
             g.DrawImage(img, imgBack.Width / 2 - img.Width / 2, imgBack.Width / 2 - img.Width / 2, img.Width, img.Height);
@@ -117,6 +118,7 @@ namespace JK.Framework.Extensions.QrCode
                 //画头像
                 Bitmap img = new Bitmap(newW, newH);
                 Graphics g = Graphics.FromImage(img);
+                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
                 // g.FillRectangle(Brushes.White, new Rectangle(0, 0, newW, newH));
                 //DrawRoundRectangle(g, Pens.Yellow, new Rectangle(0, 0, newW, newH), 10);
                 //TextureBrush brush = new TextureBrush(bmp);
@@ -124,13 +126,13 @@ namespace JK.Framework.Extensions.QrCode
 
                 //g.DrawImage(bmp, new Rectangle(0, 0, newW, newH), new Rectangle(0, 0, bmp.Width, bmp.Height), GraphicsUnit.Pixel);
                 Pen p1 = new Pen(new SolidBrush(Color.Gray));
-                using (GraphicsPath path1 = CreateRoundedRectanglePath(new Rectangle(0,0,newW,newH), 10))
+                using (GraphicsPath path1 = CreateRoundedRectanglePath(new Rectangle(0,0,img.Width,img.Height), 7))
                 {
                     g.DrawPath(p1, path1);
                     TextureBrush brush = new TextureBrush(bmp);
                     g.FillPath(brush, path1);
                 }
-
+                g.DrawImage(bmp,0,0, img.Width, img.Height);
 
                 g.Dispose();
 
@@ -157,6 +159,12 @@ namespace JK.Framework.Extensions.QrCode
                 g.FillPath(brush, path);
             }
         }
+        /// <summary>
+        /// 圆角
+        /// </summary>
+        /// <param name="rect"></param>
+        /// <param name="cornerRadius"></param>
+        /// <returns></returns>
         internal static GraphicsPath CreateRoundedRectanglePath(Rectangle rect, int cornerRadius)
         {
             GraphicsPath roundedRect = new GraphicsPath();

@@ -83,6 +83,8 @@ namespace JK.Framework.Extensions.QrCode
             FileStream fs = new System.IO.FileStream(filepath, FileMode.OpenOrCreate, FileAccess.Write);
             var bitmap = QRCodeHelper.CreateQRCodeWithLogo(content, logoPath, isNeedBorder);
             bitmap.Save(fs, System.Drawing.Imaging.ImageFormat.Png);
+            fs.Close();
+            bitmap.Dispose();
         }
     }
 }

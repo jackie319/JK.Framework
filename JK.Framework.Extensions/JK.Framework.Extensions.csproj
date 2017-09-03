@@ -91,6 +91,7 @@
     <Compile Include="QrCode\QRCodeHelper.cs" />
     <Compile Include="QrCode\TWQrCode.cs" />
     <Compile Include="Image\UploadManager.cs" />
+    <Compile Include="Search\SearchHelper.cs" />
     <Compile Include="Zip\ZipHelper.cs" />
   </ItemGroup>
   <ItemGroup>

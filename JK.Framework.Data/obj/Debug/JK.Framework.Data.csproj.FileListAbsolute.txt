@@ -56,6 +56,9 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\bin\Debug\S
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.csprojResolveAssemblyReference.cache
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framework.Data.dll.config
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framework.Data.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framework.Data.pdb
@@ -92,6 +95,3 @@ D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.Razor.xml
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.WebPages.xml
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.WebPages.Razor.xml
-D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.csprojResolveAssemblyReference.cache
-D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.dll
-D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.pdb

@@ -5,14 +5,12 @@ E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\bin\Debug\z
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.dll
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.pdb
 E:\tools\development tools\GItHub\mmy\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\JK.Framework.Test.dll.config
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\JK.Framework.Test.dll
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\JK.Framework.Test.pdb
-D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\zh-Hans\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
-D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.dll
-D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.pdb
-D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\JK.Framework.Extensions.dll
+D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\System.Json.dll
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\NPOI.dll
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\ThoughtWorks.QRCode.dll
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\NPOI.OOXML.dll
@@ -23,5 +21,7 @@ D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\JK.Framework.Extensions.
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\JK.Framework.Extensions.dll.config
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\NPOI.xml
 D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\Newtonsoft.Json.xml
-D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\JK.Framework.Test.dll.config
-D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\System.Json.dll
+D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\zh-Hans\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.dll
+D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.pdb

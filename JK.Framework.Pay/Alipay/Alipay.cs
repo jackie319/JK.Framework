@@ -8,5 +8,7 @@ namespace JK.Framework.Pay.Alipay
 {
    public  class Alipay
     {
+   
+        private string AppId { get; set; }
     }
 }

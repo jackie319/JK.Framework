@@ -1,0 +1,4 @@
+D:\Code\Github\JK.Framework\JK.Data\bin\Debug\JK.Data.dll
+D:\Code\Github\JK.Framework\JK.Data\bin\Debug\JK.Data.pdb
+D:\Code\Github\JK.Framework\JK.Data\obj\Debug\JK.Data.dll
+D:\Code\Github\JK.Framework\JK.Data\obj\Debug\JK.Data.pdb

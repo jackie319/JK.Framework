@@ -10,7 +10,11 @@ using JK.Framework.Core.Data;
 
 namespace JK.Framework.Data
 {
-    public class EfRepository<T> : IRepository<T> where T : BaseEntity
+    /// <summary>
+    /// 2017/11/11 不再继承自BaseEntity（IRepository<T> 取消了继承自BaseEntity）
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class EfRepository<T> : IRepository<T> where T : class //:BaseEntity
     {
         #region Fields
 

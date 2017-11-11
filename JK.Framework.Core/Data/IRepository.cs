@@ -9,7 +9,7 @@ namespace JK.Framework.Core.Data
     /// <summary>
     /// Repository
     /// </summary>
-    public partial interface IRepository<T> where T : BaseEntity
+    public partial interface IRepository<T> where T :class  //:BaseEntity
     {
         /// <summary>
         /// Get entity by identifier

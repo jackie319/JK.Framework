@@ -1,0 +1,4 @@
+D:\Code\Github\JK.Framework\JK.Authority\bin\Debug\JK.Authority.dll
+D:\Code\Github\JK.Framework\JK.Authority\bin\Debug\JK.Authority.pdb
+D:\Code\Github\JK.Framework\JK.Authority\obj\Debug\JK.Authority.dll
+D:\Code\Github\JK.Framework\JK.Authority\obj\Debug\JK.Authority.pdb

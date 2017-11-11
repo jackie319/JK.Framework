@@ -95,3 +95,6 @@ D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.Razor.xml
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.WebPages.xml
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\zh-Hans\System.Net.Http.Formatting.resources.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\zh-Hans\System.Web.Http.resources.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\zh-Hans\System.Web.Http.WebHost.resources.dll

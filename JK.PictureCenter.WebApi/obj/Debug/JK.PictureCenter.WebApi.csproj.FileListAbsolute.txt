@@ -78,6 +78,5 @@ D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\zh-Hans\System.Web.Razor
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\zh-Hans\System.Web.WebPages.resources.dll
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
-D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\obj\Debug\JK.PictureCenter.WebApi.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\obj\Debug\JK.PictureCenter.WebApi.dll
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\obj\Debug\JK.PictureCenter.WebApi.pdb

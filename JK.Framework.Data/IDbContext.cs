@@ -15,7 +15,7 @@ namespace JK.Framework.Data
         /// </summary>
         /// <typeparam name="TEntity">Entity type</typeparam>
         /// <returns>DbSet</returns>
-        IDbSet<TEntity> Set<TEntity>() where TEntity : BaseEntity;
+        IDbSet<TEntity> Set<TEntity>() where TEntity : class; //:BaseEntity
 
         /// <summary>
         /// Save changes
@@ -31,7 +31,7 @@ namespace JK.Framework.Data
         /// <param name="parameters">Parameters</param>
         /// <returns>Entities</returns>
         IList<TEntity> ExecuteStoredProcedureList<TEntity>(string commandText, params object[] parameters)
-            where TEntity : BaseEntity, new();
+            where TEntity : class, new();
 
         /// <summary>
         /// Creates a raw SQL query that will return elements of the given generic type.  The type can be any type that has properties that match the names of the columns returned from the query, or can be a simple primitive type. The type does not have to be an entity type. The results of this query are never tracked by the context even if the type of object returned is an entity type.

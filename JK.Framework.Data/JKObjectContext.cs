@@ -55,21 +55,21 @@ namespace JK.Framework.Data
         /// <typeparam name="TEntity">TEntity</typeparam>
         /// <param name="entity">Entity</param>
         /// <returns>Attached entity</returns>
-        protected virtual TEntity AttachEntityToContext<TEntity>(TEntity entity) where TEntity : BaseEntity, new()
-        {
-            //little hack here until Entity Framework really supports stored procedures
-            //otherwise, navigation properties of loaded entities are not loaded until an entity is attached to the context
-            var alreadyAttached = Set<TEntity>().Local.FirstOrDefault(x => x.Id == entity.Id);
-            if (alreadyAttached == null)
-            {
-                //attach new entity
-                Set<TEntity>().Attach(entity);
-                return entity;
-            }
+        //protected virtual TEntity AttachEntityToContext<TEntity>(TEntity entity) where TEntity : class, new()
+        //{
+        //    //little hack here until Entity Framework really supports stored procedures
+        //    //otherwise, navigation properties of loaded entities are not loaded until an entity is attached to the context
+        //    var alreadyAttached = Set<TEntity>().Local.FirstOrDefault(x => x.Id == entity.Id);
+        //    if (alreadyAttached == null)
+        //    {
+        //        //attach new entity
+        //        Set<TEntity>().Attach(entity);
+        //        return entity;
+        //    }
 
-            //entity is already loaded
-            return alreadyAttached;
-        }
+        //    //entity is already loaded
+        //    return alreadyAttached;
+        //}
 
         #endregion
 
@@ -89,7 +89,7 @@ namespace JK.Framework.Data
         /// </summary>
         /// <typeparam name="TEntity">Entity type</typeparam>
         /// <returns>DbSet</returns>
-        public new IDbSet<TEntity> Set<TEntity>() where TEntity : BaseEntity
+        public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {
             return base.Set<TEntity>();
         }
@@ -101,7 +101,7 @@ namespace JK.Framework.Data
         /// <param name="commandText">Command text</param>
         /// <param name="parameters">Parameters</param>
         /// <returns>Entities</returns>
-        public IList<TEntity> ExecuteStoredProcedureList<TEntity>(string commandText, params object[] parameters) where TEntity : BaseEntity, new()
+        public IList<TEntity> ExecuteStoredProcedureList<TEntity>(string commandText, params object[] parameters) where TEntity : class, new()
         {
             //add parameters to command
             if (parameters != null && parameters.Length > 0)
@@ -132,7 +132,12 @@ namespace JK.Framework.Data
                 this.Configuration.AutoDetectChangesEnabled = false;
 
                 for (int i = 0; i < result.Count; i++)
-                    result[i] = AttachEntityToContext(result[i]);
+                {
+                    //  result[i] = AttachEntityToContext(result[i]);  
+                    //2017/11/11 取消BaseEntity 
+                    //TODO： 此处待修改
+                }
+
             }
             finally
             {

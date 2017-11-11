@@ -80,3 +80,4 @@ D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\zh-Hans\System.Web.WebPa
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\obj\Debug\JK.PictureCenter.WebApi.dll
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\obj\Debug\JK.PictureCenter.WebApi.pdb
+D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\obj\Debug\JK.PictureCenter.WebApi.csprojResolveAssemblyReference.cache

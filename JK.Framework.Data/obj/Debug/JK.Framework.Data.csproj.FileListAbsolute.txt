@@ -63,8 +63,6 @@ D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framework.Data.dll.co
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framework.Data.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framework.Data.pdb
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\Autofac.dll
-D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\Autofac.Integration.Mvc.dll
-D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\Autofac.Integration.WebApi.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\EntityFramework.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\EntityFramework.SqlServer.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framework.Core.dll
@@ -81,8 +79,6 @@ D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.WebPages.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.WebPages.Razor.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\JK.Framework.Core.pdb
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\Autofac.xml
-D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\Autofac.Integration.Mvc.xml
-D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\Autofac.Integration.WebApi.xml
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\EntityFramework.xml
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\EntityFramework.SqlServer.xml
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\Newtonsoft.Json.xml

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Web;
 using Autofac;
 using Autofac.Core.Lifetime;
-using Autofac.Integration.Mvc;
 
 namespace JK.Framework.Core.Infrastructure.DependencyManagement
 {
@@ -199,8 +198,8 @@ namespace JK.Framework.Core.Infrastructure.DependencyManagement
         {
             try
             {
-                if (HttpContext.Current != null)
-                    return AutofacDependencyResolver.Current.RequestLifetimeScope;
+                //if (HttpContext.Current != null)
+                //    return AutofacDependencyResolver.Current.RequestLifetimeScope; TODO: 移除autofac.mvc
 
                 //when such lifetime scope is returned, you should be sure that it'll be disposed once used (e.g. in schedule tasks)
                 return Container.BeginLifetimeScope(MatchingScopeLifetimeTags.RequestLifetimeScopeTag);

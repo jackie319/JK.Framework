@@ -23,6 +23,7 @@
         <AssociationConnector Association="JKDataModel.FK_UserInRole_Role" ManuallyRouted="false" />
         <AssociationConnector Association="JKDataModel.FK_UserAccountWechat_UserAccount" ManuallyRouted="false" />
         <AssociationConnector Association="JKDataModel.FK_UserOperationRecords_UserAccount" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="JKDataModel.SmsRecords" Width="1.5" PointX="0.75" PointY="12.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

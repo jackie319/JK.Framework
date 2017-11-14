@@ -79,6 +79,9 @@
     <Compile Include="Model\Payment.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\SmsRecords.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\UserAccount.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>

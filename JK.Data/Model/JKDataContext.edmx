@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="JKDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="JKDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AuthorityFunction">
           <Key>
             <PropertyRef Name="FunctionGuid" />
@@ -65,6 +65,21 @@
           <Property Name="PaymentName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PaymentType" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SmsRecords">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsValidated" Type="bit" Nullable="false" />
+          <Property Name="RadomCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ResultStatusCode" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="SmsType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="TimeUpdate" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
         <EntityType Name="UserAccount">
@@ -308,6 +323,7 @@
           <EntitySet Name="AuthorityRoleInFunction" EntityType="Self.AuthorityRoleInFunction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AuthorityUserInRole" EntityType="Self.AuthorityUserInRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SmsRecords" EntityType="Self.SmsRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserAccountWechat" EntityType="Self.UserAccountWechat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLoginRecords" EntityType="Self.UserLoginRecords" Schema="dbo" store:Type="Tables" />
@@ -337,8 +353,7 @@
             <End Role="UserOperationRecords" EntitySet="UserOperationRecords" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="JKDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -683,7 +698,23 @@
             <End Role="UserAccount" EntitySet="UserAccount" />
             <End Role="UserOperationRecords" EntitySet="UserOperationRecords" />
           </AssociationSet>
+          <EntitySet Name="SmsRecords" EntityType="JKDataModel.SmsRecords" />
         </EntityContainer>
+        <EntityType Name="SmsRecords">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsValidated" Type="Boolean" Nullable="false" />
+          <Property Name="RadomCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ResultStatusCode" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SmsType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Remark" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TimeUpdate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -937,6 +968,22 @@
                 <ScalarProperty Name="MchId" ColumnName="MchId" />
                 <ScalarProperty Name="RefundId" ColumnName="RefundId" />
                 <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SmsRecords">
+            <EntityTypeMapping TypeName="JKDataModel.SmsRecords">
+              <MappingFragment StoreEntitySet="SmsRecords">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="TimeUpdate" ColumnName="TimeUpdate" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="SmsType" ColumnName="SmsType" />
+                <ScalarProperty Name="ResultStatusCode" ColumnName="ResultStatusCode" />
+                <ScalarProperty Name="RadomCode" ColumnName="RadomCode" />
+                <ScalarProperty Name="IsValidated" ColumnName="IsValidated" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

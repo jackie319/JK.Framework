@@ -14,6 +14,7 @@ namespace JK.JKUserAccount.ServiceModel
         /// </summary>
         public string AppId = "wx153d31e744b266d0";
 
+        //抽取到数据库
         public string AppSecret = "1f3af6756d168f35704555fd77a7ae58";
 
         /// <summary>

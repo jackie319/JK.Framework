@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace JK.UserAccount
 {
-    public class Class1
+    public enum SmsTypeEnum
     {
+        Registe,
+        GetBackPwd,
+        Notify
     }
 }

@@ -19,6 +19,7 @@ namespace JK.Data.Model
         {
             this.UserAccountWechat = new HashSet<UserAccountWechat>();
             this.UserOperationRecords = new HashSet<UserOperationRecords>();
+            this.UserDeliveryAddress = new HashSet<UserDeliveryAddress>();
         }
     
         public System.Guid Guid { get; set; }
@@ -47,5 +48,7 @@ namespace JK.Data.Model
         public virtual ICollection<UserAccountWechat> UserAccountWechat { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserOperationRecords> UserOperationRecords { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserDeliveryAddress> UserDeliveryAddress { get; set; }
     }
 }

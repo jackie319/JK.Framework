@@ -2,7 +2,7 @@
 using JK.Framework.Core;
 using JK.Framework.Core.Data;
 using JK.Framework.Sms.Netease;
-using JK.UserAccount.IServices;
+using JK.JKUserAccount.IServices;
 using log4net;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JK.UserAccount.ServicesImpl
+namespace JK.JKUserAccount.ServicesImpl
 {
     public class SmsImpl:ISms
     {

@@ -54,7 +54,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WechatOauth", "WechatOauth"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.WechatOauth.WebApi", "JK.WechatOauth.WebApi\JK.WechatOauth.WebApi.csproj", "{396FA1FA-B00C-4BBB-AE03-C401F5FE9600}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.UserAccount", "JK.UserAccount\JK.UserAccount.csproj", "{545AE0B0-64D0-46B5-8D43-E1E80F496531}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.JKUserAccount", "JK.UserAccount\JK.JKUserAccount.csproj", "{545AE0B0-64D0-46B5-8D43-E1E80F496531}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

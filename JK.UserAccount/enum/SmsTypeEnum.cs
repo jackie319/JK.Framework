@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JK.UserAccount
+namespace JK.JKUserAccount
 {
     public enum SmsTypeEnum
     {

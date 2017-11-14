@@ -88,6 +88,9 @@
     <Compile Include="Model\UserAccountWechat.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\UserDeliveryAddress.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\UserLoginRecords.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>

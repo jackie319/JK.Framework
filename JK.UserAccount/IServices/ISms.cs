@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JK.UserAccount.IServices
+namespace JK.JKUserAccount.IServices
 {
     public interface ISms
     {

@@ -128,6 +128,22 @@
           <Property Name="RecommenderGuid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
+        <EntityType Name="UserDeliveryAddress">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Region" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Street" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ReceiverName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
         <EntityType Name="UserLoginRecords">
           <Key>
             <PropertyRef Name="Guid" />
@@ -293,6 +309,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_UserDeliveryAddress_UserAccount">
+          <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+          <End Role="UserDeliveryAddress" Type="Self.UserDeliveryAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="UserDeliveryAddress">
+              <PropertyRef Name="UserGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_UserInRole_Role">
           <End Role="AuthorityRole" Type="Self.AuthorityRole" Multiplicity="1" />
           <End Role="AuthorityUserInRole" Type="Self.AuthorityUserInRole" Multiplicity="*" />
@@ -326,6 +354,7 @@
           <EntitySet Name="SmsRecords" EntityType="Self.SmsRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserAccountWechat" EntityType="Self.UserAccountWechat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserDeliveryAddress" EntityType="Self.UserDeliveryAddress" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLoginRecords" EntityType="Self.UserLoginRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserOperationRecords" EntityType="Self.UserOperationRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WechatPayNotify" EntityType="Self.WechatPayNotify" Schema="dbo" store:Type="Tables" />
@@ -343,6 +372,10 @@
           <AssociationSet Name="FK_UserAccountWechat_UserAccount" Association="Self.FK_UserAccountWechat_UserAccount">
             <End Role="UserAccount" EntitySet="UserAccount" />
             <End Role="UserAccountWechat" EntitySet="UserAccountWechat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserDeliveryAddress_UserAccount" Association="Self.FK_UserDeliveryAddress_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="UserDeliveryAddress" EntitySet="UserDeliveryAddress" />
           </AssociationSet>
           <AssociationSet Name="FK_UserInRole_Role" Association="Self.FK_UserInRole_Role">
             <End Role="AuthorityRole" EntitySet="AuthorityRole" />
@@ -452,6 +485,7 @@
           <Property Name="TimeLastVisited" Type="DateTime" Nullable="false" Precision="7" />
           <NavigationProperty Name="UserAccountWechat" Relationship="Self.FK_UserAccountWechat_UserAccount" FromRole="UserAccount" ToRole="UserAccountWechat" />
           <NavigationProperty Name="UserOperationRecords" Relationship="Self.FK_UserOperationRecords_UserAccount" FromRole="UserAccount" ToRole="UserOperationRecords" />
+          <NavigationProperty Name="UserDeliveryAddress" Relationship="JKDataModel.FK_UserDeliveryAddress_UserAccount" FromRole="UserAccount" ToRole="UserDeliveryAddress" />
         </EntityType>
         <EntityType Name="UserAccountWechat">
           <Key>
@@ -699,6 +733,11 @@
             <End Role="UserOperationRecords" EntitySet="UserOperationRecords" />
           </AssociationSet>
           <EntitySet Name="SmsRecords" EntityType="JKDataModel.SmsRecords" />
+          <EntitySet Name="UserDeliveryAddress" EntityType="JKDataModel.UserDeliveryAddress" />
+          <AssociationSet Name="FK_UserDeliveryAddress_UserAccount" Association="JKDataModel.FK_UserDeliveryAddress_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="UserDeliveryAddress" EntitySet="UserDeliveryAddress" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="SmsRecords">
           <Key>
@@ -715,6 +754,35 @@
           <Property Name="TimeUpdate" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
         </EntityType>
+        <EntityType Name="UserDeliveryAddress">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="UserGuid" Type="Guid" Nullable="false" />
+          <Property Name="Region" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Street" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReceiverName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="UserAccount" Relationship="JKDataModel.FK_UserDeliveryAddress_UserAccount" FromRole="UserDeliveryAddress" ToRole="UserAccount" />
+        </EntityType>
+        <Association Name="FK_UserDeliveryAddress_UserAccount">
+          <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="JKDataModel.UserDeliveryAddress" Role="UserDeliveryAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="UserDeliveryAddress">
+              <PropertyRef Name="UserGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -983,6 +1051,23 @@
                 <ScalarProperty Name="IsValidated" ColumnName="IsValidated" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDeliveryAddress">
+            <EntityTypeMapping TypeName="JKDataModel.UserDeliveryAddress">
+              <MappingFragment StoreEntitySet="UserDeliveryAddress">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="ReceiverName" ColumnName="ReceiverName" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
                 <ScalarProperty Name="Guid" ColumnName="Guid" />
               </MappingFragment>
             </EntityTypeMapping>

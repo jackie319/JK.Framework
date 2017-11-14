@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JKDataModelStoreContainer" CdmEntityContainer="JKDataEntities">
+    <EntitySetMapping Name="AuthorityFunction">
+      <EntityTypeMapping TypeName="JKDataModel.AuthorityFunction">
+        <MappingFragment StoreEntitySet="AuthorityFunction">
+          <ScalarProperty Name="FunctionGuid" ColumnName="FunctionGuid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ParentGuid" ColumnName="ParentGuid" />
+          <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="ActionUrl" ColumnName="ActionUrl" />
+          <ScalarProperty Name="FunctionType" ColumnName="FunctionType" />
+          <ScalarProperty Name="PlatForm" ColumnName="PlatForm" />
+          <ScalarProperty Name="Enable" ColumnName="Enable" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuthorityRole">
+      <EntityTypeMapping TypeName="JKDataModel.AuthorityRole">
+        <MappingFragment StoreEntitySet="AuthorityRole">
+          <ScalarProperty Name="RoleGuid" ColumnName="RoleGuid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="RoleEnumName" ColumnName="RoleEnumName" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="RoleType" ColumnName="RoleType" />
+          <ScalarProperty Name="Enable" ColumnName="Enable" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuthorityRoleInFunction">
+      <EntityTypeMapping TypeName="JKDataModel.AuthorityRoleInFunction">
+        <MappingFragment StoreEntitySet="AuthorityRoleInFunction">
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleGuid" ColumnName="RoleGuid" />
+          <ScalarProperty Name="FunctionGuid" ColumnName="FunctionGuid" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuthorityUserInRole">
+      <EntityTypeMapping TypeName="JKDataModel.AuthorityUserInRole">
+        <MappingFragment StoreEntitySet="AuthorityUserInRole">
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+          <ScalarProperty Name="RoleGuid" ColumnName="RoleGuid" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment">
+      <EntityTypeMapping TypeName="JKDataModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PaymentName" ColumnName="PaymentName" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAccount">
+      <EntityTypeMapping TypeName="JKDataModel.UserAccount">
+        <MappingFragment StoreEntitySet="UserAccount">
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+          <ScalarProperty Name="LuckTotal" ColumnName="LuckTotal" />
+          <ScalarProperty Name="AvatarImgUrl" ColumnName="AvatarImgUrl" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IsEmailValidated" ColumnName="IsEmailValidated" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+          <ScalarProperty Name="IsMobilePhoneValidated" ColumnName="IsMobilePhoneValidated" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CountVisited" ColumnName="CountVisited" />
+          <ScalarProperty Name="IPv4LastVisited" ColumnName="IPv4LastVisited" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+          <ScalarProperty Name="TimeLastVisited" ColumnName="TimeLastVisited" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAccountWechat">
+      <EntityTypeMapping TypeName="JKDataModel.UserAccountWechat">
+        <MappingFragment StoreEntitySet="UserAccountWechat">
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserAccountGuid" ColumnName="UserAccountGuid" />
+          <ScalarProperty Name="WechatOpenId" ColumnName="WechatOpenId" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="WechatNickName" ColumnName="WechatNickName" />
+          <ScalarProperty Name="WechatAvatarImgUrl" ColumnName="WechatAvatarImgUrl" />
+          <ScalarProperty Name="Privilege" ColumnName="Privilege" />
+          <ScalarProperty Name="Unionid" ColumnName="Unionid" />
+          <ScalarProperty Name="SessionKey" ColumnName="SessionKey" />
+          <ScalarProperty Name="RecommenderGuid" ColumnName="RecommenderGuid" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserLoginRecords">
+      <EntityTypeMapping TypeName="JKDataModel.UserLoginRecords">
+        <MappingFragment StoreEntitySet="UserLoginRecords">
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+          <ScalarProperty Name="Channel" ColumnName="Channel" />
+          <ScalarProperty Name="SessionTotal" ColumnName="SessionTotal" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="UserAgent" ColumnName="UserAgent" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserOperationRecords">
+      <EntityTypeMapping TypeName="JKDataModel.UserOperationRecords">
+        <MappingFragment StoreEntitySet="UserOperationRecords">
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WechatPayNotify">
+      <EntityTypeMapping TypeName="JKDataModel.WechatPayNotify">
+        <MappingFragment StoreEntitySet="WechatPayNotify">
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ReturnCode" ColumnName="ReturnCode" />
+          <ScalarProperty Name="ReturnMsg" ColumnName="ReturnMsg" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="MchId" ColumnName="MchId" />
+          <ScalarProperty Name="DeviceInfo" ColumnName="DeviceInfo" />
+          <ScalarProperty Name="NonceStr" ColumnName="NonceStr" />
+          <ScalarProperty Name="Sign" ColumnName="Sign" />
+          <ScalarProperty Name="SignType" ColumnName="SignType" />
+          <ScalarProperty Name="ResultCode" ColumnName="ResultCode" />
+          <ScalarProperty Name="ErrCode" ColumnName="ErrCode" />
+          <ScalarProperty Name="ErrCodeDes" ColumnName="ErrCodeDes" />
+          <ScalarProperty Name="OpenId" ColumnName="OpenId" />
+          <ScalarProperty Name="IsSubscribe" ColumnName="IsSubscribe" />
+          <ScalarProperty Name="TradeType" ColumnName="TradeType" />
+          <ScalarProperty Name="BankType" ColumnName="BankType" />
+          <ScalarProperty Name="TotalFee" ColumnName="TotalFee" />
+          <ScalarProperty Name="SettlementTotalFee" ColumnName="SettlementTotalFee" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="OutTradeNo" ColumnName="OutTradeNo" />
+          <ScalarProperty Name="Attach" ColumnName="Attach" />
+          <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WechatPayRecords">
+      <EntityTypeMapping TypeName="JKDataModel.WechatPayRecords">
+        <MappingFragment StoreEntitySet="WechatPayRecords">
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderGuid" ColumnName="OrderGuid" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+          <ScalarProperty Name="UserOpenId" ColumnName="UserOpenId" />
+          <ScalarProperty Name="SpbillCreateIP" ColumnName="SpbillCreateIP" />
+          <ScalarProperty Name="TotalFee" ColumnName="TotalFee" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="NonceStr" ColumnName="NonceStr" />
+          <ScalarProperty Name="TradeType" ColumnName="TradeType" />
+          <ScalarProperty Name="ReturnCode" ColumnName="ReturnCode" />
+          <ScalarProperty Name="ReturnMsg" ColumnName="ReturnMsg" />
+          <ScalarProperty Name="ResultCode" ColumnName="ResultCode" />
+          <ScalarProperty Name="ResultSign" ColumnName="ResultSign" />
+          <ScalarProperty Name="ErrCode" ColumnName="ErrCode" />
+          <ScalarProperty Name="ErrCodeDes" ColumnName="ErrCodeDes" />
+          <ScalarProperty Name="PrepayId" ColumnName="PrepayId" />
+          <ScalarProperty Name="CodeUrl" ColumnName="CodeUrl" />
+          <ScalarProperty Name="TimeUpdate" ColumnName="TimeUpdate" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WechatPayRefundNotify">
+      <EntityTypeMapping TypeName="JKDataModel.WechatPayRefundNotify">
+        <MappingFragment StoreEntitySet="WechatPayRefundNotify">
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ReturnCode" ColumnName="ReturnCode" />
+          <ScalarProperty Name="ReturnMsg" ColumnName="ReturnMsg" />
+          <ScalarProperty Name="Appid" ColumnName="Appid" />
+          <ScalarProperty Name="MchId" ColumnName="MchId" />
+          <ScalarProperty Name="NonceStr" ColumnName="NonceStr" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="ReqInfo" ColumnName="ReqInfo" />
+          <ScalarProperty Name="OutTradeNo" ColumnName="OutTradeNo" />
+          <ScalarProperty Name="RefundId" ColumnName="RefundId" />
+          <ScalarProperty Name="OutRefundNo" ColumnName="OutRefundNo" />
+          <ScalarProperty Name="TotalFee" ColumnName="TotalFee" />
+          <ScalarProperty Name="RefundFee" ColumnName="RefundFee" />
+          <ScalarProperty Name="RefundStatus" ColumnName="RefundStatus" />
+          <ScalarProperty Name="SuccessTime" ColumnName="SuccessTime" />
+          <ScalarProperty Name="RefundRecvAccout" ColumnName="RefundRecvAccout" />
+          <ScalarProperty Name="RefundAccount" ColumnName="RefundAccount" />
+          <ScalarProperty Name="RefundRequestSource" ColumnName="RefundRequestSource" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WechatPayRefundRecords">
+      <EntityTypeMapping TypeName="JKDataModel.WechatPayRefundRecords">
+        <MappingFragment StoreEntitySet="WechatPayRefundRecords">
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NonceStr" ColumnName="NonceStr" />
+          <ScalarProperty Name="Sign" ColumnName="Sign" />
+          <ScalarProperty Name="SignType" ColumnName="SignType" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="OutTradeNo" ColumnName="OutTradeNo" />
+          <ScalarProperty Name="OutRefundNo" ColumnName="OutRefundNo" />
+          <ScalarProperty Name="TotalFee" ColumnName="TotalFee" />
+          <ScalarProperty Name="RefundFee" ColumnName="RefundFee" />
+          <ScalarProperty Name="RefundFeeType" ColumnName="RefundFeeType" />
+          <ScalarProperty Name="RefundDesc" ColumnName="RefundDesc" />
+          <ScalarProperty Name="ReturnCode" ColumnName="ReturnCode" />
+          <ScalarProperty Name="ReturnMsg" ColumnName="ReturnMsg" />
+          <ScalarProperty Name="ResultCode" ColumnName="ResultCode" />
+          <ScalarProperty Name="ErrCode" ColumnName="ErrCode" />
+          <ScalarProperty Name="ErrCodeDes" ColumnName="ErrCodeDes" />
+          <ScalarProperty Name="Appid" ColumnName="Appid" />
+          <ScalarProperty Name="MchId" ColumnName="MchId" />
+          <ScalarProperty Name="RefundId" ColumnName="RefundId" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SmsRecords">
+      <EntityTypeMapping TypeName="JKDataModel.SmsRecords">
+        <MappingFragment StoreEntitySet="SmsRecords">
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+          <ScalarProperty Name="TimeUpdate" ColumnName="TimeUpdate" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="SmsType" ColumnName="SmsType" />
+          <ScalarProperty Name="ResultStatusCode" ColumnName="ResultStatusCode" />
+          <ScalarProperty Name="RadomCode" ColumnName="RadomCode" />
+          <ScalarProperty Name="IsValidated" ColumnName="IsValidated" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDeliveryAddress">
+      <EntityTypeMapping TypeName="JKDataModel.UserDeliveryAddress">
+        <MappingFragment StoreEntitySet="UserDeliveryAddress">
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="ReceiverName" ColumnName="ReceiverName" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

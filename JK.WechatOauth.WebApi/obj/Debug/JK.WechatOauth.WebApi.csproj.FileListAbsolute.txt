@@ -26,9 +26,11 @@ D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\roslyn\vbc.rsp
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\roslyn\VBCSCompiler.exe
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\roslyn\VBCSCompiler.exe.config
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\JK.WechatOauth.WebApi.dll.config
+D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\JKWechatOauthWebApi.xml
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\JK.WechatOauth.WebApi.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\JK.WechatOauth.WebApi.pdb
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\Antlr3.Runtime.dll
+D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\log4net.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\Microsoft.AI.Agent.Intercept.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\Microsoft.AI.DependencyCollector.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -39,6 +41,7 @@ D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\Microsoft.ApplicationInsig
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\Microsoft.Web.Infrastructure.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\Newtonsoft.Json.dll
+D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\Swashbuckle.Core.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\System.Net.Http.Formatting.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\System.Web.Helpers.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\System.Web.Http.dll
@@ -49,7 +52,9 @@ D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\System.Web.Razor.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\System.Web.WebPages.Deployment.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\System.Web.WebPages.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\System.Web.WebPages.Razor.dll
+D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\WebActivatorEx.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\WebGrease.dll
+D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\log4net.xml
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\Newtonsoft.Json.xml
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\System.Net.Http.Formatting.xml
@@ -78,11 +83,6 @@ D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\zh-Hans\System.Web.Razor.r
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\zh-Hans\System.Web.WebPages.resources.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\obj\Debug\JK.WechatOauth.WebApi.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\obj\Debug\JK.WechatOauth.WebApi.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\obj\Debug\JK.WechatOauth.WebApi.pdb
-D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\obj\Debug\JK.WechatOauth.WebApi.csprojResolveAssemblyReference.cache
-D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\JKWechatOauthWebApi.xml
-D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\log4net.dll
-D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\Swashbuckle.Core.dll
-D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\WebActivatorEx.dll
-D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\log4net.xml

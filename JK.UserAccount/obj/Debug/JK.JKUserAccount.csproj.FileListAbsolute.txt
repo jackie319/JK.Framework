@@ -1,4 +1,3 @@
-D:\Code\Github\JK.Framework\JK.UserAccount\obj\Debug\JK.JKUserAccount.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.UserAccount\bin\Debug\JK.JKUserAccount.dll.config
 D:\Code\Github\JK.Framework\JK.UserAccount\bin\Debug\JK.JKUserAccount.dll
 D:\Code\Github\JK.Framework\JK.UserAccount\bin\Debug\JK.JKUserAccount.pdb
@@ -25,5 +24,6 @@ D:\Code\Github\JK.Framework\JK.UserAccount\bin\Debug\Newtonsoft.Json.xml
 D:\Code\Github\JK.Framework\JK.UserAccount\bin\Debug\EntityFramework.xml
 D:\Code\Github\JK.Framework\JK.UserAccount\bin\Debug\Autofac.xml
 D:\Code\Github\JK.Framework\JK.UserAccount\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\Code\Github\JK.Framework\JK.UserAccount\obj\Debug\JK.JKUserAccount.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.UserAccount\obj\Debug\JK.JKUserAccount.dll
 D:\Code\Github\JK.Framework\JK.UserAccount\obj\Debug\JK.JKUserAccount.pdb

@@ -2,5 +2,6 @@ D:\Code\Github\JK.Framework\JK.Frameword.Oauth\bin\Debug\JK.Frameword.Oauth.dll
 D:\Code\Github\JK.Framework\JK.Frameword.Oauth\bin\Debug\JK.Frameword.Oauth.pdb
 D:\Code\Github\JK.Framework\JK.Frameword.Oauth\bin\Debug\Newtonsoft.Json.dll
 D:\Code\Github\JK.Framework\JK.Frameword.Oauth\bin\Debug\Newtonsoft.Json.xml
+D:\Code\Github\JK.Framework\JK.Frameword.Oauth\obj\Debug\JK.Frameword.Oauth.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.Frameword.Oauth\obj\Debug\JK.Frameword.Oauth.dll
 D:\Code\Github\JK.Framework\JK.Frameword.Oauth\obj\Debug\JK.Frameword.Oauth.pdb

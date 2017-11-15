@@ -8,11 +8,11 @@ namespace JK.PictureCenter.WebApi.Models
     public class PictureViewModel
     {
         /// <summary>
-        /// 提交的值
+        /// 图片的Guid(提交给接口保存)
         /// </summary>
-        public string PicUrl { get; set; }
+        public Guid Guid { get; set; }
         /// <summary>
-        /// 用于显示
+        /// 用于显示、预览
         /// </summary>
         public string HttpUrl { get; set; }
     }

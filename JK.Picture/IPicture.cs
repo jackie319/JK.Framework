@@ -9,7 +9,7 @@ namespace JK.Pictures
 {
     public interface IPicture
     {
-        void CreatedAdPic(Picture picture);
+        Picture CreatedAdPic(Picture picture);
         Picture Find(Guid pictureGuid);
     }
 }

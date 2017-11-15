@@ -1,4 +1,5 @@
-﻿using log4net.Config;
+﻿using log4net;
+using log4net.Config;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,6 +28,13 @@ namespace JK.WechatOauth.WebApi
         {
             var logCfg = new FileInfo(AppDomain.CurrentDomain.BaseDirectory + "log4net.config");
             XmlConfigurator.ConfigureAndWatch(logCfg);
+        }
+
+        protected void Application_error(object sender, EventArgs e)
+        {
+            HttpException error = (HttpException)Server.GetLastError();
+            var logger = LogManager.GetLogger(typeof(WebApiConfig));
+            logger.Error($"Application_error: {error.GetHttpCode()};{error.Message}");
         }
     }
 }

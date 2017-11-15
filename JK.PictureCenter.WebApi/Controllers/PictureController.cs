@@ -1,4 +1,6 @@
-﻿using JK.PictureCenter.WebApi.Models;
+﻿using JK.Data.Model;
+using JK.PictureCenter.WebApi.Models;
+using JK.Pictures;
 using log4net;
 using System;
 using System.Collections.Generic;
@@ -7,19 +9,26 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web.Configuration;
 using System.Web.Http;
 
 namespace JK.PictureCenter.WebApi.Controllers
 {
+    [RoutePrefix("Picture")]
     public class PictureController : ApiController
     {
-        private ILog _log = LogManager.GetLogger(typeof(PictureController));
-
+        private ILog _log;
+        private IPicture _Picture;
+        public PictureController(IPicture picture)
+        {
+            _Picture = picture;
+            _log = LogManager.GetLogger(typeof(PictureController));
+        }
         /// <summary>
         /// 图片上传
         /// </summary>
         /// <returns></returns>
-        [Route("")]
+        [Route("Upload")]
         [HttpPost]
         public async Task<PictureViewModel> PostFormData()
         {
@@ -29,9 +38,10 @@ namespace JK.PictureCenter.WebApi.Controllers
             {
                 throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
             }
-            string uploadUrl =  "ProductLibrary";//TODO:
+            string uploadUrl =WebConfigurationManager.AppSettings["UploadUrl"];
+            string pictureUrl = WebConfigurationManager.AppSettings["PictureUrl"];
 
-            string uploadCache =  "UploadCache";//TODO:
+            string uploadCache = uploadUrl+"UploadCache";
             PictureViewModel model = new PictureViewModel();
             //保存到临时目录
             var provider = new MultipartFormDataStreamProvider(uploadCache);
@@ -61,13 +71,27 @@ namespace JK.PictureCenter.WebApi.Controllers
             {
                 throw new ArgumentException("图片大小超过限制！");
             }
+
             string newfileName = Guid.NewGuid().ToString("") + ".jpg"; ;
             fileinfo.CopyTo(Path.Combine(uploadUrl, newfileName), true);
             fileinfo.Delete();
-            model.PicUrl = newfileName;
-            model.HttpUrl = ""+ newfileName;//TODO:
+       
 
+
+            var entity = new Picture();
+            entity.PictureUrl = newfileName;
+            var result=_Picture.CreatedAdPic(entity);
+
+            model.Guid = result.Guid;
+            model.HttpUrl = pictureUrl + result.Guid;
             return model;
+        }
+
+        [Route("")]
+        [HttpGet]
+        public void Detail(Guid pictureGuid)
+        {
+
         }
     }
 }

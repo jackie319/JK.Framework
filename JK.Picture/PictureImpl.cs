@@ -16,7 +16,7 @@ namespace JK.Pictures
             _PictureRepository = pictureRepository;
         }
 
-        public void CreatedAdPic(Picture picture)
+        public Picture CreatedAdPic(Picture picture)
         {
             picture.TimeCreated = DateTime.Now;
             picture.Guid = Guid.NewGuid();
@@ -24,6 +24,7 @@ namespace JK.Pictures
             picture.IsDeleted = false;
             picture.DisplayOrder = 0;
             _PictureRepository.Insert(picture);
+            return picture;
         }
 
         public Picture Find(Guid pictureGuid)

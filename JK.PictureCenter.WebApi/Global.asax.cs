@@ -30,7 +30,7 @@ namespace JK.PictureCenter.WebApi
         public static void RegisterAutofac()
         {
             string connectionStr = System.Web.Configuration.WebConfigurationManager.
-                ConnectionStrings["MMYEntities"].ConnectionString;
+                ConnectionStrings["JKDataEntities"].ConnectionString;
             RegisterApiAutofacForJK.RegisterApi(connectionStr, AutoFacRegister.RegisterAutofacDelegate);
         }
         private static void InitLog4Net()

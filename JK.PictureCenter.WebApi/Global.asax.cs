@@ -1,5 +1,7 @@
-﻿using System;
+﻿using log4net.Config;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -18,6 +20,13 @@ namespace JK.PictureCenter.WebApi
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            InitLog4Net();
+        }
+
+        private static void InitLog4Net()
+        {
+            var logCfg = new FileInfo(AppDomain.CurrentDomain.BaseDirectory + "log4net.config");
+            XmlConfigurator.ConfigureAndWatch(logCfg);
         }
     }
 }

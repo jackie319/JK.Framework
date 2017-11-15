@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Configuration;
 using System.Web.Http;
@@ -38,10 +39,10 @@ namespace JK.PictureCenter.WebApi.Controllers
             {
                 throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
             }
-            string uploadUrl =WebConfigurationManager.AppSettings["UploadUrl"];
+            string uploadUrl = WebConfigurationManager.AppSettings["UploadUrl"];
             string pictureUrl = WebConfigurationManager.AppSettings["PictureUrl"];
 
-            string uploadCache = uploadUrl+"UploadCache";
+            string uploadCache = uploadUrl + "UploadCache";
             PictureViewModel model = new PictureViewModel();
             //保存到临时目录
             var provider = new MultipartFormDataStreamProvider(uploadCache);
@@ -75,13 +76,11 @@ namespace JK.PictureCenter.WebApi.Controllers
             string newfileName = Guid.NewGuid().ToString("") + ".jpg"; ;
             fileinfo.CopyTo(Path.Combine(uploadUrl, newfileName), true);
             fileinfo.Delete();
-       
-
-
+            //保存到数据库
             var entity = new Picture();
             entity.PictureUrl = newfileName;
-            var result=_Picture.CreatedAdPic(entity);
-
+            var result = _Picture.CreatedAdPic(entity);
+            //返回
             model.Guid = result.Guid;
             model.HttpUrl = pictureUrl + result.Guid;
             return model;
@@ -89,9 +88,23 @@ namespace JK.PictureCenter.WebApi.Controllers
 
         [Route("")]
         [HttpGet]
-        public void Detail(Guid pictureGuid)
+        public HttpResponseMessage Detail(Guid pictureGuid)
         {
-
+            var picture = _Picture.Find(pictureGuid);
+            string uploadUrl = WebConfigurationManager.AppSettings["UploadUrl"];
+            var imgPath = uploadUrl + picture.PictureUrl;
+            //从图片中读取byte
+            var imgByte = File.ReadAllBytes(imgPath);
+            //从图片中读取流
+            var imgStream = new MemoryStream(File.ReadAllBytes(imgPath));
+            var resp = new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StreamContent(imgStream)
+                //或者
+                //Content = new ByteArrayContent(imgByte)
+            };
+            resp.Content.Headers.ContentType = new MediaTypeHeaderValue("image/jpg");
+            return resp;
         }
     }
 }

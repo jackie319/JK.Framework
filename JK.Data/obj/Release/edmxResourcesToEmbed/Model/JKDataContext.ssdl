@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JKDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AuthorityFunction">
+    <Key>
+      <PropertyRef Name="FunctionGuid" />
+    </Key>
+    <Property Name="FunctionGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ParentGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FunctionName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="ActionUrl" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FunctionType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PlatForm" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Enable" Type="bit" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AuthorityRole">
+    <Key>
+      <PropertyRef Name="RoleGuid" />
+    </Key>
+    <Property Name="RoleGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="RoleEnumName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoleType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Enable" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AuthorityRoleInFunction">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FunctionGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AuthorityUserInRole">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PaymentType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Picture">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PictureUrl" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SmsRecords">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsValidated" Type="bit" Nullable="false" />
+    <Property Name="RadomCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ResultStatusCode" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="SmsType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="TimeUpdate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserAccount">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Money" Type="int" Nullable="false" />
+    <Property Name="LuckTotal" Type="int" Nullable="false" />
+    <Property Name="AvatarImgUrl" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Birthday" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="IsEmailValidated" Type="bit" Nullable="false" />
+    <Property Name="MobilePhone" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="IsMobilePhoneValidated" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CountVisited" Type="int" Nullable="false" />
+    <Property Name="IPv4LastVisited" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="UserType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="TimeLastVisited" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserAccountWechat">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserAccountGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="WechatOpenId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Province" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sex" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WechatNickName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WechatAvatarImgUrl" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Privilege" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Unionid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SessionKey" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecommenderGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserDeliveryAddress">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Region" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Street" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReceiverName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="IsDefault" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserLoginRecords">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Channel" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SessionTotal" Type="int" Nullable="false" />
+    <Property Name="IP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserAgent" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserOperationRecords">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WechatPayNotify">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReturnCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReturnMsg" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="AppId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MchId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DeviceInfo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NonceStr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sign" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SignType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ResultCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ErrCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ErrCodeDes" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="OpenId" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="IsSubscribe" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TradeType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BankType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TotalFee" Type="int" Nullable="false" />
+    <Property Name="SettlementTotalFee" Type="int" Nullable="false" />
+    <Property Name="TransactionId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OutTradeNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Attach" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="TimeEnd" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WechatPayRecords">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OrderNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserOpenId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SpbillCreateIP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TotalFee" Type="int" Nullable="false" />
+    <Property Name="Body" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ProductId" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="NonceStr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TradeType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReturnCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReturnMsg" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ResultCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ResultSign" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ErrCode" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="ErrCodeDes" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="PrepayId" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="CodeUrl" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="TimeUpdate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WechatPayRefundNotify">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReturnCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReturnMsg" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Appid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MchId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NonceStr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TransactionId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReqInfo" Type="nvarchar" MaxLength="2000" Nullable="false" />
+    <Property Name="OutTradeNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RefundId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OutRefundNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TotalFee" Type="int" Nullable="false" />
+    <Property Name="RefundFee" Type="int" Nullable="false" />
+    <Property Name="RefundStatus" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SuccessTime" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RefundRecvAccout" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="RefundAccount" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RefundRequestSource" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WechatPayRefundRecords">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NonceStr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sign" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SignType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TransactionId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OutTradeNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OutRefundNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TotalFee" Type="int" Nullable="false" />
+    <Property Name="RefundFee" Type="int" Nullable="false" />
+    <Property Name="RefundFeeType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RefundDesc" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ReturnCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReturnMsg" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="ResultCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ErrCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ErrCodeDes" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Appid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MchId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RefundId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_RoleInFunction_Function">
+    <End Role="AuthorityFunction" Type="Self.AuthorityFunction" Multiplicity="1" />
+    <End Role="AuthorityRoleInFunction" Type="Self.AuthorityRoleInFunction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorityFunction">
+        <PropertyRef Name="FunctionGuid" />
+      </Principal>
+      <Dependent Role="AuthorityRoleInFunction">
+        <PropertyRef Name="FunctionGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleInFunction_Role">
+    <End Role="AuthorityRole" Type="Self.AuthorityRole" Multiplicity="1" />
+    <End Role="AuthorityRoleInFunction" Type="Self.AuthorityRoleInFunction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorityRole">
+        <PropertyRef Name="RoleGuid" />
+      </Principal>
+      <Dependent Role="AuthorityRoleInFunction">
+        <PropertyRef Name="RoleGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserAccountWechat_UserAccount">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="UserAccountWechat" Type="Self.UserAccountWechat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="UserAccountWechat">
+        <PropertyRef Name="UserAccountGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDeliveryAddress_UserAccount">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="UserDeliveryAddress" Type="Self.UserDeliveryAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="UserDeliveryAddress">
+        <PropertyRef Name="UserGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInRole_Role">
+    <End Role="AuthorityRole" Type="Self.AuthorityRole" Multiplicity="1" />
+    <End Role="AuthorityUserInRole" Type="Self.AuthorityUserInRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorityRole">
+        <PropertyRef Name="RoleGuid" />
+      </Principal>
+      <Dependent Role="AuthorityUserInRole">
+        <PropertyRef Name="RoleGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserOperationRecords_UserAccount">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="UserOperationRecords" Type="Self.UserOperationRecords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="UserOperationRecords">
+        <PropertyRef Name="UserGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="JKDataModelStoreContainer">
+    <EntitySet Name="AuthorityFunction" EntityType="Self.AuthorityFunction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuthorityRole" EntityType="Self.AuthorityRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuthorityRoleInFunction" EntityType="Self.AuthorityRoleInFunction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuthorityUserInRole" EntityType="Self.AuthorityUserInRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SmsRecords" EntityType="Self.SmsRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAccountWechat" EntityType="Self.UserAccountWechat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserDeliveryAddress" EntityType="Self.UserDeliveryAddress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserLoginRecords" EntityType="Self.UserLoginRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserOperationRecords" EntityType="Self.UserOperationRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WechatPayNotify" EntityType="Self.WechatPayNotify" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WechatPayRecords" EntityType="Self.WechatPayRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WechatPayRefundNotify" EntityType="Self.WechatPayRefundNotify" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WechatPayRefundRecords" EntityType="Self.WechatPayRefundRecords" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_RoleInFunction_Function" Association="Self.FK_RoleInFunction_Function">
+      <End Role="AuthorityFunction" EntitySet="AuthorityFunction" />
+      <End Role="AuthorityRoleInFunction" EntitySet="AuthorityRoleInFunction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleInFunction_Role" Association="Self.FK_RoleInFunction_Role">
+      <End Role="AuthorityRole" EntitySet="AuthorityRole" />
+      <End Role="AuthorityRoleInFunction" EntitySet="AuthorityRoleInFunction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserAccountWechat_UserAccount" Association="Self.FK_UserAccountWechat_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="UserAccountWechat" EntitySet="UserAccountWechat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDeliveryAddress_UserAccount" Association="Self.FK_UserDeliveryAddress_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="UserDeliveryAddress" EntitySet="UserDeliveryAddress" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInRole_Role" Association="Self.FK_UserInRole_Role">
+      <End Role="AuthorityRole" EntitySet="AuthorityRole" />
+      <End Role="AuthorityUserInRole" EntitySet="AuthorityUserInRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserOperationRecords_UserAccount" Association="Self.FK_UserOperationRecords_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="UserOperationRecords" EntitySet="UserOperationRecords" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

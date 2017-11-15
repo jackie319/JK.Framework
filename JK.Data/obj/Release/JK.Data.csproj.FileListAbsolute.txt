@@ -1,0 +1,12 @@
+D:\Code\Github\JK.Framework\JK.Data\bin\Release\JK.Data.dll.config
+D:\Code\Github\JK.Framework\JK.Data\bin\Release\JK.Data.dll
+D:\Code\Github\JK.Framework\JK.Data\bin\Release\JK.Data.pdb
+D:\Code\Github\JK.Framework\JK.Data\bin\Release\EntityFramework.dll
+D:\Code\Github\JK.Framework\JK.Data\bin\Release\EntityFramework.SqlServer.dll
+D:\Code\Github\JK.Framework\JK.Data\bin\Release\EntityFramework.xml
+D:\Code\Github\JK.Framework\JK.Data\bin\Release\EntityFramework.SqlServer.xml
+D:\Code\Github\JK.Framework\JK.Data\bin\Release\zh-Hans\EntityFramework.resources.dll
+D:\Code\Github\JK.Framework\JK.Data\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\Code\Github\JK.Framework\JK.Data\obj\Release\JK.Data.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Data\obj\Release\JK.Data.dll
+D:\Code\Github\JK.Framework\JK.Data\obj\Release\JK.Data.pdb

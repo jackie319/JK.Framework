@@ -86,7 +86,7 @@ namespace JK.PictureCenter.WebApi.Controllers
             return model;
         }
 
-        [Route("")]
+        [Route("{pictureGuid}")]
         [HttpGet]
         public HttpResponseMessage Detail(Guid pictureGuid)
         {

@@ -112,3 +112,6 @@ D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\zh-Hans\System.Web.WebPa
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\zh-Hans\EntityFramework.resources.dll
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\obj\Debug\JK.PictureCenter.WebApi.dll
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\obj\Debug\JK.PictureCenter.WebApi.pdb
+D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\System.Web.Cors.dll
+D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\System.Web.Http.Cors.dll
+D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\System.Web.Http.Cors.xml

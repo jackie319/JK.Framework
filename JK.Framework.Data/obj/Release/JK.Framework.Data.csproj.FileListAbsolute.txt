@@ -41,8 +41,6 @@ D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\JK.Framework.Data.dll.
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\JK.Framework.Data.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\JK.Framework.Data.pdb
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\Autofac.dll
-D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\Autofac.Integration.Mvc.dll
-D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\Autofac.Integration.WebApi.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\EntityFramework.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\EntityFramework.SqlServer.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\JK.Framework.Core.dll
@@ -59,8 +57,6 @@ D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.WebPages.dl
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.WebPages.Razor.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\JK.Framework.Core.pdb
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\Autofac.xml
-D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\Autofac.Integration.Mvc.xml
-D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\Autofac.Integration.WebApi.xml
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\EntityFramework.xml
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\EntityFramework.SqlServer.xml
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\Newtonsoft.Json.xml
@@ -76,3 +72,8 @@ D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\System.Web.WebPages.Ra
 D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Release\JK.Framework.Data.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Release\JK.Framework.Data.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Release\JK.Framework.Data.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\zh-Hans\EntityFramework.resources.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\zh-Hans\System.Net.Http.Formatting.resources.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\zh-Hans\System.Web.Http.resources.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Release\zh-Hans\System.Web.Http.WebHost.resources.dll

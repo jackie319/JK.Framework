@@ -94,3 +94,5 @@ D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\System.Web.WebPages.Razo
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\zh-Hans\System.Net.Http.Formatting.resources.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\zh-Hans\System.Web.Http.resources.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\zh-Hans\System.Web.Http.WebHost.resources.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll

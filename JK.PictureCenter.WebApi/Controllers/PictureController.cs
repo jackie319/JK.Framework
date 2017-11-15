@@ -29,9 +29,9 @@ namespace JK.PictureCenter.WebApi.Controllers
             {
                 throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
             }
-            string uploadUrl = AppSetting.Instance().UploadUrl + "ProductLibrary";
+            string uploadUrl =  "ProductLibrary";//TODO:
 
-            string uploadCache = AppSetting.Instance().UploadUrl + "UploadCache";
+            string uploadCache =  "UploadCache";//TODO:
             PictureViewModel model = new PictureViewModel();
             //保存到临时目录
             var provider = new MultipartFormDataStreamProvider(uploadCache);
@@ -65,7 +65,7 @@ namespace JK.PictureCenter.WebApi.Controllers
             fileinfo.CopyTo(Path.Combine(uploadUrl, newfileName), true);
             fileinfo.Delete();
             model.PicUrl = newfileName;
-            model.HttpUrl = AppSetting.Instance().ProductLibraryPictureUrl + newfileName;
+            model.HttpUrl = ""+ newfileName;//TODO:
 
             return model;
         }

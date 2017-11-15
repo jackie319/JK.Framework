@@ -348,6 +348,7 @@
       <End Role="UserAccount" EntitySet="UserAccount" />
       <End Role="UserDeliveryAddress" EntitySet="UserDeliveryAddress" />
     </AssociationSet>
+    <EntitySet Name="Picture" EntityType="JKDataModel.Picture" />
   </EntityContainer>
   <EntityType Name="SmsRecords">
     <Key>
@@ -393,4 +394,16 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Picture">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PictureUrl" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
 </Schema>

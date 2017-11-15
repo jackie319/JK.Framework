@@ -1,4 +1,5 @@
-﻿using log4net.Config;
+﻿using JK.Framework.API;
+using log4net.Config;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,9 +21,17 @@ namespace JK.PictureCenter.WebApi
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            RegisterAutofac();
             InitLog4Net();
         }
 
+        public static void RegisterAutofac()
+        {
+            string connectionStr = System.Web.Configuration.WebConfigurationManager.
+                ConnectionStrings["MMYEntities"].ConnectionString;
+
+            RegisterApiAutofacForJK.RegisterApi(connectionStr, AutoFacRegister.RegisterAutofacDelegate);
+        }
         private static void InitLog4Net()
         {
             var logCfg = new FileInfo(AppDomain.CurrentDomain.BaseDirectory + "log4net.config");

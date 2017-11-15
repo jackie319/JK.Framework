@@ -1,0 +1,15 @@
+D:\Code\Github\JK.Framework\JK.Picture\bin\Debug\JK.Pictures.dll
+D:\Code\Github\JK.Framework\JK.Picture\bin\Debug\JK.Pictures.pdb
+D:\Code\Github\JK.Framework\JK.Picture\bin\Debug\JK.Data.dll
+D:\Code\Github\JK.Framework\JK.Picture\bin\Debug\JK.Framework.Core.dll
+D:\Code\Github\JK.Framework\JK.Picture\bin\Debug\EntityFramework.dll
+D:\Code\Github\JK.Framework\JK.Picture\bin\Debug\Autofac.dll
+D:\Code\Github\JK.Framework\JK.Picture\bin\Debug\JK.Data.pdb
+D:\Code\Github\JK.Framework\JK.Picture\bin\Debug\JK.Data.dll.config
+D:\Code\Github\JK.Framework\JK.Picture\bin\Debug\JK.Framework.Core.pdb
+D:\Code\Github\JK.Framework\JK.Picture\bin\Debug\EntityFramework.xml
+D:\Code\Github\JK.Framework\JK.Picture\bin\Debug\Autofac.xml
+D:\Code\Github\JK.Framework\JK.Picture\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\Code\Github\JK.Framework\JK.Picture\obj\Debug\JK.Pictures.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Picture\obj\Debug\JK.Pictures.dll
+D:\Code\Github\JK.Framework\JK.Picture\obj\Debug\JK.Pictures.pdb

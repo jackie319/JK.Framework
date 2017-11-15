@@ -45,3 +45,4 @@ D:\Code\Github\JK.Framework\JK.Framework.API\bin\Debug\System.Web.Http.WebHost.x
 D:\Code\Github\JK.Framework\JK.Framework.API\bin\Debug\zh-Hans\System.Net.Http.Formatting.resources.dll
 D:\Code\Github\JK.Framework\JK.Framework.API\bin\Debug\zh-Hans\System.Web.Http.resources.dll
 D:\Code\Github\JK.Framework\JK.Framework.API\bin\Debug\zh-Hans\System.Web.Http.WebHost.resources.dll
+D:\Code\Github\JK.Framework\JK.Framework.API\bin\Debug\zh-Hans\EntityFramework.resources.dll

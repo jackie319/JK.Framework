@@ -62,6 +62,18 @@
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
     <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
   </EntityType>
+  <EntityType Name="Picture">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PictureUrl" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
   <EntityType Name="SmsRecords">
     <Key>
       <PropertyRef Name="Guid" />
@@ -346,6 +358,7 @@
     <EntitySet Name="AuthorityRoleInFunction" EntityType="Self.AuthorityRoleInFunction" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AuthorityUserInRole" EntityType="Self.AuthorityUserInRole" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SmsRecords" EntityType="Self.SmsRecords" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserAccountWechat" EntityType="Self.UserAccountWechat" Schema="dbo" store:Type="Tables" />

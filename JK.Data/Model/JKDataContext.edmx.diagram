@@ -26,6 +26,7 @@
         <EntityTypeShape EntityType="JKDataModel.SmsRecords" Width="1.5" PointX="0.75" PointY="12.75" />
         <EntityTypeShape EntityType="JKDataModel.UserDeliveryAddress" Width="1.5" PointX="3" PointY="18" />
         <AssociationConnector Association="JKDataModel.FK_UserDeliveryAddress_UserAccount" />
+        <EntityTypeShape EntityType="JKDataModel.Picture" Width="1.5" PointX="12.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

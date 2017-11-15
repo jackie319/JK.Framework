@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Web;
 using System.Web.Http;
 
-namespace JK.PictureCenter.WebApi
+namespace JK.PictureCenter.WebApi.App_Start
 {
     public class AutoFacRegister
     {

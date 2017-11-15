@@ -1,4 +1,5 @@
 ﻿using JK.Framework.API;
+using JK.PictureCenter.WebApi.App_Start;
 using log4net;
 using log4net.Config;
 using System;
@@ -30,7 +31,6 @@ namespace JK.PictureCenter.WebApi
         {
             string connectionStr = System.Web.Configuration.WebConfigurationManager.
                 ConnectionStrings["MMYEntities"].ConnectionString;
-
             RegisterApiAutofacForJK.RegisterApi(connectionStr, AutoFacRegister.RegisterAutofacDelegate);
         }
         private static void InitLog4Net()

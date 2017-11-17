@@ -1,0 +1,15 @@
+D:\Code\Github\JK.Framework\JK.CommonApi.Domain\bin\Debug\JK.CommonApi.Domain.dll
+D:\Code\Github\JK.Framework\JK.CommonApi.Domain\bin\Debug\JK.CommonApi.Domain.pdb
+D:\Code\Github\JK.Framework\JK.CommonApi.Domain\bin\Debug\JK.Data.dll
+D:\Code\Github\JK.Framework\JK.CommonApi.Domain\bin\Debug\JK.Framework.Core.dll
+D:\Code\Github\JK.Framework\JK.CommonApi.Domain\bin\Debug\EntityFramework.dll
+D:\Code\Github\JK.Framework\JK.CommonApi.Domain\bin\Debug\Autofac.dll
+D:\Code\Github\JK.Framework\JK.CommonApi.Domain\bin\Debug\JK.Data.pdb
+D:\Code\Github\JK.Framework\JK.CommonApi.Domain\bin\Debug\JK.Data.dll.config
+D:\Code\Github\JK.Framework\JK.CommonApi.Domain\bin\Debug\JK.Framework.Core.pdb
+D:\Code\Github\JK.Framework\JK.CommonApi.Domain\bin\Debug\EntityFramework.xml
+D:\Code\Github\JK.Framework\JK.CommonApi.Domain\bin\Debug\Autofac.xml
+D:\Code\Github\JK.Framework\JK.CommonApi.Domain\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\Code\Github\JK.Framework\JK.CommonApi.Domain\obj\Debug\JK.CommonApi.Domain.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.CommonApi.Domain\obj\Debug\JK.CommonApi.Domain.dll
+D:\Code\Github\JK.Framework\JK.CommonApi.Domain\obj\Debug\JK.CommonApi.Domain.pdb

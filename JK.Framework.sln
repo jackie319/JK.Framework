@@ -62,6 +62,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonApi", "CommonApi", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.CommonApi.WebApi", "JK.CommonApi.WebApi\JK.CommonApi.WebApi.csproj", "{5DD573F1-5A66-442A-BBE3-0BCE8DAAC69C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JK.CommonApi.Domain", "JK.CommonApi.Domain\JK.CommonApi.Domain.csproj", "{E2DA3D98-60A6-4381-A2AD-0C4F9ABCD785}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -140,6 +142,10 @@ Global
 		{5DD573F1-5A66-442A-BBE3-0BCE8DAAC69C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DD573F1-5A66-442A-BBE3-0BCE8DAAC69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DD573F1-5A66-442A-BBE3-0BCE8DAAC69C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2DA3D98-60A6-4381-A2AD-0C4F9ABCD785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2DA3D98-60A6-4381-A2AD-0C4F9ABCD785}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2DA3D98-60A6-4381-A2AD-0C4F9ABCD785}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2DA3D98-60A6-4381-A2AD-0C4F9ABCD785}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -164,5 +170,6 @@ Global
 		{262CF2AD-E208-48B0-A45B-F6C769D170A8} = {99242DE1-A084-4C69-B3E0-0D2C3D5ED570}
 		{67621AF3-7E08-4D19-9662-C8BA89DB9013} = {95B72FB8-CD79-4CED-9571-6D94EF2ADEA8}
 		{5DD573F1-5A66-442A-BBE3-0BCE8DAAC69C} = {67621AF3-7E08-4D19-9662-C8BA89DB9013}
+		{E2DA3D98-60A6-4381-A2AD-0C4F9ABCD785} = {67621AF3-7E08-4D19-9662-C8BA89DB9013}
 	EndGlobalSection
 EndGlobal

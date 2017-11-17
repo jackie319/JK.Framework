@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppSetting.cs" />
     <Compile Include="enum\SmsTypeEnum.cs" />
     <Compile Include="enum\UserTypeEnum.cs" />
     <Compile Include="IServices\ISms.cs" />

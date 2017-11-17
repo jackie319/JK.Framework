@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autofac\RegisterApiAutofacForJK.cs" />
+    <Compile Include="Controller\BaseApiController.cs" />
     <Compile Include="Filter\ApiGlobalExceptioinFilter.cs" />
     <Compile Include="Filter\ApiSessionAuthorizeAttribute.cs" />
     <Compile Include="Filter\ApiValidationFilter.cs" />

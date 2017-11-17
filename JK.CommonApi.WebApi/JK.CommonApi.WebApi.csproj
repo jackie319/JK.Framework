@@ -205,11 +205,16 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\WxLoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserAccount\LogInViewModel.cs" />
+    <Compile Include="Models\UserAccount\RegisterViewModel.cs" />
+    <Compile Include="Models\UserAccount\WxLoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -268,7 +273,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -286,9 +290,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\JK.Authority\JK.Authority.csproj">
+      <Project>{0C31DDB3-FD7B-455E-BDDC-415E1798A326}</Project>
+      <Name>JK.Authority</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JK.CommonApi.Domain\JK.CommonApi.Domain.csproj">
       <Project>{E2DA3D98-60A6-4381-A2AD-0C4F9ABCD785}</Project>
       <Name>JK.CommonApi.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JK.Data\JK.Data.csproj">
+      <Project>{5004705F-F7BB-4165-8DF3-ED420D01C666}</Project>
+      <Name>JK.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\JK.Framework.API\JK.Framework.API.csproj">
       <Project>{5D62A6D4-9579-45C9-AD39-592776FBB6C6}</Project>

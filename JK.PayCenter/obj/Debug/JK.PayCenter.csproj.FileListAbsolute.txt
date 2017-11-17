@@ -2,3 +2,4 @@ D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.PayCenter.dll
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.PayCenter.pdb
 D:\Code\Github\JK.Framework\JK.PayCenter\obj\Debug\JK.PayCenter.dll
 D:\Code\Github\JK.Framework\JK.PayCenter\obj\Debug\JK.PayCenter.pdb
+D:\Code\Github\JK.Framework\JK.PayCenter\obj\Debug\JK.PayCenter.csprojResolveAssemblyReference.cache

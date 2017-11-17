@@ -10,9 +10,7 @@ namespace JK.CommonApi.WebApi.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
-            return View();
+            return Redirect("~/apis/index");
         }
     }
 }

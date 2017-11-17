@@ -129,3 +129,5 @@ D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\zh-Hans\System.Web.WebPages.
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\zh-Hans\EntityFramework.resources.dll
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\obj\Debug\JK.CommonApi.WebApi.dll
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\obj\Debug\JK.CommonApi.WebApi.pdb
+D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\JK.Authority.dll
+D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\JK.Authority.pdb

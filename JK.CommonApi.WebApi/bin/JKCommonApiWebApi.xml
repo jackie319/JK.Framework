@@ -481,12 +481,69 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.AccountController.SubmitLogin(JK.CommonApi.WebApi.Models.UserAccount.LogInViewModel)">
+            <summary>
+            登录
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.AccountController.SendCode(System.String)">
+            <summary>
+            发送注册验证码
+            </summary>
+            <param name="phone"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.AccountController.Register(JK.CommonApi.WebApi.Models.UserAccount.RegisterViewModel)">
+            <summary>
+            用户注册
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.AccountController.Logout">
+            <summary>
+            退出登录
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:JK.CommonApi.WebApi.WebApiApplication.Application_error(System.Object,System.EventArgs)">
             <summary>
             全局异常额外处理
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.UserAccount.LogInViewModel.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.UserAccount.LogInViewModel.PasswordMd5">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.UserAccount.RegisterViewModel.MobilePhone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.UserAccount.RegisterViewModel.PasswordMd5">
+            <summary>
+            MD5密码
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.UserAccount.RegisterViewModel.SmsCode">
+            <summary>
+            短信验证码
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.UserAccount.WxLoginViewModel.UserGuid">
+            <summary>
+            推荐人Guid
+            </summary>
         </member>
     </members>
 </doc>

@@ -212,6 +212,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserAccount\ChangePasswordViewModel.cs" />
+    <Compile Include="Models\UserAccount\GetBackPasswrodViewModel.cs" />
     <Compile Include="Models\UserAccount\LogInViewModel.cs" />
     <Compile Include="Models\UserAccount\RegisterViewModel.cs" />
     <Compile Include="Models\UserAccount\WxLoginViewModel.cs" />

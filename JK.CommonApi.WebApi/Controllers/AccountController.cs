@@ -143,6 +143,73 @@ namespace JK.CommonApi.WebApi.Controllers
 
 
         /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [Route("ChangePwd")]
+        [ApiSessionAuthorize]
+        [HttpPost]
+        [ApiValidationFilter]
+        public ApiResultModel ChangePassword(ChangePasswordViewModel model)
+        {
+            if (!model.NewPasswordMd5Confirm.Equals(model.NewPasswordMd5))
+                return this.ResultApiError("俩次输入的密码不匹配");
+            try
+            {
+                var mmyUser = (UserModel)HttpContext.Current.User;
+                _userAccount.ChangePwd(mmyUser.UserName, model.OldPasswordMd5, model.NewPasswordMd5);
+            }
+            catch (CommonException ex)
+            {
+                return this.ResultApiError(ex.Message);
+            }
+            return this.ResultApiSuccess();
+        }
+
+        /// <summary>
+        /// 发送找回密码验证码
+        /// </summary>
+        /// <param name="phone"></param>
+        /// <returns></returns>
+        [Route("sendcodeBack")]
+        [HttpGet]
+        public ApiResultModel SendCodeBack(string phone)
+        {
+            _sms.SendCode(phone, SmsTypeEnum.GetBackPwd, "找回密码验证码");
+            return this.ResultApiSuccess();
+        }
+
+        /// <summary>
+        /// 找回密码(通过手机验证码重设密码)
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [Route("GetBackPassword")]
+        [HttpPost]
+        [ApiValidationFilter]
+        public ApiResultModel GetBackPassword([FromBody]GetBackPasswrodViewModel model)
+        {
+            try
+            {
+                var entity = _sms.FindRecord(model.MobilePhone, SmsTypeEnum.GetBackPwd);
+                if (entity == null) return this.ResultApiError("验证码错误");
+                if (!model.SmsCode.Equals(entity.RadomCode))
+                {
+                    return this.ResultApiError("验证码错误");
+                }
+                _userAccount.GetBackPassword(model.MobilePhone, model.PasswordMd5, model.SmsCode);
+                _sms.Validate(entity.Guid);
+            }
+            catch (CommonException ex)
+            {
+                return this.ResultApiError(ex.Message);
+            }
+            return this.ResultApiSuccess();
+        }
+
+
+        /// <summary>
         /// 退出登录
         /// </summary>
         /// <returns></returns>

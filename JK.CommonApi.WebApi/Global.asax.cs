@@ -33,7 +33,7 @@ namespace JK.CommonApi.WebApi
         public static void RegisterAutofac()
         {
             string connectionStr = System.Web.Configuration.WebConfigurationManager.
-                ConnectionStrings["FXJLEntities"].ConnectionString;
+                ConnectionStrings["JKDataEntities"].ConnectionString;
 
             RegisterApiAutofacForJK.RegisterApi(connectionStr, AutoFacRegister.RegisterAutofacDelegate);
         }

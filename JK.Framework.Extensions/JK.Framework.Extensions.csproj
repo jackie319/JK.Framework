@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="CustomerLoginResults.cs" />
     <Compile Include="DateTimeHelper.cs" />
+    <Compile Include="Draw\LotteryDraw.cs" />
     <Compile Include="Encryption\AES.cs" />
     <Compile Include="Encryption\Base64.cs" />
     <Compile Include="ImportAndExport\Excel.cs" />

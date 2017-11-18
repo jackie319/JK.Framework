@@ -41,6 +41,8 @@ namespace JK.Framework.Extensions.Draw
             }
             //prizeTotal应小于total 否则必中
 
+            box.ToOutOfOrder();//乱序
+
             //种子精确到百纳秒级别
             Random r = new Random(BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0));
             int num = r.Next(1, total);
@@ -69,4 +71,6 @@ namespace JK.Framework.Extensions.Draw
         /// </summary>
         public int WinningRate { get; set; }
     }
+
+    
 }

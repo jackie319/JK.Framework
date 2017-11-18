@@ -12,13 +12,15 @@ namespace JK.Framework.Extensions.Draw
    public class LotteryDraw
     {
 
-      /// <summary>
-      /// 活动本身没有中奖率，奖品才有中奖率
-      /// 返回中奖奖品Guid（空为不中奖）
-      /// 得到中奖奖品Guid后去数据库比对当前奖品有没有发放完。如果发放完则改为未中奖。
-      /// 每次都是独立事件。没必要那么精确
-      /// </summary>
-      /// <returns></returns>
+        /// <summary>
+        /// 活动本身没有中奖率，奖品才有中奖率
+        /// 返回中奖奖品Guid（空为不中奖）
+        /// 得到中奖奖品Guid后去数据库比对当前奖品有没有发放完。如果发放完则改为未中奖。
+        /// 每次都是独立事件。没必要那么精确
+        /// WinningRate 不能无限大，否则内存溢出。
+        /// prizeTotal应小于total 否则必中
+        /// </summary>
+        /// <returns></returns>
         public Guid Draw()
         {
             int total = 10000;//抽奖活动总基数，动态读取
@@ -30,12 +32,15 @@ namespace JK.Framework.Extensions.Draw
             {
                 prizeTotal += item.WinningRate;
 
+                if (item.WinningRate > 100000) throw new ArgumentException("建议重新配置抽奖参数");
                 //中奖几率为几就往盒子里装几个奖品
                 for (int i = 0; i < item.WinningRate; i++)
                 {
                     box.Add(item.PrizeGuid);
                 }
             }
+            //prizeTotal应小于total 否则必中
+
             //种子精确到百纳秒级别
             Random r = new Random(BitConverter.ToInt32(Guid.NewGuid().ToByteArray(), 0));
             int num = r.Next(1, total);
@@ -60,6 +65,7 @@ namespace JK.Framework.Extensions.Draw
 
         /// <summary>
         /// 中奖率（抽奖活动总基数分之n，及 WinningRate/total ）
+        /// WinningRate 不能无限大，否则内存溢出。
         /// </summary>
         public int WinningRate { get; set; }
     }

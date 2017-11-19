@@ -502,6 +502,27 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.AccountController.ChangePassword(JK.CommonApi.WebApi.Models.UserAccount.ChangePasswordViewModel)">
+            <summary>
+            修改密码
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.AccountController.SendCodeBack(System.String)">
+            <summary>
+            发送找回密码验证码
+            </summary>
+            <param name="phone"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.AccountController.GetBackPassword(JK.CommonApi.WebApi.Models.UserAccount.GetBackPasswrodViewModel)">
+            <summary>
+            找回密码(通过手机验证码重设密码)
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="M:JK.CommonApi.WebApi.Controllers.AccountController.Logout">
             <summary>
             退出登录
@@ -514,6 +535,21 @@
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.UserAccount.GetBackPasswrodViewModel.PasswordMd5">
+            <summary>
+            新密码
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.UserAccount.GetBackPasswrodViewModel.SmsCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.UserAccount.GetBackPasswrodViewModel.MobilePhone">
+            <summary>
+            手机号
+            </summary>
         </member>
         <member name="P:JK.CommonApi.WebApi.Models.UserAccount.LogInViewModel.UserName">
             <summary>

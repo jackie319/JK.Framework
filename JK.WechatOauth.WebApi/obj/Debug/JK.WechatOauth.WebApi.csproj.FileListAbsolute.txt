@@ -83,6 +83,6 @@ D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\zh-Hans\System.Web.Razor.r
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\zh-Hans\System.Web.WebPages.resources.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
-D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\obj\Debug\JK.WechatOauth.WebApi.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\obj\Debug\JK.WechatOauth.WebApi.dll
 D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\obj\Debug\JK.WechatOauth.WebApi.pdb
+D:\Code\Github\JK.Framework\JK.WechatOauth.WebApi\obj\Debug\JK.WechatOauth.WebApi.csprojResolveAssemblyReference.cache

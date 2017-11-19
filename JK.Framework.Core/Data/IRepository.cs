@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -63,5 +64,10 @@ namespace JK.Framework.Core.Data
         /// Gets a table with "no tracking" enabled (EF feature) Use it only when you load record(s) only for read-only operations
         /// </summary>
         IQueryable<T> TableNoTracking { get; }
+
+        IQueryable<T> Where(Expression<Func<T, bool>> exp);
+        IQueryable<T> WherePage(Expression<Func<T, bool>> exp,QueryBase query);
+        IQueryable<T> Where(Expression<Func<T, bool>> exp, IList<OrderExpressionStruct> structList);
+        IQueryable<T> WherePage(Expression<Func<T, bool>> exp, IList<OrderExpressionStruct> structList, QueryBase query);
     }
 }

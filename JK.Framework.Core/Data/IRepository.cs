@@ -66,8 +66,8 @@ namespace JK.Framework.Core.Data
         IQueryable<T> TableNoTracking { get; }
 
         IQueryable<T> Where(Expression<Func<T, bool>> exp);
-        IQueryable<T> WherePage(Expression<Func<T, bool>> exp,QueryBase query);
+        IQueryable<T> WherePage(Expression<Func<T, bool>> exp,QueryBase query,out int total);
         IQueryable<T> Where(Expression<Func<T, bool>> exp, IList<OrderExpressionStruct> structList);
-        IQueryable<T> WherePage(Expression<Func<T, bool>> exp, IList<OrderExpressionStruct> structList, QueryBase query);
+        IQueryable<T> WherePage(Expression<Func<T, bool>> exp, IList<OrderExpressionStruct> structList, QueryBase query,out int total);
     }
 }

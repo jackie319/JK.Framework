@@ -204,9 +204,11 @@ namespace JK.Framework.Data
            return  Table.WhereBy(exp);
         }
 
-        public IQueryable<T> WherePage(Expression<Func<T, bool>> exp, QueryBase query)
+        public IQueryable<T> WherePage(Expression<Func<T, bool>> exp, QueryBase query,out int total)
         {
-            return Table.WhereBy(exp).Skip(query.Skip).Take(query.Take);
+            var queryAll = Table.WhereBy(exp);
+            total = queryAll.Count();
+            return queryAll.Skip(query.Skip).Take(query.Take);
         }
 
         public IQueryable<T> Where(Expression<Func<T, bool>> exp, IList<OrderExpressionStruct> structList)
@@ -214,9 +216,11 @@ namespace JK.Framework.Data
             return Table.WhereBy(exp).OrderBy(structList);
         }
 
-        public IQueryable<T> WherePage(Expression<Func<T, bool>> exp, IList<OrderExpressionStruct> structList, QueryBase query)
+        public IQueryable<T> WherePage(Expression<Func<T, bool>> exp, IList<OrderExpressionStruct> structList, QueryBase query,out int total)
         {
-            return Table.WhereBy(exp).OrderBy(structList).Skip(query.Skip).Take(query.Take);
+            var queryAll = Table.WhereBy(exp);
+            total = queryAll.Count();
+            return queryAll.OrderBy(structList).Skip(query.Skip).Take(query.Take);
         }
         #endregion
 

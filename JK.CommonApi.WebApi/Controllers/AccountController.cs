@@ -47,6 +47,7 @@ namespace JK.CommonApi.WebApi.Controllers
         [HttpPost]
         [Route("login")]
         [ApiValidationFilter]
+       [AllowAnonymous]
         public ApiResultModel SubmitLogin([FromBody]LogInViewModel model)
         {
             try
@@ -106,6 +107,7 @@ namespace JK.CommonApi.WebApi.Controllers
         /// <returns></returns>
         [Route("sendcode")]
         [HttpGet]
+        [AllowAnonymous]
         public ApiResultModel SendCode(string phone)
         {
             _sms.SendCode(phone, SmsTypeEnum.Registe, "注册验证码");
@@ -121,6 +123,7 @@ namespace JK.CommonApi.WebApi.Controllers
         [Route("register")]
         [HttpPost]
         [ApiValidationFilter]
+        [AllowAnonymous]
         public ApiResultModel Register([FromBody]RegisterViewModel model)
         {
             try
@@ -174,6 +177,7 @@ namespace JK.CommonApi.WebApi.Controllers
         /// <returns></returns>
         [Route("sendcodeBack")]
         [HttpGet]
+        [AllowAnonymous]
         public ApiResultModel SendCodeBack(string phone)
         {
             _sms.SendCode(phone, SmsTypeEnum.GetBackPwd, "找回密码验证码");
@@ -188,6 +192,7 @@ namespace JK.CommonApi.WebApi.Controllers
         [Route("GetBackPassword")]
         [HttpPost]
         [ApiValidationFilter]
+        [AllowAnonymous]
         public ApiResultModel GetBackPassword([FromBody]GetBackPasswrodViewModel model)
         {
             try

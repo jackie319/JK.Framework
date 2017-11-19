@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JK.Framework.Core.Expression
+namespace JK.Framework.Core
 {
     /// <summary>
     ///  <summary>

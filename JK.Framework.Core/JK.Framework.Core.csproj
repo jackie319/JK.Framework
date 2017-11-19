@@ -55,6 +55,9 @@
     <Compile Include="Config\JKConfigHandler.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="CommonException.cs" />
+    <Compile Include="Expression\EntityOrderExpression.cs" />
+    <Compile Include="Expression\OrderExpression.cs" />
+    <Compile Include="Expression\OrderExpressionStruct.cs" />
     <Compile Include="Infrastructure\DependencyManagement\ContainerManager.cs" />
     <Compile Include="Infrastructure\DependencyManagement\IDependencyRegistrar.cs" />
     <Compile Include="IPagedList.cs" />

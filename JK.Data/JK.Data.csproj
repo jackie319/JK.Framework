@@ -61,6 +61,9 @@
     <Compile Include="Model\AuthorityUserInRole.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\FXJLSetting.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\JKDataContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,10 +79,58 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>JKDataContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\LotteryActivity.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LotteryHistory.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LotteryJackpot.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LotteryPrize.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Order.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OrderEvaluation.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OrderEvaluationPic.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OrderEvalutionReply.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OrderProduct.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Payment.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Picture.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Product.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductAlbum.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductCategory.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductClassification.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductParameters.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductPurchaseRecords.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductSupplier.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\SmsRecords.cs">
@@ -98,6 +149,9 @@
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\UserOperationRecords.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserShoppingCart.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\WechatPayNotify.cs">

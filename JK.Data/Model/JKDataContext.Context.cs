@@ -41,5 +41,23 @@ namespace JK.Data.Model
         public virtual DbSet<SmsRecords> SmsRecords { get; set; }
         public virtual DbSet<UserDeliveryAddress> UserDeliveryAddress { get; set; }
         public virtual DbSet<Picture> Picture { get; set; }
+        public virtual DbSet<FXJLSetting> FXJLSetting { get; set; }
+        public virtual DbSet<LotteryActivity> LotteryActivity { get; set; }
+        public virtual DbSet<LotteryHistory> LotteryHistory { get; set; }
+        public virtual DbSet<LotteryJackpot> LotteryJackpot { get; set; }
+        public virtual DbSet<LotteryPrize> LotteryPrize { get; set; }
+        public virtual DbSet<Order> Order { get; set; }
+        public virtual DbSet<OrderEvaluation> OrderEvaluation { get; set; }
+        public virtual DbSet<OrderEvaluationPic> OrderEvaluationPic { get; set; }
+        public virtual DbSet<OrderEvalutionReply> OrderEvalutionReply { get; set; }
+        public virtual DbSet<OrderProduct> OrderProduct { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<ProductAlbum> ProductAlbum { get; set; }
+        public virtual DbSet<ProductCategory> ProductCategory { get; set; }
+        public virtual DbSet<ProductClassification> ProductClassification { get; set; }
+        public virtual DbSet<ProductParameters> ProductParameters { get; set; }
+        public virtual DbSet<ProductPurchaseRecords> ProductPurchaseRecords { get; set; }
+        public virtual DbSet<ProductSupplier> ProductSupplier { get; set; }
+        public virtual DbSet<UserShoppingCart> UserShoppingCart { get; set; }
     }
 }

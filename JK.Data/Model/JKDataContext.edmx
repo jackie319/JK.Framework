@@ -56,6 +56,169 @@
           <Property Name="RoleGuid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
+        <EntityType Name="FXJLSetting">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IsNeedCheck" Type="bit" Nullable="false" />
+          <Property Name="PublishLimitDay" Type="int" Nullable="false" />
+          <Property Name="PublishLimitMonth" Type="int" Nullable="false" />
+          <Property Name="ShareLimitDay" Type="int" Nullable="false" />
+          <Property Name="NoMoneyMaskTotal" Type="int" Nullable="false" />
+          <Property Name="MoneyToLuckTime" Type="int" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LotteryActivity">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="BaseNumber" Type="int" Nullable="false" />
+          <Property Name="DefaultPic" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Detail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BeginTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="EndTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LotteryHistory">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PrizeActivityGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsWenner" Type="bit" Nullable="false" />
+          <Property Name="PrizeGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LotteryJackpot">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Total" Type="int" Nullable="false" />
+          <Property Name="TimeUpdate" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LotteryPrize">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PrizeActivityGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PrizeType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrizeName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Money" Type="int" Nullable="false" />
+          <Property Name="TotalNum" Type="int" Nullable="false" />
+          <Property Name="WinningRate" Type="int" Nullable="false" />
+          <Property Name="DefaultPic" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Detail" Type="nvarchar" MaxLength="2000" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrderAmount" Type="int" Nullable="false" />
+          <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserNickName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DeliveryAddressGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Region" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Street" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ReceiverName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DeliveryAddress" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="ShippingGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ShipperName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LogisticsCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ShippingRemark" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="OrderRemark" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PaymentType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrderStatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PayTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="DeliveryTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="FinishedTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="IsEvaluated" Type="bit" Nullable="false" />
+          <Property Name="StoreGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderEvaluation">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ClassificationGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ClassificationName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserNickName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DescriptionOfGoodGrade" Type="int" Nullable="false" />
+          <Property Name="LogisticsGrade" Type="int" Nullable="false" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="IsSystemEvaluated" Type="bit" Nullable="false" />
+          <Property Name="EvaluationContent" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="IsDisplay" Type="bit" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderEvaluationPic">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EvaluationGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ImageGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderEvalutionReply">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EvaluationGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Replier" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ReplyContent" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="IsSystem" Type="bit" Nullable="false" />
+          <Property Name="IsDisplay" Type="bit" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderProduct">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OrderGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="DefaultPic" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ClassificationGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ClassificationName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ProductPrice" Type="int" Nullable="false" />
+          <Property Name="PromotionPrice" Type="int" Nullable="false" />
+          <Property Name="ProductNumber" Type="int" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
         <EntityType Name="Payment">
           <Key>
             <PropertyRef Name="Guid" />
@@ -77,6 +240,129 @@
           <Property Name="DisplayOrder" Type="int" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
           <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CategoryGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductNumber" Type="int" Nullable="false" />
+          <Property Name="ProductNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DefaultPic" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="SaleTitle" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="SaleSubTitle" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="PromotionPrice" Type="int" Nullable="false" />
+          <Property Name="ProductDetail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProductRemark" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsSpecialOffer" Type="bit" Nullable="false" />
+          <Property Name="IsRecommended" Type="bit" Nullable="false" />
+          <Property Name="IsAd" Type="bit" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="ImaginaryNumber" Type="int" Nullable="false" />
+          <Property Name="VisitedTotal" Type="int" Nullable="false" />
+          <Property Name="SoldTotal" Type="int" Nullable="false" />
+          <Property Name="EvaluationToTal" Type="int" Nullable="false" />
+          <Property Name="TimeOnShelf" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="TimeOffShelf" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductAlbum">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ImageGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductCategory">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ParentGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="IsDisplay" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductClassification">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Number" Type="int" Nullable="false" />
+          <Property Name="Grams" Type="decimal" Precision="18" Scale="1" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="PromotionPrice" Type="int" Nullable="false" />
+          <Property Name="PicUrl" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductParameters">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TimeToMarket" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Material" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MosaicMaterial" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PlaceOfOrigin" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Style" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ApplyPeople" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SalesChannels" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductPurchaseRecords">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ClassificationGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ClassificationName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Grams" Type="int" Nullable="false" />
+          <Property Name="BuyingPrice" Type="int" Nullable="false" />
+          <Property Name="SupplierGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="OperatorName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OperatorGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Purchaser" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Number" Type="int" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductSupplier">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="SupplierPhone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SupplierAddress" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
           <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
         <EntityType Name="SmsRecords">
@@ -176,6 +462,20 @@
           <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserShoppingCart">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ClassificationGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductNum" Type="int" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
           <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
         <EntityType Name="WechatPayNotify">
@@ -285,6 +585,126 @@
           <Property Name="RefundId" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
+        <Association Name="FK_LotteryHistory_PrizeActivity">
+          <End Role="LotteryActivity" Type="Self.LotteryActivity" Multiplicity="1" />
+          <End Role="LotteryHistory" Type="Self.LotteryHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LotteryActivity">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="LotteryHistory">
+              <PropertyRef Name="PrizeActivityGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LotteryHistory_UserAccount">
+          <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+          <End Role="LotteryHistory" Type="Self.LotteryHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="LotteryHistory">
+              <PropertyRef Name="UserGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderEvaluation_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="OrderEvaluation" Type="Self.OrderEvaluation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="OrderEvaluation">
+              <PropertyRef Name="OrderGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderEvaluationPic_OrderEvaluation">
+          <End Role="OrderEvaluation" Type="Self.OrderEvaluation" Multiplicity="1" />
+          <End Role="OrderEvaluationPic" Type="Self.OrderEvaluationPic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderEvaluation">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="OrderEvaluationPic">
+              <PropertyRef Name="EvaluationGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderProduct_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="OrderProduct" Type="Self.OrderProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="OrderProduct">
+              <PropertyRef Name="OrderGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prize_PrizeActivity">
+          <End Role="LotteryActivity" Type="Self.LotteryActivity" Multiplicity="1" />
+          <End Role="LotteryPrize" Type="Self.LotteryPrize" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LotteryActivity">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="LotteryPrize">
+              <PropertyRef Name="PrizeActivityGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductAlbum_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductAlbum" Type="Self.ProductAlbum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="ProductAlbum">
+              <PropertyRef Name="ProductGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductClassification_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductClassification" Type="Self.ProductClassification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="ProductClassification">
+              <PropertyRef Name="ProductGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductParameters_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductParameters" Type="Self.ProductParameters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="ProductParameters">
+              <PropertyRef Name="ProductGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductPurchaseRecords_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductPurchaseRecords" Type="Self.ProductPurchaseRecords" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="ProductPurchaseRecords">
+              <PropertyRef Name="ProductGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_RoleInFunction_Function">
           <End Role="AuthorityFunction" Type="Self.AuthorityFunction" Multiplicity="1" />
           <End Role="AuthorityRoleInFunction" Type="Self.AuthorityRoleInFunction" Multiplicity="*" />
@@ -357,23 +777,93 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_UserShoppingCart_UserAccount">
+          <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+          <End Role="UserShoppingCart" Type="Self.UserShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="UserShoppingCart">
+              <PropertyRef Name="UserGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="JKDataModelStoreContainer">
           <EntitySet Name="AuthorityFunction" EntityType="Self.AuthorityFunction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AuthorityRole" EntityType="Self.AuthorityRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AuthorityRoleInFunction" EntityType="Self.AuthorityRoleInFunction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AuthorityUserInRole" EntityType="Self.AuthorityUserInRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FXJLSetting" EntityType="Self.FXJLSetting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LotteryActivity" EntityType="Self.LotteryActivity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LotteryHistory" EntityType="Self.LotteryHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LotteryJackpot" EntityType="Self.LotteryJackpot" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LotteryPrize" EntityType="Self.LotteryPrize" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderEvaluation" EntityType="Self.OrderEvaluation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderEvaluationPic" EntityType="Self.OrderEvaluationPic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderEvalutionReply" EntityType="Self.OrderEvalutionReply" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderProduct" EntityType="Self.OrderProduct" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductAlbum" EntityType="Self.ProductAlbum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductClassification" EntityType="Self.ProductClassification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductParameters" EntityType="Self.ProductParameters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductPurchaseRecords" EntityType="Self.ProductPurchaseRecords" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductSupplier" EntityType="Self.ProductSupplier" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SmsRecords" EntityType="Self.SmsRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserAccountWechat" EntityType="Self.UserAccountWechat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserDeliveryAddress" EntityType="Self.UserDeliveryAddress" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLoginRecords" EntityType="Self.UserLoginRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserOperationRecords" EntityType="Self.UserOperationRecords" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserShoppingCart" EntityType="Self.UserShoppingCart" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WechatPayNotify" EntityType="Self.WechatPayNotify" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WechatPayRecords" EntityType="Self.WechatPayRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WechatPayRefundNotify" EntityType="Self.WechatPayRefundNotify" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WechatPayRefundRecords" EntityType="Self.WechatPayRefundRecords" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_LotteryHistory_PrizeActivity" Association="Self.FK_LotteryHistory_PrizeActivity">
+            <End Role="LotteryActivity" EntitySet="LotteryActivity" />
+            <End Role="LotteryHistory" EntitySet="LotteryHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LotteryHistory_UserAccount" Association="Self.FK_LotteryHistory_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="LotteryHistory" EntitySet="LotteryHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderEvaluation_Order" Association="Self.FK_OrderEvaluation_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderEvaluation" EntitySet="OrderEvaluation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderEvaluationPic_OrderEvaluation" Association="Self.FK_OrderEvaluationPic_OrderEvaluation">
+            <End Role="OrderEvaluation" EntitySet="OrderEvaluation" />
+            <End Role="OrderEvaluationPic" EntitySet="OrderEvaluationPic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderProduct_Order" Association="Self.FK_OrderProduct_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderProduct" EntitySet="OrderProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prize_PrizeActivity" Association="Self.FK_Prize_PrizeActivity">
+            <End Role="LotteryActivity" EntitySet="LotteryActivity" />
+            <End Role="LotteryPrize" EntitySet="LotteryPrize" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductAlbum_Product" Association="Self.FK_ProductAlbum_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductAlbum" EntitySet="ProductAlbum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductClassification_Product" Association="Self.FK_ProductClassification_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductClassification" EntitySet="ProductClassification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductParameters_Product" Association="Self.FK_ProductParameters_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductParameters" EntitySet="ProductParameters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductPurchaseRecords_Product" Association="Self.FK_ProductPurchaseRecords_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductPurchaseRecords" EntitySet="ProductPurchaseRecords" />
+          </AssociationSet>
           <AssociationSet Name="FK_RoleInFunction_Function" Association="Self.FK_RoleInFunction_Function">
             <End Role="AuthorityFunction" EntitySet="AuthorityFunction" />
             <End Role="AuthorityRoleInFunction" EntitySet="AuthorityRoleInFunction" />
@@ -397,6 +887,10 @@
           <AssociationSet Name="FK_UserOperationRecords_UserAccount" Association="Self.FK_UserOperationRecords_UserAccount">
             <End Role="UserAccount" EntitySet="UserAccount" />
             <End Role="UserOperationRecords" EntitySet="UserOperationRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserShoppingCart_UserAccount" Association="Self.FK_UserShoppingCart_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="UserShoppingCart" EntitySet="UserShoppingCart" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -499,6 +993,8 @@
           <NavigationProperty Name="UserAccountWechat" Relationship="Self.FK_UserAccountWechat_UserAccount" FromRole="UserAccount" ToRole="UserAccountWechat" />
           <NavigationProperty Name="UserOperationRecords" Relationship="Self.FK_UserOperationRecords_UserAccount" FromRole="UserAccount" ToRole="UserOperationRecords" />
           <NavigationProperty Name="UserDeliveryAddress" Relationship="JKDataModel.FK_UserDeliveryAddress_UserAccount" FromRole="UserAccount" ToRole="UserDeliveryAddress" />
+          <NavigationProperty Name="LotteryHistory" Relationship="JKDataModel.FK_LotteryHistory_UserAccount" FromRole="UserAccount" ToRole="LotteryHistory" />
+          <NavigationProperty Name="UserShoppingCart" Relationship="JKDataModel.FK_UserShoppingCart_UserAccount" FromRole="UserAccount" ToRole="UserShoppingCart" />
         </EntityType>
         <EntityType Name="UserAccountWechat">
           <Key>
@@ -752,6 +1248,68 @@
             <End Role="UserDeliveryAddress" EntitySet="UserDeliveryAddress" />
           </AssociationSet>
           <EntitySet Name="Picture" EntityType="JKDataModel.Picture" />
+          <EntitySet Name="FXJLSetting" EntityType="JKDataModel.FXJLSetting" />
+          <EntitySet Name="LotteryActivity" EntityType="JKDataModel.LotteryActivity" />
+          <EntitySet Name="LotteryHistory" EntityType="JKDataModel.LotteryHistory" />
+          <EntitySet Name="LotteryJackpot" EntityType="JKDataModel.LotteryJackpot" />
+          <EntitySet Name="LotteryPrize" EntityType="JKDataModel.LotteryPrize" />
+          <EntitySet Name="Order" EntityType="JKDataModel.Order" />
+          <EntitySet Name="OrderEvaluation" EntityType="JKDataModel.OrderEvaluation" />
+          <EntitySet Name="OrderEvaluationPic" EntityType="JKDataModel.OrderEvaluationPic" />
+          <EntitySet Name="OrderEvalutionReply" EntityType="JKDataModel.OrderEvalutionReply" />
+          <EntitySet Name="OrderProduct" EntityType="JKDataModel.OrderProduct" />
+          <EntitySet Name="Product" EntityType="JKDataModel.Product" />
+          <EntitySet Name="ProductAlbum" EntityType="JKDataModel.ProductAlbum" />
+          <EntitySet Name="ProductCategory" EntityType="JKDataModel.ProductCategory" />
+          <EntitySet Name="ProductClassification" EntityType="JKDataModel.ProductClassification" />
+          <EntitySet Name="ProductParameters" EntityType="JKDataModel.ProductParameters" />
+          <EntitySet Name="ProductPurchaseRecords" EntityType="JKDataModel.ProductPurchaseRecords" />
+          <EntitySet Name="ProductSupplier" EntityType="JKDataModel.ProductSupplier" />
+          <EntitySet Name="UserShoppingCart" EntityType="JKDataModel.UserShoppingCart" />
+          <AssociationSet Name="FK_LotteryHistory_PrizeActivity" Association="JKDataModel.FK_LotteryHistory_PrizeActivity">
+            <End Role="LotteryActivity" EntitySet="LotteryActivity" />
+            <End Role="LotteryHistory" EntitySet="LotteryHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Prize_PrizeActivity" Association="JKDataModel.FK_Prize_PrizeActivity">
+            <End Role="LotteryActivity" EntitySet="LotteryActivity" />
+            <End Role="LotteryPrize" EntitySet="LotteryPrize" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LotteryHistory_UserAccount" Association="JKDataModel.FK_LotteryHistory_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="LotteryHistory" EntitySet="LotteryHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderEvaluation_Order" Association="JKDataModel.FK_OrderEvaluation_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderEvaluation" EntitySet="OrderEvaluation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderProduct_Order" Association="JKDataModel.FK_OrderProduct_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderProduct" EntitySet="OrderProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderEvaluationPic_OrderEvaluation" Association="JKDataModel.FK_OrderEvaluationPic_OrderEvaluation">
+            <End Role="OrderEvaluation" EntitySet="OrderEvaluation" />
+            <End Role="OrderEvaluationPic" EntitySet="OrderEvaluationPic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductAlbum_Product" Association="JKDataModel.FK_ProductAlbum_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductAlbum" EntitySet="ProductAlbum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductClassification_Product" Association="JKDataModel.FK_ProductClassification_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductClassification" EntitySet="ProductClassification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductParameters_Product" Association="JKDataModel.FK_ProductParameters_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductParameters" EntitySet="ProductParameters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductPurchaseRecords_Product" Association="JKDataModel.FK_ProductPurchaseRecords_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductPurchaseRecords" EntitySet="ProductPurchaseRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserShoppingCart_UserAccount" Association="JKDataModel.FK_UserShoppingCart_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="UserShoppingCart" EntitySet="UserShoppingCart" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="SmsRecords">
           <Key>
@@ -809,6 +1367,458 @@
           <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
         </EntityType>
+        <EntityType Name="FXJLSetting">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsNeedCheck" Type="Boolean" Nullable="false" />
+          <Property Name="PublishLimitDay" Type="Int32" Nullable="false" />
+          <Property Name="PublishLimitMonth" Type="Int32" Nullable="false" />
+          <Property Name="ShareLimitDay" Type="Int32" Nullable="false" />
+          <Property Name="NoMoneyMaskTotal" Type="Int32" Nullable="false" />
+          <Property Name="MoneyToLuckTime" Type="Int32" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="LotteryActivity">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BaseNumber" Type="Int32" Nullable="false" />
+          <Property Name="DefaultPic" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Detail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BeginTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="LotteryHistory" Relationship="JKDataModel.FK_LotteryHistory_PrizeActivity" FromRole="LotteryActivity" ToRole="LotteryHistory" />
+          <NavigationProperty Name="LotteryPrize" Relationship="JKDataModel.FK_Prize_PrizeActivity" FromRole="LotteryActivity" ToRole="LotteryPrize" />
+        </EntityType>
+        <EntityType Name="LotteryHistory">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserGuid" Type="Guid" Nullable="false" />
+          <Property Name="PrizeActivityGuid" Type="Guid" Nullable="false" />
+          <Property Name="IsWenner" Type="Boolean" Nullable="false" />
+          <Property Name="PrizeGuid" Type="Guid" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="LotteryActivity" Relationship="JKDataModel.FK_LotteryHistory_PrizeActivity" FromRole="LotteryHistory" ToRole="LotteryActivity" />
+          <NavigationProperty Name="UserAccount" Relationship="JKDataModel.FK_LotteryHistory_UserAccount" FromRole="LotteryHistory" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="LotteryJackpot">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Total" Type="Int32" Nullable="false" />
+          <Property Name="TimeUpdate" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="LotteryPrize">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrizeActivityGuid" Type="Guid" Nullable="false" />
+          <Property Name="PrizeType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrizeName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Money" Type="Int32" Nullable="false" />
+          <Property Name="TotalNum" Type="Int32" Nullable="false" />
+          <Property Name="WinningRate" Type="Int32" Nullable="false" />
+          <Property Name="DefaultPic" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Detail" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="LotteryActivity" Relationship="JKDataModel.FK_Prize_PrizeActivity" FromRole="LotteryPrize" ToRole="LotteryActivity" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderAmount" Type="Int32" Nullable="false" />
+          <Property Name="UserGuid" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserNickName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryAddressGuid" Type="Guid" Nullable="false" />
+          <Property Name="Region" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Street" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReceiverName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveryAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingGuid" Type="Guid" Nullable="false" />
+          <Property Name="ShipperName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LogisticsCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ShippingRemark" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OrderRemark" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderStatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PayTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="DeliveryTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="FinishedTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="IsEvaluated" Type="Boolean" Nullable="false" />
+          <Property Name="StoreGuid" Type="Guid" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="OrderEvaluation" Relationship="JKDataModel.FK_OrderEvaluation_Order" FromRole="Order" ToRole="OrderEvaluation" />
+          <NavigationProperty Name="OrderProduct" Relationship="JKDataModel.FK_OrderProduct_Order" FromRole="Order" ToRole="OrderProduct" />
+        </EntityType>
+        <EntityType Name="OrderEvaluation">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderGuid" Type="Guid" Nullable="false" />
+          <Property Name="ProductGuid" Type="Guid" Nullable="false" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ClassificationGuid" Type="Guid" Nullable="false" />
+          <Property Name="ClassificationName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UserGuid" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserNickName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DescriptionOfGoodGrade" Type="Int32" Nullable="false" />
+          <Property Name="LogisticsGrade" Type="Int32" Nullable="false" />
+          <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+          <Property Name="IsSystemEvaluated" Type="Boolean" Nullable="false" />
+          <Property Name="EvaluationContent" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="IsDisplay" Type="Boolean" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Order" Relationship="JKDataModel.FK_OrderEvaluation_Order" FromRole="OrderEvaluation" ToRole="Order" />
+          <NavigationProperty Name="OrderEvaluationPic" Relationship="JKDataModel.FK_OrderEvaluationPic_OrderEvaluation" FromRole="OrderEvaluation" ToRole="OrderEvaluationPic" />
+        </EntityType>
+        <EntityType Name="OrderEvaluationPic">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EvaluationGuid" Type="Guid" Nullable="false" />
+          <Property Name="ImageGuid" Type="Guid" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="OrderEvaluation" Relationship="JKDataModel.FK_OrderEvaluationPic_OrderEvaluation" FromRole="OrderEvaluationPic" ToRole="OrderEvaluation" />
+        </EntityType>
+        <EntityType Name="OrderEvalutionReply">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EvaluationGuid" Type="Guid" Nullable="false" />
+          <Property Name="Replier" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReplyContent" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="IsSystem" Type="Boolean" Nullable="false" />
+          <Property Name="IsDisplay" Type="Boolean" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="OrderProduct">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="OrderGuid" Type="Guid" Nullable="false" />
+          <Property Name="ProductGuid" Type="Guid" Nullable="false" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DefaultPic" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ClassificationGuid" Type="Guid" Nullable="false" />
+          <Property Name="ClassificationName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ProductPrice" Type="Int32" Nullable="false" />
+          <Property Name="PromotionPrice" Type="Int32" Nullable="false" />
+          <Property Name="ProductNumber" Type="Int32" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Order" Relationship="JKDataModel.FK_OrderProduct_Order" FromRole="OrderProduct" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryGuid" Type="Guid" Nullable="false" />
+          <Property Name="ProductNumber" Type="Int32" Nullable="false" />
+          <Property Name="ProductNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DefaultPic" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SaleTitle" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SaleSubTitle" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="PromotionPrice" Type="Int32" Nullable="false" />
+          <Property Name="ProductDetail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductRemark" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsSpecialOffer" Type="Boolean" Nullable="false" />
+          <Property Name="IsRecommended" Type="Boolean" Nullable="false" />
+          <Property Name="IsAd" Type="Boolean" Nullable="false" />
+          <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="ImaginaryNumber" Type="Int32" Nullable="false" />
+          <Property Name="VisitedTotal" Type="Int32" Nullable="false" />
+          <Property Name="SoldTotal" Type="Int32" Nullable="false" />
+          <Property Name="EvaluationToTal" Type="Int32" Nullable="false" />
+          <Property Name="TimeOnShelf" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="TimeOffShelf" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="ProductAlbum" Relationship="JKDataModel.FK_ProductAlbum_Product" FromRole="Product" ToRole="ProductAlbum" />
+          <NavigationProperty Name="ProductClassification" Relationship="JKDataModel.FK_ProductClassification_Product" FromRole="Product" ToRole="ProductClassification" />
+          <NavigationProperty Name="ProductParameters" Relationship="JKDataModel.FK_ProductParameters_Product" FromRole="Product" ToRole="ProductParameters" />
+          <NavigationProperty Name="ProductPurchaseRecords" Relationship="JKDataModel.FK_ProductPurchaseRecords_Product" FromRole="Product" ToRole="ProductPurchaseRecords" />
+        </EntityType>
+        <EntityType Name="ProductAlbum">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductGuid" Type="Guid" Nullable="false" />
+          <Property Name="ImageGuid" Type="Guid" Nullable="false" />
+          <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Product" Relationship="JKDataModel.FK_ProductAlbum_Product" FromRole="ProductAlbum" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ProductCategory">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ParentGuid" Type="Guid" Nullable="false" />
+          <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+          <Property Name="IsDisplay" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="ProductClassification">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductGuid" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Number" Type="Int32" Nullable="false" />
+          <Property Name="Grams" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="PromotionPrice" Type="Int32" Nullable="false" />
+          <Property Name="PicUrl" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Product" Relationship="JKDataModel.FK_ProductClassification_Product" FromRole="ProductClassification" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ProductParameters">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductGuid" Type="Guid" Nullable="false" />
+          <Property Name="Brand" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TimeToMarket" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Material" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MosaicMaterial" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlaceOfOrigin" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Style" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ApplyPeople" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SalesChannels" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Product" Relationship="JKDataModel.FK_ProductParameters_Product" FromRole="ProductParameters" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ProductPurchaseRecords">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductGuid" Type="Guid" Nullable="false" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ClassificationGuid" Type="Guid" Nullable="false" />
+          <Property Name="ClassificationName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Grams" Type="Int32" Nullable="false" />
+          <Property Name="BuyingPrice" Type="Int32" Nullable="false" />
+          <Property Name="SupplierGuid" Type="Guid" Nullable="false" />
+          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OperatorName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OperatorGuid" Type="Guid" Nullable="false" />
+          <Property Name="Purchaser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Number" Type="Int32" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="Remark" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Product" Relationship="JKDataModel.FK_ProductPurchaseRecords_Product" FromRole="ProductPurchaseRecords" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ProductSupplier">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierPhone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SupplierAddress" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="UserShoppingCart">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserGuid" Type="Guid" Nullable="false" />
+          <Property Name="ProductGuid" Type="Guid" Nullable="false" />
+          <Property Name="ClassificationGuid" Type="Guid" Nullable="false" />
+          <Property Name="ProductNum" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="UserAccount" Relationship="JKDataModel.FK_UserShoppingCart_UserAccount" FromRole="UserShoppingCart" ToRole="UserAccount" />
+        </EntityType>
+        <Association Name="FK_LotteryHistory_PrizeActivity">
+          <End Type="JKDataModel.LotteryActivity" Role="LotteryActivity" Multiplicity="1" />
+          <End Type="JKDataModel.LotteryHistory" Role="LotteryHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LotteryActivity">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="LotteryHistory">
+              <PropertyRef Name="PrizeActivityGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Prize_PrizeActivity">
+          <End Type="JKDataModel.LotteryActivity" Role="LotteryActivity" Multiplicity="1" />
+          <End Type="JKDataModel.LotteryPrize" Role="LotteryPrize" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LotteryActivity">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="LotteryPrize">
+              <PropertyRef Name="PrizeActivityGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LotteryHistory_UserAccount">
+          <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="JKDataModel.LotteryHistory" Role="LotteryHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="LotteryHistory">
+              <PropertyRef Name="UserGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderEvaluation_Order">
+          <End Type="JKDataModel.Order" Role="Order" Multiplicity="1" />
+          <End Type="JKDataModel.OrderEvaluation" Role="OrderEvaluation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="OrderEvaluation">
+              <PropertyRef Name="OrderGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderProduct_Order">
+          <End Type="JKDataModel.Order" Role="Order" Multiplicity="1" />
+          <End Type="JKDataModel.OrderProduct" Role="OrderProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="OrderProduct">
+              <PropertyRef Name="OrderGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderEvaluationPic_OrderEvaluation">
+          <End Type="JKDataModel.OrderEvaluation" Role="OrderEvaluation" Multiplicity="1" />
+          <End Type="JKDataModel.OrderEvaluationPic" Role="OrderEvaluationPic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderEvaluation">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="OrderEvaluationPic">
+              <PropertyRef Name="EvaluationGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductAlbum_Product">
+          <End Type="JKDataModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="JKDataModel.ProductAlbum" Role="ProductAlbum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="ProductAlbum">
+              <PropertyRef Name="ProductGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductClassification_Product">
+          <End Type="JKDataModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="JKDataModel.ProductClassification" Role="ProductClassification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="ProductClassification">
+              <PropertyRef Name="ProductGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductParameters_Product">
+          <End Type="JKDataModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="JKDataModel.ProductParameters" Role="ProductParameters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="ProductParameters">
+              <PropertyRef Name="ProductGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductPurchaseRecords_Product">
+          <End Type="JKDataModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="JKDataModel.ProductPurchaseRecords" Role="ProductPurchaseRecords" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="ProductPurchaseRecords">
+              <PropertyRef Name="ProductGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserShoppingCart_UserAccount">
+          <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="JKDataModel.UserShoppingCart" Role="UserShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="UserShoppingCart">
+              <PropertyRef Name="UserGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1106,6 +2116,324 @@
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
                 <ScalarProperty Name="PictureUrl" ColumnName="PictureUrl" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FXJLSetting">
+            <EntityTypeMapping TypeName="JKDataModel.FXJLSetting">
+              <MappingFragment StoreEntitySet="FXJLSetting">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="MoneyToLuckTime" ColumnName="MoneyToLuckTime" />
+                <ScalarProperty Name="NoMoneyMaskTotal" ColumnName="NoMoneyMaskTotal" />
+                <ScalarProperty Name="ShareLimitDay" ColumnName="ShareLimitDay" />
+                <ScalarProperty Name="PublishLimitMonth" ColumnName="PublishLimitMonth" />
+                <ScalarProperty Name="PublishLimitDay" ColumnName="PublishLimitDay" />
+                <ScalarProperty Name="IsNeedCheck" ColumnName="IsNeedCheck" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LotteryActivity">
+            <EntityTypeMapping TypeName="JKDataModel.LotteryActivity">
+              <MappingFragment StoreEntitySet="LotteryActivity">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="DefaultPic" ColumnName="DefaultPic" />
+                <ScalarProperty Name="BaseNumber" ColumnName="BaseNumber" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LotteryHistory">
+            <EntityTypeMapping TypeName="JKDataModel.LotteryHistory">
+              <MappingFragment StoreEntitySet="LotteryHistory">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="PrizeGuid" ColumnName="PrizeGuid" />
+                <ScalarProperty Name="IsWenner" ColumnName="IsWenner" />
+                <ScalarProperty Name="PrizeActivityGuid" ColumnName="PrizeActivityGuid" />
+                <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LotteryJackpot">
+            <EntityTypeMapping TypeName="JKDataModel.LotteryJackpot">
+              <MappingFragment StoreEntitySet="LotteryJackpot">
+                <ScalarProperty Name="TimeUpdate" ColumnName="TimeUpdate" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LotteryPrize">
+            <EntityTypeMapping TypeName="JKDataModel.LotteryPrize">
+              <MappingFragment StoreEntitySet="LotteryPrize">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="DefaultPic" ColumnName="DefaultPic" />
+                <ScalarProperty Name="WinningRate" ColumnName="WinningRate" />
+                <ScalarProperty Name="TotalNum" ColumnName="TotalNum" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="PrizeName" ColumnName="PrizeName" />
+                <ScalarProperty Name="PrizeType" ColumnName="PrizeType" />
+                <ScalarProperty Name="PrizeActivityGuid" ColumnName="PrizeActivityGuid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order">
+            <EntityTypeMapping TypeName="JKDataModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="StoreGuid" ColumnName="StoreGuid" />
+                <ScalarProperty Name="IsEvaluated" ColumnName="IsEvaluated" />
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="FinishedTime" ColumnName="FinishedTime" />
+                <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+                <ScalarProperty Name="PayTime" ColumnName="PayTime" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+                <ScalarProperty Name="OrderRemark" ColumnName="OrderRemark" />
+                <ScalarProperty Name="ShippingRemark" ColumnName="ShippingRemark" />
+                <ScalarProperty Name="LogisticsCode" ColumnName="LogisticsCode" />
+                <ScalarProperty Name="ShipperName" ColumnName="ShipperName" />
+                <ScalarProperty Name="ShippingGuid" ColumnName="ShippingGuid" />
+                <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="ReceiverName" ColumnName="ReceiverName" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="DeliveryAddressGuid" ColumnName="DeliveryAddressGuid" />
+                <ScalarProperty Name="UserNickName" ColumnName="UserNickName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+                <ScalarProperty Name="OrderAmount" ColumnName="OrderAmount" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderEvaluation">
+            <EntityTypeMapping TypeName="JKDataModel.OrderEvaluation">
+              <MappingFragment StoreEntitySet="OrderEvaluation">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="IsDisplay" ColumnName="IsDisplay" />
+                <ScalarProperty Name="EvaluationContent" ColumnName="EvaluationContent" />
+                <ScalarProperty Name="IsSystemEvaluated" ColumnName="IsSystemEvaluated" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="LogisticsGrade" ColumnName="LogisticsGrade" />
+                <ScalarProperty Name="DescriptionOfGoodGrade" ColumnName="DescriptionOfGoodGrade" />
+                <ScalarProperty Name="UserNickName" ColumnName="UserNickName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+                <ScalarProperty Name="ClassificationName" ColumnName="ClassificationName" />
+                <ScalarProperty Name="ClassificationGuid" ColumnName="ClassificationGuid" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductGuid" ColumnName="ProductGuid" />
+                <ScalarProperty Name="OrderGuid" ColumnName="OrderGuid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderEvaluationPic">
+            <EntityTypeMapping TypeName="JKDataModel.OrderEvaluationPic">
+              <MappingFragment StoreEntitySet="OrderEvaluationPic">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="ImageGuid" ColumnName="ImageGuid" />
+                <ScalarProperty Name="EvaluationGuid" ColumnName="EvaluationGuid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderEvalutionReply">
+            <EntityTypeMapping TypeName="JKDataModel.OrderEvalutionReply">
+              <MappingFragment StoreEntitySet="OrderEvalutionReply">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="IsDisplay" ColumnName="IsDisplay" />
+                <ScalarProperty Name="IsSystem" ColumnName="IsSystem" />
+                <ScalarProperty Name="ReplyContent" ColumnName="ReplyContent" />
+                <ScalarProperty Name="Replier" ColumnName="Replier" />
+                <ScalarProperty Name="EvaluationGuid" ColumnName="EvaluationGuid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderProduct">
+            <EntityTypeMapping TypeName="JKDataModel.OrderProduct">
+              <MappingFragment StoreEntitySet="OrderProduct">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="ProductNumber" ColumnName="ProductNumber" />
+                <ScalarProperty Name="PromotionPrice" ColumnName="PromotionPrice" />
+                <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+                <ScalarProperty Name="ClassificationName" ColumnName="ClassificationName" />
+                <ScalarProperty Name="ClassificationGuid" ColumnName="ClassificationGuid" />
+                <ScalarProperty Name="DefaultPic" ColumnName="DefaultPic" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductGuid" ColumnName="ProductGuid" />
+                <ScalarProperty Name="OrderGuid" ColumnName="OrderGuid" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="JKDataModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="TimeOffShelf" ColumnName="TimeOffShelf" />
+                <ScalarProperty Name="TimeOnShelf" ColumnName="TimeOnShelf" />
+                <ScalarProperty Name="EvaluationToTal" ColumnName="EvaluationToTal" />
+                <ScalarProperty Name="SoldTotal" ColumnName="SoldTotal" />
+                <ScalarProperty Name="VisitedTotal" ColumnName="VisitedTotal" />
+                <ScalarProperty Name="ImaginaryNumber" ColumnName="ImaginaryNumber" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="IsAd" ColumnName="IsAd" />
+                <ScalarProperty Name="IsRecommended" ColumnName="IsRecommended" />
+                <ScalarProperty Name="IsSpecialOffer" ColumnName="IsSpecialOffer" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ProductRemark" ColumnName="ProductRemark" />
+                <ScalarProperty Name="ProductDetail" ColumnName="ProductDetail" />
+                <ScalarProperty Name="PromotionPrice" ColumnName="PromotionPrice" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="SaleSubTitle" ColumnName="SaleSubTitle" />
+                <ScalarProperty Name="SaleTitle" ColumnName="SaleTitle" />
+                <ScalarProperty Name="DefaultPic" ColumnName="DefaultPic" />
+                <ScalarProperty Name="ProductNo" ColumnName="ProductNo" />
+                <ScalarProperty Name="ProductNumber" ColumnName="ProductNumber" />
+                <ScalarProperty Name="CategoryGuid" ColumnName="CategoryGuid" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductAlbum">
+            <EntityTypeMapping TypeName="JKDataModel.ProductAlbum">
+              <MappingFragment StoreEntitySet="ProductAlbum">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="ImageGuid" ColumnName="ImageGuid" />
+                <ScalarProperty Name="ProductGuid" ColumnName="ProductGuid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductCategory">
+            <EntityTypeMapping TypeName="JKDataModel.ProductCategory">
+              <MappingFragment StoreEntitySet="ProductCategory">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsDisplay" ColumnName="IsDisplay" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="ParentGuid" ColumnName="ParentGuid" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductClassification">
+            <EntityTypeMapping TypeName="JKDataModel.ProductClassification">
+              <MappingFragment StoreEntitySet="ProductClassification">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="PicUrl" ColumnName="PicUrl" />
+                <ScalarProperty Name="PromotionPrice" ColumnName="PromotionPrice" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Grams" ColumnName="Grams" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProductGuid" ColumnName="ProductGuid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductParameters">
+            <EntityTypeMapping TypeName="JKDataModel.ProductParameters">
+              <MappingFragment StoreEntitySet="ProductParameters">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="SalesChannels" ColumnName="SalesChannels" />
+                <ScalarProperty Name="ApplyPeople" ColumnName="ApplyPeople" />
+                <ScalarProperty Name="Style" ColumnName="Style" />
+                <ScalarProperty Name="PlaceOfOrigin" ColumnName="PlaceOfOrigin" />
+                <ScalarProperty Name="MosaicMaterial" ColumnName="MosaicMaterial" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="TimeToMarket" ColumnName="TimeToMarket" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="ProductGuid" ColumnName="ProductGuid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductPurchaseRecords">
+            <EntityTypeMapping TypeName="JKDataModel.ProductPurchaseRecords">
+              <MappingFragment StoreEntitySet="ProductPurchaseRecords">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Purchaser" ColumnName="Purchaser" />
+                <ScalarProperty Name="OperatorGuid" ColumnName="OperatorGuid" />
+                <ScalarProperty Name="OperatorName" ColumnName="OperatorName" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SupplierGuid" ColumnName="SupplierGuid" />
+                <ScalarProperty Name="BuyingPrice" ColumnName="BuyingPrice" />
+                <ScalarProperty Name="Grams" ColumnName="Grams" />
+                <ScalarProperty Name="ClassificationName" ColumnName="ClassificationName" />
+                <ScalarProperty Name="ClassificationGuid" ColumnName="ClassificationGuid" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductGuid" ColumnName="ProductGuid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductSupplier">
+            <EntityTypeMapping TypeName="JKDataModel.ProductSupplier">
+              <MappingFragment StoreEntitySet="ProductSupplier">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="SupplierAddress" ColumnName="SupplierAddress" />
+                <ScalarProperty Name="SupplierPhone" ColumnName="SupplierPhone" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserShoppingCart">
+            <EntityTypeMapping TypeName="JKDataModel.UserShoppingCart">
+              <MappingFragment StoreEntitySet="UserShoppingCart">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ProductNum" ColumnName="ProductNum" />
+                <ScalarProperty Name="ClassificationGuid" ColumnName="ClassificationGuid" />
+                <ScalarProperty Name="ProductGuid" ColumnName="ProductGuid" />
+                <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Guid" ColumnName="Guid" />
               </MappingFragment>

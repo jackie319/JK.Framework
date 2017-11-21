@@ -61,7 +61,7 @@ namespace JK.Framework.Extensions.Draw
     /// <summary>
     /// 奖品
     /// </summary>
-    public class Prize
+    internal class Prize
     {
         public Guid PrizeGuid { get; set; }
 

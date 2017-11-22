@@ -12,7 +12,7 @@ namespace JK.Data.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Payment
+    public partial class OrderPayment
     {
         public System.Guid Guid { get; set; }
         public int Id { get; set; }

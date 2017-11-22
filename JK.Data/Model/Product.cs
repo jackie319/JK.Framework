@@ -17,6 +17,7 @@ namespace JK.Data.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
+            this.OrderRefund = new HashSet<OrderRefund>();
             this.ProductAlbum = new HashSet<ProductAlbum>();
             this.ProductClassification = new HashSet<ProductClassification>();
             this.ProductParameters = new HashSet<ProductParameters>();
@@ -50,6 +51,8 @@ namespace JK.Data.Model
         public System.DateTime TimeOffShelf { get; set; }
         public System.DateTime TimeCreated { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderRefund> OrderRefund { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductAlbum> ProductAlbum { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

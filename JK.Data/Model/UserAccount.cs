@@ -17,10 +17,10 @@ namespace JK.Data.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public UserAccount()
         {
-            this.UserAccountWechat = new HashSet<UserAccountWechat>();
-            this.UserOperationRecords = new HashSet<UserOperationRecords>();
-            this.UserDeliveryAddress = new HashSet<UserDeliveryAddress>();
             this.LotteryHistory = new HashSet<LotteryHistory>();
+            this.UserAccountWechat = new HashSet<UserAccountWechat>();
+            this.UserDeliveryAddress = new HashSet<UserDeliveryAddress>();
+            this.UserOperationRecords = new HashSet<UserOperationRecords>();
             this.UserShoppingCart = new HashSet<UserShoppingCart>();
         }
     
@@ -47,13 +47,13 @@ namespace JK.Data.Model
         public System.DateTime TimeLastVisited { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserAccountWechat> UserAccountWechat { get; set; }
+        public virtual ICollection<LotteryHistory> LotteryHistory { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserOperationRecords> UserOperationRecords { get; set; }
+        public virtual ICollection<UserAccountWechat> UserAccountWechat { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserDeliveryAddress> UserDeliveryAddress { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LotteryHistory> LotteryHistory { get; set; }
+        public virtual ICollection<UserOperationRecords> UserOperationRecords { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserShoppingCart> UserShoppingCart { get; set; }
     }

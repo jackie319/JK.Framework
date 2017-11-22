@@ -14,6 +14,12 @@ namespace JK.Data.Model
     
     public partial class ProductClassification
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ProductClassification()
+        {
+            this.OrderRefund = new HashSet<OrderRefund>();
+        }
+    
         public System.Guid Guid { get; set; }
         public int Id { get; set; }
         public System.Guid ProductGuid { get; set; }
@@ -26,6 +32,8 @@ namespace JK.Data.Model
         public bool IsDeleted { get; set; }
         public System.DateTime TimeCreated { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderRefund> OrderRefund { get; set; }
         public virtual Product Product { get; set; }
     }
 }

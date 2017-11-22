@@ -19,6 +19,7 @@ namespace JK.Data.Model
         {
             this.OrderEvaluation = new HashSet<OrderEvaluation>();
             this.OrderProduct = new HashSet<OrderProduct>();
+            this.OrderRefund = new HashSet<OrderRefund>();
         }
     
         public System.Guid Guid { get; set; }
@@ -54,5 +55,7 @@ namespace JK.Data.Model
         public virtual ICollection<OrderEvaluation> OrderEvaluation { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderProduct> OrderProduct { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderRefund> OrderRefund { get; set; }
     }
 }

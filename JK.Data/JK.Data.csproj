@@ -103,10 +103,16 @@
     <Compile Include="Model\OrderEvalutionReply.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\OrderPayment.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\OrderProduct.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Payment.cs">
+    <Compile Include="Model\OrderRefund.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OrderShippingMethod.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Picture.cs">

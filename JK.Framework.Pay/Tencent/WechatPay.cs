@@ -359,5 +359,89 @@ namespace JK.Framework.Pay.Tencent
         {
             return TenPayV3.DownloadBill(dataInfo);
         }
+
+        /// <summary>
+        /// 用于企业向微信用户个人付款 
+        /// 目前支持向指定微信用户的openid付款
+        /// </summary>
+        /// <param name="dataInfo">微信支付需要post的xml数据</param>
+        /// <param name="cert">证书绝对路径</param>
+        /// <param name="certPassword">证书密码</param>
+        /// <param name="timeOut"></param>
+        /// <returns></returns>
+        public  TransfersResult Transfers(TenPayV3TransfersRequestData dataInfo,int timeOut = Config.TIME_OUT)
+        {
+            return TenPayV3.Transfers(dataInfo,Cert,Password,timeOut);
+        }
+
+        /// <summary>
+        /// 关闭订单接口
+        /// </summary>
+        /// <param name="dataInfo">关闭订单需要post的xml数据</param>
+        /// <returns></returns>
+        public  CloseOrderResult CloseOrder(TenPayV3CloseOrderRequestData dataInfo)
+        {
+            return TenPayV3.CloseOrder(dataInfo);
+        }
+
+        /// <summary>
+        /// 撤销订单接口
+        /// </summary>
+        /// <param name="dataInfo"></param>
+        /// <param name="cert">证书绝对路径，如@"F:\apiclient_cert.p12"</param> 
+        /// <param name="certPassword">证书密码</param>
+        /// <param name="timeOut"></param>
+        /// <returns></returns>
+        public  ReverseResult Reverse(TenPayV3ReverseRequestData dataInfo, int timeOut = Config.TIME_OUT)
+        {
+            return TenPayV3.Reverse(dataInfo,Cert,Password,timeOut);
+        }
+
+        /// <summary>
+        /// 短链接转换接口
+        /// </summary>
+        /// <param name="dataInfo"></param>
+        /// <returns></returns>
+        public  ShortUrlResult ShortUrl(TenPayV3ShortUrlRequestData dataInfo)
+        {
+            return TenPayV3.ShortUrl(dataInfo);
+        }
+
+        /// <summary>
+        /// 用于商户的企业付款操作进行结果查询，返回付款操作详细结果。
+        /// </summary>
+        /// <param name="dataInfo"></param>
+        /// <param name="timeOut"></param>
+        /// <returns></returns>
+        public  GetTransferInfoResult GetTransferInfo(TenPayV3GetTransferInfoRequestData dataInfo, int timeOut = Config.TIME_OUT)
+        {
+            return TenPayV3.GetTransferInfo(dataInfo,timeOut);
+        }
+
+        /// <summary>
+        /// 刷卡支付
+        /// 提交被扫支付
+        /// </summary>
+        /// <param name="dataInfo"></param>
+        /// <returns></returns>
+        public static MicropayResult MicroPay(TenPayV3MicroPayRequestData dataInfo)
+        {
+            return TenPayV3.MicroPay(dataInfo);
+        }
+
+
+#region 异步接口
+        /// <summary>
+        /// 【异步方法】统一支付接口
+        /// 统一支付接口，可接受JSAPI/NATIVE/APP 下预支付订单，返回预支付订单号。NATIVE 支付返回二维码code_url。
+        /// </summary>
+        /// <param name="dataInfo">微信支付需要post的xml数据</param>
+        /// <param name="timeOut"></param>
+        /// <returns></returns>
+        public  async Task<UnifiedorderResult> PayAsync(TenPayV3UnifiedorderRequestData dataInfo, int timeOut = Config.TIME_OUT)
+        {
+            return TenPayV3.UnifiedorderAsync(dataInfo,timeOut).Result;
+        }
+#endregion
     }
 }

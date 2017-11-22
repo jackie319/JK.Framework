@@ -62,6 +62,10 @@
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Senparc.Weixin.MP, Version=14.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SFTFS\SuFan\客户项目\分享精灵\code\FXJL\FXJL.Libs\Libs\Senparc.Weixin.MP.dll</HintPath>
+    </Reference>
     <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
     </Reference>
@@ -207,11 +211,19 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PayController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WxLoginController.cs" />
+    <Compile Include="Controllers\WxNotifyController.cs" />
+    <Compile Include="Controllers\WxRefundNotifyController.cs" />
+    <Compile Include="Controllers\WxShareController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PayModel\PayViewModel.cs" />
+    <Compile Include="Models\PayModel\PrePayViewModel.cs" />
+    <Compile Include="Models\PayModel\RefundPayViewModel.cs" />
+    <Compile Include="Models\PayModel\WechatShareViewModel.cs" />
     <Compile Include="Models\UserAccount\ChangePasswordViewModel.cs" />
     <Compile Include="Models\UserAccount\GetBackPasswrodViewModel.cs" />
     <Compile Include="Models\UserAccount\LogInViewModel.cs" />
@@ -275,6 +287,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\WxRefundNotify\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -292,6 +305,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\JK,WechatMP\JK.WechatMP.csproj">
+      <Project>{6258C374-6114-4CA0-AF13-D402D62606F0}</Project>
+      <Name>JK.WechatMP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JK.Authority\JK.Authority.csproj">
       <Project>{0C31DDB3-FD7B-455E-BDDC-415E1798A326}</Project>
       <Name>JK.Authority</Name>
@@ -311,6 +328,14 @@
     <ProjectReference Include="..\JK.Framework.Core\JK.Framework.Core.csproj">
       <Project>{1D16371D-484B-4EA0-8324-E39DC1BB251E}</Project>
       <Name>JK.Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JK.Framework.Extensions\JK.Framework.Extensions.csproj">
+      <Project>{FFCDE5F0-5423-4723-A5C9-894CB359FD55}</Project>
+      <Name>JK.Framework.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JK.PayCenter\JK.PayCenter.csproj">
+      <Project>{AAEA227F-D110-4E6E-945B-D6E42E76C924}</Project>
+      <Name>JK.PayCenter</Name>
     </ProjectReference>
     <ProjectReference Include="..\JK.UserAccount\JK.JKUserAccount.csproj">
       <Project>{545AE0B0-64D0-46B5-8D43-E1E80F496531}</Project>

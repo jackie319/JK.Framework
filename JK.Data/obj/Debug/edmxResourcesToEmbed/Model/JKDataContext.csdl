@@ -1,5 +1,123 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="JKDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="JKDataEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AuthorityFunction" EntityType="JKDataModel.AuthorityFunction" />
+    <EntitySet Name="AuthorityRole" EntityType="JKDataModel.AuthorityRole" />
+    <EntitySet Name="AuthorityRoleInFunction" EntityType="JKDataModel.AuthorityRoleInFunction" />
+    <EntitySet Name="AuthorityUserInRole" EntityType="JKDataModel.AuthorityUserInRole" />
+    <EntitySet Name="FXJLSetting" EntityType="JKDataModel.FXJLSetting" />
+    <EntitySet Name="LotteryActivity" EntityType="JKDataModel.LotteryActivity" />
+    <EntitySet Name="LotteryHistory" EntityType="JKDataModel.LotteryHistory" />
+    <EntitySet Name="LotteryJackpot" EntityType="JKDataModel.LotteryJackpot" />
+    <EntitySet Name="LotteryPrize" EntityType="JKDataModel.LotteryPrize" />
+    <EntitySet Name="Order" EntityType="JKDataModel.Order" />
+    <EntitySet Name="OrderEvaluation" EntityType="JKDataModel.OrderEvaluation" />
+    <EntitySet Name="OrderEvaluationPic" EntityType="JKDataModel.OrderEvaluationPic" />
+    <EntitySet Name="OrderEvalutionReply" EntityType="JKDataModel.OrderEvalutionReply" />
+    <EntitySet Name="OrderPayment" EntityType="JKDataModel.OrderPayment" />
+    <EntitySet Name="OrderProduct" EntityType="JKDataModel.OrderProduct" />
+    <EntitySet Name="OrderRefund" EntityType="JKDataModel.OrderRefund" />
+    <EntitySet Name="OrderShippingMethod" EntityType="JKDataModel.OrderShippingMethod" />
+    <EntitySet Name="Picture" EntityType="JKDataModel.Picture" />
+    <EntitySet Name="Product" EntityType="JKDataModel.Product" />
+    <EntitySet Name="ProductAlbum" EntityType="JKDataModel.ProductAlbum" />
+    <EntitySet Name="ProductCategory" EntityType="JKDataModel.ProductCategory" />
+    <EntitySet Name="ProductClassification" EntityType="JKDataModel.ProductClassification" />
+    <EntitySet Name="ProductParameters" EntityType="JKDataModel.ProductParameters" />
+    <EntitySet Name="ProductPurchaseRecords" EntityType="JKDataModel.ProductPurchaseRecords" />
+    <EntitySet Name="ProductSupplier" EntityType="JKDataModel.ProductSupplier" />
+    <EntitySet Name="SmsRecords" EntityType="JKDataModel.SmsRecords" />
+    <EntitySet Name="UserAccount" EntityType="JKDataModel.UserAccount" />
+    <EntitySet Name="UserAccountWechat" EntityType="JKDataModel.UserAccountWechat" />
+    <EntitySet Name="UserDeliveryAddress" EntityType="JKDataModel.UserDeliveryAddress" />
+    <EntitySet Name="UserLoginRecords" EntityType="JKDataModel.UserLoginRecords" />
+    <EntitySet Name="UserOperationRecords" EntityType="JKDataModel.UserOperationRecords" />
+    <EntitySet Name="UserShoppingCart" EntityType="JKDataModel.UserShoppingCart" />
+    <EntitySet Name="WechatPayNotify" EntityType="JKDataModel.WechatPayNotify" />
+    <EntitySet Name="WechatPayRecords" EntityType="JKDataModel.WechatPayRecords" />
+    <EntitySet Name="WechatPayRefundNotify" EntityType="JKDataModel.WechatPayRefundNotify" />
+    <EntitySet Name="WechatPayRefundRecords" EntityType="JKDataModel.WechatPayRefundRecords" />
+    <AssociationSet Name="FK_RoleInFunction_Function" Association="JKDataModel.FK_RoleInFunction_Function">
+      <End Role="AuthorityFunction" EntitySet="AuthorityFunction" />
+      <End Role="AuthorityRoleInFunction" EntitySet="AuthorityRoleInFunction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoleInFunction_Role" Association="JKDataModel.FK_RoleInFunction_Role">
+      <End Role="AuthorityRole" EntitySet="AuthorityRole" />
+      <End Role="AuthorityRoleInFunction" EntitySet="AuthorityRoleInFunction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInRole_Role" Association="JKDataModel.FK_UserInRole_Role">
+      <End Role="AuthorityRole" EntitySet="AuthorityRole" />
+      <End Role="AuthorityUserInRole" EntitySet="AuthorityUserInRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LotteryHistory_PrizeActivity" Association="JKDataModel.FK_LotteryHistory_PrizeActivity">
+      <End Role="LotteryActivity" EntitySet="LotteryActivity" />
+      <End Role="LotteryHistory" EntitySet="LotteryHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Prize_PrizeActivity" Association="JKDataModel.FK_Prize_PrizeActivity">
+      <End Role="LotteryActivity" EntitySet="LotteryActivity" />
+      <End Role="LotteryPrize" EntitySet="LotteryPrize" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LotteryHistory_UserAccount" Association="JKDataModel.FK_LotteryHistory_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="LotteryHistory" EntitySet="LotteryHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderEvaluation_Order" Association="JKDataModel.FK_OrderEvaluation_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="OrderEvaluation" EntitySet="OrderEvaluation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderProduct_Order" Association="JKDataModel.FK_OrderProduct_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="OrderProduct" EntitySet="OrderProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderRefund_Order" Association="JKDataModel.FK_OrderRefund_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="OrderRefund" EntitySet="OrderRefund" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderEvaluationPic_OrderEvaluation" Association="JKDataModel.FK_OrderEvaluationPic_OrderEvaluation">
+      <End Role="OrderEvaluation" EntitySet="OrderEvaluation" />
+      <End Role="OrderEvaluationPic" EntitySet="OrderEvaluationPic" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderRefund_Product" Association="JKDataModel.FK_OrderRefund_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="OrderRefund" EntitySet="OrderRefund" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderRefund_ProductClassification" Association="JKDataModel.FK_OrderRefund_ProductClassification">
+      <End Role="ProductClassification" EntitySet="ProductClassification" />
+      <End Role="OrderRefund" EntitySet="OrderRefund" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductAlbum_Product" Association="JKDataModel.FK_ProductAlbum_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductAlbum" EntitySet="ProductAlbum" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductClassification_Product" Association="JKDataModel.FK_ProductClassification_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductClassification" EntitySet="ProductClassification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductParameters_Product" Association="JKDataModel.FK_ProductParameters_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductParameters" EntitySet="ProductParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductPurchaseRecords_Product" Association="JKDataModel.FK_ProductPurchaseRecords_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductPurchaseRecords" EntitySet="ProductPurchaseRecords" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserAccountWechat_UserAccount" Association="JKDataModel.FK_UserAccountWechat_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="UserAccountWechat" EntitySet="UserAccountWechat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDeliveryAddress_UserAccount" Association="JKDataModel.FK_UserDeliveryAddress_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="UserDeliveryAddress" EntitySet="UserDeliveryAddress" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserOperationRecords_UserAccount" Association="JKDataModel.FK_UserOperationRecords_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="UserOperationRecords" EntitySet="UserOperationRecords" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserShoppingCart_UserAccount" Association="JKDataModel.FK_UserShoppingCart_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="UserShoppingCart" EntitySet="UserShoppingCart" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="AuthorityFunction">
     <Key>
       <PropertyRef Name="FunctionGuid" />
@@ -7,15 +125,15 @@
     <Property Name="FunctionGuid" Type="Guid" Nullable="false" />
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ParentGuid" Type="Guid" Nullable="false" />
-    <Property Name="FunctionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="DisplayName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FunctionName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DisplayName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
-    <Property Name="ActionUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="FunctionType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="PlatForm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ActionUrl" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FunctionType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PlatForm" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Enable" Type="Boolean" Nullable="false" />
     <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
-    <NavigationProperty Name="AuthorityRoleInFunction" Relationship="Self.FK_RoleInFunction_Function" FromRole="AuthorityFunction" ToRole="AuthorityRoleInFunction" />
+    <NavigationProperty Name="AuthorityRoleInFunction" Relationship="JKDataModel.FK_RoleInFunction_Function" FromRole="AuthorityFunction" ToRole="AuthorityRoleInFunction" />
   </EntityType>
   <EntityType Name="AuthorityRole">
     <Key>
@@ -23,16 +141,16 @@
     </Key>
     <Property Name="RoleGuid" Type="Guid" Nullable="false" />
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
-    <Property Name="RoleEnumName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="RoleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RoleEnumName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RoleType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Enable" Type="Boolean" Nullable="false" />
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
     <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
-    <NavigationProperty Name="AuthorityRoleInFunction" Relationship="Self.FK_RoleInFunction_Role" FromRole="AuthorityRole" ToRole="AuthorityRoleInFunction" />
-    <NavigationProperty Name="AuthorityUserInRole" Relationship="Self.FK_UserInRole_Role" FromRole="AuthorityRole" ToRole="AuthorityUserInRole" />
+    <NavigationProperty Name="AuthorityRoleInFunction" Relationship="JKDataModel.FK_RoleInFunction_Role" FromRole="AuthorityRole" ToRole="AuthorityRoleInFunction" />
+    <NavigationProperty Name="AuthorityUserInRole" Relationship="JKDataModel.FK_UserInRole_Role" FromRole="AuthorityRole" ToRole="AuthorityUserInRole" />
   </EntityType>
   <EntityType Name="AuthorityRoleInFunction">
     <Key>
@@ -43,8 +161,8 @@
     <Property Name="RoleGuid" Type="Guid" Nullable="false" />
     <Property Name="FunctionGuid" Type="Guid" Nullable="false" />
     <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
-    <NavigationProperty Name="AuthorityFunction" Relationship="Self.FK_RoleInFunction_Function" FromRole="AuthorityRoleInFunction" ToRole="AuthorityFunction" />
-    <NavigationProperty Name="AuthorityRole" Relationship="Self.FK_RoleInFunction_Role" FromRole="AuthorityRoleInFunction" ToRole="AuthorityRole" />
+    <NavigationProperty Name="AuthorityFunction" Relationship="JKDataModel.FK_RoleInFunction_Function" FromRole="AuthorityRoleInFunction" ToRole="AuthorityFunction" />
+    <NavigationProperty Name="AuthorityRole" Relationship="JKDataModel.FK_RoleInFunction_Role" FromRole="AuthorityRoleInFunction" ToRole="AuthorityRole" />
   </EntityType>
   <EntityType Name="AuthorityUserInRole">
     <Key>
@@ -55,301 +173,372 @@
     <Property Name="UserGuid" Type="Guid" Nullable="false" />
     <Property Name="RoleGuid" Type="Guid" Nullable="false" />
     <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
-    <NavigationProperty Name="AuthorityRole" Relationship="Self.FK_UserInRole_Role" FromRole="AuthorityUserInRole" ToRole="AuthorityRole" />
+    <NavigationProperty Name="AuthorityRole" Relationship="JKDataModel.FK_UserInRole_Role" FromRole="AuthorityUserInRole" ToRole="AuthorityRole" />
   </EntityType>
-  <EntityType Name="Payment">
+  <EntityType Name="FXJLSetting">
     <Key>
       <PropertyRef Name="Guid" />
     </Key>
     <Property Name="Guid" Type="Guid" Nullable="false" />
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PaymentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="PaymentType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="IsNeedCheck" Type="Boolean" Nullable="false" />
+    <Property Name="PublishLimitDay" Type="Int32" Nullable="false" />
+    <Property Name="PublishLimitMonth" Type="Int32" Nullable="false" />
+    <Property Name="ShareLimitDay" Type="Int32" Nullable="false" />
+    <Property Name="NoMoneyMaskTotal" Type="Int32" Nullable="false" />
+    <Property Name="MoneyToLuckTime" Type="Int32" Nullable="false" />
     <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
   </EntityType>
-  <EntityType Name="UserAccount">
+  <EntityType Name="LotteryActivity">
     <Key>
       <PropertyRef Name="Guid" />
     </Key>
     <Property Name="Guid" Type="Guid" Nullable="false" />
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BaseNumber" Type="Int32" Nullable="false" />
+    <Property Name="DefaultPic" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Detail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BeginTime" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="LotteryHistory" Relationship="JKDataModel.FK_LotteryHistory_PrizeActivity" FromRole="LotteryActivity" ToRole="LotteryHistory" />
+    <NavigationProperty Name="LotteryPrize" Relationship="JKDataModel.FK_Prize_PrizeActivity" FromRole="LotteryActivity" ToRole="LotteryPrize" />
+  </EntityType>
+  <EntityType Name="LotteryHistory">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="UserGuid" Type="Guid" Nullable="false" />
+    <Property Name="PrizeActivityGuid" Type="Guid" Nullable="false" />
+    <Property Name="IsWenner" Type="Boolean" Nullable="false" />
+    <Property Name="PrizeGuid" Type="Guid" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="LotteryActivity" Relationship="JKDataModel.FK_LotteryHistory_PrizeActivity" FromRole="LotteryHistory" ToRole="LotteryActivity" />
+    <NavigationProperty Name="UserAccount" Relationship="JKDataModel.FK_LotteryHistory_UserAccount" FromRole="LotteryHistory" ToRole="UserAccount" />
+  </EntityType>
+  <EntityType Name="LotteryJackpot">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Total" Type="Int32" Nullable="false" />
+    <Property Name="TimeUpdate" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="LotteryPrize">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PrizeActivityGuid" Type="Guid" Nullable="false" />
+    <Property Name="PrizeType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PrizeName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Money" Type="Int32" Nullable="false" />
-    <Property Name="LuckTotal" Type="Int32" Nullable="false" />
-    <Property Name="AvatarImgUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="IsEmailValidated" Type="Boolean" Nullable="false" />
-    <Property Name="MobilePhone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="IsMobilePhoneValidated" Type="Boolean" Nullable="false" />
-    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="CountVisited" Type="Int32" Nullable="false" />
-    <Property Name="IPv4LastVisited" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TotalNum" Type="Int32" Nullable="false" />
+    <Property Name="WinningRate" Type="Int32" Nullable="false" />
+    <Property Name="DefaultPic" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Detail" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-    <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
-    <Property Name="TimeLastVisited" Type="DateTime" Nullable="false" Precision="7" />
-    <NavigationProperty Name="UserAccountWechat" Relationship="Self.FK_UserAccountWechat_UserAccount" FromRole="UserAccount" ToRole="UserAccountWechat" />
-    <NavigationProperty Name="UserOperationRecords" Relationship="Self.FK_UserOperationRecords_UserAccount" FromRole="UserAccount" ToRole="UserOperationRecords" />
-    <NavigationProperty Name="UserDeliveryAddress" Relationship="JKDataModel.FK_UserDeliveryAddress_UserAccount" FromRole="UserAccount" ToRole="UserDeliveryAddress" />
+    <NavigationProperty Name="LotteryActivity" Relationship="JKDataModel.FK_Prize_PrizeActivity" FromRole="LotteryPrize" ToRole="LotteryActivity" />
   </EntityType>
-  <EntityType Name="UserAccountWechat">
+  <EntityType Name="Order">
     <Key>
       <PropertyRef Name="Guid" />
     </Key>
     <Property Name="Guid" Type="Guid" Nullable="false" />
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserAccountGuid" Type="Guid" Nullable="false" />
-    <Property Name="WechatOpenId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Province" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="WechatNickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="WechatAvatarImgUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Privilege" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Unionid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="SessionKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="RecommenderGuid" Type="Guid" Nullable="false" />
-    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
-    <NavigationProperty Name="UserAccount" Relationship="Self.FK_UserAccountWechat_UserAccount" FromRole="UserAccountWechat" ToRole="UserAccount" />
-  </EntityType>
-  <EntityType Name="UserLoginRecords">
-    <Key>
-      <PropertyRef Name="Guid" />
-    </Key>
-    <Property Name="Guid" Type="Guid" Nullable="false" />
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OrderAmount" Type="Int32" Nullable="false" />
     <Property Name="UserGuid" Type="Guid" Nullable="false" />
-    <Property Name="Channel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="SessionTotal" Type="Int32" Nullable="false" />
-    <Property Name="IP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="UserAgent" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserNickName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryAddressGuid" Type="Guid" Nullable="false" />
+    <Property Name="Region" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Street" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ZipCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReceiverName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeliveryAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingGuid" Type="Guid" Nullable="false" />
+    <Property Name="ShipperName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LogisticsCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShippingRemark" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="OrderRemark" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OrderStatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayTime" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="DeliveryTime" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="FinishedTime" Type="DateTime" Nullable="false" Precision="7" />
     <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="IsEvaluated" Type="Boolean" Nullable="false" />
+    <Property Name="StoreGuid" Type="Guid" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="OrderEvaluation" Relationship="JKDataModel.FK_OrderEvaluation_Order" FromRole="Order" ToRole="OrderEvaluation" />
+    <NavigationProperty Name="OrderProduct" Relationship="JKDataModel.FK_OrderProduct_Order" FromRole="Order" ToRole="OrderProduct" />
+    <NavigationProperty Name="OrderRefund" Relationship="JKDataModel.FK_OrderRefund_Order" FromRole="Order" ToRole="OrderRefund" />
   </EntityType>
-  <EntityType Name="UserOperationRecords">
-    <Key>
-      <PropertyRef Name="Guid" />
-    </Key>
-    <Property Name="Guid" Type="Guid" Nullable="false" />
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserGuid" Type="Guid" Nullable="false" />
-    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
-    <NavigationProperty Name="UserAccount" Relationship="Self.FK_UserOperationRecords_UserAccount" FromRole="UserOperationRecords" ToRole="UserAccount" />
-  </EntityType>
-  <EntityType Name="WechatPayNotify">
-    <Key>
-      <PropertyRef Name="Guid" />
-    </Key>
-    <Property Name="Guid" Type="Guid" Nullable="false" />
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ReturnCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ReturnMsg" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="AppId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="MchId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="DeviceInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="NonceStr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Sign" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="SignType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ResultCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ErrCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ErrCodeDes" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="OpenId" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="IsSubscribe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TradeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="BankType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TotalFee" Type="Int32" Nullable="false" />
-    <Property Name="SettlementTotalFee" Type="Int32" Nullable="false" />
-    <Property Name="TransactionId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="OutTradeNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Attach" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TimeEnd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
-  </EntityType>
-  <EntityType Name="WechatPayRecords">
+  <EntityType Name="OrderEvaluation">
     <Key>
       <PropertyRef Name="Guid" />
     </Key>
     <Property Name="Guid" Type="Guid" Nullable="false" />
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="OrderGuid" Type="Guid" Nullable="false" />
-    <Property Name="OrderNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProductGuid" Type="Guid" Nullable="false" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ClassificationGuid" Type="Guid" Nullable="false" />
+    <Property Name="ClassificationName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="UserGuid" Type="Guid" Nullable="false" />
-    <Property Name="UserOpenId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="SpbillCreateIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TotalFee" Type="Int32" Nullable="false" />
-    <Property Name="Body" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ProductId" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="NonceStr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TradeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ReturnCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ReturnMsg" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ResultCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ResultSign" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ErrCode" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ErrCodeDes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="PrepayId" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="CodeUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TimeUpdate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserNickName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DescriptionOfGoodGrade" Type="Int32" Nullable="false" />
+    <Property Name="LogisticsGrade" Type="Int32" Nullable="false" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="IsSystemEvaluated" Type="Boolean" Nullable="false" />
+    <Property Name="EvaluationContent" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="IsDisplay" Type="Boolean" Nullable="false" />
     <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Order" Relationship="JKDataModel.FK_OrderEvaluation_Order" FromRole="OrderEvaluation" ToRole="Order" />
+    <NavigationProperty Name="OrderEvaluationPic" Relationship="JKDataModel.FK_OrderEvaluationPic_OrderEvaluation" FromRole="OrderEvaluation" ToRole="OrderEvaluationPic" />
   </EntityType>
-  <EntityType Name="WechatPayRefundNotify">
+  <EntityType Name="OrderEvaluationPic">
     <Key>
       <PropertyRef Name="Guid" />
     </Key>
     <Property Name="Guid" Type="Guid" Nullable="false" />
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ReturnCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ReturnMsg" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Appid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="MchId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="NonceStr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TransactionId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ReqInfo" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="OutTradeNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="RefundId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="OutRefundNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TotalFee" Type="Int32" Nullable="false" />
-    <Property Name="RefundFee" Type="Int32" Nullable="false" />
-    <Property Name="RefundStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="SuccessTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="RefundRecvAccout" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="RefundAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="RefundRequestSource" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EvaluationGuid" Type="Guid" Nullable="false" />
+    <Property Name="ImageGuid" Type="Guid" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
     <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="OrderEvaluation" Relationship="JKDataModel.FK_OrderEvaluationPic_OrderEvaluation" FromRole="OrderEvaluationPic" ToRole="OrderEvaluation" />
   </EntityType>
-  <EntityType Name="WechatPayRefundRecords">
+  <EntityType Name="OrderEvalutionReply">
     <Key>
       <PropertyRef Name="Guid" />
     </Key>
     <Property Name="Guid" Type="Guid" Nullable="false" />
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NonceStr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Sign" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="SignType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TransactionId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="OutTradeNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="OutRefundNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="TotalFee" Type="Int32" Nullable="false" />
-    <Property Name="RefundFee" Type="Int32" Nullable="false" />
-    <Property Name="RefundFeeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="RefundDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ReturnCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ReturnMsg" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ResultCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ErrCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ErrCodeDes" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Appid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="MchId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="RefundId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EvaluationGuid" Type="Guid" Nullable="false" />
+    <Property Name="Replier" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReplyContent" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="IsSystem" Type="Boolean" Nullable="false" />
+    <Property Name="IsDisplay" Type="Boolean" Nullable="false" />
     <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
   </EntityType>
-  <Association Name="FK_RoleInFunction_Function">
-    <End Role="AuthorityFunction" Type="Self.AuthorityFunction" Multiplicity="1" />
-    <End Role="AuthorityRoleInFunction" Type="Self.AuthorityRoleInFunction" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AuthorityFunction">
-        <PropertyRef Name="FunctionGuid" />
-      </Principal>
-      <Dependent Role="AuthorityRoleInFunction">
-        <PropertyRef Name="FunctionGuid" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_RoleInFunction_Role">
-    <End Role="AuthorityRole" Type="Self.AuthorityRole" Multiplicity="1" />
-    <End Role="AuthorityRoleInFunction" Type="Self.AuthorityRoleInFunction" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AuthorityRole">
-        <PropertyRef Name="RoleGuid" />
-      </Principal>
-      <Dependent Role="AuthorityRoleInFunction">
-        <PropertyRef Name="RoleGuid" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_UserInRole_Role">
-    <End Role="AuthorityRole" Type="Self.AuthorityRole" Multiplicity="1" />
-    <End Role="AuthorityUserInRole" Type="Self.AuthorityUserInRole" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AuthorityRole">
-        <PropertyRef Name="RoleGuid" />
-      </Principal>
-      <Dependent Role="AuthorityUserInRole">
-        <PropertyRef Name="RoleGuid" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_UserAccountWechat_UserAccount">
-    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
-    <End Role="UserAccountWechat" Type="Self.UserAccountWechat" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="UserAccount">
-        <PropertyRef Name="Guid" />
-      </Principal>
-      <Dependent Role="UserAccountWechat">
-        <PropertyRef Name="UserAccountGuid" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_UserOperationRecords_UserAccount">
-    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
-    <End Role="UserOperationRecords" Type="Self.UserOperationRecords" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="UserAccount">
-        <PropertyRef Name="Guid" />
-      </Principal>
-      <Dependent Role="UserOperationRecords">
-        <PropertyRef Name="UserGuid" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="JKDataEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="AuthorityFunction" EntityType="Self.AuthorityFunction" />
-    <EntitySet Name="AuthorityRole" EntityType="Self.AuthorityRole" />
-    <EntitySet Name="AuthorityRoleInFunction" EntityType="Self.AuthorityRoleInFunction" />
-    <EntitySet Name="AuthorityUserInRole" EntityType="Self.AuthorityUserInRole" />
-    <EntitySet Name="Payment" EntityType="Self.Payment" />
-    <EntitySet Name="UserAccount" EntityType="Self.UserAccount" />
-    <EntitySet Name="UserAccountWechat" EntityType="Self.UserAccountWechat" />
-    <EntitySet Name="UserLoginRecords" EntityType="Self.UserLoginRecords" />
-    <EntitySet Name="UserOperationRecords" EntityType="Self.UserOperationRecords" />
-    <EntitySet Name="WechatPayNotify" EntityType="Self.WechatPayNotify" />
-    <EntitySet Name="WechatPayRecords" EntityType="Self.WechatPayRecords" />
-    <EntitySet Name="WechatPayRefundNotify" EntityType="Self.WechatPayRefundNotify" />
-    <EntitySet Name="WechatPayRefundRecords" EntityType="Self.WechatPayRefundRecords" />
-    <AssociationSet Name="FK_RoleInFunction_Function" Association="Self.FK_RoleInFunction_Function">
-      <End Role="AuthorityFunction" EntitySet="AuthorityFunction" />
-      <End Role="AuthorityRoleInFunction" EntitySet="AuthorityRoleInFunction" />
-    </AssociationSet>
-    <AssociationSet Name="FK_RoleInFunction_Role" Association="Self.FK_RoleInFunction_Role">
-      <End Role="AuthorityRole" EntitySet="AuthorityRole" />
-      <End Role="AuthorityRoleInFunction" EntitySet="AuthorityRoleInFunction" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserInRole_Role" Association="Self.FK_UserInRole_Role">
-      <End Role="AuthorityRole" EntitySet="AuthorityRole" />
-      <End Role="AuthorityUserInRole" EntitySet="AuthorityUserInRole" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserAccountWechat_UserAccount" Association="Self.FK_UserAccountWechat_UserAccount">
-      <End Role="UserAccount" EntitySet="UserAccount" />
-      <End Role="UserAccountWechat" EntitySet="UserAccountWechat" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserOperationRecords_UserAccount" Association="Self.FK_UserOperationRecords_UserAccount">
-      <End Role="UserAccount" EntitySet="UserAccount" />
-      <End Role="UserOperationRecords" EntitySet="UserOperationRecords" />
-    </AssociationSet>
-    <EntitySet Name="SmsRecords" EntityType="JKDataModel.SmsRecords" />
-    <EntitySet Name="UserDeliveryAddress" EntityType="JKDataModel.UserDeliveryAddress" />
-    <AssociationSet Name="FK_UserDeliveryAddress_UserAccount" Association="JKDataModel.FK_UserDeliveryAddress_UserAccount">
-      <End Role="UserAccount" EntitySet="UserAccount" />
-      <End Role="UserDeliveryAddress" EntitySet="UserDeliveryAddress" />
-    </AssociationSet>
-    <EntitySet Name="Picture" EntityType="JKDataModel.Picture" />
-  </EntityContainer>
+  <EntityType Name="OrderPayment">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PaymentName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="OrderProduct">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="OrderGuid" Type="Guid" Nullable="false" />
+    <Property Name="ProductGuid" Type="Guid" Nullable="false" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DefaultPic" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ClassificationGuid" Type="Guid" Nullable="false" />
+    <Property Name="ClassificationName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ProductPrice" Type="Int32" Nullable="false" />
+    <Property Name="PromotionPrice" Type="Int32" Nullable="false" />
+    <Property Name="ProductNumber" Type="Int32" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Order" Relationship="JKDataModel.FK_OrderProduct_Order" FromRole="OrderProduct" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="OrderRefund">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="RefundNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserGuid" Type="Guid" Nullable="false" />
+    <Property Name="OrderProductGuid" Type="Guid" Nullable="false" />
+    <Property Name="OrderGuid" Type="Guid" Nullable="false" />
+    <Property Name="ProductGuid" Type="Guid" Nullable="false" />
+    <Property Name="ClassificationGuid" Type="Guid" Nullable="false" />
+    <Property Name="RefundAmount" Type="Int32" Nullable="false" />
+    <Property Name="RefundRemark" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CheckRefundRemark" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="RefundSuccessTime" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CheckRefundTime" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Order" Relationship="JKDataModel.FK_OrderRefund_Order" FromRole="OrderRefund" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="JKDataModel.FK_OrderRefund_Product" FromRole="OrderRefund" ToRole="Product" />
+    <NavigationProperty Name="ProductClassification" Relationship="JKDataModel.FK_OrderRefund_ProductClassification" FromRole="OrderRefund" ToRole="ProductClassification" />
+  </EntityType>
+  <EntityType Name="OrderShippingMethod">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="ShipperName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShipperCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="Picture">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PictureUrl" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryGuid" Type="Guid" Nullable="false" />
+    <Property Name="ProductNumber" Type="Int32" Nullable="false" />
+    <Property Name="ProductNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DefaultPic" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SaleTitle" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SaleSubTitle" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="PromotionPrice" Type="Int32" Nullable="false" />
+    <Property Name="ProductDetail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductRemark" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsSpecialOffer" Type="Boolean" Nullable="false" />
+    <Property Name="IsRecommended" Type="Boolean" Nullable="false" />
+    <Property Name="IsAd" Type="Boolean" Nullable="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="ImaginaryNumber" Type="Int32" Nullable="false" />
+    <Property Name="VisitedTotal" Type="Int32" Nullable="false" />
+    <Property Name="SoldTotal" Type="Int32" Nullable="false" />
+    <Property Name="EvaluationToTal" Type="Int32" Nullable="false" />
+    <Property Name="TimeOnShelf" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="TimeOffShelf" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="OrderRefund" Relationship="JKDataModel.FK_OrderRefund_Product" FromRole="Product" ToRole="OrderRefund" />
+    <NavigationProperty Name="ProductAlbum" Relationship="JKDataModel.FK_ProductAlbum_Product" FromRole="Product" ToRole="ProductAlbum" />
+    <NavigationProperty Name="ProductClassification" Relationship="JKDataModel.FK_ProductClassification_Product" FromRole="Product" ToRole="ProductClassification" />
+    <NavigationProperty Name="ProductParameters" Relationship="JKDataModel.FK_ProductParameters_Product" FromRole="Product" ToRole="ProductParameters" />
+    <NavigationProperty Name="ProductPurchaseRecords" Relationship="JKDataModel.FK_ProductPurchaseRecords_Product" FromRole="Product" ToRole="ProductPurchaseRecords" />
+  </EntityType>
+  <EntityType Name="ProductAlbum">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductGuid" Type="Guid" Nullable="false" />
+    <Property Name="ImageGuid" Type="Guid" Nullable="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Product" Relationship="JKDataModel.FK_ProductAlbum_Product" FromRole="ProductAlbum" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ParentGuid" Type="Guid" Nullable="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="IsDisplay" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="ProductClassification">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductGuid" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Number" Type="Int32" Nullable="false" />
+    <Property Name="Grams" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="PromotionPrice" Type="Int32" Nullable="false" />
+    <Property Name="PicUrl" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="OrderRefund" Relationship="JKDataModel.FK_OrderRefund_ProductClassification" FromRole="ProductClassification" ToRole="OrderRefund" />
+    <NavigationProperty Name="Product" Relationship="JKDataModel.FK_ProductClassification_Product" FromRole="ProductClassification" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductParameters">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductGuid" Type="Guid" Nullable="false" />
+    <Property Name="Brand" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TimeToMarket" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Material" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MosaicMaterial" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlaceOfOrigin" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Style" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ApplyPeople" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SalesChannels" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Product" Relationship="JKDataModel.FK_ProductParameters_Product" FromRole="ProductParameters" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductPurchaseRecords">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductGuid" Type="Guid" Nullable="false" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ClassificationGuid" Type="Guid" Nullable="false" />
+    <Property Name="ClassificationName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Grams" Type="Int32" Nullable="false" />
+    <Property Name="BuyingPrice" Type="Int32" Nullable="false" />
+    <Property Name="SupplierGuid" Type="Guid" Nullable="false" />
+    <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="OperatorName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OperatorGuid" Type="Guid" Nullable="false" />
+    <Property Name="Purchaser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Number" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="Remark" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Product" Relationship="JKDataModel.FK_ProductPurchaseRecords_Product" FromRole="ProductPurchaseRecords" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductSupplier">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SupplierPhone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SupplierAddress" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
   <EntityType Name="SmsRecords">
     <Key>
       <PropertyRef Name="Guid" />
@@ -364,6 +553,58 @@
     <Property Name="Remark" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="TimeUpdate" Type="DateTime" Nullable="false" Precision="7" />
     <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="UserAccount">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NickName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Money" Type="Int32" Nullable="false" />
+    <Property Name="LuckTotal" Type="Int32" Nullable="false" />
+    <Property Name="AvatarImgUrl" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="IsEmailValidated" Type="Boolean" Nullable="false" />
+    <Property Name="MobilePhone" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="IsMobilePhoneValidated" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountVisited" Type="Int32" Nullable="false" />
+    <Property Name="IPv4LastVisited" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="UserType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="TimeLastVisited" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="LotteryHistory" Relationship="JKDataModel.FK_LotteryHistory_UserAccount" FromRole="UserAccount" ToRole="LotteryHistory" />
+    <NavigationProperty Name="UserAccountWechat" Relationship="JKDataModel.FK_UserAccountWechat_UserAccount" FromRole="UserAccount" ToRole="UserAccountWechat" />
+    <NavigationProperty Name="UserDeliveryAddress" Relationship="JKDataModel.FK_UserDeliveryAddress_UserAccount" FromRole="UserAccount" ToRole="UserDeliveryAddress" />
+    <NavigationProperty Name="UserOperationRecords" Relationship="JKDataModel.FK_UserOperationRecords_UserAccount" FromRole="UserAccount" ToRole="UserOperationRecords" />
+    <NavigationProperty Name="UserShoppingCart" Relationship="JKDataModel.FK_UserShoppingCart_UserAccount" FromRole="UserAccount" ToRole="UserShoppingCart" />
+  </EntityType>
+  <EntityType Name="UserAccountWechat">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserAccountGuid" Type="Guid" Nullable="false" />
+    <Property Name="WechatOpenId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Province" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sex" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WechatNickName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WechatAvatarImgUrl" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Privilege" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Unionid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SessionKey" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RecommenderGuid" Type="Guid" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="UserAccount" Relationship="JKDataModel.FK_UserAccountWechat_UserAccount" FromRole="UserAccountWechat" ToRole="UserAccount" />
   </EntityType>
   <EntityType Name="UserDeliveryAddress">
     <Key>
@@ -382,6 +623,355 @@
     <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
     <NavigationProperty Name="UserAccount" Relationship="JKDataModel.FK_UserDeliveryAddress_UserAccount" FromRole="UserDeliveryAddress" ToRole="UserAccount" />
   </EntityType>
+  <EntityType Name="UserLoginRecords">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserGuid" Type="Guid" Nullable="false" />
+    <Property Name="Channel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SessionTotal" Type="Int32" Nullable="false" />
+    <Property Name="IP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserAgent" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="UserOperationRecords">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserGuid" Type="Guid" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="UserAccount" Relationship="JKDataModel.FK_UserOperationRecords_UserAccount" FromRole="UserOperationRecords" ToRole="UserAccount" />
+  </EntityType>
+  <EntityType Name="UserShoppingCart">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserGuid" Type="Guid" Nullable="false" />
+    <Property Name="ProductGuid" Type="Guid" Nullable="false" />
+    <Property Name="ClassificationGuid" Type="Guid" Nullable="false" />
+    <Property Name="ProductNum" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="UserAccount" Relationship="JKDataModel.FK_UserShoppingCart_UserAccount" FromRole="UserShoppingCart" ToRole="UserAccount" />
+  </EntityType>
+  <EntityType Name="WechatPayNotify">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReturnCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReturnMsg" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AppId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MchId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeviceInfo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NonceStr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sign" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SignType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ResultCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrCodeDes" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="OpenId" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsSubscribe" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TradeType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BankType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalFee" Type="Int32" Nullable="false" />
+    <Property Name="SettlementTotalFee" Type="Int32" Nullable="false" />
+    <Property Name="TransactionId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OutTradeNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Attach" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TimeEnd" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="WechatPayRecords">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderGuid" Type="Guid" Nullable="false" />
+    <Property Name="OrderNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserGuid" Type="Guid" Nullable="false" />
+    <Property Name="UserOpenId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SpbillCreateIP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalFee" Type="Int32" Nullable="false" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ProductId" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NonceStr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TradeType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReturnCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReturnMsg" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ResultCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ResultSign" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrCode" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ErrCodeDes" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PrepayId" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CodeUrl" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TimeUpdate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="WechatPayRefundNotify">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReturnCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReturnMsg" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Appid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MchId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NonceStr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReqInfo" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="OutTradeNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefundId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OutRefundNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalFee" Type="Int32" Nullable="false" />
+    <Property Name="RefundFee" Type="Int32" Nullable="false" />
+    <Property Name="RefundStatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SuccessTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefundRecvAccout" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RefundAccount" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefundRequestSource" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="WechatPayRefundRecords">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NonceStr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sign" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SignType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OutTradeNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OutRefundNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalFee" Type="Int32" Nullable="false" />
+    <Property Name="RefundFee" Type="Int32" Nullable="false" />
+    <Property Name="RefundFeeType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefundDesc" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ReturnCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReturnMsg" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ResultCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ErrCodeDes" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Appid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MchId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RefundId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <Association Name="FK_RoleInFunction_Function">
+    <End Type="JKDataModel.AuthorityFunction" Role="AuthorityFunction" Multiplicity="1" />
+    <End Type="JKDataModel.AuthorityRoleInFunction" Role="AuthorityRoleInFunction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorityFunction">
+        <PropertyRef Name="FunctionGuid" />
+      </Principal>
+      <Dependent Role="AuthorityRoleInFunction">
+        <PropertyRef Name="FunctionGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoleInFunction_Role">
+    <End Type="JKDataModel.AuthorityRole" Role="AuthorityRole" Multiplicity="1" />
+    <End Type="JKDataModel.AuthorityRoleInFunction" Role="AuthorityRoleInFunction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorityRole">
+        <PropertyRef Name="RoleGuid" />
+      </Principal>
+      <Dependent Role="AuthorityRoleInFunction">
+        <PropertyRef Name="RoleGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInRole_Role">
+    <End Type="JKDataModel.AuthorityRole" Role="AuthorityRole" Multiplicity="1" />
+    <End Type="JKDataModel.AuthorityUserInRole" Role="AuthorityUserInRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorityRole">
+        <PropertyRef Name="RoleGuid" />
+      </Principal>
+      <Dependent Role="AuthorityUserInRole">
+        <PropertyRef Name="RoleGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LotteryHistory_PrizeActivity">
+    <End Type="JKDataModel.LotteryActivity" Role="LotteryActivity" Multiplicity="1" />
+    <End Type="JKDataModel.LotteryHistory" Role="LotteryHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LotteryActivity">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="LotteryHistory">
+        <PropertyRef Name="PrizeActivityGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Prize_PrizeActivity">
+    <End Type="JKDataModel.LotteryActivity" Role="LotteryActivity" Multiplicity="1" />
+    <End Type="JKDataModel.LotteryPrize" Role="LotteryPrize" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LotteryActivity">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="LotteryPrize">
+        <PropertyRef Name="PrizeActivityGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LotteryHistory_UserAccount">
+    <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+    <End Type="JKDataModel.LotteryHistory" Role="LotteryHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="LotteryHistory">
+        <PropertyRef Name="UserGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderEvaluation_Order">
+    <End Type="JKDataModel.Order" Role="Order" Multiplicity="1" />
+    <End Type="JKDataModel.OrderEvaluation" Role="OrderEvaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="OrderEvaluation">
+        <PropertyRef Name="OrderGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderProduct_Order">
+    <End Type="JKDataModel.Order" Role="Order" Multiplicity="1" />
+    <End Type="JKDataModel.OrderProduct" Role="OrderProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="OrderProduct">
+        <PropertyRef Name="OrderGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderRefund_Order">
+    <End Type="JKDataModel.Order" Role="Order" Multiplicity="1" />
+    <End Type="JKDataModel.OrderRefund" Role="OrderRefund" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="OrderRefund">
+        <PropertyRef Name="OrderGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderEvaluationPic_OrderEvaluation">
+    <End Type="JKDataModel.OrderEvaluation" Role="OrderEvaluation" Multiplicity="1" />
+    <End Type="JKDataModel.OrderEvaluationPic" Role="OrderEvaluationPic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderEvaluation">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="OrderEvaluationPic">
+        <PropertyRef Name="EvaluationGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderRefund_Product">
+    <End Type="JKDataModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="JKDataModel.OrderRefund" Role="OrderRefund" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="OrderRefund">
+        <PropertyRef Name="ProductGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderRefund_ProductClassification">
+    <End Type="JKDataModel.ProductClassification" Role="ProductClassification" Multiplicity="1" />
+    <End Type="JKDataModel.OrderRefund" Role="OrderRefund" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductClassification">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="OrderRefund">
+        <PropertyRef Name="ClassificationGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductAlbum_Product">
+    <End Type="JKDataModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="JKDataModel.ProductAlbum" Role="ProductAlbum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="ProductAlbum">
+        <PropertyRef Name="ProductGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductClassification_Product">
+    <End Type="JKDataModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="JKDataModel.ProductClassification" Role="ProductClassification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="ProductClassification">
+        <PropertyRef Name="ProductGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductParameters_Product">
+    <End Type="JKDataModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="JKDataModel.ProductParameters" Role="ProductParameters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="ProductParameters">
+        <PropertyRef Name="ProductGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductPurchaseRecords_Product">
+    <End Type="JKDataModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="JKDataModel.ProductPurchaseRecords" Role="ProductPurchaseRecords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="ProductPurchaseRecords">
+        <PropertyRef Name="ProductGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserAccountWechat_UserAccount">
+    <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+    <End Type="JKDataModel.UserAccountWechat" Role="UserAccountWechat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="UserAccountWechat">
+        <PropertyRef Name="UserAccountGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_UserDeliveryAddress_UserAccount">
     <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
     <End Type="JKDataModel.UserDeliveryAddress" Role="UserDeliveryAddress" Multiplicity="*" />
@@ -394,16 +984,28 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="Picture">
-    <Key>
-      <PropertyRef Name="Guid" />
-    </Key>
-    <Property Name="Guid" Type="Guid" Nullable="false" />
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PictureUrl" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
-    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-    <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
-  </EntityType>
+  <Association Name="FK_UserOperationRecords_UserAccount">
+    <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+    <End Type="JKDataModel.UserOperationRecords" Role="UserOperationRecords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="UserOperationRecords">
+        <PropertyRef Name="UserGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserShoppingCart_UserAccount">
+    <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+    <End Type="JKDataModel.UserShoppingCart" Role="UserShoppingCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="UserShoppingCart">
+        <PropertyRef Name="UserGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

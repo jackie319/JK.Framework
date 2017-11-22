@@ -529,12 +529,126 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.PayController.Pay(JK.CommonApi.WebApi.Models.PayModel.PayViewModel)">
+            <summary>
+            支付
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.PayController.PayTest(JK.CommonApi.WebApi.Models.PayModel.PayViewModel)">
+            <summary>
+             支付测试（该接口前端不对接）
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.PayController.RefundTest(JK.CommonApi.WebApi.Models.PayModel.RefundPayViewModel)">
+            <summary>
+            退款（该接口前端不对接）
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.WxNotifyController.Notify">
+            注意：同样的通知可能会多次发送给商户系统。商户系统必须能够正确处理重复的通知。
+        </member>
+        <member name="T:JK.CommonApi.WebApi.Controllers.WxShareController">
+            <summary>
+            微信分享
+            </summary>
+        </member>
         <member name="M:JK.CommonApi.WebApi.WebApiApplication.Application_error(System.Object,System.EventArgs)">
             <summary>
             全局异常额外处理
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.PayViewModel.OrderGuid">
+            <summary>
+            订单Guid
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.PayViewModel.OrderNo">
+            <summary>
+            订单号
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.PayViewModel.Payment">
+            <summary>
+            支付方式 JSAPI = 0, MWEB=1,
+            </summary>
+        </member>
+        <member name="T:JK.CommonApi.WebApi.Models.PayModel.PrePayViewModel">
+            <summary>
+            WeixinJSBridge 支付所需参数
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.PrePayViewModel.AppId">
+            <summary>
+            公众号id
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.PrePayViewModel.TimeStamp">
+            <summary>
+            时间戳
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.PrePayViewModel.NonceStr">
+            <summary>
+            随机字符串
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.PrePayViewModel.SignType">
+            <summary>
+            签名方式
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.PrePayViewModel.PaySign">
+            <summary>
+            签名
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.PrePayViewModel.Package">
+            <summary>
+            prepay_id
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.PrePayViewModel.MWebUrl">
+            <summary>
+            支付跳转链接(H5支付时才返回)
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.RefundPayViewModel.OrderRefundGuid">
+            <summary>
+            退款申请Guid
+            </summary>
+        </member>
+        <member name="T:JK.CommonApi.WebApi.Models.PayModel.WechatShareViewModel">
+            <summary>
+            微信分享需要参数
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.WechatShareViewModel.AppId">
+            <summary>
+            微信AppId
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.WechatShareViewModel.Timestamp">
+            <summary>
+            时间戳
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.WechatShareViewModel.NonceStr">
+            <summary>
+            随机码
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.WechatShareViewModel.Signature">
+            <summary>
+            签名
+            </summary>
         </member>
         <member name="P:JK.CommonApi.WebApi.Models.UserAccount.GetBackPasswrodViewModel.PasswordMd5">
             <summary>

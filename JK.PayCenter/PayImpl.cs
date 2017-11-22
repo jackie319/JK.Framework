@@ -25,7 +25,7 @@ namespace JK.PayCenter
         private IRepository<Order> _orderRepository;
         private IRepository<OrderProduct> _orderProductRepository;
         private IRepository<WechatPayRecords> _payRecordsRepository;
-        private IRepository<Payment> _paymentRepository;
+        private IRepository<OrderPayment> _paymentRepository;
         private IRepository<Product> _productRepository;
         private IRepository<ProductClassification> _productClassificationrRepository;
         private IRepository<WechatPayNotify> _orderPayNotifyRepository;
@@ -35,7 +35,7 @@ namespace JK.PayCenter
         private WechatPay _wechatPay;
 
         private ISms _sms;
-        public PayImpl(IRepository<Order> ordeRepository, IRepository<WechatPayRecords> payRecordsRepository, IRepository<Payment> paymentRepository,
+        public PayImpl(IRepository<Order> ordeRepository, IRepository<WechatPayRecords> payRecordsRepository, IRepository<OrderPayment> paymentRepository,
             IRepository<Product> productRepository, IRepository<OrderProduct> orderProductRepository,
             IRepository<WechatPayNotify> orderPayNotifyRepository, IRepository<ProductClassification> productClassificationrRepository, ISms sms)
         {

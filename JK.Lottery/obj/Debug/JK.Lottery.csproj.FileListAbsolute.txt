@@ -1,0 +1,4 @@
+D:\Code\Github\JK.Framework\JK.Lottery\bin\Debug\JK.Lottery.dll
+D:\Code\Github\JK.Framework\JK.Lottery\bin\Debug\JK.Lottery.pdb
+D:\Code\Github\JK.Framework\JK.Lottery\obj\Debug\JK.Lottery.dll
+D:\Code\Github\JK.Framework\JK.Lottery\obj\Debug\JK.Lottery.pdb

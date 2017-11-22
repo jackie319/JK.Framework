@@ -1,0 +1,4 @@
+D:\Code\Github\JK.Framework\JK.Order\bin\Debug\JK.Order.dll
+D:\Code\Github\JK.Framework\JK.Order\bin\Debug\JK.Order.pdb
+D:\Code\Github\JK.Framework\JK.Order\obj\Debug\JK.Order.dll
+D:\Code\Github\JK.Framework\JK.Order\obj\Debug\JK.Order.pdb

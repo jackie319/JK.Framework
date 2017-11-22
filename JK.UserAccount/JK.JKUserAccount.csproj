@@ -74,9 +74,9 @@
       <Project>{5004705F-F7BB-4165-8DF3-ED420D01C666}</Project>
       <Name>JK.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\JK.Frameword.Oauth\JK.Frameword.Oauth.csproj">
+    <ProjectReference Include="..\JK.Frameword.Oauth\JK.Framework.Oauth.csproj">
       <Project>{9B347CC8-FA5F-4B09-A3D2-97A0F5D38862}</Project>
-      <Name>JK.Frameword.Oauth</Name>
+      <Name>JK.Framework.Oauth</Name>
     </ProjectReference>
     <ProjectReference Include="..\JK.Framework.Core\JK.Framework.Core.csproj">
       <Project>{1D16371D-484B-4EA0-8324-E39DC1BB251E}</Project>

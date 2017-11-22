@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JK.Framework.Pay.Alipay
+namespace JK.Framework.Alipay.Model
 {
-   public  class Alipay
+    public class TradePayRequestModel
     {
-   
-        private string AppId { get; set; }
+        public string out_trade_no { get; set; }
     }
 }

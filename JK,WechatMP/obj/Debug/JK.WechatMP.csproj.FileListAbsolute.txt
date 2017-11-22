@@ -4,7 +4,6 @@ D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.Framework.Core.dll
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.Data.dll
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.Framework.Sms.dll
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\log4net.dll
-D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.Frameword.Oauth.dll
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.Framework.Extensions.dll
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\Newtonsoft.Json.dll
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\Senparc.Weixin.dll
@@ -19,7 +18,6 @@ D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.Data.dll.config
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.Framework.Sms.pdb
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.Framework.Sms.dll.config
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\log4net.xml
-D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.Frameword.Oauth.pdb
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\Newtonsoft.Json.xml
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\Autofac.xml
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\EntityFramework.xml
@@ -29,3 +27,5 @@ D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.WechatMP.dll
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.WechatMP.pdb
 D:\Code\Github\JK.Framework\JK,WechatMP\obj\Debug\JK.WechatMP.dll
 D:\Code\Github\JK.Framework\JK,WechatMP\obj\Debug\JK.WechatMP.pdb
+D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.Framework.Oauth.dll
+D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.Framework.Oauth.pdb

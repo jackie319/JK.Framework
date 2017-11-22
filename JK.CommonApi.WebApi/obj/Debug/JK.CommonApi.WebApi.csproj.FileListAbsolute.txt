@@ -76,7 +76,6 @@ D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\ThoughtWorks.QRCode.dll
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\NPOI.OOXML.dll
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\JK.Framework.Pay.dll
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\JK.Framework.Sms.dll
-D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\JK.Frameword.Oauth.dll
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\Senparc.Weixin.dll
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\NPOI.OpenXmlFormats.dll
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\NPOI.OpenXml4Net.dll
@@ -125,7 +124,6 @@ D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\JK.Framework.Pay.pdb
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\JK.Framework.Pay.dll.config
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\JK.Framework.Sms.pdb
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\JK.Framework.Sms.dll.config
-D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\JK.Frameword.Oauth.pdb
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\zh-Hans\System.Web.Helpers.resources.dll
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\zh-Hans\System.Web.Http.resources.dll
@@ -139,3 +137,5 @@ D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\zh-Hans\System.Web.WebPages.
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\zh-Hans\EntityFramework.resources.dll
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\obj\Debug\JK.CommonApi.WebApi.dll
 D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\obj\Debug\JK.CommonApi.WebApi.pdb
+D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\JK.Framework.Oauth.dll
+D:\Code\Github\JK.Framework\JK.CommonApi.WebApi\bin\JK.Framework.Oauth.pdb

@@ -7,8 +7,8 @@
     <ProjectGuid>{9B347CC8-FA5F-4B09-A3D2-97A0F5D38862}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JK.Frameword.Oauth</RootNamespace>
-    <AssemblyName>JK.Frameword.Oauth</AssemblyName>
+    <RootNamespace>JK.Framework.Oauth</RootNamespace>
+    <AssemblyName>JK.Framework.Oauth</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

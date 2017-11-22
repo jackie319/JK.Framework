@@ -11,7 +11,6 @@ D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\EntityFramework.dll
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\Autofac.dll
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.Framework.Extensions.dll
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.Framework.Sms.dll
-D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.Frameword.Oauth.dll
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\Newtonsoft.Json.dll
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\Senparc.Weixin.dll
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\NPOI.dll
@@ -34,10 +33,11 @@ D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.Framework.Extensions.pdb
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.Framework.Extensions.dll.config
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.Framework.Sms.pdb
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.Framework.Sms.dll.config
-D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.Frameword.Oauth.pdb
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\Newtonsoft.Json.xml
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\NPOI.xml
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\zh-Hans\EntityFramework.resources.dll
 D:\Code\Github\JK.Framework\JK.PayCenter\obj\Debug\JK.PayCenter.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.PayCenter\obj\Debug\JK.PayCenter.dll
 D:\Code\Github\JK.Framework\JK.PayCenter\obj\Debug\JK.PayCenter.pdb
+D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.Framework.Oauth.dll
+D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.Framework.Oauth.pdb

@@ -23,6 +23,7 @@ namespace JK.WechatOauth.WebApi.Controllers
         }
 
         /// <summary>
+        /// 公众号授权
         /// 想要进行微信授权的项目跳转到此地址
         /// 传入返回的页面地址
         /// 公众号登录
@@ -72,7 +73,8 @@ namespace JK.WechatOauth.WebApi.Controllers
 
 
         /// <summary>
-        /// 想要进行微信授权的项目跳转到此地址
+        /// 微信登录（开放平台）
+        /// 想要进行微信登录的项目跳转到此地址
         /// 传入返回的页面地址
         /// PC登录,微信开放平台注册账户.appid 不一样
         /// </summary>
@@ -117,6 +119,56 @@ namespace JK.WechatOauth.WebApi.Controllers
             //微信会对授权链接做正则强匹配校验，如果链接的参数顺序不对，授权页面将无法正常访问
             return Redirect(result);
         }
+
+        /// <summary>
+        /// JS 微信登录（开放平台）
+        /// JS微信登录获取信息
+        /// 传入返回的页面地址
+        /// PC登录,微信开放平台注册账户.appid 不一样
+        /// </summary>
+        /// <returns></returns>
+        [Route("GetCodeJS")]
+        [HttpGet]
+        public JSWxLoginViewModel GetCodeJSWxLogin([FromUri]OauthViewModel model)
+        {
+            JSWxLoginViewModel result = new JSWxLoginViewModel();
+            string redirectUrl = string.Empty;
+            string oauthUrl = string.Empty;
+            string appId = string.Empty;
+            string state = "STATE";
+            if (!string.IsNullOrEmpty(model.RedirectUrl))
+            {
+                redirectUrl = model.RedirectUrl;
+            }
+
+            if (!string.IsNullOrEmpty(model.State))
+            {
+                state = model.State;
+            }
+            try
+            {
+                //进行微信授权代理的网站地址(本网站地址)
+                oauthUrl = WebConfigurationManager.AppSettings["OauthUrl"];
+                appId = WebConfigurationManager.AppSettings["OpenAppId"];
+            }
+            catch (System.Configuration.ConfigurationErrorsException)
+            {
+                throw new ArgumentException("请在web.config 配置OauthUrl和AppId");
+            }
+            string url = $"{oauthUrl}Oauth?RedirectUrl={redirectUrl}";
+            if (!string.IsNullOrEmpty(model.AppId))
+            {
+                appId = model.AppId;
+            }
+            var myRedirecturl = System.Web.HttpUtility.HtmlEncode(url);
+            result.AppId = appId;
+            result.Id = "login_container";
+            result.Scope = "snsapi_login";
+            result.RedirectUri = myRedirecturl;
+            result.State = state;
+            return result;
+        }
+
 
         /// <summary>
         /// 收到code后跳转到上面Action收到的跳转地址并返回code

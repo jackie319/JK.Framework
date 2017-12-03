@@ -194,6 +194,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Oauth\CodeViewModel.cs" />
+    <Compile Include="Models\Oauth\JSWxLoginViewModel.cs" />
     <Compile Include="Models\Oauth\OauthViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

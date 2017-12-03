@@ -74,7 +74,7 @@ namespace JK.WechatOauth.WebApi.Controllers
         /// <summary>
         /// 想要进行微信授权的项目跳转到此地址
         /// 传入返回的页面地址
-        /// PC登录
+        /// PC登录,微信开放平台注册账户.appid 不一样
         /// </summary>
         /// <returns></returns>
         [Route("GetCodeQr")]
@@ -98,7 +98,7 @@ namespace JK.WechatOauth.WebApi.Controllers
             {
                 //进行微信授权代理的网站地址(本网站地址)
                 oauthUrl = WebConfigurationManager.AppSettings["OauthUrl"];
-                appId = WebConfigurationManager.AppSettings["AppId"];
+                appId = WebConfigurationManager.AppSettings["OpenAppId"];
             }
             catch (System.Configuration.ConfigurationErrorsException)
             {

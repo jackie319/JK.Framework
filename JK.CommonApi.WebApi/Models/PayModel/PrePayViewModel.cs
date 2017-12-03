@@ -40,5 +40,9 @@ namespace JK.CommonApi.WebApi.Models.PayModel
         /// 支付跳转链接(H5支付时才返回)
         /// </summary>
         public string MWebUrl { get; set; }
+        /// <summary>
+        /// 扫码支付二维码地址（扫码支付时才返回）
+        /// </summary>
+        public string CodeUrl { get; set; }
     }
 }

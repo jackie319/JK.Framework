@@ -108,6 +108,9 @@ namespace JK.PayCenter
                 case PaymentEnum.MWEB:
                     tenPayType = TenPayV3Type.MWEB;
                     break;
+                case PaymentEnum.NATIVE:
+                    tenPayType = TenPayV3Type.NATIVE;
+                    break;
             }
             var result = UnifiedOrder(order, openId, spbillCreateIP, nonceStr, body, "", tenPayType);
             var entity = _payRecordsRepository.Table.FirstOrDefault(q => q.Guid == record.Guid);

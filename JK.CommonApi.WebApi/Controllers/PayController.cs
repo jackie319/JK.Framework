@@ -104,6 +104,7 @@ namespace JK.CommonApi.WebApi.Controllers
 
             _log.Info("H5跳转链接=" + result.MWebUrl);
             pre.MWebUrl = result.MWebUrl;
+            pre.CodeUrl = result.CodeUrl;
             pre.AppId = setting.AppId;
             pre.NonceStr = Guid.NewGuid().ToString("N");
             pre.SignType = "MD5";

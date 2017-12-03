@@ -19,9 +19,9 @@ namespace JK.PayCenter
         /// H5支付
         /// </summary>
         MWEB = 1,
-        ///// <summary>
-        ///// 扫码支付
-        ///// </summary>
-        //NATIVE = 2,
+        /// <summary>
+        /// 扫码支付
+        /// </summary>
+        NATIVE = 2,
     }
 }

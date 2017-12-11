@@ -27,7 +27,7 @@ namespace JK.PictureCenter.WebApi.Controllers
             _log = LogManager.GetLogger(typeof(PictureController));
         }
         /// <summary>
-        /// 图片上传
+        /// 图片上传 PostFormData
         /// </summary>
         /// <returns></returns>
         [Route("")]

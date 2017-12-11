@@ -14,5 +14,11 @@ namespace JK.PictureCenter.WebApi.Controllers
 
             return View();
         }
+
+
+        public ActionResult test()
+        {
+            return View();
+        }
     }
 }

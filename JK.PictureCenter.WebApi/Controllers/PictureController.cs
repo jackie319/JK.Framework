@@ -44,6 +44,14 @@ namespace JK.PictureCenter.WebApi.Controllers
             string pictureUrl = WebConfigurationManager.AppSettings["PictureUrl"];
 
             string uploadCache = uploadUrl + "UploadCache";
+            if (!Directory.Exists(uploadUrl))
+            {
+                Directory.CreateDirectory(uploadUrl);
+            }
+            if (!Directory.Exists(uploadCache))
+            {
+                Directory.CreateDirectory(uploadCache);
+            }
             PictureViewModel model = new PictureViewModel();
             //保存到临时目录
             var provider = new MultipartFormDataStreamProvider(uploadCache);

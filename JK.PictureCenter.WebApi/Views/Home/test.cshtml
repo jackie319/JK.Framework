@@ -1,0 +1,80 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "test";
+}
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <style>
+        .suwis-img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="suwis-upload">
+        <div class="uploadlist">
+            <div class="item">
+                <img class="suwis-img" alt="">
+            </div>
+        </div>
+        <div class="file-wrapper">
+            <form action="javascript:;">
+                <input class="files" type="file" onchange="upload(event)">
+            </form>
+        </div>
+    </div>
+    <script>
+    var files = ''
+    var uploadList = []
+    var loadingProgress = 0
+    // $('.files').on('onchange', function() {
+    //   console.log(12121)
+    // })
+    function upload(rs) {
+      var xhr = new XMLHttpRequest()
+      var fd = new FormData()
+      // add files
+      files = rs.target.files
+      fd.append('file', files[0])
+      /* event listners */
+      xhr.upload.addEventListener('progress', this.uploadProgress, false)
+      xhr.addEventListener('load', this.uploadComplete, false)
+      // xhr.addEventListener('error', this.uploadFailed, false)
+      // xhr.addEventListener('abort', this.uploadCanceled, false)
+      /* Be sure to change the url below to the url of your upload server side script */
+      xhr.open('POST', 'http://localhost:65121/Picture')  // 提交的地址
+      xhr.setRequestHeader('sessionkey', '2512f97e977eb12f442aa831cc035306')  // sessionkey
+      xhr.setRequestHeader('token', '1j32ksie3j9jd893dd')
+      xhr.send(fd)
+    }
+
+    function uploadProgress(event) {
+      // console.log(event, 'event')
+      loadingProgress = Math.round(event.loaded / event.total * 100) + '%'
+      // 显示
+    }
+    function uploadComplete(event) {
+      // 隐藏
+      let result = JSON.parse(event.currentTarget.response)
+      uploadList.push(result)
+      $('.suwis-img').attr('src', uploadList[0].HttpUrl)
+    }
+    </script>
+</body>
+</html>
+
+
+

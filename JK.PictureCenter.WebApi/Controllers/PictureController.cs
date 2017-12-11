@@ -1,4 +1,5 @@
 ﻿using JK.Data.Model;
+using JK.Framework.Extensions;
 using JK.PictureCenter.WebApi.Models;
 using JK.Pictures;
 using log4net;
@@ -29,7 +30,7 @@ namespace JK.PictureCenter.WebApi.Controllers
         /// 图片上传
         /// </summary>
         /// <returns></returns>
-        [Route("Upload")]
+        [Route("")]
         [HttpPost]
         public async Task<PictureViewModel> PostFormData()
         {
@@ -85,6 +86,24 @@ namespace JK.PictureCenter.WebApi.Controllers
             model.HttpUrl = pictureUrl + result.Guid;
             return model;
         }
+
+
+        ///// <summary>
+        ///// 头像上传(Base64)
+        ///// </summary>
+        ///// <returns></returns>
+        //[Route("Avatar")]
+        //[HttpPost]
+        //public PictureViewModel UploadBase64([FromBody]AvatarBase64 file)
+        //{
+        //    _log.Info("base64 图片:" + file.File);
+        //    PictureViewModel model = new PictureViewModel();
+        //    var url = UploadManager.SavePictureBase64(file.File, "Member");
+        //    model.PicUrl = url;
+        //    model.HttpUrl = AppSetting.Instance().MemberPictureUrl + url;
+        //    return model;
+        //}
+
 
         [Route("{pictureGuid}")]
         [HttpGet]

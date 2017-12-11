@@ -200,6 +200,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AvatarBase64.cs" />
     <Compile Include="Models\PictureViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -283,6 +284,10 @@
     <ProjectReference Include="..\JK.Framework.API\JK.Framework.API.csproj">
       <Project>{5d62a6d4-9579-45c9-ad39-592776fbb6c6}</Project>
       <Name>JK.Framework.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JK.Framework.Extensions\JK.Framework.Extensions.csproj">
+      <Project>{FFCDE5F0-5423-4723-A5C9-894CB359FD55}</Project>
+      <Name>JK.Framework.Extensions</Name>
     </ProjectReference>
     <ProjectReference Include="..\JK.Picture\JK.Pictures.csproj">
       <Project>{262cf2ad-e208-48b0-a45b-f6c769d170a8}</Project>

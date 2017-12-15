@@ -53,6 +53,10 @@ namespace JK.CommonApi.WebApi.Controllers
             try
             {
                 var account = _userAccount.Login(model.UserName, model.PasswordMd5);
+                //if (!account.UserType.Equals(UserTypeEnum.Admin.ToString())) //后台登录
+                //{
+                //    return this.ResultApiError("用户名或密码错误");
+                //}
                 string openId = string.Empty;
                 var usreAccountWechat = _userAccount.FindUserAccountWechat(account.Guid);
                 if (usreAccountWechat != null)

@@ -27,7 +27,7 @@ namespace JK.PictureCenter.WebApi.Controllers
             _log = LogManager.GetLogger(typeof(PictureController));
         }
         /// <summary>
-        /// 图片上传 PostFormData
+        /// 图片上传 Post FormData
         /// </summary>
         /// <returns></returns>
         [Route("")]
@@ -96,21 +96,29 @@ namespace JK.PictureCenter.WebApi.Controllers
         }
 
 
-        ///// <summary>
-        ///// 头像上传(Base64)
-        ///// </summary>
-        ///// <returns></returns>
-        //[Route("Avatar")]
-        //[HttpPost]
-        //public PictureViewModel UploadBase64([FromBody]AvatarBase64 file)
-        //{
-        //    _log.Info("base64 图片:" + file.File);
-        //    PictureViewModel model = new PictureViewModel();
-        //    var url = UploadManager.SavePictureBase64(file.File, "Member");
-        //    model.PicUrl = url;
-        //    model.HttpUrl = AppSetting.Instance().MemberPictureUrl + url;
-        //    return model;
-        //}
+        /// <summary>
+        /// 头像上传(Base64)
+        /// </summary>
+        /// <returns></returns>
+        [Route("Base64")]
+        [HttpPost]
+        public PictureViewModel UploadBase64([FromBody]AvatarBase64 file)
+        {
+            string uploadUrl = WebConfigurationManager.AppSettings["UploadUrl"];
+            string pictureUrl = WebConfigurationManager.AppSettings["PictureUrl"];
+            _log.Info("base64 图片:" + file.File);
+            PictureViewModel model = new PictureViewModel();
+            var url = UploadManager.SavePictureBase64New(file.File, "uploadUrl");
+
+            //保存到数据库
+            var entity = new Picture();
+            entity.PictureUrl = url;
+            var result = _Picture.CreatedAdPic(entity);
+            //返回
+            model.Guid = result.Guid;
+            model.HttpUrl = pictureUrl + result.Guid;
+            return model;
+        }
 
 
         [Route("{pictureGuid}")]

@@ -146,6 +146,42 @@ namespace JK.Framework.Extensions
             return picName;
         }
 
+
+        /// <summary>
+        /// string img(base64) 新
+        /// </summary>
+        /// <param name="img">img为base64编码的图片字符串
+        ///类似：“ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAAARCAMAAAArMfRlAAAABGdBTUEA”
+        /// </param>
+        /// <param name="uploadPath"></param>
+        /// <returns></returns>
+        public static string SavePictureBase64New(string img, string uploadPath)
+        {
+            //TODO：图片校验
+
+            string path = "";
+            string picName = string.Empty;
+            if (string.IsNullOrEmpty(img))
+                throw new ArgumentException("图片为空！");
+            if (string.IsNullOrEmpty(uploadPath))
+                throw new ArgumentException("图片路径不能为空！");
+            var tmpArr = img.Split(',');
+            byte[] bytes = Convert.FromBase64String(tmpArr[1]);
+            MemoryStream ms = new MemoryStream(bytes);
+            Bitmap bmp = new Bitmap(ms);
+            //string basePath = uploadUrl;
+            picName = Guid.NewGuid() + ".jpg";//TODO:
+            path = uploadPath  + picName;
+            if (!Directory.Exists(uploadPath))
+            {
+                Directory.CreateDirectory(uploadPath);
+            }
+            if (bmp.Width > 3000) throw new ArgumentException("图片太大！");//TODO:
+            bmp.Save(path);
+            ms.Close();
+            return picName;
+        }
+
         //controller 调用
         //public PictureViewModel UploadBase64()
         //{

@@ -115,3 +115,5 @@ D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\zh-Hans\EntityFramework.
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\obj\Release\JK.PictureCenter.WebApi.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\obj\Release\JK.PictureCenter.WebApi.dll
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\obj\Release\JK.PictureCenter.WebApi.pdb
+D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\Swashbuckle.Core.dll
+D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\WebActivatorEx.dll

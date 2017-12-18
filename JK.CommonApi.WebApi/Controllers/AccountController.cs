@@ -132,6 +132,9 @@ namespace JK.CommonApi.WebApi.Controllers
         {
             try
             {
+                Boolean flag = _userAccount.IsUserNameExist(model.MobilePhone);
+                if (flag) return this.ResultApiError("手机号已存在");
+
                 var entity = _sms.FindRecord(model.MobilePhone, SmsTypeEnum.Registe);
                 if (entity == null) return this.ResultApiError("验证码错误");
                 if (!model.SmsCode.Equals(entity.RadomCode))
@@ -148,6 +151,21 @@ namespace JK.CommonApi.WebApi.Controllers
             return this.ResultApiSuccess();
         }
 
+
+        /// <summary>
+        /// 用户名是否存在（手机号即是用户名）
+        /// </summary>
+        /// <param name="phone"></param>
+        /// <returns></returns>
+        [Route("IsUserNameExist")]
+        [HttpGet]
+        [AllowAnonymous]
+        public ApiResultModel IsUserNameExist(string phone)
+        {
+            Boolean flag = _userAccount.IsUserNameExist(phone);
+            if (flag) return this.ResultApiError("手机号已存在");
+            return this.ResultApiSuccess();
+        }
 
         /// <summary>
         /// 修改密码

@@ -489,7 +489,7 @@
         </member>
         <member name="M:JK.PictureCenter.WebApi.Controllers.PictureController.UploadBase64(JK.PictureCenter.WebApi.Models.AvatarBase64)">
             <summary>
-            头像上传(Base64)
+            图片上传(Base64)
             </summary>
             <returns></returns>
         </member>

@@ -108,7 +108,7 @@ namespace JK.PictureCenter.WebApi.Controllers
             string pictureUrl = WebConfigurationManager.AppSettings["PictureUrl"];
             _log.Info("base64 图片:" + file.File);
             PictureViewModel model = new PictureViewModel();
-            var url = UploadManager.SavePictureBase64New(file.File, "uploadUrl");
+            var url = UploadManager.SavePictureBase64New(file.File, uploadUrl);
 
             //保存到数据库
             var entity = new Picture();

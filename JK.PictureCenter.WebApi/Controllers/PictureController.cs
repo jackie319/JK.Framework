@@ -97,7 +97,7 @@ namespace JK.PictureCenter.WebApi.Controllers
 
 
         /// <summary>
-        /// 头像上传(Base64)
+        /// 图片上传(Base64)
         /// </summary>
         /// <returns></returns>
         [Route("Base64")]
@@ -120,7 +120,11 @@ namespace JK.PictureCenter.WebApi.Controllers
             return model;
         }
 
-
+        /// <summary>
+        /// 获取图片
+        /// </summary>
+        /// <param name="pictureGuid"></param>
+        /// <returns></returns>
         [Route("{pictureGuid}")]
         [HttpGet]
         public HttpResponseMessage Detail(Guid pictureGuid)

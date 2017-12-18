@@ -115,3 +115,6 @@ D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\obj\Debug\JK.PictureCenter.W
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\System.Web.Cors.dll
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\System.Web.Http.Cors.dll
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\System.Web.Http.Cors.xml
+D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\JKPictureCenterWebApi.xml
+D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\Swashbuckle.Core.dll
+D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\WebActivatorEx.dll

@@ -167,31 +167,7 @@ namespace JK.CommonApi.WebApi.Controllers
             return this.ResultApiSuccess();
         }
 
-        /// <summary>
-        /// 修改密码
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        [Route("ChangePwd")]
-        [ApiSessionAuthorize]
-        [HttpPost]
-        [ApiValidationFilter]
-        public ApiResultModel ChangePassword(ChangePasswordViewModel model)
-        {
-            if (!model.NewPasswordMd5Confirm.Equals(model.NewPasswordMd5))
-                return this.ResultApiError("俩次输入的密码不匹配");
-            try
-            {
-                var mmyUser = (UserModel)HttpContext.Current.User;
-                _userAccount.ChangePwd(mmyUser.UserName, model.OldPasswordMd5, model.NewPasswordMd5);
-            }
-            catch (CommonException ex)
-            {
-                return this.ResultApiError(ex.Message);
-            }
-            return this.ResultApiSuccess();
-        }
-
+     
         /// <summary>
         /// 发送找回密码验证码
         /// </summary>

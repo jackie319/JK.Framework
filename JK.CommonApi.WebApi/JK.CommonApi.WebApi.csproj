@@ -212,6 +212,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PayController.cs" />
+    <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WxLoginController.cs" />
     <Compile Include="Controllers\WxNotifyController.cs" />
@@ -228,6 +229,7 @@
     <Compile Include="Models\UserAccount\GetBackPasswrodViewModel.cs" />
     <Compile Include="Models\UserAccount\LogInViewModel.cs" />
     <Compile Include="Models\UserAccount\RegisterViewModel.cs" />
+    <Compile Include="Models\UserAccount\UserInfoViewModel.cs" />
     <Compile Include="Models\UserAccount\WxLoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

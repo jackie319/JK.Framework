@@ -26,13 +26,13 @@
           <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ParentGuid" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="CategoryName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="DisplayName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DisplayOrder" Type="int" Nullable="false" />
           <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="DisplayPosition" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ArticleGuid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="ActionUrl" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsDisplay" Type="bit" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
           <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
@@ -1157,9 +1157,9 @@
             <End Role="UserShoppingCart" EntitySet="UserShoppingCart" />
           </AssociationSet>
           <EntitySet Name="Article" EntityType="JKDataModel.Article" />
-          <EntitySet Name="ArticleCategory" EntityType="JKDataModel.ArticleCategory" />
           <EntitySet Name="FriendlyLink" EntityType="JKDataModel.FriendlyLink" />
           <EntitySet Name="UserAccountFinance" EntityType="JKDataModel.UserAccountFinance" />
+          <EntitySet Name="ArticleCategory" EntityType="JKDataModel.ArticleCategory" />
         </EntityContainer>
         <EntityType Name="AuthorityFunction">
           <Key>
@@ -2065,23 +2065,6 @@
           <Property Name="AdminUserGuid" Type="Guid" Nullable="false" />
           <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
         </EntityType>
-        <EntityType Name="ArticleCategory">
-          <Key>
-            <PropertyRef Name="Guid" />
-          </Key>
-          <Property Name="Guid" Type="Guid" Nullable="false" />
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ParentGuid" Type="Guid" Nullable="false" />
-          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DisplayName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
-          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DisplayPosition" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ArticleGuid" Type="Guid" Nullable="false" />
-          <Property Name="ActionUrl" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
-        </EntityType>
         <EntityType Name="FriendlyLink">
           <Key>
             <PropertyRef Name="Guid" />
@@ -2107,6 +2090,23 @@
           <Property Name="TotalShare" Type="Int32" Nullable="false" />
           <Property Name="FrozenFunds" Type="Int32" Nullable="false" />
           <Property Name="TotalRevenue" Type="Int32" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="ArticleCategory">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParentGuid" Type="Guid" Nullable="false" />
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DisplayPosition" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ArticleGuid" Type="Guid" Nullable="false" />
+          <Property Name="ActionUrl" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsDisplay" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
           <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
         </EntityType>
         </Schema>
@@ -2776,24 +2776,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ArticleCategory">
-            <EntityTypeMapping TypeName="JKDataModel.ArticleCategory">
-              <MappingFragment StoreEntitySet="ArticleCategory">
-                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="ActionUrl" ColumnName="ActionUrl" />
-                <ScalarProperty Name="ArticleGuid" ColumnName="ArticleGuid" />
-                <ScalarProperty Name="DisplayPosition" ColumnName="DisplayPosition" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
-                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-                <ScalarProperty Name="ParentGuid" ColumnName="ParentGuid" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Guid" ColumnName="Guid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="FriendlyLink">
             <EntityTypeMapping TypeName="JKDataModel.FriendlyLink">
               <MappingFragment StoreEntitySet="FriendlyLink">
@@ -2818,6 +2800,24 @@
                 <ScalarProperty Name="TotalAssets" ColumnName="TotalAssets" />
                 <ScalarProperty Name="Balance" ColumnName="Balance" />
                 <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ArticleCategory">
+            <EntityTypeMapping TypeName="JKDataModel.ArticleCategory">
+              <MappingFragment StoreEntitySet="ArticleCategory">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsDisplay" ColumnName="IsDisplay" />
+                <ScalarProperty Name="ActionUrl" ColumnName="ActionUrl" />
+                <ScalarProperty Name="ArticleGuid" ColumnName="ArticleGuid" />
+                <ScalarProperty Name="DisplayPosition" ColumnName="DisplayPosition" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="ParentGuid" ColumnName="ParentGuid" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Guid" ColumnName="Guid" />
               </MappingFragment>

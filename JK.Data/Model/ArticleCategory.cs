@@ -18,12 +18,12 @@ namespace JK.Data.Model
         public int Id { get; set; }
         public System.Guid ParentGuid { get; set; }
         public string CategoryName { get; set; }
-        public string DisplayName { get; set; }
         public int DisplayOrder { get; set; }
         public string Type { get; set; }
         public string DisplayPosition { get; set; }
         public System.Guid ArticleGuid { get; set; }
         public string ActionUrl { get; set; }
+        public bool IsDisplay { get; set; }
         public bool IsDeleted { get; set; }
         public System.DateTime TimeCreated { get; set; }
     }

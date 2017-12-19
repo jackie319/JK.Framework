@@ -52,7 +52,7 @@ namespace JK.JKUserAccount.ServicesImpl
             link.Guid = Guid.NewGuid();
             link.TimeCreated = DateTime.Now;
             link.IsDeleted = false;
-            link.IsDisplay = true;
+            link.IsDisplay = false;
             _FriendyLinkRepository.Insert(link);
         }
 

@@ -58,10 +58,12 @@
     <Compile Include="AppSetting.cs" />
     <Compile Include="enum\SmsTypeEnum.cs" />
     <Compile Include="enum\UserTypeEnum.cs" />
+    <Compile Include="IServices\IFriendlyLink.cs" />
     <Compile Include="IServices\ISms.cs" />
     <Compile Include="IServices\IUserAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceModel\UnifiedOrderSetting.cs" />
+    <Compile Include="ServicesImpl\FriendlyLinkImpl.cs" />
     <Compile Include="ServicesImpl\SmsImpl.cs" />
     <Compile Include="ServicesImpl\UserAccountImpl.cs" />
   </ItemGroup>

@@ -61,5 +61,9 @@ namespace JK.Data.Model
         public virtual DbSet<WechatPayRecords> WechatPayRecords { get; set; }
         public virtual DbSet<WechatPayRefundNotify> WechatPayRefundNotify { get; set; }
         public virtual DbSet<WechatPayRefundRecords> WechatPayRefundRecords { get; set; }
+        public virtual DbSet<Article> Article { get; set; }
+        public virtual DbSet<ArticleCategory> ArticleCategory { get; set; }
+        public virtual DbSet<FriendlyLink> FriendlyLink { get; set; }
+        public virtual DbSet<UserAccountFinance> UserAccountFinance { get; set; }
     }
 }

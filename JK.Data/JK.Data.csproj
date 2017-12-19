@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Article.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ArticleCategory.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\AuthorityFunction.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
@@ -59,6 +65,9 @@
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\AuthorityUserInRole.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FriendlyLink.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\FXJLSetting.cs">
@@ -143,6 +152,9 @@
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\UserAccount.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserAccountFinance.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\UserAccountWechat.cs">

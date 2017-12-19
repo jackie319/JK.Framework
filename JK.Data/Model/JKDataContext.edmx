@@ -5,6 +5,37 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="JKDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubTitle" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Detail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IsDisplay" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="AdminUserGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ArticleCategory">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParentGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DisplayPosition" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ArticleGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ActionUrl" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
         <EntityType Name="AuthorityFunction">
           <Key>
             <PropertyRef Name="FunctionGuid" />
@@ -54,6 +85,19 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="RoleGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FriendlyLink">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WebTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="WebUrl" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DisplayOrder" Type="int" Nullable="false" />
+          <Property Name="IsDisplay" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
           <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
         <EntityType Name="FXJLSetting">
@@ -435,6 +479,20 @@
           <Property Name="UserType" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="TimeLastVisited" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserAccountFinance">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Balance" Type="int" Nullable="false" />
+          <Property Name="TotalAssets" Type="int" Nullable="false" />
+          <Property Name="TotalShare" Type="int" Nullable="false" />
+          <Property Name="FrozenFunds" Type="int" Nullable="false" />
+          <Property Name="TotalRevenue" Type="int" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
         <EntityType Name="UserAccountWechat">
           <Key>
@@ -856,10 +914,13 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="JKDataModelStoreContainer">
+          <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ArticleCategory" EntityType="Self.ArticleCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AuthorityFunction" EntityType="Self.AuthorityFunction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AuthorityRole" EntityType="Self.AuthorityRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AuthorityRoleInFunction" EntityType="Self.AuthorityRoleInFunction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AuthorityUserInRole" EntityType="Self.AuthorityUserInRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FriendlyLink" EntityType="Self.FriendlyLink" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FXJLSetting" EntityType="Self.FXJLSetting" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LotteryActivity" EntityType="Self.LotteryActivity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LotteryHistory" EntityType="Self.LotteryHistory" Schema="dbo" store:Type="Tables" />
@@ -883,6 +944,7 @@
           <EntitySet Name="ProductSupplier" EntityType="Self.ProductSupplier" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SmsRecords" EntityType="Self.SmsRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserAccountFinance" EntityType="Self.UserAccountFinance" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserAccountWechat" EntityType="Self.UserAccountWechat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserDeliveryAddress" EntityType="Self.UserDeliveryAddress" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLoginRecords" EntityType="Self.UserLoginRecords" Schema="dbo" store:Type="Tables" />
@@ -1094,6 +1156,10 @@
             <End Role="UserAccount" EntitySet="UserAccount" />
             <End Role="UserShoppingCart" EntitySet="UserShoppingCart" />
           </AssociationSet>
+          <EntitySet Name="Article" EntityType="JKDataModel.Article" />
+          <EntitySet Name="ArticleCategory" EntityType="JKDataModel.ArticleCategory" />
+          <EntitySet Name="FriendlyLink" EntityType="JKDataModel.FriendlyLink" />
+          <EntitySet Name="UserAccountFinance" EntityType="JKDataModel.UserAccountFinance" />
         </EntityContainer>
         <EntityType Name="AuthorityFunction">
           <Key>
@@ -1985,6 +2051,64 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDisplay" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="AdminUserGuid" Type="Guid" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="ArticleCategory">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParentGuid" Type="Guid" Nullable="false" />
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DisplayName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DisplayPosition" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ArticleGuid" Type="Guid" Nullable="false" />
+          <Property Name="ActionUrl" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="FriendlyLink">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WebTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WebUrl" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+          <Property Name="IsDisplay" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="UserAccountFinance">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserGuid" Type="Guid" Nullable="false" />
+          <Property Name="Balance" Type="Int32" Nullable="false" />
+          <Property Name="TotalAssets" Type="Int32" Nullable="false" />
+          <Property Name="TotalShare" Type="Int32" Nullable="false" />
+          <Property Name="FrozenFunds" Type="Int32" Nullable="false" />
+          <Property Name="TotalRevenue" Type="Int32" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2632,6 +2756,68 @@
                 <ScalarProperty Name="SignType" ColumnName="SignType" />
                 <ScalarProperty Name="Sign" ColumnName="Sign" />
                 <ScalarProperty Name="NonceStr" ColumnName="NonceStr" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Article">
+            <EntityTypeMapping TypeName="JKDataModel.Article">
+              <MappingFragment StoreEntitySet="Article">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="AdminUserGuid" ColumnName="AdminUserGuid" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsDisplay" ColumnName="IsDisplay" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ArticleCategory">
+            <EntityTypeMapping TypeName="JKDataModel.ArticleCategory">
+              <MappingFragment StoreEntitySet="ArticleCategory">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="ActionUrl" ColumnName="ActionUrl" />
+                <ScalarProperty Name="ArticleGuid" ColumnName="ArticleGuid" />
+                <ScalarProperty Name="DisplayPosition" ColumnName="DisplayPosition" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="ParentGuid" ColumnName="ParentGuid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FriendlyLink">
+            <EntityTypeMapping TypeName="JKDataModel.FriendlyLink">
+              <MappingFragment StoreEntitySet="FriendlyLink">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsDisplay" ColumnName="IsDisplay" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="WebUrl" ColumnName="WebUrl" />
+                <ScalarProperty Name="WebTitle" ColumnName="WebTitle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAccountFinance">
+            <EntityTypeMapping TypeName="JKDataModel.UserAccountFinance">
+              <MappingFragment StoreEntitySet="UserAccountFinance">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="TotalRevenue" ColumnName="TotalRevenue" />
+                <ScalarProperty Name="FrozenFunds" ColumnName="FrozenFunds" />
+                <ScalarProperty Name="TotalShare" ColumnName="TotalShare" />
+                <ScalarProperty Name="TotalAssets" ColumnName="TotalAssets" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Guid" ColumnName="Guid" />
               </MappingFragment>

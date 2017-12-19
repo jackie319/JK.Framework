@@ -61,6 +61,10 @@
         <AssociationConnector Association="JKDataModel.FK_UserDeliveryAddress_UserAccount" />
         <AssociationConnector Association="JKDataModel.FK_UserOperationRecords_UserAccount" />
         <AssociationConnector Association="JKDataModel.FK_UserShoppingCart_UserAccount" />
+        <EntityTypeShape EntityType="JKDataModel.Article" Width="1.5" PointX="20.375" PointY="8.75" />
+        <EntityTypeShape EntityType="JKDataModel.ArticleCategory" Width="1.5" PointX="20.375" PointY="12.75" />
+        <EntityTypeShape EntityType="JKDataModel.FriendlyLink" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="JKDataModel.UserAccountFinance" Width="1.5" PointX="20.375" PointY="16.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

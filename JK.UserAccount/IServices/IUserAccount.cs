@@ -45,5 +45,16 @@ namespace JK.JKUserAccount.IServices
         UserAccount WechatLogin(string code, Guid userGuid);
 
         UserAccountWechat FindUserAccountWechat(Guid userGuid);
+        /// <summary>
+        /// 用户列表
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="userType"></param>
+        /// <param name="isCertified"></param>
+        /// <param name="skip"></param>
+        /// <param name="take"></param>
+        /// <param name="total"></param>
+        /// <returns></returns>
+        IList<UserAccount> GetList(string userName, UserTypeEnum? userType, Boolean? isCertified, int skip, int take, out int total);
     }
 }

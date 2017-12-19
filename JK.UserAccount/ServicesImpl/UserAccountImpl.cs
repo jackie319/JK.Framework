@@ -383,6 +383,34 @@ namespace JK.JKUserAccount.ServicesImpl
             _userDeliveryAddressRepository.Update(entity);
         }
 
+        /// <summary>
+        /// 用户列表
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="userType"></param>
+        /// <param name="isCertified"></param>
+        /// <param name="skip"></param>
+        /// <param name="take"></param>
+        /// <param name="total"></param>
+        /// <returns></returns>
+        public IList<UserAccount> GetList(string userName, UserTypeEnum? userType, Boolean? isCertified, int skip, int take, out int total)
+        {
+            var query = _userAccountRepository.Table.Where(q => !q.IsDeleted);
+            if (!string.IsNullOrEmpty(userName))
+            {
+                query = query.Where(q => q.UserName.Contains(userName) || q.MobilePhone.Contains(userName));
+            }
+            if (userType != null)
+            {
+                query = query.Where(q => q.UserType.Equals(userType.ToString()));
+            }
+            //if (isCertified != null)
+            //{
+            //    query = query.Where(q => q.IsCertified == isCertified);
+            //}
+            total = query.Count();
+            return query.OrderByDescending(q => q.TimeCreated).Skip(skip).Take(take).ToList();
+        }
 
     }
 }

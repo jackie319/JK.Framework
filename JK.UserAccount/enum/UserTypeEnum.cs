@@ -13,9 +13,13 @@ namespace JK.JKUserAccount
         /// </summary>
         Member,
         /// <summary>
+        /// 企业
+        /// </summary>
+        Enterprise,
+        /// <summary>
         /// 管理员
         /// </summary>
-        Admin
+        Admin,
     }
 
     public enum GenderEnum

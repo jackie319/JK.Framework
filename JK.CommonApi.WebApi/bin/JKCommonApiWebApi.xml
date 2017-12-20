@@ -502,11 +502,11 @@
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:JK.CommonApi.WebApi.Controllers.AccountController.ChangePassword(JK.CommonApi.WebApi.Models.UserAccount.ChangePasswordViewModel)">
+        <member name="M:JK.CommonApi.WebApi.Controllers.AccountController.IsUserNameExist(System.String)">
             <summary>
-            修改密码
+            用户名是否存在（手机号即是用户名）
             </summary>
-            <param name="model"></param>
+            <param name="phone"></param>
             <returns></returns>
         </member>
         <member name="M:JK.CommonApi.WebApi.Controllers.AccountController.SendCodeBack(System.String)">
@@ -527,6 +527,53 @@
             <summary>
             退出登录
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.FriendlyLinkController.GetList(JK.CommonApi.WebApi.Models.FriendlyLinkModel.FriendyLinkQueryModel)">
+            <summary>
+            所有友情链接(后台)
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.FriendlyLinkController.GetList">
+            <summary>
+            所有友情链接(前端显示)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.FriendlyLinkController.Detail(System.Guid)">
+            <summary>
+            详情
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.FriendlyLinkController.Save(JK.CommonApi.WebApi.Models.FriendlyLinkModel.FriendyLinkViewModel)">
+            <summary>
+            新建或编辑友情链接
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.FriendlyLinkController.Delete(System.Guid)">
+            <summary>
+            删除
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.FriendlyLinkController.Dispaly(System.Guid)">
+            <summary>
+            显示
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.FriendlyLinkController.NoDispaly(System.Guid)">
+            <summary>
+            不显示
+            </summary>
+            <param name="guid"></param>
             <returns></returns>
         </member>
         <member name="M:JK.CommonApi.WebApi.Controllers.PayController.Pay(JK.CommonApi.WebApi.Models.PayModel.PayViewModel)">
@@ -550,6 +597,31 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.UserInfoController.UserInfo">
+            <summary>
+            获取用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.UserInfoController.Update(JK.CommonApi.WebApi.Models.UserAccount.UserInfoViewModel)">
+            <summary>
+            更新用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.UserInfoController.UpdateAvatar(System.String)">
+            <summary>
+            更新头像
+            </summary>
+            <param name="picUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.UserInfoController.ChangePassword(JK.CommonApi.WebApi.Models.UserAccount.ChangePasswordViewModel)">
+            <summary>
+            修改密码
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:JK.CommonApi.WebApi.Controllers.WxNotifyController.Notify">
             注意：同样的通知可能会多次发送给商户系统。商户系统必须能够正确处理重复的通知。
         </member>
@@ -564,6 +636,56 @@
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.FriendlyLinkModel.FriendyLinkListViewModel.WebTitle">
+            <summary>
+            友情链接名称
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.FriendlyLinkModel.FriendyLinkListViewModel.WebUrl">
+            <summary>
+            跳转地址
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.FriendlyLinkModel.FriendyLinkListViewModel.DisplayOrder">
+            <summary>
+            显示顺序
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.FriendlyLinkModel.FriendyLinkListViewModel.IsDisplay">
+            <summary>
+            是否在前端显示
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.FriendlyLinkModel.FriendyLinkListViewModel.TimeCreated">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.FriendlyLinkModel.FriendyLinkQueryModel.Title">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.FriendlyLinkModel.FriendyLinkQueryModel.Display">
+            <summary>
+            是否显示
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.FriendlyLinkModel.FriendyLinkViewModel.WebTitle">
+            <summary>
+            友情链接名称
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.FriendlyLinkModel.FriendyLinkViewModel.WebUrl">
+            <summary>
+            跳转地址
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.FriendlyLinkModel.FriendyLinkViewModel.DisplayOrder">
+            <summary>
+            显示顺序
+            </summary>
         </member>
         <member name="P:JK.CommonApi.WebApi.Models.PayModel.PayViewModel.OrderGuid">
             <summary>
@@ -618,6 +740,11 @@
         <member name="P:JK.CommonApi.WebApi.Models.PayModel.PrePayViewModel.MWebUrl">
             <summary>
             支付跳转链接(H5支付时才返回)
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.PrePayViewModel.CodeUrl">
+            <summary>
+            扫码支付二维码地址（扫码支付时才返回）
             </summary>
         </member>
         <member name="P:JK.CommonApi.WebApi.Models.PayModel.RefundPayViewModel.OrderRefundGuid">
@@ -688,6 +815,36 @@
         <member name="P:JK.CommonApi.WebApi.Models.UserAccount.RegisterViewModel.SmsCode">
             <summary>
             短信验证码
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.UserAccount.UserInfoViewModel.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.UserAccount.UserInfoViewModel.AvatarImgUrl">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.UserAccount.UserInfoViewModel.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.UserAccount.UserInfoViewModel.Birthday">
+            <summary>
+            生日
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.UserAccount.UserInfoViewModel.MobilePhone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.UserAccount.UserInfoViewModel.Email">
+            <summary>
+            邮箱
             </summary>
         </member>
         <member name="P:JK.CommonApi.WebApi.Models.UserAccount.WxLoginViewModel.UserGuid">

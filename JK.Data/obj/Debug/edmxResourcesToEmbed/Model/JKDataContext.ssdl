@@ -1,5 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="JKDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubTitle" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Detail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsDisplay" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="AdminUserGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArticleCategory">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ParentGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DisplayPosition" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ArticleGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ActionUrl" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsDisplay" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
   <EntityType Name="AuthorityFunction">
     <Key>
       <PropertyRef Name="FunctionGuid" />
@@ -49,6 +80,19 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
     <Property Name="RoleGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FriendlyLink">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WebTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WebUrl" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="IsDisplay" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
     <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
   </EntityType>
   <EntityType Name="FXJLSetting">
@@ -430,6 +474,20 @@
     <Property Name="UserType" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
     <Property Name="TimeLastVisited" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserAccountFinance">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Balance" Type="int" Nullable="false" />
+    <Property Name="TotalAssets" Type="int" Nullable="false" />
+    <Property Name="TotalShare" Type="int" Nullable="false" />
+    <Property Name="FrozenFunds" Type="int" Nullable="false" />
+    <Property Name="TotalRevenue" Type="int" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
   </EntityType>
   <EntityType Name="UserAccountWechat">
     <Key>
@@ -851,10 +909,13 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="JKDataModelStoreContainer">
+    <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ArticleCategory" EntityType="Self.ArticleCategory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AuthorityFunction" EntityType="Self.AuthorityFunction" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AuthorityRole" EntityType="Self.AuthorityRole" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AuthorityRoleInFunction" EntityType="Self.AuthorityRoleInFunction" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AuthorityUserInRole" EntityType="Self.AuthorityUserInRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FriendlyLink" EntityType="Self.FriendlyLink" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FXJLSetting" EntityType="Self.FXJLSetting" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LotteryActivity" EntityType="Self.LotteryActivity" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LotteryHistory" EntityType="Self.LotteryHistory" Schema="dbo" store:Type="Tables" />
@@ -878,6 +939,7 @@
     <EntitySet Name="ProductSupplier" EntityType="Self.ProductSupplier" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SmsRecords" EntityType="Self.SmsRecords" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAccountFinance" EntityType="Self.UserAccountFinance" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserAccountWechat" EntityType="Self.UserAccountWechat" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserDeliveryAddress" EntityType="Self.UserDeliveryAddress" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserLoginRecords" EntityType="Self.UserLoginRecords" Schema="dbo" store:Type="Tables" />

@@ -26,12 +26,19 @@ namespace JK.CommonApi.WebApi.App_Start
             //}
             operation.parameters.Add(new Parameter { name = "token", @in = "header", description = "token", required = false, type = "string" });
 
+            //后台
             bool flag = apiDescription.ActionDescriptor.GetCustomAttributes<AllowAnonymousAttribute>().Any();
             if (!flag)
             {
                 operation.parameters.Add(new Parameter { name = "sessionkey", @in = "header", description = "sessionkey", required = false, type = "string" });
             }
 
+            //前台
+            var isNeedLogin = apiDescription.ActionDescriptor.GetCustomAttributes<ApiSessionAuthorizeAttribute>().Any();
+            //if (isNeedLogin)
+            //{
+            //    operation.parameters.Add(new Parameter { name = "sessionkey", @in = "header", description = "sessionkey", required = false, type = "string" });
+            //}
 
         }
     }

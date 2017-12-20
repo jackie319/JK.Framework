@@ -117,6 +117,10 @@
       <End Role="UserAccount" EntitySet="UserAccount" />
       <End Role="UserShoppingCart" EntitySet="UserShoppingCart" />
     </AssociationSet>
+    <EntitySet Name="Article" EntityType="JKDataModel.Article" />
+    <EntitySet Name="FriendlyLink" EntityType="JKDataModel.FriendlyLink" />
+    <EntitySet Name="UserAccountFinance" EntityType="JKDataModel.UserAccountFinance" />
+    <EntitySet Name="ArticleCategory" EntityType="JKDataModel.ArticleCategory" />
   </EntityContainer>
   <EntityType Name="AuthorityFunction">
     <Key>
@@ -1008,4 +1012,62 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubTitle" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Detail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsDisplay" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="AdminUserGuid" Type="Guid" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="FriendlyLink">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WebTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WebUrl" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="IsDisplay" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="UserAccountFinance">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserGuid" Type="Guid" Nullable="false" />
+    <Property Name="Balance" Type="Int32" Nullable="false" />
+    <Property Name="TotalAssets" Type="Int32" Nullable="false" />
+    <Property Name="TotalShare" Type="Int32" Nullable="false" />
+    <Property Name="FrozenFunds" Type="Int32" Nullable="false" />
+    <Property Name="TotalRevenue" Type="Int32" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="ArticleCategory">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentGuid" Type="Guid" Nullable="false" />
+    <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DisplayPosition" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ArticleGuid" Type="Guid" Nullable="false" />
+    <Property Name="ActionUrl" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsDisplay" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
 </Schema>

@@ -488,6 +488,7 @@
         </member>
         <member name="M:JK.WechatOauth.WebApi.Controllers.OauthController.GetCode(JK.WechatOauth.WebApi.Models.Oauth.OauthViewModel)">
             <summary>
+            公众号授权
             想要进行微信授权的项目跳转到此地址
             传入返回的页面地址
             公众号登录
@@ -496,14 +497,16 @@
         </member>
         <member name="M:JK.WechatOauth.WebApi.Controllers.OauthController.GetCodeQr(JK.WechatOauth.WebApi.Models.Oauth.OauthViewModel)">
             <summary>
+            微信登录（开放平台）
             想要进行微信登录的项目跳转到此地址
             传入返回的页面地址
             PC登录,微信开放平台注册账户.appid 不一样
             </summary>
             <returns></returns>
         </member>
-        <member name="M:JK.WechatOauth.WebApi.Controllers.OauthController.GetJSWxLogin(JK.WechatOauth.WebApi.Models.Oauth.OauthViewModel)">
+        <member name="M:JK.WechatOauth.WebApi.Controllers.OauthController.GetCodeJSWxLogin(JK.WechatOauth.WebApi.Models.Oauth.OauthViewModel)">
             <summary>
+            JS 微信登录（开放平台）
             JS微信登录获取信息
             传入返回的页面地址
             PC登录,微信开放平台注册账户.appid 不一样

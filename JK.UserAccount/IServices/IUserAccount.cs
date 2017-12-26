@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using JK.Data.Model;
+using JK.JKUserAccount.ServiceModel;
+
 namespace JK.JKUserAccount.IServices
 {
     public interface IUserAccount
@@ -43,7 +45,7 @@ namespace JK.JKUserAccount.IServices
         /// <param name="code"></param>
         /// <returns></returns>
         UserAccount WechatLogin(string code, Guid userGuid);
-
+        UserAccount WechatJscodeLogin(WxJscodeLoginModel model);
         UserAccountWechat FindUserAccountWechat(Guid userGuid);
         /// <summary>
         /// 用户列表

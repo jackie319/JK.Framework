@@ -22,6 +22,7 @@ namespace JK.JKUserAccount.ServicesImpl
         private IRepository<UserDeliveryAddress> _userDeliveryAddressRepository;
         private IRepository<UserLoginRecords> _userLoginRecordRepository;
         private WechatOauth _wechatOauth;
+        private WechatJsCode _wechatJsCode;
         private UnifiedOrderSetting _setting;
         private readonly string _Salt = "_MMYPlatform";
         public UserAccountImpl(IRepository<UserAccount> useraccountRepository, IRepository<UserDeliveryAddress> userDeliveryAddressRepository, IRepository<UserAccountWechat> userAccountWechatRepository, IRepository<UserLoginRecords> userLoginRecordRepository)
@@ -31,6 +32,7 @@ namespace JK.JKUserAccount.ServicesImpl
             _userDeliveryAddressRepository = userDeliveryAddressRepository;
             _userAccountWechatRepository = userAccountWechatRepository;
             _wechatOauth = new WechatOauth(_setting.AppId, _setting.AppSecret);
+            _wechatJsCode = new WechatJsCode(_setting.AppId, _setting.AppSecret);
             _userLoginRecordRepository = userLoginRecordRepository;
         }
         /// <summary>
@@ -87,6 +89,42 @@ namespace JK.JKUserAccount.ServicesImpl
             account.Password = "";
             return account;
         }
+
+        /// <summary>
+        /// 微信小程序登录
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public UserAccount WechatJscodeLogin(WxJscodeLoginModel model)
+        {
+            UserAccount account = new UserAccount();
+            SessionKeyResult result = _wechatJsCode.GetSessionKey(model.Code);
+            if (!string.IsNullOrEmpty(result.errcode))
+            {
+                throw new CommonException($"获取session_key失败：errcode:{result.errcode},errmsg:{result.errmsg}");
+            }
+            var wechat = FindUserAccountWechat(result.openid);
+            if (wechat == null)
+            {
+                UserInfoResult userInfo = new UserInfoResult();
+                userInfo.city = model.City ?? string.Empty;
+                userInfo.country = model.country ?? string.Empty;
+                userInfo.headimgurl = model.AvatarUrl;
+                userInfo.nickname = model.NickName;
+                userInfo.openid = result.openid;
+                userInfo.unionid = result.unionid ?? string.Empty;
+                userInfo.sex = model.Gender;
+                account = CreateUserByWechat(userInfo, model.UserGuid);
+            }
+            else
+            {
+                account = _userAccountRepository.Table.FirstOrDefault(q => q.Guid == wechat.UserAccountGuid && !q.IsDeleted);
+                //TODO:更新
+            }
+            account.Password = "";
+            return account;
+        }
+
         public UserAccountWechat FindUserAccountWechat(string openId)
         {
             return _userAccountWechatRepository.Table.FirstOrDefault(q => q.WechatOpenId.Equals(openId));

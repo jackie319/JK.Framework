@@ -215,6 +215,7 @@
     <Compile Include="Controllers\PayController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\WxJscodeLoginController.cs" />
     <Compile Include="Controllers\WxLoginController.cs" />
     <Compile Include="Controllers\WxNotifyController.cs" />
     <Compile Include="Controllers\WxRefundNotifyController.cs" />

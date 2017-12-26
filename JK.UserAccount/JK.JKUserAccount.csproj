@@ -46,6 +46,7 @@
       <HintPath>..\..\..\SFTFS\SuFan\客户项目\分享精灵\code\FXJL\FXJL.Libs\Libs\Senparc.Weixin.MP.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -63,6 +64,7 @@
     <Compile Include="IServices\IUserAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceModel\UnifiedOrderSetting.cs" />
+    <Compile Include="ServiceModel\WxJscodeLoginModel.cs" />
     <Compile Include="ServicesImpl\FriendlyLinkImpl.cs" />
     <Compile Include="ServicesImpl\SmsImpl.cs" />
     <Compile Include="ServicesImpl\UserAccountImpl.cs" />

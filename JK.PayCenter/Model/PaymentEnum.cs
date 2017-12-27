@@ -12,7 +12,7 @@ namespace JK.PayCenter
     public enum PaymentEnum
     {
         /// <summary>
-        /// 公众号支付
+        /// 公众号支付，小程序支付
         /// </summary>
         JSAPI = 0,
         /// <summary>

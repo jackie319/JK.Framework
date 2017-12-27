@@ -673,6 +673,47 @@
           <Property Name="RefundId" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
         </EntityType>
+        <EntityType Name="WithdrawCashOrder">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="OrderNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Money" Type="int" Nullable="false" />
+          <Property Name="IsChecked" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TimeCretead" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WithdrawCashRecords">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="MchAppId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MchId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DeviceInfo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NonceStr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OutTradeNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OpenId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CheckName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ReUserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+          <Property Name="PayDesc" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="SpbillCreateIP" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PayKey" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ReturnCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ResultCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ErrCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ErrCodeDes" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="PartnerTradeNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PaymentNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PaymentTime" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <Association Name="FK_LotteryHistory_PrizeActivity">
           <End Role="LotteryActivity" Type="Self.LotteryActivity" Multiplicity="1" />
           <End Role="LotteryHistory" Type="Self.LotteryHistory" Multiplicity="*" />
@@ -913,6 +954,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_WithdrawCashOrder_UserAccount">
+          <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+          <End Role="WithdrawCashOrder" Type="Self.WithdrawCashOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="WithdrawCashOrder">
+              <PropertyRef Name="UserGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="JKDataModelStoreContainer">
           <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ArticleCategory" EntityType="Self.ArticleCategory" Schema="dbo" store:Type="Tables" />
@@ -954,6 +1007,8 @@
           <EntitySet Name="WechatPayRecords" EntityType="Self.WechatPayRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WechatPayRefundNotify" EntityType="Self.WechatPayRefundNotify" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WechatPayRefundRecords" EntityType="Self.WechatPayRefundRecords" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WithdrawCashOrder" EntityType="Self.WithdrawCashOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WithdrawCashRecords" EntityType="Self.WithdrawCashRecords" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_LotteryHistory_PrizeActivity" Association="Self.FK_LotteryHistory_PrizeActivity">
             <End Role="LotteryActivity" EntitySet="LotteryActivity" />
             <End Role="LotteryHistory" EntitySet="LotteryHistory" />
@@ -1033,6 +1088,10 @@
           <AssociationSet Name="FK_UserShoppingCart_UserAccount" Association="Self.FK_UserShoppingCart_UserAccount">
             <End Role="UserAccount" EntitySet="UserAccount" />
             <End Role="UserShoppingCart" EntitySet="UserShoppingCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WithdrawCashOrder_UserAccount" Association="Self.FK_WithdrawCashOrder_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="WithdrawCashOrder" EntitySet="WithdrawCashOrder" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -1160,6 +1219,12 @@
           <EntitySet Name="FriendlyLink" EntityType="JKDataModel.FriendlyLink" />
           <EntitySet Name="UserAccountFinance" EntityType="JKDataModel.UserAccountFinance" />
           <EntitySet Name="ArticleCategory" EntityType="JKDataModel.ArticleCategory" />
+          <EntitySet Name="WithdrawCashOrder" EntityType="JKDataModel.WithdrawCashOrder" />
+          <AssociationSet Name="FK_WithdrawCashOrder_UserAccount" Association="JKDataModel.FK_WithdrawCashOrder_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="WithdrawCashOrder" EntitySet="WithdrawCashOrder" />
+          </AssociationSet>
+          <EntitySet Name="WithdrawCashRecords" EntityType="JKDataModel.WithdrawCashRecords" />
         </EntityContainer>
         <EntityType Name="AuthorityFunction">
           <Key>
@@ -1627,6 +1692,7 @@
           <NavigationProperty Name="UserDeliveryAddress" Relationship="JKDataModel.FK_UserDeliveryAddress_UserAccount" FromRole="UserAccount" ToRole="UserDeliveryAddress" />
           <NavigationProperty Name="UserOperationRecords" Relationship="JKDataModel.FK_UserOperationRecords_UserAccount" FromRole="UserAccount" ToRole="UserOperationRecords" />
           <NavigationProperty Name="UserShoppingCart" Relationship="JKDataModel.FK_UserShoppingCart_UserAccount" FromRole="UserAccount" ToRole="UserShoppingCart" />
+          <NavigationProperty Name="WithdrawCashOrder" Relationship="JKDataModel.FK_WithdrawCashOrder_UserAccount" FromRole="UserAccount" ToRole="WithdrawCashOrder" />
         </EntityType>
         <EntityType Name="UserAccountWechat">
           <Key>
@@ -2108,6 +2174,60 @@
           <Property Name="IsDisplay" Type="Boolean" Nullable="false" />
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
           <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="WithdrawCashOrder">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="OrderNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserGuid" Type="Guid" Nullable="false" />
+          <Property Name="Money" Type="Int32" Nullable="false" />
+          <Property Name="IsChecked" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TimeCretead" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="UserAccount" Relationship="JKDataModel.FK_WithdrawCashOrder_UserAccount" FromRole="WithdrawCashOrder" ToRole="UserAccount" />
+        </EntityType>
+        <Association Name="FK_WithdrawCashOrder_UserAccount">
+          <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="JKDataModel.WithdrawCashOrder" Role="WithdrawCashOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="WithdrawCashOrder">
+              <PropertyRef Name="UserGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="WithdrawCashRecords">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="MchAppId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MchId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DeviceInfo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NonceStr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OutTradeNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OpenId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CheckName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReUserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+          <Property Name="PayDesc" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SpbillCreateIP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PayKey" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReturnCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ResultCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ErrCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ErrCodeDes" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PartnerTradeNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -2818,6 +2938,49 @@
                 <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
                 <ScalarProperty Name="ParentGuid" ColumnName="ParentGuid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WithdrawCashOrder">
+            <EntityTypeMapping TypeName="JKDataModel.WithdrawCashOrder">
+              <MappingFragment StoreEntitySet="WithdrawCashOrder">
+                <ScalarProperty Name="TimeCretead" ColumnName="TimeCretead" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsChecked" ColumnName="IsChecked" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WithdrawCashRecords">
+            <EntityTypeMapping TypeName="JKDataModel.WithdrawCashRecords">
+              <MappingFragment StoreEntitySet="WithdrawCashRecords">
+                <ScalarProperty Name="PaymentTime" ColumnName="PaymentTime" />
+                <ScalarProperty Name="PaymentNo" ColumnName="PaymentNo" />
+                <ScalarProperty Name="PartnerTradeNo" ColumnName="PartnerTradeNo" />
+                <ScalarProperty Name="ErrCodeDes" ColumnName="ErrCodeDes" />
+                <ScalarProperty Name="ErrCode" ColumnName="ErrCode" />
+                <ScalarProperty Name="ResultCode" ColumnName="ResultCode" />
+                <ScalarProperty Name="ReturnCode" ColumnName="ReturnCode" />
+                <ScalarProperty Name="PayKey" ColumnName="PayKey" />
+                <ScalarProperty Name="SpbillCreateIP" ColumnName="SpbillCreateIP" />
+                <ScalarProperty Name="PayDesc" ColumnName="PayDesc" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ReUserName" ColumnName="ReUserName" />
+                <ScalarProperty Name="CheckName" ColumnName="CheckName" />
+                <ScalarProperty Name="OpenId" ColumnName="OpenId" />
+                <ScalarProperty Name="OutTradeNo" ColumnName="OutTradeNo" />
+                <ScalarProperty Name="NonceStr" ColumnName="NonceStr" />
+                <ScalarProperty Name="DeviceInfo" ColumnName="DeviceInfo" />
+                <ScalarProperty Name="MchId" ColumnName="MchId" />
+                <ScalarProperty Name="MchAppId" ColumnName="MchAppId" />
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Guid" ColumnName="Guid" />
               </MappingFragment>

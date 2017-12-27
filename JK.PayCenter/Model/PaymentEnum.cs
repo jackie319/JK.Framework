@@ -6,6 +6,22 @@ using System.Threading.Tasks;
 
 namespace JK.PayCenter
 {
+
+    public enum PayStatusEnum
+    {
+        /// <summary>
+        /// 未支付
+        /// </summary>
+        Default,
+        /// <summary>
+        /// 支付成功
+        /// </summary>
+        Success,
+        /// <summary>
+        /// 支付失败
+        /// </summary>
+        Failure
+    }
     /// <summary>
     /// 支付方式
     /// </summary>

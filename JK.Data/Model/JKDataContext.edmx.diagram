@@ -65,6 +65,9 @@
         <EntityTypeShape EntityType="JKDataModel.FriendlyLink" Width="1.5" PointX="12.375" PointY="0.75" />
         <EntityTypeShape EntityType="JKDataModel.UserAccountFinance" Width="1.5" PointX="20.375" PointY="16.75" />
         <EntityTypeShape EntityType="JKDataModel.ArticleCategory" Width="1.5" PointX="20.375" PointY="12.75" />
+        <EntityTypeShape EntityType="JKDataModel.WithdrawCashOrder" Width="1.5" PointX="3" PointY="24.125" />
+        <AssociationConnector Association="JKDataModel.FK_WithdrawCashOrder_UserAccount" />
+        <EntityTypeShape EntityType="JKDataModel.WithdrawCashRecords" Width="1.5" PointX="20.375" PointY="20.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

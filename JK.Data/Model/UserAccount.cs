@@ -22,6 +22,7 @@ namespace JK.Data.Model
             this.UserDeliveryAddress = new HashSet<UserDeliveryAddress>();
             this.UserOperationRecords = new HashSet<UserOperationRecords>();
             this.UserShoppingCart = new HashSet<UserShoppingCart>();
+            this.WithdrawCashOrder = new HashSet<WithdrawCashOrder>();
         }
     
         public System.Guid Guid { get; set; }
@@ -56,5 +57,7 @@ namespace JK.Data.Model
         public virtual ICollection<UserOperationRecords> UserOperationRecords { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserShoppingCart> UserShoppingCart { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<WithdrawCashOrder> WithdrawCashOrder { get; set; }
     }
 }

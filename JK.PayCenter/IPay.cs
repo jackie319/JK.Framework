@@ -13,5 +13,6 @@ namespace JK.PayCenter
         WechatPayResult WechatPay(Guid orderGuid, string orderNo, string openId, string spbillCreateIP, PaymentEnum payment);
 
         PayNotifyResult PayNotify(HttpContext httpContext);
+        void PayToUser(Guid userGuid, string openId, int money, string spbillCreateIP);
     }
 }

@@ -65,5 +65,7 @@ namespace JK.Data.Model
         public virtual DbSet<FriendlyLink> FriendlyLink { get; set; }
         public virtual DbSet<UserAccountFinance> UserAccountFinance { get; set; }
         public virtual DbSet<ArticleCategory> ArticleCategory { get; set; }
+        public virtual DbSet<WithdrawCashOrder> WithdrawCashOrder { get; set; }
+        public virtual DbSet<WithdrawCashRecords> WithdrawCashRecords { get; set; }
     }
 }

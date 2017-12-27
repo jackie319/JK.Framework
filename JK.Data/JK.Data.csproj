@@ -184,6 +184,12 @@
     <Compile Include="Model\WechatPayRefundRecords.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\WithdrawCashOrder.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\WithdrawCashRecords.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

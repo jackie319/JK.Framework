@@ -66,6 +66,10 @@
       <Project>{1D16371D-484B-4EA0-8324-E39DC1BB251E}</Project>
       <Name>JK.Framework.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JK.Framework.Extensions\JK.Framework.Extensions.csproj">
+      <Project>{FFCDE5F0-5423-4723-A5C9-894CB359FD55}</Project>
+      <Name>JK.Framework.Extensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JK.Framework.Pay\JK.Framework.Pay.csproj">
       <Project>{D8F93D0A-620F-4BB7-A0B2-E799CEF75B8C}</Project>
       <Name>JK.Framework.Pay</Name>

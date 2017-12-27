@@ -1,6 +1,7 @@
 ﻿using JK.Data.Model;
 using JK.Framework.Core;
 using JK.Framework.Core.Data;
+using JK.Framework.Extensions;
 using JK.Framework.Pay.Tencent;
 using JK.JKUserAccount.IServices;
 using JK.JKUserAccount.ServiceModel;
@@ -29,7 +30,9 @@ namespace JK.PayCenter
         private IRepository<Product> _productRepository;
         private IRepository<ProductClassification> _productClassificationrRepository;
         private IRepository<WechatPayNotify> _orderPayNotifyRepository;
-      //  private IProductCategory _productCategoryRepository;
+        //  private IProductCategory _productCategoryRepository;
+        private IRepository<WithdrawCashOrder> _withdrawCashOrderRepository;
+        private IRepository<WithdrawCashRecords> _withdrawCashRecordsRepository;
         private UnifiedOrderSetting _setting;
         private ILog _log;
         private WechatPay _wechatPay;
@@ -37,7 +40,8 @@ namespace JK.PayCenter
         private ISms _sms;
         public PayImpl(IRepository<Order> ordeRepository, IRepository<WechatPayRecords> payRecordsRepository, IRepository<OrderPayment> paymentRepository,
             IRepository<Product> productRepository, IRepository<OrderProduct> orderProductRepository,
-            IRepository<WechatPayNotify> orderPayNotifyRepository, IRepository<ProductClassification> productClassificationrRepository, ISms sms)
+            IRepository<WechatPayNotify> orderPayNotifyRepository, IRepository<ProductClassification> productClassificationrRepository, ISms sms,
+             IRepository<WithdrawCashOrder> withdrawCashOrderRepository, IRepository<WithdrawCashRecords> withdrawCashRecordsRepository)
         {
             _orderRepository = ordeRepository;
             _payRecordsRepository = payRecordsRepository;
@@ -49,6 +53,8 @@ namespace JK.PayCenter
             _productClassificationrRepository = productClassificationrRepository;
             _wechatPay = new WechatPay(_setting.AppId, _setting.MchId, _setting.Key, _setting.Cert, _setting.AppKey);
             _log = LogManager.GetLogger(typeof(PayImpl));
+            _withdrawCashOrderRepository = withdrawCashOrderRepository;
+            _withdrawCashRecordsRepository = withdrawCashRecordsRepository;
             _sms = sms;
         }
         /// <summary>
@@ -296,6 +302,90 @@ namespace JK.PayCenter
             result.ReturnCode = "SUCCESS";
             _log.Info("微信支付通知：成功处理完毕");
             return result;
+        }
+
+        /// <summary>
+        /// 提现
+        /// </summary>
+        public void PayToUser(Guid userGuid, string openId, int money, string spbillCreateIP)
+        {
+
+            WithdrawCashOrder cashOrder = new WithdrawCashOrder();
+            cashOrder.UserGuid = userGuid;
+            cashOrder.Money = money;
+            var order = CreateWithdrawCashOrder(cashOrder); //生成提现订单
+
+            string nonceStr = Guid.NewGuid().ToString("N");
+
+            _setting.DeviceInfo = "";//非必填
+            _setting.NonceStr = nonceStr;
+            _setting.OutTradeNo = order.OrderNo;//商户订单号
+            string checkName = "NO_CHECK";//不校验真实姓名
+            string reUserName = "";//不校验时非必填
+            string desc = "提现";
+            TenPayV3TransfersRequestData data = new TenPayV3TransfersRequestData(_setting.AppId, _setting.MchId, _setting.DeviceInfo, _setting.NonceStr, _setting.OutTradeNo,
+               openId, _setting.Key, checkName, reUserName, money, desc, spbillCreateIP);
+            var result = _wechatPay.Transfers(data);//开始提现
+
+            //记录提现历史
+            WithdrawCashRecords record = new WithdrawCashRecords();
+            record.Amount = money;
+            record.DeviceInfo = _setting.DeviceInfo;
+            record.ErrCode = result.err_code ?? "";
+            record.ErrCodeDes = result.err_code_des ?? "";
+            record.MchId = _setting.MchId;
+            record.MchAppId = _setting.AppId;
+            record.NonceStr = nonceStr;
+            record.PartnerTradeNo = result.partner_trade_no ?? "";
+            record.PaymentNo = result.payment_no ?? "";
+            record.PaymentTime = result.payment_time ?? "";
+            record.ResultCode = result.result_code ?? "";
+            record.ReturnCode = result.return_code ?? "";
+            record.PayKey = _setting.Key;
+            record.PayDesc = desc;
+            record.CheckName = checkName;
+            record.ReUserName = reUserName;
+            record.SpbillCreateIP = spbillCreateIP;
+            record.OpenId = openId;
+            CreateWithdrawCashRecords(record);
+
+            //更改提现订单状态
+            if (result.return_code.Equals("SUCCESS") && result.result_code.Equals("SUCCESS"))
+            {
+                UpdateWithdrawCashOrder(order.OrderNo, PayStatusEnum.Success);
+            }
+            else
+            {
+                UpdateWithdrawCashOrder(order.OrderNo, PayStatusEnum.Failure);
+                throw new Exception("提现失败：return_code=" + result.return_code ?? "" + ";result_code=" + result.result_code ?? "");
+            }
+        }
+
+        public WithdrawCashOrder CreateWithdrawCashOrder(WithdrawCashOrder order)
+        {
+            order.Guid = Guid.NewGuid();
+            order.OrderNo = OrderNo.CreateOrderNo();
+            order.TimeCretead = DateTime.Now;
+            order.Status = PayStatusEnum.Default.ToString();
+            order.IsChecked = false;
+            order.IsDeleted = false;
+            _withdrawCashOrderRepository.Insert(order);
+            return order;
+        }
+
+        public void UpdateWithdrawCashOrder(string orderNo, PayStatusEnum status)
+        {
+            var entity = _withdrawCashOrderRepository.Table.FirstOrDefault(q => q.OrderNo.Equals(orderNo));
+            if (entity == null) throw new ArgumentException("找不到该提现订单");
+            entity.Status = status.ToString();
+            _withdrawCashOrderRepository.Update(entity);
+        }
+
+        public void CreateWithdrawCashRecords(WithdrawCashRecords record)
+        {
+            record.Guid = Guid.Empty;
+            record.TimeCreated = DateTime.Now;
+            _withdrawCashRecordsRepository.Insert(record);
         }
     }
 }

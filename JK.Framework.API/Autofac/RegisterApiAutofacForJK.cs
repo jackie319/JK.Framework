@@ -9,6 +9,8 @@ using Autofac.Integration.WebApi;
 using JK.Framework.Core.Caching;
 using JK.Framework.Core.Data;
 using JK.Framework.Data;
+using System.Web.Mvc;
+using Autofac.Integration.Mvc;
 
 namespace JK.Framework.API
 {
@@ -48,7 +50,7 @@ namespace JK.Framework.API
             //注册api容器需要使用HttpConfiguration对象
              config.DependencyResolver = new AutofacWebApiDependencyResolver(_container);
 
-          //  DependencyResolver.SetResolver(new AutofacDependencyResolver(_container));
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(_container));//支持MVC.通知的Controller是MVC
 
         }
     }

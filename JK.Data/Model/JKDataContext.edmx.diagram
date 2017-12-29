@@ -68,6 +68,7 @@
         <EntityTypeShape EntityType="JKDataModel.WithdrawCashOrder" Width="1.5" PointX="3" PointY="24.125" />
         <AssociationConnector Association="JKDataModel.FK_WithdrawCashOrder_UserAccount" />
         <EntityTypeShape EntityType="JKDataModel.WithdrawCashRecords" Width="1.5" PointX="20.375" PointY="20.75" />
+        <EntityTypeShape EntityType="JKDataModel.MyLotteryV" Width="1.5" PointX="21.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

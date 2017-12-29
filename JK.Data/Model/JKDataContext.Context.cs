@@ -67,5 +67,6 @@ namespace JK.Data.Model
         public virtual DbSet<ArticleCategory> ArticleCategory { get; set; }
         public virtual DbSet<WithdrawCashOrder> WithdrawCashOrder { get; set; }
         public virtual DbSet<WithdrawCashRecords> WithdrawCashRecords { get; set; }
+        public virtual DbSet<MyLotteryV> MyLotteryV { get; set; }
     }
 }

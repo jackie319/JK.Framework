@@ -158,6 +158,7 @@
           <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PrizeActivityGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Grade" Type="int" Nullable="false" />
           <Property Name="PrizeType" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="PrizeName" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Money" Type="int" Nullable="false" />
@@ -714,6 +715,41 @@
           <Property Name="PaymentNo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="PaymentTime" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“JKData.dbo.MyLotteryV”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="MyLotteryV">
+          <Key>
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="DefaultPic" />
+            <PropertyRef Name="BaseNumber" />
+            <PropertyRef Name="Detail" />
+            <PropertyRef Name="BeginTime" />
+            <PropertyRef Name="EndTime" />
+            <PropertyRef Name="PrizeActivityGuid" />
+            <PropertyRef Name="UserGuid" />
+            <PropertyRef Name="IsWenner" />
+            <PropertyRef Name="PrizeGuid" />
+            <PropertyRef Name="TimeCreated" />
+          </Key>
+          <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DefaultPic" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="BaseNumber" Type="int" Nullable="false" />
+          <Property Name="Detail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BeginTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="EndTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="PrizeActivityGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsWenner" Type="bit" Nullable="false" />
+          <Property Name="PrizeGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PrizeName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Money" Type="int" />
+          <Property Name="PrizeType" Type="varchar" MaxLength="50" />
+          <Property Name="PrizePic" Type="varchar" MaxLength="200" />
+          <Property Name="PrizeDetail" Type="nvarchar" MaxLength="2000" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
         <Association Name="FK_LotteryHistory_PrizeActivity">
           <End Role="LotteryActivity" Type="Self.LotteryActivity" Multiplicity="1" />
           <End Role="LotteryHistory" Type="Self.LotteryHistory" Multiplicity="*" />
@@ -1009,6 +1045,27 @@
           <EntitySet Name="WechatPayRefundRecords" EntityType="Self.WechatPayRefundRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WithdrawCashOrder" EntityType="Self.WithdrawCashOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WithdrawCashRecords" EntityType="Self.WithdrawCashRecords" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MyLotteryV" EntityType="Self.MyLotteryV" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MyLotteryV].[Title] AS [Title], 
+    [MyLotteryV].[Type] AS [Type], 
+    [MyLotteryV].[DefaultPic] AS [DefaultPic], 
+    [MyLotteryV].[BaseNumber] AS [BaseNumber], 
+    [MyLotteryV].[Detail] AS [Detail], 
+    [MyLotteryV].[BeginTime] AS [BeginTime], 
+    [MyLotteryV].[EndTime] AS [EndTime], 
+    [MyLotteryV].[PrizeActivityGuid] AS [PrizeActivityGuid], 
+    [MyLotteryV].[UserGuid] AS [UserGuid], 
+    [MyLotteryV].[IsWenner] AS [IsWenner], 
+    [MyLotteryV].[PrizeGuid] AS [PrizeGuid], 
+    [MyLotteryV].[PrizeName] AS [PrizeName], 
+    [MyLotteryV].[Money] AS [Money], 
+    [MyLotteryV].[PrizeType] AS [PrizeType], 
+    [MyLotteryV].[PrizePic] AS [PrizePic], 
+    [MyLotteryV].[PrizeDetail] AS [PrizeDetail], 
+    [MyLotteryV].[TimeCreated] AS [TimeCreated]
+    FROM [dbo].[MyLotteryV] AS [MyLotteryV]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_LotteryHistory_PrizeActivity" Association="Self.FK_LotteryHistory_PrizeActivity">
             <End Role="LotteryActivity" EntitySet="LotteryActivity" />
             <End Role="LotteryHistory" EntitySet="LotteryHistory" />
@@ -1225,6 +1282,7 @@
             <End Role="WithdrawCashOrder" EntitySet="WithdrawCashOrder" />
           </AssociationSet>
           <EntitySet Name="WithdrawCashRecords" EntityType="JKDataModel.WithdrawCashRecords" />
+          <EntitySet Name="MyLotteryV" EntityType="JKDataModel.MyLotteryV" />
         </EntityContainer>
         <EntityType Name="AuthorityFunction">
           <Key>
@@ -1355,6 +1413,7 @@
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
           <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
           <NavigationProperty Name="LotteryActivity" Relationship="JKDataModel.FK_Prize_PrizeActivity" FromRole="LotteryPrize" ToRole="LotteryActivity" />
+          <Property Name="Grade" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -2229,6 +2288,39 @@
           <Property Name="PaymentNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PaymentTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="MyLotteryV">
+          <Key>
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Type" />
+            <PropertyRef Name="DefaultPic" />
+            <PropertyRef Name="BaseNumber" />
+            <PropertyRef Name="Detail" />
+            <PropertyRef Name="BeginTime" />
+            <PropertyRef Name="EndTime" />
+            <PropertyRef Name="PrizeActivityGuid" />
+            <PropertyRef Name="UserGuid" />
+            <PropertyRef Name="IsWenner" />
+            <PropertyRef Name="PrizeGuid" />
+            <PropertyRef Name="TimeCreated" />
+          </Key>
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DefaultPic" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="BaseNumber" Type="Int32" Nullable="false" />
+          <Property Name="Detail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BeginTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="PrizeActivityGuid" Type="Guid" Nullable="false" />
+          <Property Name="UserGuid" Type="Guid" Nullable="false" />
+          <Property Name="IsWenner" Type="Boolean" Nullable="false" />
+          <Property Name="PrizeGuid" Type="Guid" Nullable="false" />
+          <Property Name="PrizeName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Money" Type="Int32" />
+          <Property Name="PrizeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrizePic" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PrizeDetail" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2348,6 +2440,7 @@
           <EntitySetMapping Name="LotteryPrize">
             <EntityTypeMapping TypeName="JKDataModel.LotteryPrize">
               <MappingFragment StoreEntitySet="LotteryPrize">
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
                 <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="Detail" ColumnName="Detail" />
@@ -2983,6 +3076,29 @@
                 <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MyLotteryV">
+            <EntityTypeMapping TypeName="JKDataModel.MyLotteryV">
+              <MappingFragment StoreEntitySet="MyLotteryV">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="PrizeDetail" ColumnName="PrizeDetail" />
+                <ScalarProperty Name="PrizePic" ColumnName="PrizePic" />
+                <ScalarProperty Name="PrizeType" ColumnName="PrizeType" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="PrizeName" ColumnName="PrizeName" />
+                <ScalarProperty Name="PrizeGuid" ColumnName="PrizeGuid" />
+                <ScalarProperty Name="IsWenner" ColumnName="IsWenner" />
+                <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+                <ScalarProperty Name="PrizeActivityGuid" ColumnName="PrizeActivityGuid" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="BaseNumber" ColumnName="BaseNumber" />
+                <ScalarProperty Name="DefaultPic" ColumnName="DefaultPic" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

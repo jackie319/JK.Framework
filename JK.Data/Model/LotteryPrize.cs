@@ -26,6 +26,7 @@ namespace JK.Data.Model
         public string Detail { get; set; }
         public bool IsDeleted { get; set; }
         public System.DateTime TimeCreated { get; set; }
+        public int Grade { get; set; }
     
         public virtual LotteryActivity LotteryActivity { get; set; }
     }

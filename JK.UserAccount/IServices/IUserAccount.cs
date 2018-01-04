@@ -45,6 +45,7 @@ namespace JK.JKUserAccount.IServices
         /// <param name="code"></param>
         /// <returns></returns>
         UserAccount WechatLogin(string code, Guid userGuid);
+        UserAccount WechatOpenLogin(string code, Guid userGuid);
         UserAccount WechatJscodeLogin(WxJscodeLoginModel model);
         UserAccountWechat FindUserAccountWechat(Guid userGuid);
         /// <summary>

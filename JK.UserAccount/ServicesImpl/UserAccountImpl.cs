@@ -22,6 +22,7 @@ namespace JK.JKUserAccount.ServicesImpl
         private IRepository<UserDeliveryAddress> _userDeliveryAddressRepository;
         private IRepository<UserLoginRecords> _userLoginRecordRepository;
         private WechatOauth _wechatOauth;
+        private WechatOauth _wechatOpenOauth;
         private WechatJsCode _wechatJsCode;
         private UnifiedOrderSetting _setting;
         private readonly string _Salt = "_MMYPlatform";
@@ -32,6 +33,7 @@ namespace JK.JKUserAccount.ServicesImpl
             _userDeliveryAddressRepository = userDeliveryAddressRepository;
             _userAccountWechatRepository = userAccountWechatRepository;
             _wechatOauth = new WechatOauth(_setting.AppId, _setting.AppSecret);
+            _wechatOpenOauth = new WechatOauth("wxa8f539ab4579afe9", "1828eacb166348a5dbbfdf3e863aaac6");
             _wechatJsCode = new WechatJsCode(_setting.AppId, _setting.AppSecret);
             _userLoginRecordRepository = userLoginRecordRepository;
         }
@@ -75,6 +77,33 @@ namespace JK.JKUserAccount.ServicesImpl
             if (wechat == null)
             {
                 var userInfo = _wechatOauth.GetUserInfo(codeResult.access_token, codeResult.openid);
+                if (!string.IsNullOrEmpty(userInfo.errcode))
+                {
+                    throw new CommonException($"获取wechat用户信息失败：errcode:{userInfo.errcode},errmsg:{userInfo.errmsg}");
+                }
+                account = CreateUserByWechat(userInfo, userGuid);
+            }
+            else
+            {
+                account = _userAccountRepository.Table.FirstOrDefault(q => q.Guid == wechat.UserAccountGuid && !q.IsDeleted);
+                //TODO:更新
+            }
+            account.Password = "";
+            return account;
+        }
+
+        public UserAccount WechatOpenLogin(string code, Guid userGuid)
+        {
+            UserAccount account = new UserAccount();
+            var codeResult = _wechatOpenOauth.GetAccessToken(code);
+            if (!string.IsNullOrEmpty(codeResult.errcode))
+            {
+                throw new CommonException($"获取AccesToken失败：errcode:{codeResult.errcode},errmsg:{codeResult.errmsg}");
+            }
+            var wechat = FindUserAccountWechat(codeResult.openid);
+            if (wechat == null)
+            {
+                var userInfo = _wechatOpenOauth.GetUserInfo(codeResult.access_token, codeResult.openid);
                 if (!string.IsNullOrEmpty(userInfo.errcode))
                 {
                     throw new CommonException($"获取wechat用户信息失败：errcode:{userInfo.errcode},errmsg:{userInfo.errmsg}");

@@ -19,15 +19,18 @@ using System.Web.Http;
 namespace JK.CommonApi.WebApi.Controllers
 {
     /// <summary>
-    /// 微信登录（公众号）
+    /// /// <summary>
+    /// 微信登录（开放平台）
+    /// Appid 和 Appsecret 和公众平台不一样
+    /// 用户openId 和公众号不一样
     /// </summary>
-    [RoutePrefix("WxLogin")]
-    public class WxLoginController : ApiController
+    [RoutePrefix("WxOpenLogin")]
+    public class WxOpenLoginController : ApiController
     {
         private IUserAccount _userAccount;
         private ICacheManager _cache;
         private ILog _log;
-        public WxLoginController(IUserAccount userAccount, ICacheManager cache)
+        public WxOpenLoginController(IUserAccount userAccount, ICacheManager cache)
         {
             _userAccount = userAccount;
             _cache = cache;
@@ -39,7 +42,7 @@ namespace JK.CommonApi.WebApi.Controllers
         {
             try
             {
-                var account = _userAccount.WechatLogin(model.Code, model.UserGuid);
+                var account = _userAccount.WechatOpenLogin(model.Code, model.UserGuid);
                 string openId = string.Empty;
                 var usreAccountWechat = _userAccount.FindUserAccountWechat(account.Guid);
                 if (usreAccountWechat != null)
@@ -47,7 +50,7 @@ namespace JK.CommonApi.WebApi.Controllers
                     openId = usreAccountWechat.WechatOpenId;
                 }
                 UserModel userModel = new UserModel(account, account.NickName, true, openId) { };
-                string sessionKey = SessionManager.GetSessionKey(userModel.UserGuid,"CommonApi");
+                string sessionKey = SessionManager.GetSessionKey(userModel.UserGuid, "CommonApi");
                 _cache.Remove(sessionKey);
                 _cache.SetSliding(sessionKey, userModel, AppSetting.Instance().SessionTimeExpired);
                 _userAccount.UpdateSessionKey(userModel.UserGuid, sessionKey);
@@ -92,7 +95,6 @@ namespace JK.CommonApi.WebApi.Controllers
             }
             return this.ResultApiSuccess();
         }
-
 
     }
 }

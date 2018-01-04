@@ -221,6 +221,7 @@
     <Compile Include="Controllers\WxJscodeLoginController.cs" />
     <Compile Include="Controllers\WxLoginController.cs" />
     <Compile Include="Controllers\WxNotifyController.cs" />
+    <Compile Include="Controllers\WxOpenLoginController.cs" />
     <Compile Include="Controllers\WxRefundController.cs" />
     <Compile Include="Controllers\WxRefundNotifyController.cs" />
     <Compile Include="Controllers\WxShareController.cs" />

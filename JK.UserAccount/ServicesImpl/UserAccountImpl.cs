@@ -154,6 +154,11 @@ namespace JK.JKUserAccount.ServicesImpl
             return account;
         }
 
+        /// <summary>
+        /// 判断微信用户有没有登录过系统。TODO：此处应改用unionId判断，而不是openId
+        /// </summary>
+        /// <param name="openId"></param>
+        /// <returns></returns>
         public UserAccountWechat FindUserAccountWechat(string openId)
         {
             return _userAccountWechatRepository.Table.FirstOrDefault(q => q.WechatOpenId.Equals(openId));

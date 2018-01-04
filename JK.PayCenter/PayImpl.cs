@@ -33,6 +33,7 @@ namespace JK.PayCenter
         //  private IProductCategory _productCategoryRepository;
         private IRepository<WithdrawCashOrder> _withdrawCashOrderRepository;
         private IRepository<WithdrawCashRecords> _withdrawCashRecordsRepository;
+        private IRepository<UserAccount> _UserAccountRepository;
         private UnifiedOrderSetting _setting;
         private ILog _log;
         private WechatPay _wechatPay;
@@ -41,7 +42,8 @@ namespace JK.PayCenter
         public PayImpl(IRepository<Order> ordeRepository, IRepository<WechatPayRecords> payRecordsRepository, IRepository<OrderPayment> paymentRepository,
             IRepository<Product> productRepository, IRepository<OrderProduct> orderProductRepository,
             IRepository<WechatPayNotify> orderPayNotifyRepository, IRepository<ProductClassification> productClassificationrRepository, ISms sms,
-             IRepository<WithdrawCashOrder> withdrawCashOrderRepository, IRepository<WithdrawCashRecords> withdrawCashRecordsRepository)
+             IRepository<WithdrawCashOrder> withdrawCashOrderRepository, IRepository<WithdrawCashRecords> withdrawCashRecordsRepository,
+              IRepository<UserAccount> userAccountRepository)
         {
             _orderRepository = ordeRepository;
             _payRecordsRepository = payRecordsRepository;
@@ -51,10 +53,11 @@ namespace JK.PayCenter
             _orderPayNotifyRepository = orderPayNotifyRepository;
             _setting = new UnifiedOrderSetting();
             _productClassificationrRepository = productClassificationrRepository;
-            _wechatPay = new WechatPay(_setting.AppId, _setting.MchId, _setting.Key, _setting.Cert, _setting.AppKey);
+            _wechatPay = new WechatPay(_setting.AppId, _setting.MchId, _setting.Key, _setting.Cert, _setting.MchId);
             _log = LogManager.GetLogger(typeof(PayImpl));
             _withdrawCashOrderRepository = withdrawCashOrderRepository;
             _withdrawCashRecordsRepository = withdrawCashRecordsRepository;
+            _UserAccountRepository = userAccountRepository;
             _sms = sms;
         }
         /// <summary>
@@ -309,7 +312,9 @@ namespace JK.PayCenter
         /// </summary>
         public void PayToUser(Guid userGuid, string openId, int money, string spbillCreateIP)
         {
-
+            //确认用户余额大于提现金额
+            var user = _UserAccountRepository.Table.FirstOrDefault(q => q.Guid == userGuid);
+            if (user.Money < money) throw new ArgumentException("用户余额不足");
             WithdrawCashOrder cashOrder = new WithdrawCashOrder();
             cashOrder.UserGuid = userGuid;
             cashOrder.Money = money;
@@ -347,12 +352,16 @@ namespace JK.PayCenter
             record.ReUserName = reUserName;
             record.SpbillCreateIP = spbillCreateIP;
             record.OpenId = openId;
+            record.OutTradeNo = _setting.OutTradeNo;
             CreateWithdrawCashRecords(record);
 
             //更改提现订单状态
             if (result.return_code.Equals("SUCCESS") && result.result_code.Equals("SUCCESS"))
             {
                 UpdateWithdrawCashOrder(order.OrderNo, PayStatusEnum.Success);
+                //更改用户余额
+                user.Money -= money;
+                _UserAccountRepository.Update(user);
             }
             else
             {

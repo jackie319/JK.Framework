@@ -38,7 +38,7 @@ namespace JK.Framework.Pay.Tencent
         private string Cert { get; set; }
 
         /// <summary>
-        /// 证书私钥
+        /// 证书私钥（默认为商户号）
         /// </summary>
         private string Password { get; set; }
 

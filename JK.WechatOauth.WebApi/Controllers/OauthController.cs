@@ -74,6 +74,7 @@ namespace JK.WechatOauth.WebApi.Controllers
 
         /// <summary>
         /// 微信登录（开放平台）
+        /// 跳转到微信二维码页面
         /// 想要进行微信登录的项目跳转到此地址
         /// 传入返回的页面地址
         /// PC登录,微信开放平台注册账户.appid 不一样
@@ -122,7 +123,7 @@ namespace JK.WechatOauth.WebApi.Controllers
 
         /// <summary>
         /// JS 微信登录（开放平台）
-        /// JS微信登录获取信息
+        /// JS微信登录获取信息，将微信登录二维码内嵌到自己页面中
         /// 传入返回的页面地址
         /// PC登录,微信开放平台注册账户.appid 不一样
         /// </summary>

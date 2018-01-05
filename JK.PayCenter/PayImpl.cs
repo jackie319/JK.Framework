@@ -149,7 +149,7 @@ namespace JK.PayCenter
         private UnifiedorderResult UnifiedOrder(Order order, string openId, string spbillCreateIP, string nonceStr, string body, string productId, TenPayV3Type type)
         {
 
-            _setting.DeviceInfo = "WEB";
+            _setting.DeviceInfo = "WEB";//非必填
             _setting.NonceStr = nonceStr;
             _setting.Body = body;
             _setting.Detail = _setting.Body;

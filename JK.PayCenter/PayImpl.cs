@@ -159,7 +159,17 @@ namespace JK.PayCenter
             _setting.NotifyUrl = "http://api.m.maimaiyin.cn/WxNotify/Notify";
             _setting.TradeType = type;
             _setting.ProductId = productId;//扫码支付必填
-            _setting.OpenId = openId;//trade_type=JSAPI时（即公众号支付），此参数必传，此参数为微信用户在商户对应appid下的唯一标识
+            if(type== TenPayV3Type.JSAPI)
+            {
+                _setting.OpenId = openId;
+            }
+            else
+            {
+                _setting.OpenId = string.Empty;
+            }
+          //  _setting.OpenId = openId;//trade_type=JSAPI时（即公众号支付），此参数必传，此参数为微信用户在商户对应appid下的唯一标识
+                                     //（非公众号支付时不传openId）。如:PC端微信扫码登录 。用户登录获得的openid和用户对应公众号openId不一致。
+                                     //传了反而会报错:AppId和openId不匹配。因为支付用的是公众号AppId
             TenPayV3UnifiedorderRequestData data = new TenPayV3UnifiedorderRequestData(_setting.AppId, _setting.MchId, _setting.Body, _setting.OutTradeNo, _setting.TotalFee, _setting.SpbillCreateIP,
                 _setting.NotifyUrl, _setting.TradeType, _setting.OpenId, _setting.Key, _setting.NonceStr);
             UnifiedorderResult result = _wechatPay.Pay(data);

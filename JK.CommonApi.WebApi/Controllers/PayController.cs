@@ -33,7 +33,7 @@ namespace JK.CommonApi.WebApi.Controllers
             _log = LogManager.GetLogger(typeof(PayController));
         }
         /// <summary>
-        /// 支付
+        /// 支付 （非公众号支付时不传openId）
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>

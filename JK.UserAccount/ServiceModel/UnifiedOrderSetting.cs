@@ -33,7 +33,7 @@ namespace JK.JKUserAccount.ServiceModel
         /// </summary>
         public string AppKey = "";
 
-        public string Cert = @"D:\cert\apiclient_cert.p12";
+        public string Cert = @"D:\cert\apiclient_cert.p12";//抽到配置文件
 
         #region 服务商
 

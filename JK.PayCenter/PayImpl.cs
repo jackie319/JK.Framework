@@ -344,6 +344,8 @@ namespace JK.PayCenter
 
             //记录提现历史
             WithdrawCashRecords record = new WithdrawCashRecords();
+            record.Guid = Guid.NewGuid();
+            record.TimeCreated = DateTime.Now;
             record.Amount = money;
             record.DeviceInfo = _setting.DeviceInfo;
             record.ErrCode = result.err_code ?? "";

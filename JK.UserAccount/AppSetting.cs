@@ -26,6 +26,8 @@ namespace JK.JKUserAccount
 
         public string QrLogoPath { get; set; }
 
+        public string WechatPayNotifyUrl { get; set; }
+
         public int SessionTimeExpired { get; set; }
     }
 }

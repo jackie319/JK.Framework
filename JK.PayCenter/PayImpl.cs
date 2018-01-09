@@ -156,7 +156,7 @@ namespace JK.PayCenter
             _setting.OutTradeNo = order.OrderNo;//商户订单号
             _setting.TotalFee = order.OrderAmount;//订单总金额
             _setting.SpbillCreateIP = spbillCreateIP;//用户端IP
-            _setting.NotifyUrl = "http://api.m.maimaiyin.cn/WxNotify/Notify";
+            _setting.NotifyUrl = "http://wxapi.ynsufan.com/WxNotify/Notify";//使用配置 AppSetting.Instance().WechatPayNotifyUrl
             _setting.TradeType = type;
             _setting.ProductId = productId;//扫码支付必填
             if(type== TenPayV3Type.JSAPI)

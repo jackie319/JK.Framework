@@ -47,9 +47,10 @@ namespace JK.CommonApi.WebApi
         public void GetAppSetting()
         {
             string pictureUrl = WebConfigurationManager.AppSettings["PictureUrl"];
-
+            string wechatPayNotifyUrl = WebConfigurationManager.AppSettings["WechatPayNotifyUrl"];
             string sessionTimeExpired = WebConfigurationManager.AppSettings["SessionTimeExpired"];
             AppSetting.Instance().PictureUrl = pictureUrl;
+            AppSetting.Instance().WechatPayNotifyUrl = wechatPayNotifyUrl;
             AppSetting.Instance().SessionTimeExpired = Convert.ToInt32(sessionTimeExpired);
         }
 

@@ -486,6 +486,7 @@ namespace JK.JKUserAccount.ServicesImpl
 
         /// <summary>
         /// 我的团队(树型结构，可控制层级)
+        /// 无限级递归的分页处理??
         /// </summary>
         /// <param name="userName"></param>
         /// <returns></returns>

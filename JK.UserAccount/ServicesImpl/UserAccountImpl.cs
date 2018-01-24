@@ -503,7 +503,7 @@ namespace JK.JKUserAccount.ServicesImpl
                     model.Grade = grade;
                     if (grade <= 2)//控制层级
                     {
-                        model.ChildrenModels = GetMyTeam(userName);
+                        model.ChildrenModels = GetMyTeam(item.UserName);
                         grade += 1;
                     }
 

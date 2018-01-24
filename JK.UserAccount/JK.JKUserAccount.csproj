@@ -63,6 +63,7 @@
     <Compile Include="IServices\ISms.cs" />
     <Compile Include="IServices\IUserAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceModel\MyTeamServiceModel.cs" />
     <Compile Include="ServiceModel\UnifiedOrderSetting.cs" />
     <Compile Include="ServiceModel\WxJscodeLoginModel.cs" />
     <Compile Include="ServicesImpl\FriendlyLinkImpl.cs" />

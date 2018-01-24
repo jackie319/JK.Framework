@@ -31,7 +31,6 @@
         <EntityTypeShape EntityType="JKDataModel.ProductPurchaseRecords" Width="1.5" PointX="11" PointY="15.25" />
         <EntityTypeShape EntityType="JKDataModel.ProductSupplier" Width="1.5" PointX="15.75" PointY="14.75" />
         <EntityTypeShape EntityType="JKDataModel.SmsRecords" Width="1.5" PointX="5.75" PointY="18.75" />
-        <EntityTypeShape EntityType="JKDataModel.UserAccount" Width="1.5" PointX="0.75" PointY="9.5" />
         <EntityTypeShape EntityType="JKDataModel.UserAccountWechat" Width="1.5" PointX="3" PointY="15" />
         <EntityTypeShape EntityType="JKDataModel.UserDeliveryAddress" Width="1.5" PointX="3" PointY="19.75" />
         <EntityTypeShape EntityType="JKDataModel.UserLoginRecords" Width="1.5" PointX="7.75" PointY="18.75" />
@@ -46,7 +45,6 @@
         <AssociationConnector Association="JKDataModel.FK_UserInRole_Role" />
         <AssociationConnector Association="JKDataModel.FK_LotteryHistory_PrizeActivity" />
         <AssociationConnector Association="JKDataModel.FK_Prize_PrizeActivity" />
-        <AssociationConnector Association="JKDataModel.FK_LotteryHistory_UserAccount" />
         <AssociationConnector Association="JKDataModel.FK_OrderEvaluation_Order" />
         <AssociationConnector Association="JKDataModel.FK_OrderProduct_Order" />
         <AssociationConnector Association="JKDataModel.FK_OrderRefund_Order" />
@@ -57,18 +55,20 @@
         <AssociationConnector Association="JKDataModel.FK_ProductClassification_Product" />
         <AssociationConnector Association="JKDataModel.FK_ProductParameters_Product" />
         <AssociationConnector Association="JKDataModel.FK_ProductPurchaseRecords_Product" />
-        <AssociationConnector Association="JKDataModel.FK_UserAccountWechat_UserAccount" />
-        <AssociationConnector Association="JKDataModel.FK_UserDeliveryAddress_UserAccount" />
-        <AssociationConnector Association="JKDataModel.FK_UserOperationRecords_UserAccount" />
-        <AssociationConnector Association="JKDataModel.FK_UserShoppingCart_UserAccount" />
         <EntityTypeShape EntityType="JKDataModel.Article" Width="1.5" PointX="20.375" PointY="8.75" />
         <EntityTypeShape EntityType="JKDataModel.FriendlyLink" Width="1.5" PointX="12.375" PointY="0.75" />
         <EntityTypeShape EntityType="JKDataModel.UserAccountFinance" Width="1.5" PointX="20.375" PointY="16.75" />
         <EntityTypeShape EntityType="JKDataModel.ArticleCategory" Width="1.5" PointX="20.375" PointY="12.75" />
         <EntityTypeShape EntityType="JKDataModel.WithdrawCashOrder" Width="1.5" PointX="3" PointY="24.125" />
-        <AssociationConnector Association="JKDataModel.FK_WithdrawCashOrder_UserAccount" />
         <EntityTypeShape EntityType="JKDataModel.WithdrawCashRecords" Width="1.5" PointX="20.375" PointY="20.75" />
         <EntityTypeShape EntityType="JKDataModel.MyLotteryV" Width="1.5" PointX="21.375" PointY="0.75" />
+        <EntityTypeShape EntityType="JKDataModel.UserAccount" Width="1.5" PointX="0.75" PointY="13.125" />
+        <AssociationConnector Association="JKDataModel.FK_LotteryHistory_UserAccount" />
+        <AssociationConnector Association="JKDataModel.FK_UserAccountWechat_UserAccount" />
+        <AssociationConnector Association="JKDataModel.FK_UserDeliveryAddress_UserAccount" />
+        <AssociationConnector Association="JKDataModel.FK_UserOperationRecords_UserAccount" />
+        <AssociationConnector Association="JKDataModel.FK_UserShoppingCart_UserAccount" />
+        <AssociationConnector Association="JKDataModel.FK_WithdrawCashOrder_UserAccount" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

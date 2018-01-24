@@ -30,6 +30,7 @@ namespace JK.Data.Model
         public string UserName { get; set; }
         public string NickName { get; set; }
         public string Password { get; set; }
+        public string Recommender { get; set; }
         public int Money { get; set; }
         public int LuckTotal { get; set; }
         public string AvatarImgUrl { get; set; }

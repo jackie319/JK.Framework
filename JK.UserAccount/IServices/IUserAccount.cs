@@ -59,5 +59,6 @@ namespace JK.JKUserAccount.IServices
         /// <param name="total"></param>
         /// <returns></returns>
         IList<UserAccount> GetList(string userName, UserTypeEnum? userType, Boolean? isCertified, int skip, int take, out int total);
+        IList<MyTeamServiceModel> GetMyTeam(string userName);
     }
 }

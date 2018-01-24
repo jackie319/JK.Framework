@@ -51,7 +51,6 @@ namespace JK.Data.Model
         public virtual DbSet<ProductPurchaseRecords> ProductPurchaseRecords { get; set; }
         public virtual DbSet<ProductSupplier> ProductSupplier { get; set; }
         public virtual DbSet<SmsRecords> SmsRecords { get; set; }
-        public virtual DbSet<UserAccount> UserAccount { get; set; }
         public virtual DbSet<UserAccountWechat> UserAccountWechat { get; set; }
         public virtual DbSet<UserDeliveryAddress> UserDeliveryAddress { get; set; }
         public virtual DbSet<UserLoginRecords> UserLoginRecords { get; set; }
@@ -68,5 +67,6 @@ namespace JK.Data.Model
         public virtual DbSet<WithdrawCashOrder> WithdrawCashOrder { get; set; }
         public virtual DbSet<WithdrawCashRecords> WithdrawCashRecords { get; set; }
         public virtual DbSet<MyLotteryV> MyLotteryV { get; set; }
+        public virtual DbSet<UserAccount> UserAccount { get; set; }
     }
 }

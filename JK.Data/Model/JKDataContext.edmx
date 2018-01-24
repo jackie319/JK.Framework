@@ -464,6 +464,7 @@
           <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="NickName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Recommender" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Money" Type="int" Nullable="false" />
           <Property Name="LuckTotal" Type="int" Nullable="false" />
           <Property Name="AvatarImgUrl" Type="varchar" MaxLength="250" Nullable="false" />
@@ -1182,7 +1183,6 @@
           <EntitySet Name="ProductPurchaseRecords" EntityType="JKDataModel.ProductPurchaseRecords" />
           <EntitySet Name="ProductSupplier" EntityType="JKDataModel.ProductSupplier" />
           <EntitySet Name="SmsRecords" EntityType="JKDataModel.SmsRecords" />
-          <EntitySet Name="UserAccount" EntityType="JKDataModel.UserAccount" />
           <EntitySet Name="UserAccountWechat" EntityType="JKDataModel.UserAccountWechat" />
           <EntitySet Name="UserDeliveryAddress" EntityType="JKDataModel.UserDeliveryAddress" />
           <EntitySet Name="UserLoginRecords" EntityType="JKDataModel.UserLoginRecords" />
@@ -1211,10 +1211,6 @@
           <AssociationSet Name="FK_Prize_PrizeActivity" Association="JKDataModel.FK_Prize_PrizeActivity">
             <End Role="LotteryActivity" EntitySet="LotteryActivity" />
             <End Role="LotteryPrize" EntitySet="LotteryPrize" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LotteryHistory_UserAccount" Association="JKDataModel.FK_LotteryHistory_UserAccount">
-            <End Role="UserAccount" EntitySet="UserAccount" />
-            <End Role="LotteryHistory" EntitySet="LotteryHistory" />
           </AssociationSet>
           <AssociationSet Name="FK_OrderEvaluation_Order" Association="JKDataModel.FK_OrderEvaluation_Order">
             <End Role="Order" EntitySet="Order" />
@@ -1256,6 +1252,18 @@
             <End Role="Product" EntitySet="Product" />
             <End Role="ProductPurchaseRecords" EntitySet="ProductPurchaseRecords" />
           </AssociationSet>
+          <EntitySet Name="Article" EntityType="JKDataModel.Article" />
+          <EntitySet Name="FriendlyLink" EntityType="JKDataModel.FriendlyLink" />
+          <EntitySet Name="UserAccountFinance" EntityType="JKDataModel.UserAccountFinance" />
+          <EntitySet Name="ArticleCategory" EntityType="JKDataModel.ArticleCategory" />
+          <EntitySet Name="WithdrawCashOrder" EntityType="JKDataModel.WithdrawCashOrder" />
+          <EntitySet Name="WithdrawCashRecords" EntityType="JKDataModel.WithdrawCashRecords" />
+          <EntitySet Name="MyLotteryV" EntityType="JKDataModel.MyLotteryV" />
+          <EntitySet Name="UserAccount" EntityType="JKDataModel.UserAccount" />
+          <AssociationSet Name="FK_LotteryHistory_UserAccount" Association="JKDataModel.FK_LotteryHistory_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="LotteryHistory" EntitySet="LotteryHistory" />
+          </AssociationSet>
           <AssociationSet Name="FK_UserAccountWechat_UserAccount" Association="JKDataModel.FK_UserAccountWechat_UserAccount">
             <End Role="UserAccount" EntitySet="UserAccount" />
             <End Role="UserAccountWechat" EntitySet="UserAccountWechat" />
@@ -1272,17 +1280,10 @@
             <End Role="UserAccount" EntitySet="UserAccount" />
             <End Role="UserShoppingCart" EntitySet="UserShoppingCart" />
           </AssociationSet>
-          <EntitySet Name="Article" EntityType="JKDataModel.Article" />
-          <EntitySet Name="FriendlyLink" EntityType="JKDataModel.FriendlyLink" />
-          <EntitySet Name="UserAccountFinance" EntityType="JKDataModel.UserAccountFinance" />
-          <EntitySet Name="ArticleCategory" EntityType="JKDataModel.ArticleCategory" />
-          <EntitySet Name="WithdrawCashOrder" EntityType="JKDataModel.WithdrawCashOrder" />
           <AssociationSet Name="FK_WithdrawCashOrder_UserAccount" Association="JKDataModel.FK_WithdrawCashOrder_UserAccount">
             <End Role="UserAccount" EntitySet="UserAccount" />
             <End Role="WithdrawCashOrder" EntitySet="WithdrawCashOrder" />
           </AssociationSet>
-          <EntitySet Name="WithdrawCashRecords" EntityType="JKDataModel.WithdrawCashRecords" />
-          <EntitySet Name="MyLotteryV" EntityType="JKDataModel.MyLotteryV" />
         </EntityContainer>
         <EntityType Name="AuthorityFunction">
           <Key>
@@ -1721,38 +1722,6 @@
           <Property Name="TimeUpdate" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
         </EntityType>
-        <EntityType Name="UserAccount">
-          <Key>
-            <PropertyRef Name="Guid" />
-          </Key>
-          <Property Name="Guid" Type="Guid" Nullable="false" />
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="NickName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Money" Type="Int32" Nullable="false" />
-          <Property Name="LuckTotal" Type="Int32" Nullable="false" />
-          <Property Name="AvatarImgUrl" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="IsEmailValidated" Type="Boolean" Nullable="false" />
-          <Property Name="MobilePhone" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
-          <Property Name="IsMobilePhoneValidated" Type="Boolean" Nullable="false" />
-          <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CountVisited" Type="Int32" Nullable="false" />
-          <Property Name="IPv4LastVisited" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-          <Property Name="UserType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="TimeLastVisited" Type="DateTime" Nullable="false" Precision="7" />
-          <NavigationProperty Name="LotteryHistory" Relationship="JKDataModel.FK_LotteryHistory_UserAccount" FromRole="UserAccount" ToRole="LotteryHistory" />
-          <NavigationProperty Name="UserAccountWechat" Relationship="JKDataModel.FK_UserAccountWechat_UserAccount" FromRole="UserAccount" ToRole="UserAccountWechat" />
-          <NavigationProperty Name="UserDeliveryAddress" Relationship="JKDataModel.FK_UserDeliveryAddress_UserAccount" FromRole="UserAccount" ToRole="UserDeliveryAddress" />
-          <NavigationProperty Name="UserOperationRecords" Relationship="JKDataModel.FK_UserOperationRecords_UserAccount" FromRole="UserAccount" ToRole="UserOperationRecords" />
-          <NavigationProperty Name="UserShoppingCart" Relationship="JKDataModel.FK_UserShoppingCart_UserAccount" FromRole="UserAccount" ToRole="UserShoppingCart" />
-          <NavigationProperty Name="WithdrawCashOrder" Relationship="JKDataModel.FK_WithdrawCashOrder_UserAccount" FromRole="UserAccount" ToRole="WithdrawCashOrder" />
-        </EntityType>
         <EntityType Name="UserAccountWechat">
           <Key>
             <PropertyRef Name="Guid" />
@@ -1996,18 +1965,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_LotteryHistory_UserAccount">
-          <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
-          <End Type="JKDataModel.LotteryHistory" Role="LotteryHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserAccount">
-              <PropertyRef Name="Guid" />
-            </Principal>
-            <Dependent Role="LotteryHistory">
-              <PropertyRef Name="UserGuid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_OrderEvaluation_Order">
           <End Type="JKDataModel.Order" Role="Order" Multiplicity="1" />
           <End Type="JKDataModel.OrderEvaluation" Role="OrderEvaluation" Multiplicity="*" />
@@ -2128,54 +2085,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserAccountWechat_UserAccount">
-          <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
-          <End Type="JKDataModel.UserAccountWechat" Role="UserAccountWechat" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserAccount">
-              <PropertyRef Name="Guid" />
-            </Principal>
-            <Dependent Role="UserAccountWechat">
-              <PropertyRef Name="UserAccountGuid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UserDeliveryAddress_UserAccount">
-          <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
-          <End Type="JKDataModel.UserDeliveryAddress" Role="UserDeliveryAddress" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserAccount">
-              <PropertyRef Name="Guid" />
-            </Principal>
-            <Dependent Role="UserDeliveryAddress">
-              <PropertyRef Name="UserGuid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UserOperationRecords_UserAccount">
-          <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
-          <End Type="JKDataModel.UserOperationRecords" Role="UserOperationRecords" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserAccount">
-              <PropertyRef Name="Guid" />
-            </Principal>
-            <Dependent Role="UserOperationRecords">
-              <PropertyRef Name="UserGuid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UserShoppingCart_UserAccount">
-          <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
-          <End Type="JKDataModel.UserShoppingCart" Role="UserShoppingCart" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserAccount">
-              <PropertyRef Name="Guid" />
-            </Principal>
-            <Dependent Role="UserShoppingCart">
-              <PropertyRef Name="UserGuid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Article">
           <Key>
             <PropertyRef Name="Guid" />
@@ -2249,18 +2158,6 @@
           <Property Name="TimeCretead" Type="DateTime" Nullable="false" Precision="7" />
           <NavigationProperty Name="UserAccount" Relationship="JKDataModel.FK_WithdrawCashOrder_UserAccount" FromRole="WithdrawCashOrder" ToRole="UserAccount" />
         </EntityType>
-        <Association Name="FK_WithdrawCashOrder_UserAccount">
-          <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
-          <End Type="JKDataModel.WithdrawCashOrder" Role="WithdrawCashOrder" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserAccount">
-              <PropertyRef Name="Guid" />
-            </Principal>
-            <Dependent Role="WithdrawCashOrder">
-              <PropertyRef Name="UserGuid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="WithdrawCashRecords">
           <Key>
             <PropertyRef Name="Guid" />
@@ -2321,6 +2218,111 @@
           <Property Name="PrizeDetail" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
         </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NickName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Recommender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Money" Type="Int32" Nullable="false" />
+          <Property Name="LuckTotal" Type="Int32" Nullable="false" />
+          <Property Name="AvatarImgUrl" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="IsEmailValidated" Type="Boolean" Nullable="false" />
+          <Property Name="MobilePhone" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="IsMobilePhoneValidated" Type="Boolean" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountVisited" Type="Int32" Nullable="false" />
+          <Property Name="IPv4LastVisited" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="UserType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="TimeLastVisited" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="LotteryHistory" Relationship="JKDataModel.FK_LotteryHistory_UserAccount" FromRole="UserAccount" ToRole="LotteryHistory" />
+          <NavigationProperty Name="UserAccountWechat" Relationship="JKDataModel.FK_UserAccountWechat_UserAccount" FromRole="UserAccount" ToRole="UserAccountWechat" />
+          <NavigationProperty Name="UserDeliveryAddress" Relationship="JKDataModel.FK_UserDeliveryAddress_UserAccount" FromRole="UserAccount" ToRole="UserDeliveryAddress" />
+          <NavigationProperty Name="UserOperationRecords" Relationship="JKDataModel.FK_UserOperationRecords_UserAccount" FromRole="UserAccount" ToRole="UserOperationRecords" />
+          <NavigationProperty Name="UserShoppingCart" Relationship="JKDataModel.FK_UserShoppingCart_UserAccount" FromRole="UserAccount" ToRole="UserShoppingCart" />
+          <NavigationProperty Name="WithdrawCashOrder" Relationship="JKDataModel.FK_WithdrawCashOrder_UserAccount" FromRole="UserAccount" ToRole="WithdrawCashOrder" />
+        </EntityType>
+        <Association Name="FK_LotteryHistory_UserAccount">
+          <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="JKDataModel.LotteryHistory" Role="LotteryHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="LotteryHistory">
+              <PropertyRef Name="UserGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAccountWechat_UserAccount">
+          <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="JKDataModel.UserAccountWechat" Role="UserAccountWechat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="UserAccountWechat">
+              <PropertyRef Name="UserAccountGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserDeliveryAddress_UserAccount">
+          <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="JKDataModel.UserDeliveryAddress" Role="UserDeliveryAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="UserDeliveryAddress">
+              <PropertyRef Name="UserGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserOperationRecords_UserAccount">
+          <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="JKDataModel.UserOperationRecords" Role="UserOperationRecords" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="UserOperationRecords">
+              <PropertyRef Name="UserGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserShoppingCart_UserAccount">
+          <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="JKDataModel.UserShoppingCart" Role="UserShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="UserShoppingCart">
+              <PropertyRef Name="UserGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WithdrawCashOrder_UserAccount">
+          <End Type="JKDataModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="JKDataModel.WithdrawCashOrder" Role="WithdrawCashOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Guid" />
+            </Principal>
+            <Dependent Role="WithdrawCashOrder">
+              <PropertyRef Name="UserGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2759,33 +2761,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="UserAccount">
-            <EntityTypeMapping TypeName="JKDataModel.UserAccount">
-              <MappingFragment StoreEntitySet="UserAccount">
-                <ScalarProperty Name="TimeLastVisited" ColumnName="TimeLastVisited" />
-                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
-                <ScalarProperty Name="UserType" ColumnName="UserType" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="IPv4LastVisited" ColumnName="IPv4LastVisited" />
-                <ScalarProperty Name="CountVisited" ColumnName="CountVisited" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="IsMobilePhoneValidated" ColumnName="IsMobilePhoneValidated" />
-                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
-                <ScalarProperty Name="IsEmailValidated" ColumnName="IsEmailValidated" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="AvatarImgUrl" ColumnName="AvatarImgUrl" />
-                <ScalarProperty Name="LuckTotal" ColumnName="LuckTotal" />
-                <ScalarProperty Name="Money" ColumnName="Money" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="NickName" ColumnName="NickName" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Guid" ColumnName="Guid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="UserAccountWechat">
             <EntityTypeMapping TypeName="JKDataModel.UserAccountWechat">
               <MappingFragment StoreEntitySet="UserAccountWechat">
@@ -3099,6 +3074,34 @@
                 <ScalarProperty Name="DefaultPic" ColumnName="DefaultPic" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAccount">
+            <EntityTypeMapping TypeName="JKDataModel.UserAccount">
+              <MappingFragment StoreEntitySet="UserAccount">
+                <ScalarProperty Name="TimeLastVisited" ColumnName="TimeLastVisited" />
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IPv4LastVisited" ColumnName="IPv4LastVisited" />
+                <ScalarProperty Name="CountVisited" ColumnName="CountVisited" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IsMobilePhoneValidated" ColumnName="IsMobilePhoneValidated" />
+                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+                <ScalarProperty Name="IsEmailValidated" ColumnName="IsEmailValidated" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="AvatarImgUrl" ColumnName="AvatarImgUrl" />
+                <ScalarProperty Name="LuckTotal" ColumnName="LuckTotal" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="Recommender" ColumnName="Recommender" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

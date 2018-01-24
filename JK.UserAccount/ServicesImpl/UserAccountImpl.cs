@@ -484,5 +484,43 @@ namespace JK.JKUserAccount.ServicesImpl
             return query.OrderByDescending(q => q.TimeCreated).Skip(skip).Take(take).ToList();
         }
 
+        /// <summary>
+        /// 我的团队(树型结构，可控制层级)
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
+        public IList<MyTeamServiceModel> GetMyTeam(string userName)
+        {
+            IList<MyTeamServiceModel> models = new List<MyTeamServiceModel>();
+            var childrenModels = GetUserListByRecommender(userName);
+            if (childrenModels.Count() > 0)
+            {
+                foreach (var item in childrenModels)
+                {
+                    int grade = 1;
+                    var model = MyTeamServiceModel.CopyFrom(item);
+                    model.Grade = grade;
+                    if (grade <= 2)//控制层级
+                    {
+                        model.ChildrenModels = GetMyTeam(userName);
+                        grade += 1;
+                    }
+
+                    models.Add(model);
+                }
+            }
+            return models;
+        }
+        /// <summary>
+        /// 某用户推荐的所有用户
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
+        public IList<UserAccount> GetUserListByRecommender(string userName)
+        {
+            var list = _userAccountRepository.Table.Where(q => q.Recommender.Equals(userName) && !q.IsDeleted).OrderByDescending(q => q.TimeCreated);
+            return list.ToList();
+        }
+
     }
 }

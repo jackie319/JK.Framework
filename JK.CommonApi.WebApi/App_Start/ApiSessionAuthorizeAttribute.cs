@@ -13,6 +13,9 @@ namespace JK.CommonApi.WebApi.App_Start
 {
     public class ApiSessionAuthorizeAttribute: AuthorizeAttribute
     {
+        /// <summary>
+        /// 属性注入
+        /// </summary>
         public ICacheManager _cache { get; set; }
         private ILog _log = LogManager.GetLogger(typeof(ApiSessionAuthorizeAttribute));
 

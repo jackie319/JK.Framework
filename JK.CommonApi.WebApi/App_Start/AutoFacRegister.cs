@@ -14,10 +14,14 @@ namespace JK.CommonApi.WebApi.App_Start
     {
         public static void RegisterAutofacDelegate(ContainerBuilder builder)
         {
+            //webapi
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+            //mvc
              builder.RegisterControllers(Assembly.GetExecutingAssembly());//通知类Controller是MVC
+            //业务类
             //builder.RegisterType<TaskImpl>().As<ITask>().InstancePerDependency();
 
+            //webapi Filter
             builder.RegisterWebApiFilterProvider(GlobalConfiguration.Configuration);
         }
     }

@@ -103,6 +103,7 @@
     <Compile Include="NopEntityTypeConfiguration.cs" />
     <Compile Include="JKObjectContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterAutofacForJK.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

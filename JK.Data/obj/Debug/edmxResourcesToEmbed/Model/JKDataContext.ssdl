@@ -153,6 +153,7 @@
     <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PrizeActivityGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Grade" Type="int" Nullable="false" />
     <Property Name="PrizeType" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="PrizeName" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="Money" Type="int" Nullable="false" />
@@ -458,6 +459,7 @@
     <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="NickName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Recommender" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Money" Type="int" Nullable="false" />
     <Property Name="LuckTotal" Type="int" Nullable="false" />
     <Property Name="AvatarImgUrl" Type="varchar" MaxLength="250" Nullable="false" />
@@ -666,6 +668,82 @@
     <Property Name="Appid" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="MchId" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="RefundId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WithdrawCashOrder">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="OrderNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Money" Type="int" Nullable="false" />
+    <Property Name="IsChecked" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TimeCretead" Type="datetime2" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WithdrawCashRecords">
+    <Key>
+      <PropertyRef Name="Guid" />
+    </Key>
+    <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="MchAppId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MchId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DeviceInfo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NonceStr" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OutTradeNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OpenId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CheckName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReUserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+    <Property Name="PayDesc" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="SpbillCreateIP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PayKey" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReturnCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ResultCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ErrCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ErrCodeDes" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="PartnerTradeNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PaymentNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PaymentTime" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“JKData.dbo.MyLotteryV”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="MyLotteryV">
+    <Key>
+      <PropertyRef Name="Title" />
+      <PropertyRef Name="Type" />
+      <PropertyRef Name="DefaultPic" />
+      <PropertyRef Name="BaseNumber" />
+      <PropertyRef Name="Detail" />
+      <PropertyRef Name="BeginTime" />
+      <PropertyRef Name="EndTime" />
+      <PropertyRef Name="PrizeActivityGuid" />
+      <PropertyRef Name="UserGuid" />
+      <PropertyRef Name="IsWenner" />
+      <PropertyRef Name="PrizeGuid" />
+      <PropertyRef Name="TimeCreated" />
+    </Key>
+    <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DefaultPic" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="BaseNumber" Type="int" Nullable="false" />
+    <Property Name="Detail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BeginTime" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="EndTime" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="PrizeActivityGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsWenner" Type="bit" Nullable="false" />
+    <Property Name="PrizeGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PrizeName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Money" Type="int" />
+    <Property Name="PrizeType" Type="varchar" MaxLength="50" />
+    <Property Name="PrizePic" Type="varchar" MaxLength="200" />
+    <Property Name="PrizeDetail" Type="nvarchar" MaxLength="2000" />
     <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
   </EntityType>
   <Association Name="FK_LotteryHistory_PrizeActivity">
@@ -908,6 +986,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_WithdrawCashOrder_UserAccount">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="WithdrawCashOrder" Type="Self.WithdrawCashOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="Guid" />
+      </Principal>
+      <Dependent Role="WithdrawCashOrder">
+        <PropertyRef Name="UserGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="JKDataModelStoreContainer">
     <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ArticleCategory" EntityType="Self.ArticleCategory" Schema="dbo" store:Type="Tables" />
@@ -949,6 +1039,29 @@
     <EntitySet Name="WechatPayRecords" EntityType="Self.WechatPayRecords" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="WechatPayRefundNotify" EntityType="Self.WechatPayRefundNotify" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="WechatPayRefundRecords" EntityType="Self.WechatPayRefundRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WithdrawCashOrder" EntityType="Self.WithdrawCashOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WithdrawCashRecords" EntityType="Self.WithdrawCashRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MyLotteryV" EntityType="Self.MyLotteryV" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MyLotteryV].[Title] AS [Title], 
+    [MyLotteryV].[Type] AS [Type], 
+    [MyLotteryV].[DefaultPic] AS [DefaultPic], 
+    [MyLotteryV].[BaseNumber] AS [BaseNumber], 
+    [MyLotteryV].[Detail] AS [Detail], 
+    [MyLotteryV].[BeginTime] AS [BeginTime], 
+    [MyLotteryV].[EndTime] AS [EndTime], 
+    [MyLotteryV].[PrizeActivityGuid] AS [PrizeActivityGuid], 
+    [MyLotteryV].[UserGuid] AS [UserGuid], 
+    [MyLotteryV].[IsWenner] AS [IsWenner], 
+    [MyLotteryV].[PrizeGuid] AS [PrizeGuid], 
+    [MyLotteryV].[PrizeName] AS [PrizeName], 
+    [MyLotteryV].[Money] AS [Money], 
+    [MyLotteryV].[PrizeType] AS [PrizeType], 
+    [MyLotteryV].[PrizePic] AS [PrizePic], 
+    [MyLotteryV].[PrizeDetail] AS [PrizeDetail], 
+    [MyLotteryV].[TimeCreated] AS [TimeCreated]
+    FROM [dbo].[MyLotteryV] AS [MyLotteryV]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_LotteryHistory_PrizeActivity" Association="Self.FK_LotteryHistory_PrizeActivity">
       <End Role="LotteryActivity" EntitySet="LotteryActivity" />
       <End Role="LotteryHistory" EntitySet="LotteryHistory" />
@@ -1028,6 +1141,10 @@
     <AssociationSet Name="FK_UserShoppingCart_UserAccount" Association="Self.FK_UserShoppingCart_UserAccount">
       <End Role="UserAccount" EntitySet="UserAccount" />
       <End Role="UserShoppingCart" EntitySet="UserShoppingCart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WithdrawCashOrder_UserAccount" Association="Self.FK_WithdrawCashOrder_UserAccount">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="WithdrawCashOrder" EntitySet="WithdrawCashOrder" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

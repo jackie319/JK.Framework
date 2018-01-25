@@ -114,6 +114,7 @@
     <EntitySetMapping Name="LotteryPrize">
       <EntityTypeMapping TypeName="JKDataModel.LotteryPrize">
         <MappingFragment StoreEntitySet="LotteryPrize">
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
           <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="Detail" ColumnName="Detail" />
@@ -432,33 +433,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="UserAccount">
-      <EntityTypeMapping TypeName="JKDataModel.UserAccount">
-        <MappingFragment StoreEntitySet="UserAccount">
-          <ScalarProperty Name="TimeLastVisited" ColumnName="TimeLastVisited" />
-          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
-          <ScalarProperty Name="UserType" ColumnName="UserType" />
-          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-          <ScalarProperty Name="IPv4LastVisited" ColumnName="IPv4LastVisited" />
-          <ScalarProperty Name="CountVisited" ColumnName="CountVisited" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="IsMobilePhoneValidated" ColumnName="IsMobilePhoneValidated" />
-          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
-          <ScalarProperty Name="IsEmailValidated" ColumnName="IsEmailValidated" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="AvatarImgUrl" ColumnName="AvatarImgUrl" />
-          <ScalarProperty Name="LuckTotal" ColumnName="LuckTotal" />
-          <ScalarProperty Name="Money" ColumnName="Money" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="NickName" ColumnName="NickName" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Guid" ColumnName="Guid" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="UserAccountWechat">
       <EntityTypeMapping TypeName="JKDataModel.UserAccountWechat">
         <MappingFragment StoreEntitySet="UserAccountWechat">
@@ -704,6 +678,100 @@
           <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
           <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
           <ScalarProperty Name="ParentGuid" ColumnName="ParentGuid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WithdrawCashOrder">
+      <EntityTypeMapping TypeName="JKDataModel.WithdrawCashOrder">
+        <MappingFragment StoreEntitySet="WithdrawCashOrder">
+          <ScalarProperty Name="TimeCretead" ColumnName="TimeCretead" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsChecked" ColumnName="IsChecked" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+          <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WithdrawCashRecords">
+      <EntityTypeMapping TypeName="JKDataModel.WithdrawCashRecords">
+        <MappingFragment StoreEntitySet="WithdrawCashRecords">
+          <ScalarProperty Name="PaymentTime" ColumnName="PaymentTime" />
+          <ScalarProperty Name="PaymentNo" ColumnName="PaymentNo" />
+          <ScalarProperty Name="PartnerTradeNo" ColumnName="PartnerTradeNo" />
+          <ScalarProperty Name="ErrCodeDes" ColumnName="ErrCodeDes" />
+          <ScalarProperty Name="ErrCode" ColumnName="ErrCode" />
+          <ScalarProperty Name="ResultCode" ColumnName="ResultCode" />
+          <ScalarProperty Name="ReturnCode" ColumnName="ReturnCode" />
+          <ScalarProperty Name="PayKey" ColumnName="PayKey" />
+          <ScalarProperty Name="SpbillCreateIP" ColumnName="SpbillCreateIP" />
+          <ScalarProperty Name="PayDesc" ColumnName="PayDesc" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ReUserName" ColumnName="ReUserName" />
+          <ScalarProperty Name="CheckName" ColumnName="CheckName" />
+          <ScalarProperty Name="OpenId" ColumnName="OpenId" />
+          <ScalarProperty Name="OutTradeNo" ColumnName="OutTradeNo" />
+          <ScalarProperty Name="NonceStr" ColumnName="NonceStr" />
+          <ScalarProperty Name="DeviceInfo" ColumnName="DeviceInfo" />
+          <ScalarProperty Name="MchId" ColumnName="MchId" />
+          <ScalarProperty Name="MchAppId" ColumnName="MchAppId" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MyLotteryV">
+      <EntityTypeMapping TypeName="JKDataModel.MyLotteryV">
+        <MappingFragment StoreEntitySet="MyLotteryV">
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+          <ScalarProperty Name="PrizeDetail" ColumnName="PrizeDetail" />
+          <ScalarProperty Name="PrizePic" ColumnName="PrizePic" />
+          <ScalarProperty Name="PrizeType" ColumnName="PrizeType" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+          <ScalarProperty Name="PrizeName" ColumnName="PrizeName" />
+          <ScalarProperty Name="PrizeGuid" ColumnName="PrizeGuid" />
+          <ScalarProperty Name="IsWenner" ColumnName="IsWenner" />
+          <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+          <ScalarProperty Name="PrizeActivityGuid" ColumnName="PrizeActivityGuid" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="BaseNumber" ColumnName="BaseNumber" />
+          <ScalarProperty Name="DefaultPic" ColumnName="DefaultPic" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAccount">
+      <EntityTypeMapping TypeName="JKDataModel.UserAccount">
+        <MappingFragment StoreEntitySet="UserAccount">
+          <ScalarProperty Name="TimeLastVisited" ColumnName="TimeLastVisited" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IPv4LastVisited" ColumnName="IPv4LastVisited" />
+          <ScalarProperty Name="CountVisited" ColumnName="CountVisited" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsMobilePhoneValidated" ColumnName="IsMobilePhoneValidated" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+          <ScalarProperty Name="IsEmailValidated" ColumnName="IsEmailValidated" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="AvatarImgUrl" ColumnName="AvatarImgUrl" />
+          <ScalarProperty Name="LuckTotal" ColumnName="LuckTotal" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+          <ScalarProperty Name="Recommender" ColumnName="Recommender" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Guid" ColumnName="Guid" />
         </MappingFragment>

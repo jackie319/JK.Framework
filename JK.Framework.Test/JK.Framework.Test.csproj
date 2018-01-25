@@ -36,11 +36,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Json, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Json.4.4.0\lib\netstandard1.0\System.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <Choose>
@@ -56,17 +67,28 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AutoFacRegister.cs" />
+    <Compile Include="Initial.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserAccountTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\JK.Framework.Data\JK.Framework.Data.csproj">
+      <Project>{837B0507-D077-489C-B117-B14D8596E547}</Project>
+      <Name>JK.Framework.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JK.Framework.Extensions\JK.Framework.Extensions.csproj">
       <Project>{ffcde5f0-5423-4723-a5c9-894cb359fd55}</Project>
       <Name>JK.Framework.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JK.UserAccount\JK.JKUserAccount.csproj">
+      <Project>{545ae0b0-64d0-46b5-8d43-e1e80f496531}</Project>
+      <Name>JK.JKUserAccount</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

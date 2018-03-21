@@ -68,5 +68,9 @@ namespace JK.Data.Model
         public virtual DbSet<WithdrawCashRecords> WithdrawCashRecords { get; set; }
         public virtual DbSet<MyLotteryV> MyLotteryV { get; set; }
         public virtual DbSet<UserAccount> UserAccount { get; set; }
+        public virtual DbSet<StatisticsDays> StatisticsDays { get; set; }
+        public virtual DbSet<Store> Store { get; set; }
+        public virtual DbSet<UserAccountBalanceLog> UserAccountBalanceLog { get; set; }
+        public virtual DbSet<UserAccountFinanceChangeRecords> UserAccountFinanceChangeRecords { get; set; }
     }
 }

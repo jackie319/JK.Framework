@@ -154,10 +154,22 @@
     <Compile Include="Model\SmsRecords.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\StatisticsDays.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Store.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\UserAccount.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\UserAccountBalanceLog.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\UserAccountFinance.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserAccountFinanceChangeRecords.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\UserAccountWechat.cs">

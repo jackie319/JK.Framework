@@ -20,7 +20,7 @@ namespace JK.CommonApi.WebApi.Controllers
 {
     /// <summary>
     /// /// <summary>
-    /// 微信登录（开放平台）
+    /// 微信登录（开放平台，网站）
     /// Appid 和 Appsecret 和公众平台不一样
     /// 用户openId 和公众号不一样
     /// </summary>

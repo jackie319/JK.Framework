@@ -5,6 +5,19 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="JKDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AppVersion">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Project" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Version" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IOSDownLoadUrl" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="AndroidDownLoadUrl" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="TimeCreated" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
         <EntityType Name="Article">
           <Key>
             <PropertyRef Name="Guid" />
@@ -1056,6 +1069,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="JKDataModelStoreContainer">
+          <EntitySet Name="AppVersion" EntityType="Self.AppVersion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ArticleCategory" EntityType="Self.ArticleCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AuthorityFunction" EntityType="Self.AuthorityFunction" Schema="dbo" store:Type="Tables" />
@@ -1344,6 +1358,7 @@
           <EntitySet Name="Store" EntityType="JKDataModel.Store" />
           <EntitySet Name="UserAccountBalanceLog" EntityType="JKDataModel.UserAccountBalanceLog" />
           <EntitySet Name="UserAccountFinanceChangeRecords" EntityType="JKDataModel.UserAccountFinanceChangeRecords" />
+          <EntitySet Name="AppVersion" EntityType="JKDataModel.AppVersion" />
         </EntityContainer>
         <EntityType Name="AuthorityFunction">
           <Key>
@@ -2435,6 +2450,19 @@
           <Property Name="Remark" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
         </EntityType>
+        <EntityType Name="AppVersion">
+          <Key>
+            <PropertyRef Name="Guid" />
+          </Key>
+          <Property Name="Guid" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Project" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Version" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IOSDownLoadUrl" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="AndroidDownLoadUrl" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="TimeCreated" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3268,6 +3296,20 @@
                 <ScalarProperty Name="ChangeMoney" ColumnName="ChangeMoney" />
                 <ScalarProperty Name="ChangeType" ColumnName="ChangeType" />
                 <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Guid" ColumnName="Guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppVersion">
+            <EntityTypeMapping TypeName="JKDataModel.AppVersion">
+              <MappingFragment StoreEntitySet="AppVersion">
+                <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="AndroidDownLoadUrl" ColumnName="AndroidDownLoadUrl" />
+                <ScalarProperty Name="IOSDownLoadUrl" ColumnName="IOSDownLoadUrl" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Guid" ColumnName="Guid" />
               </MappingFragment>

@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\AppVersion.cs">
+      <DependentUpon>JKDataContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Article.cs">
       <DependentUpon>JKDataContext.tt</DependentUpon>
     </Compile>

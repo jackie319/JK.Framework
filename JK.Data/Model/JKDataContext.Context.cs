@@ -72,5 +72,6 @@ namespace JK.Data.Model
         public virtual DbSet<Store> Store { get; set; }
         public virtual DbSet<UserAccountBalanceLog> UserAccountBalanceLog { get; set; }
         public virtual DbSet<UserAccountFinanceChangeRecords> UserAccountFinanceChangeRecords { get; set; }
+        public virtual DbSet<AppVersion> AppVersion { get; set; }
     }
 }

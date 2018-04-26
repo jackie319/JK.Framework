@@ -47,8 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\TradePayRequestModel.cs" />
-    <Compile Include="Model\TradePayResponseModel.cs" />
+    <Compile Include="Model\ConmonRequestModel.cs" />
+    <Compile Include="Model\H5PayRequestModel.cs" />
+    <Compile Include="Model\PagePayRequestModel.cs" />
     <Compile Include="Pay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

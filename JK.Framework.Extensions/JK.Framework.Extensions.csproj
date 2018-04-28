@@ -73,6 +73,7 @@
     <Compile Include="DateTimeHelper.cs" />
     <Compile Include="Draw\LotteryDraw.cs" />
     <Compile Include="Draw\OutOfOrder.cs" />
+    <Compile Include="Email\Email.cs" />
     <Compile Include="Encryption\AES.cs" />
     <Compile Include="Encryption\Base64.cs" />
     <Compile Include="ImportAndExport\Excel.cs" />

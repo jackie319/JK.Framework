@@ -1,6 +1,7 @@
 ﻿using JK.Data.Model;
 using JK.Framework.Core;
 using JK.Framework.Core.Data;
+using JK.Framework.Sms.aliyun;
 using JK.Framework.Sms.Netease;
 using log4net;
 using System;
@@ -20,11 +21,17 @@ namespace JK.Sms
         private const int RegisteCodeTemplateid = 3050311;
         private const int NotifyCodeTemplateid = 3061875;
         private SmsCode smsCode;
+        private const string AccessKeyId = "";
+        private const  string AccessKeySecret = "";
+        private const string SignName = "";
+        private const string TemplateCode = "";
+        private SmsManager smsManager;
         private ILog _log;
         public SmsImpl(IRepository<SmsRecords> smsRecordsRepository)
         {
             _SmsRecordsRepository = smsRecordsRepository;
             smsCode = new SmsCode(Appkey, AppSecret);
+            smsManager = new SmsManager(AccessKeyId, AccessKeySecret);
             _log = LogManager.GetLogger(typeof(SmsImpl));
         }
 
@@ -95,6 +102,23 @@ namespace JK.Sms
             if (!model.code.Equals("200"))
             {
                 _log.Error("发送验证码短信返回错误：" + model.code + ":" + model.msg ?? string.Empty);
+            }
+        }
+
+        /// <summary>
+        /// 发送验证码短信(阿里云)
+        /// </summary>
+        /// <param name="phone"></param>
+        /// <param name="type"></param>
+        /// <param name="remark"></param>
+        public void SendCodeByaliyun(string phone, SmsTypeEnum type, string remark)
+        {
+            var record = AddRecord(phone, type, remark);
+            var model = smsManager.SendRegisteCode(phone, SignName, TemplateCode);
+            UpdateRecord(record.Guid, model.Code, model.BizId ?? string.Empty, model.Message ?? string.Empty);
+            if (!model.Code.Equals("OK"))
+            {
+                _log.Error("发送验证码短信返回错误：" + model.Code + ":" + model.Message ?? string.Empty);
             }
         }
 

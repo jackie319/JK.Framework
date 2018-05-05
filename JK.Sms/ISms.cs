@@ -10,6 +10,7 @@ namespace JK.Sms
    public  interface ISms
     {
         void SendCode(string phone, SmsTypeEnum type, string remark);
+        void SendCodeByaliyun(string phone, SmsTypeEnum type, string remark);
         SmsRecords FindRecord(string phone, SmsTypeEnum smsType);
         void Validate(Guid recordGuid);
         void PayNotify(IList<string> moblieList, IList<string> paramList);

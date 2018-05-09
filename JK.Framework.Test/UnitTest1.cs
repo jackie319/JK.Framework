@@ -17,7 +17,6 @@ namespace JK.Framework.Test
         [TestMethod]
         public void TestMethod1()
         {
-
             IList<string> mobileList = new List<string>();
             mobileList.Add("18288215197");
             mobileList.Add("18288215197");

@@ -777,5 +777,75 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="StatisticsDays">
+      <EntityTypeMapping TypeName="JKDataModel.StatisticsDays">
+        <MappingFragment StoreEntitySet="StatisticsDays">
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RecordsDay" ColumnName="RecordsDay" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Store">
+      <EntityTypeMapping TypeName="JKDataModel.Store">
+        <MappingFragment StoreEntitySet="Store">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+          <ScalarProperty Name="GeographicalPosition" ColumnName="GeographicalPosition" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="Addreess" ColumnName="Addreess" />
+          <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+          <ScalarProperty Name="StorePictureGuid" ColumnName="StorePictureGuid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAccountBalanceLog">
+      <EntityTypeMapping TypeName="JKDataModel.UserAccountBalanceLog">
+        <MappingFragment StoreEntitySet="UserAccountBalanceLog">
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAccountFinanceChangeRecords">
+      <EntityTypeMapping TypeName="JKDataModel.UserAccountFinanceChangeRecords">
+        <MappingFragment StoreEntitySet="UserAccountFinanceChangeRecords">
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+          <ScalarProperty Name="ChangeMoney" ColumnName="ChangeMoney" />
+          <ScalarProperty Name="ChangeType" ColumnName="ChangeType" />
+          <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AppVersion">
+      <EntityTypeMapping TypeName="JKDataModel.AppVersion">
+        <MappingFragment StoreEntitySet="AppVersion">
+          <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="AndroidDownLoadUrl" ColumnName="AndroidDownLoadUrl" />
+          <ScalarProperty Name="IOSDownLoadUrl" ColumnName="IOSDownLoadUrl" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

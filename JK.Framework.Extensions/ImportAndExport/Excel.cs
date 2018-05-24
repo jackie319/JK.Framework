@@ -71,7 +71,7 @@ namespace JK.Framework.Extensions
 
 
         /// <summary>
-        /// 转化为Excel内存流
+        /// 转化为Excel内存流。TODO：有bug.浏览器下载后提升格式不匹配并且乱码
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="list"></param>
@@ -128,6 +128,63 @@ namespace JK.Framework.Extensions
             ms.Position = 0;
 
             return ms;
+        }
+
+        /// <summary>
+        /// 保存excel 在本地 .在浏览器中输出MemoryStream 有bug。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
+        /// <param name="filePath"></param>
+        public static void SaveToExcel<T>(IList<T> list, string filePath)
+
+        {
+            IWorkbook workbook = new HSSFWorkbook();
+            ISheet sheet = workbook.CreateSheet();
+            IRow headerRow = sheet.CreateRow(0);
+
+            //创建表头
+
+            var coloumIndex = 0;//当前表的列
+
+            foreach (var memberInfo in typeof(T).GetProperties())
+
+            {
+                var columnName = memberInfo.Name;
+                var attrs = memberInfo.GetCustomAttributes(false);   //反射成员的所有特性
+                if (attrs.Any(a => a is DisplayNameAttribute))
+                {
+                    columnName = ((DisplayNameAttribute)attrs.Single(a => a is DisplayNameAttribute)).DisplayName;
+
+                } //不显示的就跳过
+                headerRow.CreateCell(coloumIndex).SetCellValue(columnName);
+                coloumIndex++;
+            }
+
+            //创建数据
+
+            for (var rownum = 0; rownum < list.Count; rownum++)
+            {
+                IRow dataRow = sheet.CreateRow(rownum + 1);
+                var row = list[rownum];
+                coloumIndex = 0;
+                for (var index = 0; index < row.GetType().GetProperties().Length; index++)
+                {
+                    var propertyInfo = row.GetType().GetProperties()[index];
+                    var attrs = propertyInfo.GetCustomAttributes(false);    //反射成员的所有特性
+                    if (attrs.Any(a => a is DisplayAttribute && !((DisplayAttribute)a).AutoGenerateField))
+                    {
+                        continue;//不显示的就跳过
+                    }
+                    var p = row.GetType().GetProperties()[index];           //将模型中的对应列取出
+                    dataRow.CreateCell(coloumIndex).SetCellValue(p.GetValue(row, null).ToString());//If Caption not set, returns the ColumnName value
+                    coloumIndex++;
+                }
+            }
+            var file = new System.IO.FileStream(filePath, System.IO.FileMode.Create, System.IO.FileAccess.ReadWrite);
+            workbook.Write(file);
+            file.Close();
+            workbook.Close();
         }
 
         /// <summary>
@@ -416,7 +473,7 @@ namespace JK.Framework.Extensions
         }
 
 
-#region 导入示例
+        #region 导入示例
         //public class ImportPrincipalModel
         //{
         //    public HttpPostedFileBase Excel { get; set; }
@@ -474,6 +531,181 @@ namespace JK.Framework.Extensions
         //        EmallManager.CreateMerchantStaff(staff);
         //    }
         //}
-#endregion
+        #endregion
+
+
+        #region 导出示例
+
+
+        //保存为excel文件。手动版
+        //private void SaveToExcel(IList<TenderRecordsUserAccountListVModel> list, string filePath)
+        //{
+        //    //var list = dc.v_bs_dj_bbcdd1.Where(eps).ToList();
+        //    HSSFWorkbook hssfworkbook = new HSSFWorkbook();
+
+        //    ISheet sheet1 = hssfworkbook.CreateSheet("投标记录");
+
+        //    IRow rowHeader = sheet1.CreateRow(0);
+
+        //    //生成excel标题
+        //    rowHeader.CreateCell(0).SetCellValue("投标人");
+        //    rowHeader.CreateCell(1).SetCellValue("投标人昵称");
+        //    rowHeader.CreateCell(2).SetCellValue("投标项目编号");
+        //    rowHeader.CreateCell(3).SetCellValue("投标项目标题");
+        //    rowHeader.CreateCell(4).SetCellValue("投标金额");
+        //    rowHeader.CreateCell(5).SetCellValue("投标时间");
+        //    //生成excel内容
+        //    for (int i = 0; i < list.Count; i++)
+        //    {
+        //        NPOI.SS.UserModel.IRow rowtemp = sheet1.CreateRow(i + 1);
+        //        rowtemp.CreateCell(0).SetCellValue(list[i].UserName);
+        //        rowtemp.CreateCell(1).SetCellValue(list[i].NickName);
+        //        rowtemp.CreateCell(2).SetCellValue(list[i].ProjectNO);
+        //        rowtemp.CreateCell(3).SetCellValue(list[i].Title);
+        //        rowtemp.CreateCell(4).SetCellValue(list[i].Amount);
+        //        rowtemp.CreateCell(5).SetCellValue(list[i].TimeCreated);
+
+        //    }
+
+        //    for (int i = 0; i < 10; i++)
+        //        sheet1.AutoSizeColumn(i);
+        //    var file = new System.IO.FileStream(filePath, System.IO.FileMode.Create, System.IO.FileAccess.ReadWrite);
+        //    hssfworkbook.Write(file);
+        //    file.Close();
+        //    hssfworkbook.Close();
+        //}
+
+        /// <summary>
+        /// 导出投标记录的Excel
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
+        //[HttpGet]
+        //[Route("TenderRecordsToExcel")]
+        ////   [ApiSessionAuthorize]
+        //public ToExcelModel TenderRecordsToExcel([FromUri]TenderRecordsUserAccountIQueryModel query)
+        //{
+        //    int total;
+        //    if (query == null) query = new TenderRecordsUserAccountIQueryModel();
+        //    var resultList = new List<TenderRecordsUserAccountListVModel>();
+        //    var list = _tenderRecords.GetTenderRecordsList(query.UserNameOrNikeName, query.ProjectNo, query.Title, query.Skip, query.Take, out total);
+        //    if (list != null)
+        //    {
+        //        resultList = list.Select(TenderRecordsUserAccountListVModel.CopyFrom).ToList();
+        //    }
+        //    string tableName = DateTime.Now.ToString("yyyymmddHHmmss");
+
+        //    ToExcelModel model = new ToExcelModel();
+        //    string path = "D:\\" + tableName + ".xls";
+        //    model.DownloadUrl = path;
+        //    SaveToExcel(resultList, path);
+        //    return model;
+        //}
+
+        #endregion
+
+        #region 导出示例 泛型版
+        ///// <summary>
+        ///// 导出投标记录的Excel。保存为excel文件
+        ///// </summary>
+        ///// <param name="query"></param>
+        ///// <returns></returns>
+        //[HttpGet]
+        //[Route("TenderRecordsToExcel")]
+        ////   [ApiSessionAuthorize]
+        //public ToExcelModel TenderRecordsToExcel([FromUri]TenderRecordsUserAccountIQueryModel query)
+        //{
+        //    int total;
+        //    if (query == null) query = new TenderRecordsUserAccountIQueryModel();
+        //    var resultList = new List<TenderRecordsUserAccountListVModel>();
+        //    var list = _tenderRecords.GetTenderRecordsList(query.UserNameOrNikeName, query.ProjectNo, query.Title, query.Skip, query.Take, out total);
+        //    if (list != null)
+        //    {
+        //        resultList = list.Select(TenderRecordsUserAccountListVModel.CopyFrom).ToList();
+        //    }
+        //    string tableName = DateTime.Now.ToString("yyyymmddHHmmss");
+
+        //    ToExcelModel model = new ToExcelModel();
+        //    string path = "D:\\" + tableName + ".xls";
+        //    model.DownloadUrl = path;
+        //    Excel.SaveToExcel(resultList, path);
+        //    return model;
+        //}
+
+        // excel 标题名称使用DisplayName 汉化
+        //public class TenderRecordsUserAccountListVModel
+        //{
+        //    /// <summary>
+        //    /// 投标人Guid
+        //    /// </summary>
+        //    public Guid UserGuid { get; set; }
+        //    /// <summary>
+        //    /// 投标人名称
+        //    /// </summary>
+        //    [DisplayName("投标人")]
+        //    public string UserName { get; set; }
+        //    /// <summary>
+        //    /// 投标人昵称
+        //    /// </summary>
+        //    [DisplayName("投标人昵称")]
+        //    public string NickName { get; set; }
+
+        //    /// <summary>
+        //    /// 投标Guid
+        //    /// </summary>
+        //    public Guid Guid { get; set; }
+        //    /// <summary>
+        //    /// 投标项目Guid
+        //    /// </summary>
+        //    public Guid ProjectGuid { get; set; }
+        //    /// <summary>
+        //    /// 投标项目编号
+        //    /// </summary>
+        //    [DisplayName("投标项目编号")]
+        //    public string ProjectNO { get; set; }
+        //    /// <summary>
+        //    /// 投标标题
+        //    /// </summary>
+        //    [DisplayName("投标项目标题")]
+        //    public string Title { get; set; }
+        //    /// <summary>
+        //    /// 金额
+        //    /// </summary>
+        //    [DisplayName("投标金额")]
+        //    public int Amount { get; set; }
+
+        //    /// <summary>
+        //    /// /
+        //    /// </summary>
+        //    public bool IsAutomatic { get; set; }
+        //    /// <summary>
+        //    /// 债权转让
+        //    /// </summary>
+        //    public bool IsTransferred { get; set; }
+        //    /// <summary>
+        //    /// 创建时间
+        //    /// </summary>
+        //    [DisplayName("投标时间")]
+        //    public string TimeCreated { get; set; }
+
+        //    public static TenderRecordsUserAccountListVModel CopyFrom(TenderRecordsUserAccountListV recordsUserAccountListV)
+        //    {
+        //        TenderRecordsUserAccountListVModel model = new TenderRecordsUserAccountListVModel();
+
+        //        model.UserGuid = recordsUserAccountListV.UserGuid;
+        //        model.Guid = recordsUserAccountListV.Guid;
+        //        model.UserName = recordsUserAccountListV.UserName;
+        //        model.NickName = recordsUserAccountListV.NickName;
+        //        model.ProjectGuid = recordsUserAccountListV.ProjectGuid;
+        //        model.ProjectNO = recordsUserAccountListV.ProjectNO;
+        //        model.Title = recordsUserAccountListV.Title;
+        //        model.Amount = recordsUserAccountListV.Amount;
+        //        model.IsAutomatic = recordsUserAccountListV.IsTransferred;
+        //        model.IsAutomatic = recordsUserAccountListV.IsAutomatic;
+        //        model.TimeCreated = recordsUserAccountListV.TimeCreated.ToString("yyyy-MM-dd HH:mm:ss");
+        //        return model;
+        //    }
+        //}
+        #endregion
     }
 }

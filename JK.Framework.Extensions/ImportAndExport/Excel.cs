@@ -632,6 +632,35 @@ namespace JK.Framework.Extensions
         //    return model;
         //}
 
+        ///// <summary>
+        ///// 导出投标记录的Excel
+        ///// </summary>
+        ///// <param name="query"></param>
+        ///// <returns></returns>
+        //[HttpGet]
+        //[Route("TenderRecordsToExcel")]
+        //[ApiSessionAuthorize]
+        //public ToExcelModel TenderRecordsToExcel([FromUri]TenderRecordsUserAccountIQueryModel query)
+        //{
+        //    int total;
+        //    if (query == null) query = new TenderRecordsUserAccountIQueryModel();
+        //    var resultList = new List<TenderRecordsUserAccountListVModel>();
+        //    var list = _tenderRecords.GetTenderRecordsList(query.UserNameOrNikeName, query.ProjectNo, query.Title, 0, int.MaxValue, out total);
+        //    if (list != null)
+        //    {
+        //        resultList = list.Select(TenderRecordsUserAccountListVModel.CopyFrom).ToList();
+        //    }
+        //    string tableName = DateTime.Now.ToString("yyyymmddHHmmss");
+
+        //    ToExcelModel model = new ToExcelModel();
+        //    var FileSaveDirectory = AppSetting.Instance().FileSaveDirectory;
+        //    string path = $"{FileSaveDirectory}{tableName}.xls";
+        //    var url = AppSetting.Instance().UploadUrl;
+        //    model.DownloadUrl = $"{url}{tableName}.xls";
+        //    Excel.SaveToExcel(resultList, path);
+        //    return model;
+        //}
+
         // excel 标题名称使用DisplayName 汉化
         //public class TenderRecordsUserAccountListVModel
         //{

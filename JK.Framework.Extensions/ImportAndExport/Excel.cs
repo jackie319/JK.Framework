@@ -94,7 +94,7 @@ namespace JK.Framework.Extensions
             {
                 var columnName = memberInfo.Name;
                 var attrs = memberInfo.GetCustomAttributes(false);   //反射成员的所有特性
-                if (attrs.Any(a => a is DisplayAttribute)) //<=== 是否应改为 DisplayNameAttribute?
+                if (attrs.Any(a => a is DisplayNameAttribute)) 
                 {
                     columnName = ((DisplayNameAttribute)attrs.Single(a => a is DisplayNameAttribute)).DisplayName;
 

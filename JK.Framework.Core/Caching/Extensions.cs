@@ -46,6 +46,25 @@ namespace JK.Framework.Core.Caching
                 cacheManager.Set(key, result, cacheTime);
             return result;
         }
+
+        //public class ProductSupplierImpl : IProductSupplier
+        //{
+        //    private IRepository<ProductSupplier> _ProductSupplierRepository;
+        //    private ICacheManager _CacheManager;
+        //    private const string PRODUCTS_BY_ID_KEY = "MMY.productSupplier.uid-{0}";
+
+        //    public ProductSupplierImpl(IRepository<ProductSupplier> useraccountRepository, ICacheManager cacheManager)
+        //    {
+        //        _ProductSupplierRepository = useraccountRepository;
+        //        _CacheManager = cacheManager;
+        //    }
+        //    使用实例
+        //    public ProductSupplier FindWithCache(Guid uid)
+        //    {
+        //        string key = String.Format(PRODUCTS_BY_ID_KEY, uid);
+        //        return _CacheManager.Get(key, () => _ProductSupplierRepository.Table.FirstOrDefault(q => q.Guid == uid && !q.IsDeleted));
+        //    }
+        //}
     }
 }
 

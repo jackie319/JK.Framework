@@ -91,6 +91,8 @@ D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\System.Web.WebPages.Razor
 D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\NPOI.xml
 D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\Newtonsoft.Json.xml
 D:\Code\Github\JK.Framework\JK.Framework.Web\bin\Debug\zh-Hans\EntityFramework.resources.dll
-D:\Code\Github\JK.Framework\JK.Framework.Web\obj\Debug\JK.Framework.Web.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.Framework.Web\obj\Debug\JK.Framework.Web.dll
 D:\Code\Github\JK.Framework\JK.Framework.Web\obj\Debug\JK.Framework.Web.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Web\obj\Debug\JK.Framework.Web.csprojAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Web\obj\Debug\JK.Framework.Web.csproj.CoreCompileInputs.cache
+D:\Code\Github\JK.Framework\JK.Framework.Web\obj\Debug\JK.Framework.Web.csproj.CopyComplete

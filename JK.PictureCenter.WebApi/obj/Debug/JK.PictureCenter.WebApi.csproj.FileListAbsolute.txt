@@ -1,4 +1,3 @@
-D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\obj\Debug\JK.PictureCenter.WebApi.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\ApplicationInsights.config
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\roslyn\csc.exe
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\roslyn\csc.exe.config
@@ -118,3 +117,8 @@ D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\System.Web.Http.Cors.xml
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\JKPictureCenterWebApi.xml
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\Swashbuckle.Core.dll
 D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\WebActivatorEx.dll
+D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\Autofac.Integration.Mvc.dll
+D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\bin\Autofac.Integration.Mvc.xml
+D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\obj\Debug\JK.PictureCenter.WebApi.csprojAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\obj\Debug\JK.PictureCenter.WebApi.csproj.CoreCompileInputs.cache
+D:\Code\Github\JK.Framework\JK.PictureCenter.WebApi\obj\Debug\JK.PictureCenter.WebApi.csproj.CopyComplete

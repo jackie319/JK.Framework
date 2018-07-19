@@ -10,6 +10,8 @@ D:\Code\Github\JK.Framework\JK.Picture\bin\Debug\JK.Framework.Core.pdb
 D:\Code\Github\JK.Framework\JK.Picture\bin\Debug\EntityFramework.xml
 D:\Code\Github\JK.Framework\JK.Picture\bin\Debug\Autofac.xml
 D:\Code\Github\JK.Framework\JK.Picture\bin\Debug\zh-Hans\EntityFramework.resources.dll
-D:\Code\Github\JK.Framework\JK.Picture\obj\Debug\JK.Pictures.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.Picture\obj\Debug\JK.Pictures.dll
 D:\Code\Github\JK.Framework\JK.Picture\obj\Debug\JK.Pictures.pdb
+D:\Code\Github\JK.Framework\JK.Picture\obj\Debug\JK.Pictures.csprojAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Picture\obj\Debug\JK.Pictures.csproj.CoreCompileInputs.cache
+D:\Code\Github\JK.Framework\JK.Picture\obj\Debug\JK.Pictures.csproj.CopyComplete

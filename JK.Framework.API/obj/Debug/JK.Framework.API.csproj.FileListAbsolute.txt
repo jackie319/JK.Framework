@@ -43,7 +43,6 @@ D:\Code\Github\JK.Framework\JK.Framework.API\bin\Debug\zh-Hans\EntityFramework.r
 D:\Code\Github\JK.Framework\JK.Framework.API\bin\Debug\zh-Hans\System.Net.Http.Formatting.resources.dll
 D:\Code\Github\JK.Framework\JK.Framework.API\bin\Debug\zh-Hans\System.Web.Http.resources.dll
 D:\Code\Github\JK.Framework\JK.Framework.API\bin\Debug\zh-Hans\System.Web.Http.WebHost.resources.dll
-D:\Code\Github\JK.Framework\JK.Framework.API\obj\Debug\JK.Framework.API.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.Framework.API\obj\Debug\JK.Framework.API.dll
 D:\Code\Github\JK.Framework\JK.Framework.API\obj\Debug\JK.Framework.API.pdb
 D:\Code\Github\JK.Framework\JK.Framework.API\bin\Debug\Autofac.Integration.Mvc.dll
@@ -61,3 +60,6 @@ D:\Code\Github\JK.Framework\JK.Framework.API\bin\Debug\System.Web.Razor.xml
 D:\Code\Github\JK.Framework\JK.Framework.API\bin\Debug\System.Web.WebPages.xml
 D:\Code\Github\JK.Framework\JK.Framework.API\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\Code\Github\JK.Framework\JK.Framework.API\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Code\Github\JK.Framework\JK.Framework.API\obj\Debug\JK.Framework.API.csprojAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.API\obj\Debug\JK.Framework.API.csproj.CoreCompileInputs.cache
+D:\Code\Github\JK.Framework\JK.Framework.API\obj\Debug\JK.Framework.API.csproj.CopyComplete

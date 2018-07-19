@@ -36,8 +36,15 @@ D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.Framework.Sms.dll.config
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\Newtonsoft.Json.xml
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\NPOI.xml
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\zh-Hans\EntityFramework.resources.dll
-D:\Code\Github\JK.Framework\JK.PayCenter\obj\Debug\JK.PayCenter.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.PayCenter\obj\Debug\JK.PayCenter.dll
 D:\Code\Github\JK.Framework\JK.PayCenter\obj\Debug\JK.PayCenter.pdb
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.Framework.Oauth.dll
 D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.Framework.Oauth.pdb
+D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\AopSdk.dll
+D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.Framework.Alipay.dll
+D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\aliyun-net-sdk-dysmsapi.dll
+D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\aliyun-net-sdk-core.dll
+D:\Code\Github\JK.Framework\JK.PayCenter\bin\Debug\JK.Framework.Alipay.pdb
+D:\Code\Github\JK.Framework\JK.PayCenter\obj\Debug\JK.PayCenter.csprojAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.PayCenter\obj\Debug\JK.PayCenter.csproj.CoreCompileInputs.cache
+D:\Code\Github\JK.Framework\JK.PayCenter\obj\Debug\JK.PayCenter.csproj.CopyComplete

@@ -1,4 +1,6 @@
 ﻿using JK.Data.Model;
+using JK.Framework.Alipay;
+using JK.Framework.Alipay.Model;
 using JK.Framework.Core;
 using JK.Framework.Core.Data;
 using JK.Framework.Extensions;
@@ -60,6 +62,50 @@ namespace JK.PayCenter
             _UserAccountRepository = userAccountRepository;
             _sms = sms;
         }
+
+        public string Alipay(Guid orderGuid, string orderNo, Guid userGuid)
+        {
+            var subject = "清石建材";
+            //确认订单
+            var order = _orderRepository.Table.FirstOrDefault(q => q.Guid == orderGuid && q.OrderNo.Equals(orderNo));
+            if (order == null) throw new CommonException("订单不存在");
+            //  if(order.Status)  //判断订单状态
+            //var orderAmount = Convert.ToDouble(order.Amount) / 100;
+
+            ////记录支付记录
+            //AlipayRecords recoreds = new AlipayRecords();
+            //recoreds.Guid = Guid.NewGuid();
+            //recoreds.OrderGuid = orderGuid;
+            //recoreds.OrderNo = orderNo;
+            //recoreds.UserOpenId = string.Empty;
+            //recoreds.UserGuid = userGuid.ToString();
+            //recoreds.Subject = subject;
+            //recoreds.TotalFee = orderAmount + "";
+            //recoreds.TimeCreated = DateTime.Now;
+            //recoreds.TradeNo = string.Empty;//同步返回
+            //recoreds.TotalAmount = string.Empty;
+            //recoreds.SellerId = string.Empty;
+            //_alipayRecordsRepository.Insert(recoreds);
+
+            //提交支付
+            ConmonRequestModel requestModel = new ConmonRequestModel();
+            requestModel.Getway = "https://openapi.alipay.com/gateway.do";
+            //requestModel.AppId = AppSetting.Instance().AppId;
+            //requestModel.MerchantPrivateKey = AppSetting.Instance().MerchantPrivateKey;
+            //requestModel.AlipayPublicKey = AppSetting.Instance().AlipayPublicKey;
+            requestModel.ReturnUrl = "http://api.xiaoheilang.com/Alipay/AlipayReturn";
+            requestModel.NotifyUrl = " http://api.xiaoheilang.com/AlipayNotify";
+            Pay alipay = new Pay(requestModel);
+            PagePayRequestModel pagePayRequestModel = new PagePayRequestModel();
+            pagePayRequestModel.Boby = subject;
+            pagePayRequestModel.Subject = subject;
+            pagePayRequestModel.OutTradeNo = order.OrderNo; //TODO:应为支付流水ID
+            //pagePayRequestModel.TotalAmount = orderAmount;
+            pagePayRequestModel.ProductCode = "FAST_INSTANT_TRADE_PAY";
+            var result = alipay.DefaultPay(pagePayRequestModel);
+            return result.Body;
+        }
+
         /// <summary>
         /// 支付前检查商品库存，支付成功后（收到通知）扣减库存
         /// </summary>

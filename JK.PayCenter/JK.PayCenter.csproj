@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AopSdk">
+      <HintPath>..\..\..\SFTFS\SuFan\客户项目\p2b借贷平台\P2B\P2B.Libs\libs\AopSdk.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
@@ -61,6 +64,10 @@
     <ProjectReference Include="..\JK.Data\JK.Data.csproj">
       <Project>{5004705F-F7BB-4165-8DF3-ED420D01C666}</Project>
       <Name>JK.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JK.Framework.Alipay\JK.Framework.Alipay.csproj">
+      <Project>{E4F109AB-07A1-4A40-8F56-541F35F5C01E}</Project>
+      <Name>JK.Framework.Alipay</Name>
     </ProjectReference>
     <ProjectReference Include="..\JK.Framework.Core\JK.Framework.Core.csproj">
       <Project>{1D16371D-484B-4EA0-8324-E39DC1BB251E}</Project>

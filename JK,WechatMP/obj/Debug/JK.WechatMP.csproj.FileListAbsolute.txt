@@ -22,10 +22,14 @@ D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\Newtonsoft.Json.xml
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\Autofac.xml
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\EntityFramework.xml
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\zh-Hans\EntityFramework.resources.dll
-D:\Code\Github\JK.Framework\JK,WechatMP\obj\Debug\JK.WechatMP.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.WechatMP.dll
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.WechatMP.pdb
 D:\Code\Github\JK.Framework\JK,WechatMP\obj\Debug\JK.WechatMP.dll
 D:\Code\Github\JK.Framework\JK,WechatMP\obj\Debug\JK.WechatMP.pdb
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.Framework.Oauth.dll
 D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\JK.Framework.Oauth.pdb
+D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\aliyun-net-sdk-dysmsapi.dll
+D:\Code\Github\JK.Framework\JK,WechatMP\bin\Debug\aliyun-net-sdk-core.dll
+D:\Code\Github\JK.Framework\JK,WechatMP\obj\Debug\JK.WechatMP.csprojAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK,WechatMP\obj\Debug\JK.WechatMP.csproj.CoreCompileInputs.cache
+D:\Code\Github\JK.Framework\JK,WechatMP\obj\Debug\JK.WechatMP.csproj.CopyComplete

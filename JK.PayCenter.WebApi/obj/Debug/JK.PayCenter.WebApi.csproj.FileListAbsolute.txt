@@ -78,6 +78,8 @@ D:\Code\Github\JK.Framework\JK.PayCenter.WebApi\bin\zh-Hans\System.Web.Razor.res
 D:\Code\Github\JK.Framework\JK.PayCenter.WebApi\bin\zh-Hans\System.Web.WebPages.resources.dll
 D:\Code\Github\JK.Framework\JK.PayCenter.WebApi\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 D:\Code\Github\JK.Framework\JK.PayCenter.WebApi\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
-D:\Code\Github\JK.Framework\JK.PayCenter.WebApi\obj\Debug\JK.PayCenter.WebApi.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.PayCenter.WebApi\obj\Debug\JK.PayCenter.WebApi.dll
 D:\Code\Github\JK.Framework\JK.PayCenter.WebApi\obj\Debug\JK.PayCenter.WebApi.pdb
+D:\Code\Github\JK.Framework\JK.PayCenter.WebApi\obj\Debug\JK.PayCenter.WebApi.csprojAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.PayCenter.WebApi\obj\Debug\JK.PayCenter.WebApi.csproj.CoreCompileInputs.cache
+D:\Code\Github\JK.Framework\JK.PayCenter.WebApi\obj\Debug\JK.PayCenter.WebApi.csproj.CopyComplete

@@ -4,6 +4,11 @@
         <name>JK.CommonApi.WebApi</name>
     </assembly>
     <members>
+        <member name="P:JK.CommonApi.WebApi.App_Start.ApiSessionAuthorizeAttribute._cache">
+            <summary>
+            属性注入
+            </summary>
+        </member>
         <member name="M:JK.CommonApi.WebApi.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
             <summary>
             Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
@@ -529,6 +534,38 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.AlipayApiController.AliPay(JK.CommonApi.WebApi.Models.PayModel.PayViewModel)">
+            <summary>
+            网站支付
+            </summary>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.AlipayApiController.Return(JK.CommonApi.WebApi.Models.Alipay.AlipayReturnModel)">
+            <summary>
+            同步返回
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.AlipayController.PageTest">
+            <summary>
+            网站支付
+            </summary>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.AlipayController.H5Test">
+            <summary>
+            手机网站支付
+            </summary>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.AlipayNotifyController.Notify">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JK.CommonApi.WebApi.Controllers.AlipayReturnController">
+            <summary>
+            同步通知
+            </summary>
+        </member>
         <member name="M:JK.CommonApi.WebApi.Controllers.FriendlyLinkController.GetList(JK.CommonApi.WebApi.Models.FriendlyLinkModel.FriendyLinkQueryModel)">
             <summary>
             所有友情链接(后台)
@@ -578,7 +615,7 @@
         </member>
         <member name="M:JK.CommonApi.WebApi.Controllers.PayController.Pay(JK.CommonApi.WebApi.Models.PayModel.PayViewModel)">
             <summary>
-            支付
+            支付 （非公众号支付时不传openId）
             </summary>
             <param name="model"></param>
             <returns></returns>
@@ -622,6 +659,11 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:JK.CommonApi.WebApi.Controllers.WxAppLoginController">
+            <summary>
+            移动应用微信登录(App)
+            </summary>
+        </member>
         <member name="T:JK.CommonApi.WebApi.Controllers.WxJscodeLoginController">
             <summary>
             微信登录(小程序)
@@ -634,13 +676,37 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="T:JK.CommonApi.WebApi.Controllers.WxLoginController">
+            <summary>
+            微信登录（公众号）
+            </summary>
+        </member>
         <member name="M:JK.CommonApi.WebApi.Controllers.WxNotifyController.Notify">
             注意：同样的通知可能会多次发送给商户系统。商户系统必须能够正确处理重复的通知。
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:JK.CommonApi.WebApi.Controllers.WxOpenLoginController" -->
+        <member name="M:JK.CommonApi.WebApi.Controllers.WxRefundController.RefundTest(JK.CommonApi.WebApi.Models.PayModel.RefundPayViewModel)">
+            <summary>
+            退款（该接口前端不对接）
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
         </member>
         <member name="T:JK.CommonApi.WebApi.Controllers.WxShareController">
             <summary>
             微信分享
             </summary>
+        </member>
+        <member name="T:JK.CommonApi.WebApi.Controllers.WxWithdrawCashController">
+            <summary>
+            提现
+            </summary>
+        </member>
+        <member name="M:JK.CommonApi.WebApi.Controllers.WxWithdrawCashController.WithdrawCash(JK.CommonApi.WebApi.Models.PayModel.WithdrawCashViewModel)">
+            <summary>
+            提现
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:JK.CommonApi.WebApi.WebApiApplication.Application_error(System.Object,System.EventArgs)">
             <summary>
@@ -648,6 +714,66 @@
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.Alipay.AlipayReturnModel.app_id">
+             <summary>
+            支付宝分配给开发者的应用ID
+             </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.Alipay.AlipayReturnModel.method">
+             <summary>
+            接口名称
+             </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.Alipay.AlipayReturnModel.sign_type">
+            <summary>
+            签名算法类型，目前支持RSA2和RSA，推荐使用RSA2
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.Alipay.AlipayReturnModel.sign">
+            <summary>
+            支付宝对本次支付结果的签名，开发者必须使用支付宝公钥验证签名
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.Alipay.AlipayReturnModel.charset">
+            <summary>
+            编码格式，如utf-8,gbk,gb2312等
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.Alipay.AlipayReturnModel.timestamp">
+            <summary>
+            前台回跳的时间，格式"yyyy-MM-dd HH:mm:ss"
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.Alipay.AlipayReturnModel.version">
+            <summary>
+            调用的接口版本，固定为：1.0
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.Alipay.AlipayReturnModel.auth_app_id">
+            <summary>
+            授权方的appid注：由于本接口暂不开放第三方应用授权，因此auth_app_id=app_id
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.Alipay.AlipayReturnModel.out_trade_no">
+            <summary>
+            商户网站唯一订单号
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.Alipay.AlipayReturnModel.trade_no">
+             <summary>
+            该交易在支付宝系统中的交易流水号。最长64位。
+             </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.Alipay.AlipayReturnModel.total_amount">
+            <summary>
+            该笔订单的资金总额，单位为RMB-Yuan。取值范围为[0.01，100000000.00]，精确到小数点后两位。
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.Alipay.AlipayReturnModel.seller_id">
+            <summary>
+            收款支付宝账号对应的支付宝唯一用户号。 以2088开头的纯16位数字
+            </summary>
         </member>
         <member name="P:JK.CommonApi.WebApi.Models.FriendlyLinkModel.FriendyLinkListViewModel.WebTitle">
             <summary>
@@ -787,6 +913,11 @@
         <member name="P:JK.CommonApi.WebApi.Models.PayModel.WechatShareViewModel.Signature">
             <summary>
             签名
+            </summary>
+        </member>
+        <member name="P:JK.CommonApi.WebApi.Models.PayModel.WithdrawCashViewModel.Amount">
+            <summary>
+            提现金额
             </summary>
         </member>
         <member name="P:JK.CommonApi.WebApi.Models.UserAccount.GetBackPasswrodViewModel.PasswordMd5">

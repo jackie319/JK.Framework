@@ -29,5 +29,6 @@ namespace JK.JKUserAccount
         public string WechatPayNotifyUrl { get; set; }
 
         public int SessionTimeExpired { get; set; }
+        public string AlipayPublicKey { get; set; }
     }
 }

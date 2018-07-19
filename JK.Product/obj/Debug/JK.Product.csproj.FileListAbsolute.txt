@@ -2,4 +2,4 @@ D:\Code\Github\JK.Framework\JK.Product\bin\Debug\JK.Product.dll
 D:\Code\Github\JK.Framework\JK.Product\bin\Debug\JK.Product.pdb
 D:\Code\Github\JK.Framework\JK.Product\obj\Debug\JK.Product.dll
 D:\Code\Github\JK.Framework\JK.Product\obj\Debug\JK.Product.pdb
-D:\Code\Github\JK.Framework\JK.Product\obj\Debug\JK.Product.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Product\obj\Debug\JK.Product.csproj.CoreCompileInputs.cache

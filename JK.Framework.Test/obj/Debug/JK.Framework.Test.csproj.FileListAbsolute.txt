@@ -25,3 +25,5 @@ D:\Code\Github\JK.Framework\JK.Framework.Test\bin\Debug\zh-Hans\Microsoft.Visual
 D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.dll
 D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.csprojAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Test\obj\Debug\JK.Framework.Test.csproj.CoreCompileInputs.cache

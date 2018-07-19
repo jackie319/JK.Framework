@@ -93,6 +93,8 @@ D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\zh-Hans\EntityFramework.
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\zh-Hans\System.Net.Http.Formatting.resources.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\zh-Hans\System.Web.Http.resources.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\bin\Debug\zh-Hans\System.Web.Http.WebHost.resources.dll
-D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.dll
 D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.pdb
+D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.csprojAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.csproj.CoreCompileInputs.cache
+D:\Code\Github\JK.Framework\JK.Framework.Data\obj\Debug\JK.Framework.Data.csproj.CopyComplete

@@ -24,4 +24,6 @@ D:\Code\Github\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.dll
 D:\Code\Github\JK.Framework\JK.Framework.Core\bin\Debug\Autofac.xml
 D:\Code\Github\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.dll
 D:\Code\Github\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.pdb
-D:\Code\Github\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.csprojResolveAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.csprojAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.csproj.CoreCompileInputs.cache
+D:\Code\Github\JK.Framework\JK.Framework.Core\obj\Debug\JK.Framework.Core.csproj.CopyComplete

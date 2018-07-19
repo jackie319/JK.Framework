@@ -28,6 +28,10 @@ D:\Code\Github\JK.Framework\JK.Sms\bin\Debug\JK.Framework.Extensions.dll.config
 D:\Code\Github\JK.Framework\JK.Sms\bin\Debug\Newtonsoft.Json.xml
 D:\Code\Github\JK.Framework\JK.Sms\bin\Debug\NPOI.xml
 D:\Code\Github\JK.Framework\JK.Sms\bin\Debug\zh-Hans\EntityFramework.resources.dll
-D:\Code\Github\JK.Framework\JK.Sms\obj\Debug\JK.Sms.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.Sms\obj\Debug\JK.Sms.dll
 D:\Code\Github\JK.Framework\JK.Sms\obj\Debug\JK.Sms.pdb
+D:\Code\Github\JK.Framework\JK.Sms\bin\Debug\aliyun-net-sdk-core.dll
+D:\Code\Github\JK.Framework\JK.Sms\bin\Debug\aliyun-net-sdk-dysmsapi.dll
+D:\Code\Github\JK.Framework\JK.Sms\obj\Debug\JK.Sms.csprojAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.Sms\obj\Debug\JK.Sms.csproj.CoreCompileInputs.cache
+D:\Code\Github\JK.Framework\JK.Sms\obj\Debug\JK.Sms.csproj.CopyComplete

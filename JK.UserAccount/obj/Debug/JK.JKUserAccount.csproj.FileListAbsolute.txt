@@ -22,10 +22,12 @@ D:\Code\Github\JK.Framework\JK.UserAccount\bin\Debug\Newtonsoft.Json.xml
 D:\Code\Github\JK.Framework\JK.UserAccount\bin\Debug\EntityFramework.xml
 D:\Code\Github\JK.Framework\JK.UserAccount\bin\Debug\Autofac.xml
 D:\Code\Github\JK.Framework\JK.UserAccount\bin\Debug\zh-Hans\EntityFramework.resources.dll
-D:\Code\Github\JK.Framework\JK.UserAccount\obj\Debug\JK.JKUserAccount.csprojResolveAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.UserAccount\obj\Debug\JK.JKUserAccount.dll
 D:\Code\Github\JK.Framework\JK.UserAccount\obj\Debug\JK.JKUserAccount.pdb
 D:\Code\Github\JK.Framework\JK.UserAccount\bin\Debug\JK.Framework.Oauth.dll
 D:\Code\Github\JK.Framework\JK.UserAccount\bin\Debug\JK.Framework.Oauth.pdb
 D:\Code\Github\JK.Framework\JK.UserAccount\bin\Debug\aliyun-net-sdk-dysmsapi.dll
 D:\Code\Github\JK.Framework\JK.UserAccount\bin\Debug\aliyun-net-sdk-core.dll
+D:\Code\Github\JK.Framework\JK.UserAccount\obj\Debug\JK.JKUserAccount.csprojAssemblyReference.cache
+D:\Code\Github\JK.Framework\JK.UserAccount\obj\Debug\JK.JKUserAccount.csproj.CoreCompileInputs.cache
+D:\Code\Github\JK.Framework\JK.UserAccount\obj\Debug\JK.JKUserAccount.csproj.CopyComplete

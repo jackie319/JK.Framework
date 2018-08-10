@@ -32,7 +32,7 @@ namespace JK.Framework.Oauth.Wechat
         {
             string state = "STATE";
             string url = $"{oauthUrl}?RedirectUrl={redirectUrl}";//可以只要redirectUrl
-            var myRedirecturl = System.Web.HttpUtility.HtmlEncode(url);
+            var myRedirecturl = System.Web.HttpUtility.UrlEncode(url);
             string result = $"https://open.weixin.qq.com/connect/oauth2/authorize?appid={AppId}&redirect_uri={myRedirecturl}&response_type=code&scope=snsapi_userinfo&state={state}#wechat_redirect";
             return result;
         }

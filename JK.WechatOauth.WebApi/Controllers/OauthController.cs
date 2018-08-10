@@ -62,7 +62,7 @@ namespace JK.WechatOauth.WebApi.Controllers
             {
                 appId = model.AppId;
             }
-            var myRedirecturl = System.Web.HttpUtility.HtmlEncode(url);
+            var myRedirecturl = System.Web.HttpUtility.UrlEncode(url);
 
             string result = $"https://open.weixin.qq.com/connect/oauth2/authorize?appid={appId}&redirect_uri={myRedirecturl}&response_type=code&scope=snsapi_userinfo&state={state}#wechat_redirect";
             //没有出现授权页面，而是白屏，基本上是地址result 拼写错误，大小写，空格等。
@@ -113,7 +113,7 @@ namespace JK.WechatOauth.WebApi.Controllers
             {
                 appId = model.AppId;
             }
-            var myRedirecturl = System.Web.HttpUtility.HtmlEncode(url);
+            var myRedirecturl = System.Web.HttpUtility.UrlEncode(url);
             string result = $"https://open.weixin.qq.com/connect/qrconnect?appid={appId}&redirect_uri={myRedirecturl}&response_type=code&scope=snsapi_login&state={state}#wechat_redirect";
             //没有出现授权页面，而是白屏，基本上是地址result 拼写错误，大小写，空格等。
             //尤其注意：由于授权操作安全等级较高，所以在发起授权请求时，
@@ -161,7 +161,7 @@ namespace JK.WechatOauth.WebApi.Controllers
             {
                 appId = model.AppId;
             }
-            var myRedirecturl = System.Web.HttpUtility.HtmlEncode(url);
+            var myRedirecturl = System.Web.HttpUtility.UrlEncode(url);
             result.AppId = appId;
             result.Id = "login_container";
             result.Scope = "snsapi_login";

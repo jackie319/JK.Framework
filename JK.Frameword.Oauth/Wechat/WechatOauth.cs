@@ -21,6 +21,21 @@ namespace JK.Framework.Oauth.Wechat
             AppId = appId;
             Secret = secret;
         }
+
+        /// <summary>
+        /// 拼接用于请求code 的链接
+        /// </summary>
+        /// <param name="oauthUrl"></param>
+        /// <param name="redirectUrl"></param>
+        /// <returns></returns>
+        public string GetCodeString(string oauthUrl, string redirectUrl)
+        {
+            string state = "STATE";
+            string url = $"{oauthUrl}?RedirectUrl={redirectUrl}";//可以只要redirectUrl
+            var myRedirecturl = System.Web.HttpUtility.HtmlEncode(url);
+            string result = $"https://open.weixin.qq.com/connect/oauth2/authorize?appid={AppId}&redirect_uri={myRedirecturl}&response_type=code&scope=snsapi_userinfo&state={state}#wechat_redirect";
+            return result;
+        }
         /// <summary>
         /// 获取AccessToken
         /// 尤其注意：由于公众号的secret和获取到的access_token安全级别都非常高，必须只保存在服务器，

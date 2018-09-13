@@ -76,9 +76,12 @@
     <Compile Include="Email\Email.cs" />
     <Compile Include="Encryption\AES.cs" />
     <Compile Include="Encryption\Base64.cs" />
+    <Compile Include="Fun.cs" />
     <Compile Include="ImportAndExport\Excel.cs" />
+    <Compile Include="ImportAndExport\ExcelHelper.cs" />
     <Compile Include="ImportAndExport\ExportCsvManager.cs" />
     <Compile Include="ImportAndExport\ImportCsvManager.cs" />
+    <Compile Include="ImportAndExport\NPOIExtension.cs" />
     <Compile Include="JsonStorage.cs" />
     <Compile Include="JsonTool.cs" />
     <Compile Include="LinqTool.cs" />

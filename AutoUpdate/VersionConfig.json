@@ -1,0 +1,4 @@
+{
+  "VersionNum": "1.0.0",
+  "UpdateUrl": "http://localhost:8002/api/services/app/versionManager/GetLatestVersion",
+}

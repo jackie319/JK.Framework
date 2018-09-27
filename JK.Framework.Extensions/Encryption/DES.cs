@@ -31,13 +31,13 @@ namespace JK.Framework.Extensions.Encryption
         /// <returns>密文</returns>
         public static string DESEncrypt(string plainStr)
         {
-            byte[] bKey = Encoding.UTF8.GetBytes(Key);
-            byte[] bIV = Encoding.UTF8.GetBytes(IV);
-            byte[] byteArray = Encoding.UTF8.GetBytes(plainStr);
             string encrypt = null;
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();
             try
             {
+                byte[] bKey = Encoding.UTF8.GetBytes(Key);
+                byte[] bIV = Encoding.UTF8.GetBytes(IV);
+                byte[] byteArray = Encoding.UTF8.GetBytes(plainStr);
                 using (MemoryStream mStream = new MemoryStream())
                 {
                     using (CryptoStream cStream = new CryptoStream(mStream, des.CreateEncryptor(bKey, bIV), CryptoStreamMode.Write))
@@ -48,7 +48,7 @@ namespace JK.Framework.Extensions.Encryption
                     }
                 }
             }
-            catch { }
+            catch { }//TODO:错误处理
             des.Clear();
             return encrypt;
         }
@@ -59,13 +59,13 @@ namespace JK.Framework.Extensions.Encryption
         /// <returns>明文</returns>
         public static string DESDecrypt(string encryptStr)
         {
-            byte[] bKey = Encoding.UTF8.GetBytes(Key);
-            byte[] bIV = Encoding.UTF8.GetBytes(IV);
-            byte[] byteArray = Convert.FromBase64String(encryptStr);
             string decrypt = null;
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();
             try
             {
+                byte[] bKey = Encoding.UTF8.GetBytes(Key);
+                byte[] bIV = Encoding.UTF8.GetBytes(IV);
+                byte[] byteArray = Convert.FromBase64String(encryptStr);
                 using (MemoryStream mStream = new MemoryStream())
                 {
                     using (CryptoStream cStream = new CryptoStream(mStream, des.CreateDecryptor(bKey, bIV), CryptoStreamMode.Write))
@@ -76,7 +76,7 @@ namespace JK.Framework.Extensions.Encryption
                     }
                 }
             }
-            catch { }
+            catch { }//TODO：错误处理
             des.Clear();
             return decrypt;
         }

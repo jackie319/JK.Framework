@@ -9,6 +9,6 @@ D:\Code\Github\JK.Framework\JK.Data\bin\Debug\zh-Hans\EntityFramework.resources.
 D:\Code\Github\JK.Framework\JK.Data\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
 D:\Code\Github\JK.Framework\JK.Data\obj\Debug\JK.Data.dll
 D:\Code\Github\JK.Framework\JK.Data\obj\Debug\JK.Data.pdb
-D:\Code\Github\JK.Framework\JK.Data\obj\Debug\JK.Data.csprojAssemblyReference.cache
 D:\Code\Github\JK.Framework\JK.Data\obj\Debug\JK.Data.csproj.CoreCompileInputs.cache
 D:\Code\Github\JK.Framework\JK.Data\obj\Debug\JK.Data.csproj.CopyComplete
+D:\Code\Github\JK.Framework\JK.Data\obj\Debug\JK.Data.csprojAssemblyReference.cache

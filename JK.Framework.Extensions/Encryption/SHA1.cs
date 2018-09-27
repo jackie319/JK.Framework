@@ -11,7 +11,7 @@ namespace JK.Framework.Extensions
     {
 
         /// <summary>
-        /// 对字符串进行SHA1加密
+        /// 对字符串进行SHA1加密（不可逆）
         /// </summary>
         /// <param name="Source_String">需要加密的字符串</param>
         /// <returns>密文</returns>

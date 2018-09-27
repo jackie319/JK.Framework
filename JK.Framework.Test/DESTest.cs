@@ -14,7 +14,8 @@ namespace JK.Framework.Test
         [TestMethod]
         public void TestDEs()
         {
-            var jackie = DES.DESEncrypt("jackie214");
+            var jackie = DES.DESEncrypt("123456789010987654");
+            int length = jackie.Length;
             var me = DES.DESDecrypt(jackie);
             Assert.IsTrue(me.Equals("jackie214"));
         }
